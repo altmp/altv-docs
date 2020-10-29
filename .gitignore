@@ -1,0 +1,16 @@
+# Build results
+_site/
+api/**
+!api/**.md
+_site/
+[Oo]bj/
+output.json
+**.zip
+
+# Others
+docfx/
+plugins/
+templates/*
+!templates/altmp
+coreclr-module/
+altv-types/

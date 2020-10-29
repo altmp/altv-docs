@@ -6,8 +6,8 @@ on:
     paths:
       - 'templates/altmp/**'
       - 'docfx.json'
-      - 'docs/index.md'
-      - 'docs/toc.yml'
+      - 'index.md'
+      - 'toc.yml'
       - 'CNAME'
       - '!build.*'
       - '!.gitignore'
