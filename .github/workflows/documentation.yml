@@ -141,7 +141,7 @@ jobs:
       - name: Download artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: publish.yml
+          workflow: documentation.yml
       - name: Download artifacts
         if: ${{ always() }}
         uses: actions/download-artifact@v2
