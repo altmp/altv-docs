@@ -1,0 +1,6 @@
+- name: JavaScript
+  href: altv-types/docs/toc.yml
+  topicHref: altv-types/docs/index.md
+- name: C#
+  href: coreclr-module/docs/toc.yml
+  topicHref: coreclr-module/docs/index.md

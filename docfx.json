@@ -1,0 +1,92 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md",
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "index.md"
+        ],
+        "exclude": [
+          "api/index.yml"
+        ],
+        "src": "altv-types/docs",
+        "dest": "js/"
+      },
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md",
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "src": "coreclr-module/docs",
+        "dest": "cs/"
+      },
+      {
+        "files": [
+          "toc.yml",
+          "index.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-types/docs",
+        "dest": "js/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "coreclr-module/docs",
+        "dest": "cs/"
+      },
+      {
+        "files": [
+          "CNAME"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.yml"
+        ],
+        "src": "altv-types/docs",
+        "dest": "js/"
+      },
+      {
+        "files": [
+          "apidoc/**.yml"
+        ],
+        "src": "coreclr-module/docs",
+        "dest": "cs/"
+      }
+    ],
+    "globalMetadata": {
+      "_disableSideFilter": true,
+      "_gitContribute": {
+        "branch": "master",
+        "apiSpecFolder": "docs/apidoc"
+      },
+      "_gitUrlPattern": "github"
+    },
+    "template": [
+      "default",
+      "templates/docfx-plugins-typescriptreference",
+      "templates/discordfx",
+      "templates/altmp"
+    ],
+    "markdownEngineName": "markdig",
+    "dest": "_site"
+  }
+}

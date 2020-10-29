@@ -1,0 +1,206 @@
+name: Documentation
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'templates/altmp/**'
+      - 'docfx.json'
+      - 'docs/index.md'
+      - 'docs/toc.yml'
+      - 'CNAME'
+      - '!build.*'
+      - '!.gitignore'
+  repository_dispatch:
+    types:
+      - Update JS documentation
+      - Update C# documentation
+jobs:
+  js:
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/altv-types
+          ref: feat/docs-tools
+          path: ./altv-types
+      - name: Install dependencies
+        run: |
+          Set-Location -Path './altv-types/docs/'
+          yarn install
+      - name: Generate JS metadata
+        run: |
+          Set-Location -Path './altv-types/docs/'
+          npx typedoc --options './typedoc.json'
+          npx type2docfx './api/.manifest' './api/' --basePath '.' --sourceUrl 'https://github.com/altmp/altv-types' --sourceBranch 'master' --disableAlphabetOrder
+      - name: Pack files
+        run: |
+          Set-Location -Path './altv-types/'
+          tar -cvf ../js.tar docs
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: js
+          path: ./js.tar
+  cs:
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: FabianTerhorst/coreclr-module
+          ref: feat/docs-tools
+          path: ./coreclr-module
+      - name: Download DocFx
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: dotnet/docfx
+          latest: true
+          fileName: docfx.zip
+      - name: Unzip DocFx package
+        run: |
+          Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
+          Remove-Item -Path 'docfx.zip'
+      - name: Generate C# metadata
+        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json'
+      - name: Pack files
+        run: |
+          Set-Location -Path './coreclr-module/'
+          tar -cvf ../cs.tar docs
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cs
+          path: ./cs.tar
+  docs:
+    runs-on: windows-latest
+    continue-on-error: true
+    needs:
+      - js
+      - cs
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Checkout JS repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/altv-types
+          path: ./altv-types
+      - name: Checkout C# repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: FabianTerhorst/coreclr-module
+          path: ./coreclr-module
+      - name: Download DocFx package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: dotnet/docfx
+          latest: true
+          fileName: docfx.zip
+      - name: Unzip DocFx package
+        run: |
+          Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
+          Remove-Item -Path 'docfx.zip'
+      - name: Download DocFx TypeScriptReference package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: Lhoerion/DocFx.Plugins.TypeScriptReference
+          latest: true
+          fileName: docfx-plugins-typescriptreference.zip
+      - name: Unzip DocFx TypeScriptReference package
+        run: |
+          Expand-Archive -Path 'docfx-plugins-typescriptreference.zip' -DestinationPath './templates/'
+          Remove-Item -Path 'docfx-plugins-typescriptreference.zip'
+      - name: Download DocFx DiscordFX package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: Lhoerion/DiscordFX
+          latest: true
+          fileName: docfx-tmpls-discordfx.zip
+      - name: Unzip DocFx DiscordFX package
+        run: |
+          Expand-Archive -Path 'docfx-tmpls-discordfx.zip' -DestinationPath './templates/'
+          Remove-Item -Path 'docfx-tmpls-discordfx.zip'
+      - name: Download artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: publish.yml
+      - name: Download artifacts
+        if: ${{ always() }}
+        uses: actions/download-artifact@v2
+      - name: Unpack artifacts
+        if: ${{ always() }}
+        run: |
+          rm -r altv-types/docs/
+          mv js/js.tar altv-types/js.tar
+          tar -xvf altv-types/js.tar -C altv-types
+          del altv-types/js.tar
+          rm -r coreclr-module/docs/
+          mv cs/cs.tar coreclr-module/cs.tar
+          tar -xvf coreclr-module/cs.tar -C coreclr-module
+          del coreclr-module/cs.tar
+      - name: Build docs
+        if: ${{ always() }}
+        run: ./docfx/docfx './docfx.json'
+      - name: Pack files
+        if: ${{ always() }}
+        run: tar -cvf _site.tar _site
+      - name: Upload artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: ./_site.tar
+  deploy:
+    name: Deploy GitHub Pages
+    runs-on: ubuntu-latest
+    needs:
+      - docs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+          path: ./docs
+      - name: Unpack files
+        run: tar -xvf _site.tar
+        working-directory: ./docs
+      - name: Deploy page
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/_site
+          clean: true
+      - name: Post Download artifacts
+        if: ${{ always() }}
+        uses: geekyeggo/delete-artifact@v1
+        with:
+          name: site
+      - name: Post Download artifacts
+        if: ${{ always() }}
+        uses: c-hive/gha-remove-artifacts@v1
+        with:
+          age: '1 minute'
