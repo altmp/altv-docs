@@ -96,9 +96,9 @@ try
         Set-Location -Path "./altv-types"
         git init 2>$null
         git remote add "origin" "https://github.com/altmp/altv-types/" 2>$null
-        git fetch --depth 1 "origin" "feat/docs-tools" 2>$null
+        git fetch --depth 1 "origin" "master" 2>$null
         git reset --hard "FETCH_HEAD" 2>$null
-        git branch --set-upstream-to "origin/feat/docs-tools" "master" 2>$null
+        git branch --set-upstream-to "origin/master" "master" 2>$null
         Set-Location $cwd
     }
 
@@ -108,9 +108,9 @@ try
         Set-Location -Path "./coreclr-module"
         git init 2>$null
         git remote add "origin" "https://github.com/FabianTerhorst/coreclr-module/" 2>$null
-        git fetch --depth 1 "origin" "feat/docs-tools" 2>$null
+        git fetch --depth 1 "origin" "master" 2>$null
         git reset --hard "FETCH_HEAD" 2>$null
-        git branch --set-upstream-to "origin/feat/docs-tools" "master" 2>$null
+        git branch --set-upstream-to "origin/master" "master" 2>$null
         Set-Location $cwd
     }
 

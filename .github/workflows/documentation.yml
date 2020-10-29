@@ -29,7 +29,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: feat/docs-tools
+          ref: master
           path: ./altv-types
       - name: Install dependencies
         run: |
@@ -58,7 +58,7 @@ jobs:
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: feat/docs-tools
+          ref: master
           path: ./coreclr-module
       - name: Download DocFx
         uses: robinraju/release-downloader@v1
