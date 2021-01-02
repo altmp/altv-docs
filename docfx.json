@@ -31,7 +31,9 @@
       {
         "files": [
           "toc.yml",
-          "index.md"
+          "index.md",
+          "articles/**.md",
+          "articles/**/toc.yml"
         ]
       }
     ],

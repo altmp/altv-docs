@@ -1,3 +1,6 @@
+- name: General
+  href: articles/toc.yml
+  topicHref: articles/index.md
 - name: JavaScript
   href: altv-types/docs/toc.yml
   topicHref: altv-types/docs/index.md
