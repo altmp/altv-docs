@@ -6,6 +6,8 @@ on:
     paths:
       - 'templates/altmp/**'
       - 'docfx.json'
+      - 'articles/**.md'
+      - 'articles/**.yml'
       - 'index.md'
       - 'toc.yml'
       - 'CNAME'
