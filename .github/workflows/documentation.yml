@@ -179,12 +179,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Dispatch event to altv-typings repo
-        uses: peter-evans/repository-dispatch@v1.1.2
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-          repository: altmp/altv-typings
-          event-type: Update documentation
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
