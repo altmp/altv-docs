@@ -1,5 +1,7 @@
 - name: Getting Started
-  href: index.md
-  items:
-    - name: Logging
-      href: logging.md
+  href: getting-started/
+  topicHref: getting-started/index.md
+- name: Logging
+  href: logging.md
+- name: How to Contribute
+  href: contributing.md
