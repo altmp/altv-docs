@@ -1,2 +1,5 @@
 - name: Getting Started
-  href: index.md
+  href: getting-started/
+  topicHref: getting-started/index.md
+- name: How to Contribute
+  href: contributing.md
