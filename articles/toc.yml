@@ -3,5 +3,8 @@
   topicHref: getting-started/index.md
 - name: Logging
   href: logging.md
+- name: Config files
+  href: configs/
+  topicHref: configs/index.md
 - name: How to Contribute
   href: contributing.md
