@@ -3,16 +3,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'templates/altmp/**'
-      - 'docfx.json'
-      - 'articles/**.md'
-      - 'articles/**.yml'
-      - 'index.md'
-      - 'toc.yml'
-      - 'CNAME'
-      - '!build.*'
-      - '!.gitignore'
   repository_dispatch:
     types:
       - Update JS documentation
@@ -190,12 +180,12 @@ jobs:
         run: tar -xvf _site.tar
         working-directory: ./docs
       - name: Deploy page
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/_site
-          clean: true
+          publish_dir: ./docs/_site
+          cname: docs.altv.mp
+          full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
       - name: Post Download artifacts
         if: ${{ always() }}
         uses: geekyeggo/delete-artifact@v1

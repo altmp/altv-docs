@@ -33,6 +33,20 @@ function GetAssemblyVersion([string] $file) {
     }
 }
 
+function GetVisualStudioVersion() {
+    $instances=& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products * -latest -format json | ConvertFrom-Json
+    if($instances.Length -gt 0) {
+        $instances[0].installationVersion
+    } else {
+        ""
+    }
+}
+
+function VerifyVisualStudioInstance() {
+    $instances=& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products * -requires Microsoft.NetCore.Component.SDK -latest -format json | ConvertFrom-Json
+    $instances.Length -gt 0
+}
+
 function FetchAndDownloadRelease([string] $repo, [string] $file, [string] $tag=$null) {
     $global:ProgressPreference='SilentlyContinue'
     if(-not $tag) {
@@ -153,14 +167,19 @@ try
     }
 
     LogWrap "Tools version" {
-        $dotnetVersion=dotnet --version
+        $vsVer=GetVisualStudioVersion
         $docfxVer=GetAssemblyVersion "./docfx/docfx.exe"
         $pluginVer=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/*.dll"
         $themeVer=cat "./templates/discordfx/version.txt"
         $typedocVer=npm view typedoc version
         $type2docfxVer=npm view typedoc version
+        # & "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products Microsoft.VisualStudio.Product.BuildTools -format json
         Write-Host -NoNewline -ForegroundColor "green" "done`n"
-        Write-Host ".NET Core v$dotnetVersion"
+        if($vsVer -ne "") {
+            Write-Host "Visual Studio v$vsVer"
+        } else {
+            Write-Host -ForegroundColor "yellow" "Visual Studio installation not found!"
+        }
         Write-Host "DocFx v$docfxVer"
         Write-Host "DocFx TypescriptReference v$pluginVer"
         Write-Host "DocFx DiscordFX v$themeVer"
@@ -176,9 +195,12 @@ try
         Set-Location $cwd
         return $LastExitCode, $buff
     }
-
     LogWrap "Generating C# project metadata" {
-        ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
+        if(VerifyVisualStudioInstance) {
+            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
+        } else {
+            return -0x1
+        }
     }
 
     ./docfx/docfx build "docfx.json" --serve -p $port

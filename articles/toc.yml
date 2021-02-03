@@ -1,11 +1,8 @@
 - name: Getting Started
-  href: index.md
+  href: getting-started/
+  topicHref: getting-started/index.md
 - name: Config files
-  href: configs.md
-  items:
-    - name: Server configuration
-      href: configs/server.md
-    - name: Resource configuration
-      href: configs/resource.md
-    - name: Stream configuration
-      href: configs/stream.md
+  href: configs/
+  topicHref: configs/index.md
+- name: How to Contribute
+  href: contributing.md
