@@ -1,6 +1,8 @@
 - name: Getting Started
   href: getting-started/
   topicHref: getting-started/index.md
+- name: Logging
+  href: logging.md
 - name: Config files
   href: configs/
   topicHref: configs/index.md
