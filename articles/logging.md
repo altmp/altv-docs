@@ -52,13 +52,16 @@ You can see a list of all color codes in the table below:
 
 ## Using logs in your code
 
-# [JavaScript / Lua](#tab/jslua/1)
+Here you can find small examples in the different programming languages alt:V offers on how to use logging:
+
+**JavaScript / Lua**
 ```js
 alt.log("~r~Hello ~g~World!");
 alt.logWarning("This is a warning");
 alt.logError("This is an error");
 ```
-# [C#](#tab/csharp/1)
+
+**C#**
 ```csharp
 ColoredMessage coloredMessage = new ColoredMessage();
 coloredMessage += TextColor.Red;
@@ -69,4 +72,3 @@ Alt.LogColored(coloredMessage);
 Alt.LogWarning("This is a warning");
 Alt.LogError("This is an error");
 ```
----
