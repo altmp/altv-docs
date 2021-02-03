@@ -1,0 +1,8 @@
+- name: Configs
+  href: index.md
+- name: Server config
+  href: server.md
+- name: Resource config
+  href: resource.md
+- name: Stream config
+  href: stream.md
