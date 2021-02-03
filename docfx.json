@@ -51,11 +51,6 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
-      },
-      {
-        "files": [
-          "CNAME"
-        ]
       }
     ],
     "overwrite": [
