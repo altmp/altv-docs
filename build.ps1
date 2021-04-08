@@ -7,6 +7,7 @@ param(
 function PostCleanup() {
     Remove-Item -Path 'docfx.zip' -Force 2>&1 > $null
     Remove-Item -Path 'docfx-plugins-typescriptreference.zip' -Force 2>&1 > $null
+    Remove-Item -Path 'docfx-plugins-extractsearchindex.zip' -Force 2>&1 > $null
     Remove-Item -Path 'docfx-tmpls-discordfx.zip' -Force 2>&1 > $null
     if($cleanMetadata) {
         Remove-Item -Path './_site/' -Recurse -Force 2>&1 > $null
@@ -34,6 +35,7 @@ function GetAssemblyVersion([string] $file) {
 }
 
 function GetVisualStudioVersion() {
+    if(-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe")) { ""; return }
     $instances=& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products * -latest -format json | ConvertFrom-Json
     if($instances.Length -gt 0) {
         $instances[0].installationVersion
@@ -43,6 +45,7 @@ function GetVisualStudioVersion() {
 }
 
 function VerifyVisualStudioInstance() {
+    if(-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe")) { $false; return }
     $instances=& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products * -requires Microsoft.NetCore.Component.SDK -latest -format json | ConvertFrom-Json
     $instances.Length -gt 0
 }
@@ -50,13 +53,12 @@ function VerifyVisualStudioInstance() {
 function FetchAndDownloadRelease([string] $repo, [string] $file, [string] $tag=$null) {
     $global:ProgressPreference='SilentlyContinue'
     if(-not $tag) {
-        $tag=(Invoke-WebRequest -UseBasicParsing "https://api.github.com/repos/$repo/releases" | ConvertFrom-Json)[0].tag_name
+        $tag=((Invoke-WebRequest -UseBasicParsing "https://api.github.com/repos/$repo/releases" | ConvertFrom-Json) | Where-Object { -not $_.prerelease } | Select-Object -First 1 -ExpandProperty "tag_name")
     }
     Invoke-WebRequest -UseBasicParsing "https://github.com/$repo/releases/download/$tag/$file" -OutFile $file
     $global:ProgressPreference='Continue'
     return ([int]$? - 1)
 }
-
 
 function ExtractArchive([string] $path, [string] $dest) {
     if(-not (Test-Path -Path $path)) { throw "Cannot find path $path because it does not exist." }
@@ -146,6 +148,15 @@ try
         ExtractArchive "docfx-plugins-typescriptreference.zip" "./templates/" 2>&1 6>$null
     }
 
+    LogWrap "Downloading DocFx ExtractSearchIndex package" {
+        if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { return -0x1 }
+        FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.ExtractSearchIndex" "docfx-plugins-extractsearchindex.zip" 2>&1 6>$null
+    }
+    LogWrap "Extracting DocFx ExtractSearchIndex package" {
+        if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { return -0x1 }
+        ExtractArchive "docfx-plugins-extractsearchindex.zip" "./templates/" 2>&1 6>$null
+    }
+
     LogWrap "Downloading DocFx DiscordFX package" {
         if(Test-Path "./templates/discordfx/") { return -0x1 }
         FetchAndDownloadRelease "Lhoerion/DiscordFX" "docfx-tmpls-discordfx.zip" 2>&1 6>$null
@@ -170,10 +181,10 @@ try
         $vsVer=GetVisualStudioVersion
         $docfxVer=GetAssemblyVersion "./docfx/docfx.exe"
         $pluginVer=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/*.dll"
+        $plugin2Ver=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/*.dll"
         $themeVer=cat "./templates/discordfx/version.txt"
         $typedocVer=npm view typedoc version
         $type2docfxVer=npm view typedoc version
-        # & "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products Microsoft.VisualStudio.Product.BuildTools -format json
         Write-Host -NoNewline -ForegroundColor "green" "done`n"
         if($vsVer -ne "") {
             Write-Host "Visual Studio v$vsVer"
@@ -182,6 +193,7 @@ try
         }
         Write-Host "DocFx v$docfxVer"
         Write-Host "DocFx TypescriptReference v$pluginVer"
+        Write-Host "DocFx ExtractSearchIndex v$plugin2Ver"
         Write-Host "DocFx DiscordFX v$themeVer"
         Write-Host "TypeDoc v$typedocVer"
         Write-Host "type2docfx v$type2docfxVer"
