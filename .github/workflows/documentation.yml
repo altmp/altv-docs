@@ -120,6 +120,16 @@ jobs:
         run: |
           Expand-Archive -Path 'docfx-plugins-typescriptreference.zip' -DestinationPath './templates/'
           Remove-Item -Path 'docfx-plugins-typescriptreference.zip'
+      - name: Download DocFx ExtractSearchIndex package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: Lhoerion/DocFx.Plugins.ExtractSearchIndex
+          latest: true
+          fileName: docfx-plugins-extractsearchindex.zip
+      - name: Unzip DocFx ExtractSearchIndex package
+        run: |
+          Expand-Archive -Path 'docfx-plugins-extractsearchindex.zip' -DestinationPath './templates/'
+          Remove-Item -Path 'docfx-plugins-extractsearchindex.zip'
       - name: Download DocFx DiscordFX package
         uses: robinraju/release-downloader@v1
         with:
