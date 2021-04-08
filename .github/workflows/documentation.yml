@@ -104,7 +104,6 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: dotnet/docfx
-          tag: v2.56.6
           fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
