@@ -69,6 +69,7 @@ coloredMessage += "Hello ";
 coloredMessage += TextColor.Green;
 coloredMessage += "World!";
 Alt.LogColored(coloredMessage);
-Alt.LogWarning("This is a warning");
-Alt.LogError("This is an error");
+// Not implemented yet
+//Alt.LogWarning("This is a warning");
+//Alt.LogError("This is an error");
 ```
