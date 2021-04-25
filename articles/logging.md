@@ -71,4 +71,6 @@ coloredMessage += "World!";
 Alt.LogColored(coloredMessage);
 Alt.LogWarning("This is a warning");
 Alt.LogError("This is an error");
+Alt.LogInfo("This is an info");
+Alt.LogDebug("This is a debug message");
 ```
