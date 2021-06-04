@@ -55,7 +55,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1.7.2
         with:
-          dotnet-version: 5.0.101
+          dotnet-version: 5.0.202
       - name: Download DocFx
         uses: robinraju/release-downloader@v1
         with:
@@ -67,7 +67,7 @@ jobs:
           Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
           Remove-Item -Path 'docfx.zip'
       - name: Generate C# metadata
-        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json' --property TargetFramework=net5.0
+        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json'
       - name: Pack files
         run: |
           Set-Location -Path './coreclr-module/'
