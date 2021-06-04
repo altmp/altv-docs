@@ -42,7 +42,7 @@ jobs:
           name: js
           path: ./js.tar
   cs:
-    runs-on: windows-2016
+    runs-on: windows-latest
     continue-on-error: true
     steps:
       - name: Checkout repository
@@ -52,10 +52,6 @@ jobs:
           repository: FabianTerhorst/coreclr-module
           ref: master
           path: ./coreclr-module
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: 5.0.202
       - name: Download DocFx
         uses: robinraju/release-downloader@v1
         with:
@@ -67,7 +63,7 @@ jobs:
           Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
           Remove-Item -Path 'docfx.zip'
       - name: Generate C# metadata
-        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json'
+        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json' --property TargetFramework=netcoreapp3.1
       - name: Pack files
         run: |
           Set-Location -Path './coreclr-module/'
@@ -158,10 +154,12 @@ jobs:
           mv js/js.tar altv-types/js.tar
           tar -xvf altv-types/js.tar -C altv-types
           del altv-types/js.tar
+          if([System.String]::IsNullOrWhiteSpace((cat "altv-types\docs\api\.manifest" -ea SilentlyContinue))) { exit 1 }
           rm -r coreclr-module/docs/
           mv cs/cs.tar coreclr-module/cs.tar
           tar -xvf coreclr-module/cs.tar -C coreclr-module
           del coreclr-module/cs.tar
+          if([System.String]::IsNullOrWhiteSpace((cat "coreclr-module\docs\api\.manifest" -ea SilentlyContinue))) { exit 1 }
       - name: Build docs
         if: ${{ always() }}
         run: ./docfx/docfx './docfx.json'
