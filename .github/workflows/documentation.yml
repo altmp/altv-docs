@@ -30,7 +30,9 @@ jobs:
       - name: Generate JS metadata
         run: |
           Set-Location -Path './altv-types/docs/'
-          npx typedoc --options './typedoc.json'
+          Push-Location -Path '../'
+          npx typedoc --options './docs/typedoc.json'
+          Pop-Location
           npx type2docfx './api/.manifest' './api/' --basePath '.' --sourceUrl 'https://github.com/altmp/altv-types' --sourceBranch 'master' --disableAlphabetOrder
       - name: Pack files
         run: |
@@ -75,7 +77,6 @@ jobs:
           path: ./cs.tar
   docs:
     runs-on: windows-latest
-    continue-on-error: true
     needs:
       - js
       - cs
@@ -154,12 +155,12 @@ jobs:
           mv js/js.tar altv-types/js.tar
           tar -xvf altv-types/js.tar -C altv-types
           del altv-types/js.tar
-          if([System.String]::IsNullOrWhiteSpace((cat "altv-types\docs\api\.manifest" -ea SilentlyContinue))) { exit 1 }
+          if([System.String]::IsNullOrWhiteSpace((cat "altv-types\docs\api\.manifest" -ea SilentlyContinue))) { throw "Invalid altv-types repo manifest." }
           rm -r coreclr-module/docs/
           mv cs/cs.tar coreclr-module/cs.tar
           tar -xvf coreclr-module/cs.tar -C coreclr-module
           del coreclr-module/cs.tar
-          if([System.String]::IsNullOrWhiteSpace((cat "coreclr-module\docs\api\.manifest" -ea SilentlyContinue))) { exit 1 }
+          if([System.String]::IsNullOrWhiteSpace((cat "coreclr-module\docs\api\.manifest" -ea SilentlyContinue))) { throw "Invalid coreclr-module repo manifest." }
       - name: Build docs
         if: ${{ always() }}
         run: ./docfx/docfx './docfx.json'
