@@ -54,11 +54,11 @@ jobs:
           repository: FabianTerhorst/coreclr-module
           ref: master
           path: ./coreclr-module
-      - name: Download DocFx
+      - name: Download DocFx package
         uses: robinraju/release-downloader@v1
         with:
           repository: dotnet/docfx
-          latest: true
+          tag: v2.56.7
           fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
@@ -105,7 +105,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: dotnet/docfx
-          latest: true
+          tag: v2.56.7
           fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
@@ -115,7 +115,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.TypeScriptReference
-          latest: true
+          tag: v1.1.2
           fileName: docfx-plugins-typescriptreference.zip
       - name: Unzip DocFx TypeScriptReference package
         run: |
@@ -125,7 +125,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.ExtractSearchIndex
-          latest: true
+          tag: v1.0.0
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
         run: |
