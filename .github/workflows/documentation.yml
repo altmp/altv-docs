@@ -44,7 +44,7 @@ jobs:
           name: js
           path: ./js.tar
   cs:
-    runs-on: windows-2016
+    runs-on: windows-latest
     continue-on-error: true
     steps:
       - name: Checkout repository
