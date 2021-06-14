@@ -47,6 +47,10 @@ jobs:
     runs-on: windows-latest
     continue-on-error: true
     steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1.8.0
+        with:
+          dotnet-version: 5.0.203
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -85,6 +89,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1.8.0
+        with:
+          dotnet-version: 5.0.203
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
