@@ -180,8 +180,8 @@ try
     LogWrap "Tools version" {
         $vsVer=GetVisualStudioVersion
         $docfxVer=GetAssemblyVersion "./docfx/docfx.exe"
-        $pluginVer=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/*.dll"
-        $plugin2Ver=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/*.dll"
+        $pluginVer=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/DocFx.*.dll"
+        $plugin2Ver=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/DocFx.*.dll"
         $themeVer=cat "./templates/discordfx/version.txt"
         $typedocVer=npm view typedoc version
         $type2docfxVer=npm view typedoc version
