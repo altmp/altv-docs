@@ -25,12 +25,13 @@ exports.postTransform = function (model) {
 function handleReleaseStages(vm) {
   if(vm.releaseStage) {
     if(vm.releaseStage.indexOf('beta') !== -1) {
-      vm.releaseStage.unshift(releaseStages[0]);
+      vm.releaseStage.push(releaseStages[0]);
     }
+    vm.releaseStage.sort();
     if(vm.releaseStage.indexOf('public') !== -1) {
       vm.releaseStage = releaseStages;
     }
-    vm.releaseStage = vm.releaseStage.reverse();
+    vm.releaseStage.reverse();
   } else {
     vm.releaseStage = null;
   }
