@@ -11,6 +11,7 @@ jobs:
   js:
     runs-on: windows-latest
     continue-on-error: true
+    if: ${{ github.event.event_type == 'Update JS documentation' }}
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -21,7 +22,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: master
+          ref: ${{ github.event.client_payload.ref }}
           path: ./altv-types
       - name: Install dependencies
         run: |
@@ -46,13 +47,14 @@ jobs:
   cs:
     runs-on: windows-2016
     continue-on-error: true
+    if: ${{ github.event.event_type == 'Update C# documentation' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: master
+          ref: ${{ github.event.client_payload.ref }}
           path: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
