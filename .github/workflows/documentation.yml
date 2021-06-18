@@ -144,6 +144,7 @@ jobs:
           Expand-Archive -Path 'docfx-tmpls-discordfx.zip' -DestinationPath './templates/'
           Remove-Item -Path 'docfx-tmpls-discordfx.zip'
       - name: Download artifacts
+        if: ${{ always() }}
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: documentation.yml
