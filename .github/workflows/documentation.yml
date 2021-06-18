@@ -12,7 +12,6 @@ jobs:
     runs-on: windows-latest
     continue-on-error: true
     steps:
-      - run: test "${{ github.event.action }}" = "Update JS documentation"
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -22,7 +21,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: ${{ github.event.client_payload.sha }}
+          ref: master
           path: ./altv-types
       - name: Install dependencies
         run: |
@@ -48,13 +47,12 @@ jobs:
     runs-on: windows-2016
     continue-on-error: true
     steps:
-      - run: test "${{ github.event.action }}" = "Update C# documentation"
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: ${{ github.event.client_payload.sha }}
+          ref: master
           path: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
@@ -144,7 +142,6 @@ jobs:
           Expand-Archive -Path 'docfx-tmpls-discordfx.zip' -DestinationPath './templates/'
           Remove-Item -Path 'docfx-tmpls-discordfx.zip'
       - name: Download artifacts
-        if: ${{ always() }}
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: documentation.yml
