@@ -11,7 +11,7 @@ jobs:
   js:
     runs-on: windows-latest
     continue-on-error: true
-    if: ${{ github.event.event_type == 'Update JS documentation' }}
+    if: ${{ github.event.action == 'Update JS documentation' || github.event_name == 'push' }}
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -47,7 +47,7 @@ jobs:
   cs:
     runs-on: windows-2016
     continue-on-error: true
-    if: ${{ github.event.event_type == 'Update C# documentation' }}
+    if: ${{ github.event.action == 'Update C# documentation' || github.event_name == 'push' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
