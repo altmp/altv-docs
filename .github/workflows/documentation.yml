@@ -44,7 +44,7 @@ jobs:
           Push-Location -Path "../"
           npx typedoc --options "./docs/typedoc.json"
           Pop-Location
-          npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "master" --disableAlphabetOrder
+          npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "${{ github.event.client_payload.sha }}" --disableAlphabetOrder
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
