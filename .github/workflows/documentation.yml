@@ -17,7 +17,7 @@ jobs:
         run: |
           if("${{ github.event.action }}" -ne "Update JS documentation") {
             Write-Output "::set-output name=skip::true"
-            Write-Host "Step skipped." -ForegroundColor "Red"
+            Write-Output "Step skipped."
           }
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -35,16 +35,16 @@ jobs:
       - name: Install dependencies
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
-          Set-Location -Path './altv-types/docs/'
+          Set-Location -Path "./altv-types/docs/"
           yarn install
       - name: Generate JS metadata
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
-          Set-Location -Path './altv-types/docs/'
-          Push-Location -Path '../'
-          npx typedoc --options './docs/typedoc.json'
+          Set-Location -Path "./altv-types/docs/"
+          Push-Location -Path "../"
+          npx typedoc --options "./docs/typedoc.json"
           Pop-Location
-          npx type2docfx './api/.manifest' './api/' --basePath '.' --sourceUrl 'https://github.com/altmp/altv-types' --sourceBranch 'master' --disableAlphabetOrder
+          npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "master" --disableAlphabetOrder
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -80,11 +80,11 @@ jobs:
       - name: Unzip DocFx package
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
-          Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
-          Remove-Item -Path 'docfx.zip'
+          Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "./docfx.zip"
       - name: Generate C# metadata
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
-        run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json' --property TargetFramework=netcoreapp3.1
+        run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json" --property TargetFramework=netcoreapp3.1
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -125,8 +125,8 @@ jobs:
           fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
-          Remove-Item -Path 'docfx.zip'
+          Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "docfx.zip"
       - name: Download DocFx TypeScriptReference package
         uses: robinraju/release-downloader@v1
         with:
@@ -135,8 +135,8 @@ jobs:
           fileName: docfx-plugins-typescriptreference.zip
       - name: Unzip DocFx TypeScriptReference package
         run: |
-          Expand-Archive -Path 'docfx-plugins-typescriptreference.zip' -DestinationPath './templates/'
-          Remove-Item -Path 'docfx-plugins-typescriptreference.zip'
+          Expand-Archive -Path "./docfx-plugins-typescriptreference.zip" -DestinationPath "./templates/"
+          Remove-Item -Path "./docfx-plugins-typescriptreference.zip"
       - name: Download DocFx ExtractSearchIndex package
         uses: robinraju/release-downloader@v1
         with:
@@ -145,8 +145,8 @@ jobs:
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
         run: |
-          Expand-Archive -Path 'docfx-plugins-extractsearchindex.zip' -DestinationPath './templates/'
-          Remove-Item -Path 'docfx-plugins-extractsearchindex.zip'
+          Expand-Archive -Path "./docfx-plugins-extractsearchindex.zip" -DestinationPath "./templates/"
+          Remove-Item -Path "./docfx-plugins-extractsearchindex.zip"
       - name: Download DocFx DiscordFX package
         uses: robinraju/release-downloader@v1
         with:
@@ -155,16 +155,16 @@ jobs:
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFX package
         run: |
-          Expand-Archive -Path 'docfx-tmpls-discordfx.zip' -DestinationPath './templates/'
-          Remove-Item -Path 'docfx-tmpls-discordfx.zip'
+          Expand-Archive -Path "./docfx-tmpls-discordfx.zip" -DestinationPath "./templates/"
+          Remove-Item -Path "./docfx-tmpls-discordfx.zip"
       - run: npm install adm-zip
       - name: Download previous job artifacts
         uses: actions/github-script@v4
         with:
           script: |
-            const AdmZip = require('adm-zip');
+            const AdmZip = require("adm-zip");
             const fs = require("fs");
-            const path = require('path');
+            const path = require("path");
             const artifactNames = ["js", "cs"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
@@ -220,7 +220,7 @@ jobs:
             throw "Invalid coreclr-module repo manifest."
           }
       - name: Build docs
-        run: ./docfx/docfx './docfx.json'
+        run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -254,18 +254,13 @@ jobs:
         uses: geekyeggo/delete-artifact@v1
         with:
           name: site
-      # - name: Post Download artifacts
-      #   if: ${{ always() }}
-      #   uses: c-hive/gha-remove-artifacts@v1
-      #   with:
-      #     age: '1 minute'
       - name: Download previous job artifacts
         uses: actions/github-script@v4
         with:
           result-encoding: json
           script: |
             const fs = require("fs");
-            const path = require('path');
+            const path = require("path");
             const artifactNames = ["js", "cs"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
