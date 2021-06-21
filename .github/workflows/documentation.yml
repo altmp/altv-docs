@@ -13,38 +13,41 @@ jobs:
     continue-on-error: true
     steps:
       - name: Conditional run
+        id: cond-run
         run: |
-          if("${{ github.event.event_type }}" -ne "Update C# documentation") {
-            throw "Step skipped."
+          if("${{ github.event.event_type }}" -ne "Update JS documentation") {
+            Write-Output "::set-output name=skip::true"
+            Write-Host "Step skipped." -ForegroundColor "Red"
           }
       - name: Setup Node.js
         uses: actions/setup-node@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           node-version: 12.x
       - name: Checkout repository
         uses: actions/checkout@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           persist-credentials: false
           repository: altmp/altv-types
           ref: ${{ github.event.client_payload.sha }}
           path: ./altv-types
       - name: Install dependencies
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Set-Location -Path './altv-types/docs/'
           yarn install
       - name: Generate JS metadata
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Set-Location -Path './altv-types/docs/'
           Push-Location -Path '../'
           npx typedoc --options './docs/typedoc.json'
           Pop-Location
           npx type2docfx './api/.manifest' './api/' --basePath '.' --sourceUrl 'https://github.com/altmp/altv-types' --sourceBranch 'master' --disableAlphabetOrder
-      # - name: Pack files
-      #   run: |
-      #     Set-Location -Path './altv-types/'
-      #     tar -cvf ../js.tar docs
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           name: js
           path: ./altv-types/docs/
@@ -53,12 +56,15 @@ jobs:
     continue-on-error: true
     steps:
       - name: Conditional run
+        id: cond-run
         run: |
           if("${{ github.event.event_type }}" -ne "Update C# documentation") {
-            throw "Step skipped."
+            Write-Output "::set-output name=skip::true"
+            Write-Host "Step skipped." -ForegroundColor "Red"
           }
       - name: Checkout repository
         uses: actions/checkout@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
@@ -66,22 +72,22 @@ jobs:
           path: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           repository: dotnet/docfx
           tag: v2.56.7
           fileName: docfx.zip
       - name: Unzip DocFx package
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path 'docfx.zip' -DestinationPath './docfx/'
           Remove-Item -Path 'docfx.zip'
       - name: Generate C# metadata
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json' --property TargetFramework=netcoreapp3.1
-      # - name: Pack files
-      #   run: |
-      #     Set-Location -Path './coreclr-module/'
-      #     tar -cvf ../cs.tar docs
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           name: cs
           path: ./coreclr-module/docs/
@@ -192,12 +198,24 @@ jobs:
       - name: Unpack artifacts
         run: |
           Remove-Item -Path "./altv-types/docs/" -Recurse
-          Move-Item -Path "./js/"  -Destination "./altv-types/docs"
+          if(-not (Test-Path -Path "./js/js.tar")) {
+            Move-Item -Path "./js/"  -Destination "./altv-types/docs"
+          } else {
+            Move-Item -Path "./js/js.tar"  -Destination "./altv-types/js.tar"
+            tar -xvf "./altv-types/js.tar" -C "./altv-types/"
+            Remove-Item -Path "./altv-types/js.tar"
+          }
           if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-types\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
             throw "Invalid altv-types repo manifest."
           }
           Remove-Item -Path "./coreclr-module/docs/" -Recurse
-          Move-Item -Path "./cs/" -Destination "./coreclr-module/docs"
+          if(-not (Test-Path -Path "./cs/cs.tar")) {
+            Move-Item -Path "./cs/"  -Destination "./coreclr-module/docs"
+          } else {
+            Move-Item -Path "./cs/cs.tar"  -Destination "./altv-types/cs.tar"
+            tar -xvf "./coreclr-module/cs.tar" -C "./coreclr-module/"
+            Remove-Item -Path "./coreclr-module/cs.tar"
+          }
           if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "coreclr-module\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
             throw "Invalid coreclr-module repo manifest."
           }
