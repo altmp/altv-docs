@@ -12,6 +12,11 @@ jobs:
     runs-on: windows-latest
     continue-on-error: true
     steps:
+      - name: Conditional run
+        run: |
+          if("${{ github.event.event_type }}" -ne "Update C# documentation") {
+            throw "Step skipped."
+          }
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -21,7 +26,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: master
+          ref: ${{ github.event.client_payload.sha }}
           path: ./altv-types
       - name: Install dependencies
         run: |
@@ -34,25 +39,30 @@ jobs:
           npx typedoc --options './docs/typedoc.json'
           Pop-Location
           npx type2docfx './api/.manifest' './api/' --basePath '.' --sourceUrl 'https://github.com/altmp/altv-types' --sourceBranch 'master' --disableAlphabetOrder
-      - name: Pack files
-        run: |
-          Set-Location -Path './altv-types/'
-          tar -cvf ../js.tar docs
+      # - name: Pack files
+      #   run: |
+      #     Set-Location -Path './altv-types/'
+      #     tar -cvf ../js.tar docs
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: js
-          path: ./js.tar
+          path: ./altv-types/docs/
   cs:
     runs-on: windows-2016
     continue-on-error: true
     steps:
+      - name: Conditional run
+        run: |
+          if("${{ github.event.event_type }}" -ne "Update C# documentation") {
+            throw "Step skipped."
+          }
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: master
+          ref: ${{ github.event.client_payload.sha }}
           path: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
@@ -66,15 +76,15 @@ jobs:
           Remove-Item -Path 'docfx.zip'
       - name: Generate C# metadata
         run: ./docfx/docfx metadata './coreclr-module/docs/docfx.json' --property TargetFramework=netcoreapp3.1
-      - name: Pack files
-        run: |
-          Set-Location -Path './coreclr-module/'
-          tar -cvf ../cs.tar docs
+      # - name: Pack files
+      #   run: |
+      #     Set-Location -Path './coreclr-module/'
+      #     tar -cvf ../cs.tar docs
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: cs
-          path: ./cs.tar
+          path: ./coreclr-module/docs/
   docs:
     runs-on: windows-latest
     needs:
@@ -141,38 +151,63 @@ jobs:
         run: |
           Expand-Archive -Path 'docfx-tmpls-discordfx.zip' -DestinationPath './templates/'
           Remove-Item -Path 'docfx-tmpls-discordfx.zip'
-      - name: Download artifacts
-        uses: dawidd6/action-download-artifact@v2
+      - run: npm install adm-zip
+      - name: Download previous job artifacts
+        uses: actions/github-script@v4
         with:
-          workflow: documentation.yml
-      - name: Download artifacts
-        if: ${{ always() }}
+          script: |
+            const AdmZip = require('adm-zip');
+            const fs = require("fs");
+            const path = require('path');
+            const artifactNames = ["js", "cs"];
+            const artifacts = (await github.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            })).data.artifacts;
+            if (!artifacts.length) {
+              console.log("No artifacts found");
+              return;
+            }
+            for (const artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
+              if (!artifact) continue;
+              console.log("==> Artifact:", artifact.id);
+              console.log(`==> Downloading: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
+              const zip = await github.actions.downloadArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifact.id,
+                archive_format: "zip"
+              });
+              const filePath = path.join("./", artifact.name);
+              const adm = new AdmZip(Buffer.from(zip.data));
+              adm.getEntries().forEach((entry) => {
+                const action = entry.isDirectory ? "creating" : "inflating";
+                console.log(`  ${action}: ${path.join(filePath, entry.entryName)}`);
+              })
+              adm.extractAllTo(filePath, true);
+            }
+      - name: Download current job artifacts
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
-        if: ${{ always() }}
         run: |
-          rm -r altv-types/docs/
-          mv js/js.tar altv-types/js.tar
-          tar -xvf altv-types/js.tar -C altv-types
-          del altv-types/js.tar
-          if([System.String]::IsNullOrWhiteSpace((cat "altv-types\docs\api\.manifest" -ea SilentlyContinue))) { throw "Invalid altv-types repo manifest." }
-          rm -r coreclr-module/docs/
-          mv cs/cs.tar coreclr-module/cs.tar
-          tar -xvf coreclr-module/cs.tar -C coreclr-module
-          del coreclr-module/cs.tar
-          if([System.String]::IsNullOrWhiteSpace((cat "coreclr-module\docs\api\.manifest" -ea SilentlyContinue))) { throw "Invalid coreclr-module repo manifest." }
+          Remove-Item -Path "./altv-types/docs/" -Recurse
+          Move-Item -Path "./js/"  -Destination "./altv-types/docs"
+          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-types\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
+            throw "Invalid altv-types repo manifest."
+          }
+          Remove-Item -Path "./coreclr-module/docs/" -Recurse
+          Move-Item -Path "./cs/" -Destination "./coreclr-module/docs"
+          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "coreclr-module\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
+            throw "Invalid coreclr-module repo manifest."
+          }
       - name: Build docs
-        if: ${{ always() }}
         run: ./docfx/docfx './docfx.json'
-      - name: Pack files
-        if: ${{ always() }}
-        run: tar -cvf _site.tar _site
       - name: Upload artifacts
-        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
           name: site
-          path: ./_site.tar
+          path: ./_site/
   deploy:
     name: Deploy GitHub Pages
     runs-on: ubuntu-latest
@@ -188,10 +223,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: ./docs
-      - name: Unpack files
-        run: tar -xvf _site.tar
-        working-directory: ./docs
+          path: ./docs/_site
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -204,8 +236,37 @@ jobs:
         uses: geekyeggo/delete-artifact@v1
         with:
           name: site
-      - name: Post Download artifacts
-        if: ${{ always() }}
-        uses: c-hive/gha-remove-artifacts@v1
+      # - name: Post Download artifacts
+      #   if: ${{ always() }}
+      #   uses: c-hive/gha-remove-artifacts@v1
+      #   with:
+      #     age: '1 minute'
+      - name: Download previous job artifacts
+        uses: actions/github-script@v4
         with:
-          age: '1 minute'
+          result-encoding: json
+          script: |
+            const fs = require("fs");
+            const path = require('path');
+            const artifactNames = ["js", "cs"];
+            const artifacts = (await github.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            })).data.artifacts;
+            if (!artifacts.length) {
+              console.log("No artifacts found");
+              return;
+            }
+            for (let i = artifacts.length - 1; i >= 0; i--) {
+              const artifact = artifacts[i];
+              if (!artifact || artifacts.reduce((acc, val) => (val.name === artifact.name ? ++acc : acc), 0) <= 1) continue;
+              console.log("==> Artifact:", artifact.id);
+              console.log(`==> Removing: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
+              await github.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifact.id
+              });
+              artifact.name = null;
+            }
