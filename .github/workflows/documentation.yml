@@ -15,7 +15,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.event_type }}" -ne "Update JS documentation") {
+          if("${{ github.event_name }}" -ne "Update JS documentation") {
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
@@ -58,7 +58,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.event_type }}" -ne "Update C# documentation") {
+          if("${{ github.event_name }}" -ne "Update C# documentation") {
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
