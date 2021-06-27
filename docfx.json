@@ -30,6 +30,18 @@
       },
       {
         "files": [
+          "api/**.yml",
+          "api/index.md",
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "src": "gta",
+        "dest": "gta/"
+      },
+      {
+        "files": [
           "toc.yml",
           "index.md",
           "articles/**.md",
@@ -67,6 +79,13 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "src": "gta",
+        "dest": "gta/"
       }
     ],
     "globalMetadata": {
