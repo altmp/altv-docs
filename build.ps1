@@ -132,7 +132,7 @@ try
 
     LogWrap "Downloading DocFx package" {
         if(Test-Path "./docfx/docfx.exe") { return -0x1 }
-        FetchAndDownloadRelease "dotnet/docfx" "docfx.zip" "v2.56.7" 2>$null
+        FetchAndDownloadRelease "dotnet/docfx" "docfx.zip" "v2.58" 2>$null
     }
     LogWrap "Extracting DocFx package" {
         if(Test-Path "./docfx/docfx.exe") { return -0x1 }
@@ -141,7 +141,7 @@ try
 
     LogWrap "Downloading DocFx TypeScriptReference package" {
         if(Test-Path "./templates/docfx-plugins-typescriptreference/") { return -0x1 }
-        FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.TypeScriptReference" "docfx-plugins-typescriptreference.zip" "v1.1.2" 2>&1 6>$null
+        FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.TypeScriptReference" "docfx-plugins-typescriptreference.zip" "v1.1.4" 2>&1 6>$null
     }
     LogWrap "Extracting DocFx TypeScriptReference package" {
         if(Test-Path "./templates/docfx-plugins-typescriptreference/") { return -0x1 }
@@ -150,7 +150,7 @@ try
 
     LogWrap "Downloading DocFx ExtractSearchIndex package" {
         if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { return -0x1 }
-        FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.ExtractSearchIndex" "docfx-plugins-extractsearchindex.zip" "v1.0.0" 2>&1 6>$null
+        FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.ExtractSearchIndex" "docfx-plugins-extractsearchindex.zip" "v1.0.1" 2>&1 6>$null
     }
     LogWrap "Extracting DocFx ExtractSearchIndex package" {
         if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { return -0x1 }
