@@ -9,7 +9,7 @@ on:
       - Update C# documentation
 jobs:
   js:
-    runs-on: windows-latest
+    runs-on: windows-2019
     continue-on-error: true
     steps:
       - name: Conditional run
@@ -52,7 +52,7 @@ jobs:
           name: js
           path: ./altv-types/docs/
   cs:
-    runs-on: windows-2016
+    runs-on: windows-2019
     continue-on-error: true
     steps:
       - name: Conditional run
@@ -92,7 +92,7 @@ jobs:
           name: cs
           path: ./coreclr-module/docs/
   docs:
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs:
       - js
       - cs
@@ -228,7 +228,7 @@ jobs:
           path: ./_site/
   deploy:
     name: Deploy GitHub Pages
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - docs
     steps:
