@@ -1,2 +1,5 @@
 - name: Placeholder
   href: index.md
+- name: tutorials
+  href: tutorials/
+  homepage: tutorials/index.md
