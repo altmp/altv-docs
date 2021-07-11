@@ -7,6 +7,7 @@ on:
     types:
       - Update JS documentation
       - Update C# documentation
+      - Update SDK documentation
 jobs:
   js:
     runs-on: windows-2019
@@ -91,11 +92,37 @@ jobs:
         with:
           name: cs
           path: ./coreclr-module/docs/
+  sdk:
+    runs-on: windows-2019
+    continue-on-error: true
+    steps:
+      - name: Conditional run
+        id: cond-run
+        run: |
+          if("${{ github.event.action }}" -ne "Update SDK documentation") {
+            Write-Output "::set-output name=skip::true"
+            Write-Host "Step skipped." -ForegroundColor "Red"
+          }
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        with:
+          persist-credentials: false
+          repository: altmp/cpp-sdk
+          ref: ${{ github.event.client_payload.sha }}
+          path: ./cpp-sdk
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        with:
+          name: sdk
+          path: ./cpp-sdk/
   docs:
     runs-on: windows-2019
     needs:
       - js
       - cs
+      - sdk
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -117,6 +144,12 @@ jobs:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
           path: ./coreclr-module
+      - name: Checkout SDK repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/cpp-sdk
+          path: ./cpp-sdk
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
         with:
@@ -165,7 +198,7 @@ jobs:
             const AdmZip = require("adm-zip");
             const fs = require("fs");
             const path = require("path");
-            const artifactNames = ["js", "cs"];
+            const artifactNames = ["js", "cs", "sdk"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -219,6 +252,14 @@ jobs:
           if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "coreclr-module\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
             throw "Invalid coreclr-module repo manifest."
           }
+          Remove-Item -Path "./cpp-sdk/articles/" -Recurse
+          if(-not (Test-Path -Path "./sdk/sdk.tar")) {
+            Move-Item -Path "./sdk/"  -Destination "./cpp-sdk/articles"
+          } else {
+            Move-Item -Path "./sdk/sdk.tar"  -Destination "./cpp-sdk/sdk.tar"
+            tar -xvf "./cpp-sdk/sdk.tar" -C "./cpp-sdk/"
+            Remove-Item -Path "./cpp-sdk/sdk.tar"
+          }
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
@@ -261,7 +302,7 @@ jobs:
           script: |
             const fs = require("fs");
             const path = require("path");
-            const artifactNames = ["js", "cs"];
+            const artifactNames = ["js", "cs", "sdk"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,

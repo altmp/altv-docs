@@ -130,6 +130,18 @@ try
         Set-Location $cwd
     }
 
+    LogWrap "Checkout SDK repository" {
+        if(Test-Path "./cpp-sdk/") { return -0x1 }
+        New-Item -ItemType "directory" -Path "./cpp-sdk" -Force | Out-Null
+        Set-Location -Path "./cpp-sdk"
+        git init 2>$null
+        git remote add "origin" "https://github.com/altmp/cpp-sdk/" 2>$null
+        git fetch --depth 1 "origin" "docs" 2>$null
+        git reset --hard "FETCH_HEAD" 2>$null
+        git branch --set-upstream-to "origin/docs" "master"
+        Set-Location $cwd
+    }
+
     LogWrap "Downloading DocFx package" {
         if(Test-Path "./docfx/docfx.exe") { return -0x1 }
         FetchAndDownloadRelease "dotnet/docfx" "docfx.zip" "v2.58" 2>$null

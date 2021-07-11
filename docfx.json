@@ -30,6 +30,14 @@
       },
       {
         "files": [
+          "**.md",
+          "**/toc.yml",
+        ],
+        "src": "cpp-sdk/articles/",
+        "dest": "sdk/"
+      },
+      {
+        "files": [
           "toc.yml",
           "index.md",
           "articles/**.md",
