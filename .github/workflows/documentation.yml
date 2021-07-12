@@ -254,6 +254,7 @@ jobs:
             throw "Invalid coreclr-module repo manifest."
           }
           Remove-Item -Path "./cpp-sdk/articles/" -Recurse
+          Get-ChildItem -Path -Recurse "./cpp-sdk/" -Exclude ".git"
           if(-not (Test-Path -Path "./sdk/sdk.tar")) {
             Move-Item -Path "./sdk/"  -Destination "./cpp-sdk/articles"
           } else {
@@ -261,6 +262,7 @@ jobs:
             tar -xvf "./cpp-sdk/sdk.tar" -C "./cpp-sdk/"
             Remove-Item -Path "./cpp-sdk/sdk.tar"
           }
+          Get-ChildItem -Path -Recurse "./cpp-sdk/" -Exclude ".git"
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
