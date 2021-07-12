@@ -149,6 +149,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/cpp-sdk
+          ref: docs
           path: ./cpp-sdk
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
