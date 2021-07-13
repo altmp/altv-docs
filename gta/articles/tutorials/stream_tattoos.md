@@ -1,8 +1,8 @@
 # Stream Tattoos
 This tutorial will show, how to add custom tattoos to your server.
 ## Suggested tools 
-- [Open IV](https://openiv.com/)
-- [Template for fast creating](https://github.com/C0kkie/altv_custom_tattoos)
+* [Open IV](https://openiv.com/)
+* [Template for fast creating](https://github.com/C0kkie/altv_custom_tattoos)
 
 
 ## customtattoos_overlays.xml 

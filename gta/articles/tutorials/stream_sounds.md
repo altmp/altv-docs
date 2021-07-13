@@ -2,7 +2,7 @@
 This tutorial show, how to replace default sound for your server.
 
 ## Suggested tools 
-- [OpenIV](https://openiv.com/)
+* [OpenIV](https://openiv.com/)
 #
 
 ## Creating the resources

@@ -2,7 +2,7 @@
 This tutorial show, how to add/replace custom weapons for your server.
 
 ## Suggested tools
-- [OpenIV](https://openiv.com/)
+* [OpenIV](https://openiv.com/)
 
 ## Creating the resources
 1. Open ```dlc.rpf``` and extract all the ```.meta``` files and models/texture (```.ydr```/```.ytd```)

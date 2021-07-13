@@ -10,9 +10,7 @@
           "toc.yml",
           "index.md"
         ],
-        "exclude": [
-          "api/index.yml"
-        ],
+        "exclude": ["api/index.yml"],
         "src": "altv-types/docs",
         "dest": "js/"
       },
@@ -51,39 +49,34 @@
     ],
     "resource": [
       {
-        "files": [
-          "images/**"
-        ],
+        "files": ["images/**"],
         "src": "altv-types/docs",
         "dest": "js/"
       },
       {
-        "files": [
-          "images/**"
-        ],
+        "files": ["images/**"],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": ["images/**"],
+        "src": "gta",
+        "dest": "gta/"
       }
     ],
     "overwrite": [
       {
-        "files": [
-          "apidoc/**.md"
-        ],
+        "files": ["apidoc/**.md"],
         "src": "altv-types/docs",
         "dest": "js/"
       },
       {
-        "files": [
-          "apidoc/**.md"
-        ],
+        "files": ["apidoc/**.md"],
         "src": "coreclr-module/docs",
         "dest": "cs/"
       },
       {
-        "files": [
-          "apidoc/**.md"
-        ],
+        "files": ["apidoc/**.md"],
         "src": "gta",
         "dest": "gta/"
       }
@@ -107,7 +100,7 @@
       "templates/discordfx",
       "templates/altmp"
     ],
-    "postProcessors": [ "ExtractSearchIndexAlt" ],
+    "postProcessors": ["ExtractSearchIndexAlt"],
     "markdownEngineName": "markdig",
     "dest": "_site"
   }

@@ -1,10 +1,11 @@
+# Stream Vehicles
 This tutorial will show, how to add custom vehicles to your server.
 
 For this tutorial we will use [https://www.gta5-mods.com/vehicles/pfister-meteor-add-on Meteor by Vanillaworks-Team].
-== Suggested tools ==
-- [OpenIV](https://openiv.com/)
-- [Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
-- [Template for fast creating](https://github.com/Carbon-Open-Source-Factory/addon_vehicle_template)
+## Suggested tools ##
+* [OpenIV](https://openiv.com/)
+* [Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
+* [Template for fast creating](https://github.com/Carbon-Open-Source-Factory/addon_vehicle_template)
 
 ## Creating the resources
 1. Open ```dlc.rpf``` or any other ```*.rpf``` archive with one of suggested tools.
@@ -15,7 +16,8 @@ For this tutorial we will use [https://www.gta5-mods.com/vehicles/pfister-meteor
 
 ## Folder Structure
 
-![](images/stream_vehicles/Stream_Vehicles-FolderStructure.png)
+![](./../tutorials/images/stream_vehicles/Stream_Vehicles-FolderStructure.png)
+
 
 ## **resource.cfg**
 ```

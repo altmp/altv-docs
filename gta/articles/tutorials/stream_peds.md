@@ -2,7 +2,7 @@
 This tutorial shows, how to add/replace custom peds on your server.
 
 ## Suggested tools
-- [OpenIV](https://openiv.com/)
+* [OpenIV](https://openiv.com/)
 #
 ## Creating the resources
 1. Open <code>dlc.rpf</code>( or archive ) and extract all **.ydd**/**.ytd**/**.ymt**/**.ytf** files.

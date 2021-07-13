@@ -1,9 +1,11 @@
+# Stream Interiorproxies.meta Files
 This Tutorial will show you, how to stream interiorproxies.meta on your Server. For this tutorial we will use [GTA IV Burgershot by Smallo](https://www.gta5-mods.com/maps/gtaiv-burgershot-interior-sp-and-fivem).
-This Tutorial will answer the known "why are players invisible in my MLO" question.
-# Suggested tools
-[OpenIV](https://openiv.com/)
 
-[Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
+This Tutorial will answer the known "why are players invisible in my MLO" question.
+
+# Suggested tools
+* [OpenIV](https://openiv.com/)
+* [Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
 
 # Adding the MLO to the Server
 Download the MLO from the link above and add it as a resource to your Server. You can find the tutorial for streaming MLO's here: [MLOs]([Tutorial:Stream)

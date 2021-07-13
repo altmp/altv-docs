@@ -2,9 +2,9 @@
 This tutorial show, how to add custom clothes for MP Character on your server.
 
 ## Suggested tools 
-- [alt:V clothes tool updated by DurtyFree](https://github.com/DurtyFree/altv-cloth-tool/releases/latest)
-- [OpenIV](https://openiv.com)
-- [Clothes Menu for testing your resource](https://github.com/Nicoo34/Clothes-Menu)
+* [alt:V clothes tool updated by DurtyFree](https://github.com/DurtyFree/altv-cloth-tool/releases/latest)
+* [OpenIV](https://openiv.com)
+* [Clothes Menu for testing your resource](https://github.com/Nicoo34/Clothes-Menu)
 
 
 ## Creating the resources 

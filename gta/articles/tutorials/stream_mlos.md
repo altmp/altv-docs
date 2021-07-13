@@ -2,8 +2,8 @@
 This tutorial will show, how to add custom MLO to your server. For this tutorial we will use [GTA IV Burgershot by Smallo](https://www.gta5-mods.com/maps/gtaiv-burgershot-interior-sp-and-fivem).
 
 ## Suggested tools 
-- [Open IV](https://openiv.com/)
-- [Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
+* [Open IV](https://openiv.com/)
+* [Codewalker](https://www.gta5-mods.com/tools/codewalker-gtav-interactive-3d-map)
 #
 ## Creating the resources 
 1. Open ```dlc.rpf``` or any other ```*.rpf``` archive with one of suggested tools 
