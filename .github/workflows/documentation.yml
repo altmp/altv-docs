@@ -85,7 +85,7 @@ jobs:
           Remove-Item -Path "./docfx.zip"
       - name: Generate C# metadata
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
-        run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json" --property TargetFramework=netcoreapp3.1
+        run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
