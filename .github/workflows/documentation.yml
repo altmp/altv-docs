@@ -165,7 +165,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.TypeScriptReference
-          tag: v1.1.4
+          tag: v1.1.5
           fileName: docfx-plugins-typescriptreference.zip
       - name: Unzip DocFx TypeScriptReference package
         run: |
