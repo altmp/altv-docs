@@ -61,6 +61,8 @@ if($err -ne $null -or -not (Test-Path "./common.ps1")) { throw "Script common.ps
 try
 {
     $cwd=(Get-Location).Path
+    $tmpd="${env:TMP}/altv-docs"
+    New-Item -ItemType "Directory" -Path "$tmpd" 2>&1 >$null
 
     if($cleanOnly) { exit }
 
@@ -94,11 +96,11 @@ try
     foreach($el in $requiredPackages.GetEnumerator()) {
         Run-Task "Downloading $($el.Value["name"]) package" {
             if(Test-Path $el.Value["predicate"]) { Exit-Task (-0x1) }
-            FetchAndDownloadRelease $el.Value["repo"] "${env:TMP}/altv-docs/" $el.Key $el.Value["version"]
+            FetchAndDownloadRelease $el.Value["repo"] "$tmpd/" $el.Key $el.Value["version"]
         }
         Run-Task "Extracting $($el.Value["name"]) package" {
             if(Test-Path $el.Value["predicate"]) { Exit-Task (-0x1) }
-            ExtractArchive "${env:TMP}/altv-docs/$($el.Key)" $el.Value["dest"]
+            ExtractArchive "$tmpd/$($el.Key)" $el.Value["dest"]
         }
     }
 
@@ -179,38 +181,38 @@ try
 
     # Run-Task "Downloading DocFx package" {
     #     if(Test-Path "./docfx/docfx.exe") { Exit-Task (-0x1) }
-    #     FetchAndDownloadRelease "dotnet/docfx" "${env:TMP}/altv-docs/" "docfx.zip" "v2.58"
+    #     FetchAndDownloadRelease "dotnet/docfx" "$tmpd/" "docfx.zip" "v2.58"
     # }
     # Run-Task "Extracting DocFx package" {
     #     if(Test-Path "./docfx/docfx.exe") { Exit-Task (-0x1) }
-    #     ExtractArchive "${env:TMP}/altv-docs/docfx.zip" "./docfx/"
+    #     ExtractArchive "$tmpd/docfx.zip" "./docfx/"
     # }
 
     # Run-Task "Downloading DocFx TypeScriptReference package" {
     #     if(Test-Path "./templates/docfx-plugins-typescriptreference/") { Exit-Task (-0x1) }
-    #     FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.TypeScriptReference" "${env:TMP}/altv-docs/" "docfx-plugins-typescriptreference.zip" "v1.1.5"
+    #     FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.TypeScriptReference" "$tmpd/" "docfx-plugins-typescriptreference.zip" "v1.1.5"
     # }
     # Run-Task "Extracting DocFx TypeScriptReference package" {
     #     if(Test-Path "./templates/docfx-plugins-typescriptreference/") { Exit-Task (-0x1) }
-    #     ExtractArchive "${env:TMP}/altv-docs/docfx-plugins-typescriptreference.zip" "./templates/"
+    #     ExtractArchive "$tmpd/docfx-plugins-typescriptreference.zip" "./templates/"
     # }
 
     # Run-Task "Downloading DocFx ExtractSearchIndex package" {
     #     if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { Exit-Task (-0x1) }
-    #     FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.ExtractSearchIndex" "${env:TMP}/altv-docs/" "docfx-plugins-extractsearchindex.zip" "v1.0.1"
+    #     FetchAndDownloadRelease "Lhoerion/DocFx.Plugins.ExtractSearchIndex" "$tmpd/" "docfx-plugins-extractsearchindex.zip" "v1.0.1"
     # }
     # Run-Task "Extracting DocFx ExtractSearchIndex package" {
     #     if(Test-Path "./templates/docfx-plugins-extractsearchindex/") { Exit-Task (-0x1) }
-    #     ExtractArchive "${env:TMP}/altv-docs/docfx-plugins-extractsearchindex.zip" "./templates/"
+    #     ExtractArchive "$tmpd/docfx-plugins-extractsearchindex.zip" "./templates/"
     # }
 
     # Run-Task "Downloading DocFx DiscordFX package" {
     #     if(Test-Path "./templates/discordfx/") { Exit-Task (-0x1) }
-    #     FetchAndDownloadRelease "Lhoerion/DiscordFX" "${env:TMP}/altv-docs/" "docfx-tmpls-discordfx.zip"
+    #     FetchAndDownloadRelease "Lhoerion/DiscordFX" "$tmpd/" "docfx-tmpls-discordfx.zip"
     # }
     # Run-Task "Extracting DocFx DiscordFX package" {
     #     if(Test-Path "./templates/discordfx/") { Exit-Task (-0x1) }
-    #     ExtractArchive "${env:TMP}/altv-docs/docfx-tmpls-discordfx.zip" "./templates/"
+    #     ExtractArchive "$tmpd/docfx-tmpls-discordfx.zip" "./templates/"
     # }
 
     Run-Task "Tools version" {
@@ -239,13 +241,13 @@ try
     }
     Run-Task "Generating C# project metadata" {
         if(IsVisualStudioInstalled) {
-            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json" --intermediateFolder "${env:TMP}/altv-docs/obj/"
+            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json" --intermediateFolder "$tmpd/obj/"
         } else {
             Exit-Task (-0x1)
         }
     }
 
-    ./docfx/docfx build "docfx.json" --intermediateFolder "${env:TMP}/altv-docs/obj/" --serve -p $port
+    ./docfx/docfx build "docfx.json" --intermediateFolder "$tmpd/obj/" --serve -p $port
 }
 finally
 {
