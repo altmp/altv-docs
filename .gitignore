@@ -6,6 +6,7 @@ _site/
 [Oo]bj/
 output.json
 **.zip
+common.ps1
 
 # Others
 docfx/
