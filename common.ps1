@@ -141,7 +141,7 @@ function Exit-Task {
 
 $versions=@{
     "docfx.zip"="v2.58";
-    "docfx-plugins-typescriptreference.zip"="v1.1.4";
+    "docfx-plugins-typescriptreference.zip"="v1.1.5";
     "docfx-plugins-extractsearchindex.zip"="v1.0.1";
     "docfx-tmpls-discordfx.zip"=$null;
 }
