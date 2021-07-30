@@ -241,7 +241,7 @@ try
     }
     Run-Task "Generating C# project metadata" {
         if(IsVisualStudioInstalled) {
-            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json" --intermediateFolder "$tmpd/obj/"
+            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
         } else {
             Exit-Task (-0x1)
         }
