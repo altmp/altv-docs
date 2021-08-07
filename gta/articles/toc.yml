@@ -1,2 +1,11 @@
-- name: Placeholder
-  href: index.md
+- name: Peds
+  href: ped/index.md
+  items:
+  - name: Models
+    href: ped/models.md
+
+- name: Vehicle
+  href: vehicle/index.md
+  items:
+  - name: Models
+    href: vehicle/models.md

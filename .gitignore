@@ -14,3 +14,11 @@ templates/*
 !templates/altmp
 coreclr-module/
 altv-types/
+
+tools/generators/vehicle_models/bin
+tools/generators/vehicle_models/obj
+tools/generators/vehicle_models/out
+
+tools/generators/ped_models/bin
+tools/generators/ped_models/obj
+tools/generators/ped_models/out

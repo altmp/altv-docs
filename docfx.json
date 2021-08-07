@@ -63,6 +63,13 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "gta",
+        "dest": "gta/"
       }
     ],
     "overwrite": [
