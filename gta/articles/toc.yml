@@ -1,7 +1,3 @@
-- name: Tutorials
-  href: tutorials/
-  homepage: tutorials/index.md
-
 - name: Peds
   href: ped/index.md
   items:
@@ -13,4 +9,27 @@
   items:
   - name: Models
     href: vehicle/models.md
+
+- name: Tutorials
+  href: tutorials/index.md
+  items:
+  - name: Add Client Mods
+    href: tutorials/add_client_mods.md
+  - name: Stream Interiorsproxies.meta
+    href: tutorials/stream_interiorsproxies.meta.md
+  - name: Stream MLOs
+    href: tutorials/stream_mlos.md
+  - name: Stream PEDs
+    href: tutorials/stream_peds.md
+  - name: Stream Sounds
+    href: tutorials/stream_sounds.md
+  - name: Stream Tattoos
+    href: tutorials/stream_tattoos.md
+  - name: Stream Vehicles
+    href: tutorials/stream_vehicles.md
+  - name: Stream Weapons
+    href: tutorials/stream_weapons.md
+  - name: Stream Clothes
+    href: tutorials/stream_clothes.md
+
 
