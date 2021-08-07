@@ -19,8 +19,8 @@ Be sure you have the latest updated Clothes tool, check the link before in the `
 6. ```Sixth step```: add the resource name in your ```server.cfg``` and your resource folder into the ```server resource folder```
 
 
-![First step](images/stream_clothes/first.png)
-![Last step](images/stream_clothes/second.png)
+![First step](./../../images/stream_clothes/first.png)
+![Second step](./../../images/stream_clothes/second.png)
 
 <gallery>
 Tutorial clothes firstl.webp| First steps
