@@ -1,3 +1,7 @@
+- name: Tutorials
+  href: tutorials/
+  homepage: tutorials/index.md
+
 - name: Peds
   href: ped/index.md
   items:
@@ -9,3 +13,4 @@
   items:
   - name: Models
     href: vehicle/models.md
+
