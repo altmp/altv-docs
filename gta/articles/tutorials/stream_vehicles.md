@@ -16,7 +16,7 @@ For this tutorial we will use [https://www.gta5-mods.com/vehicles/pfister-meteor
 
 ## Folder Structure
 
-![](./../../images/stream_vehicles/Stream_Vehicles-FolderStructure.png)
+![](./../../images/tutorials/Stream_Vehicles-FolderStructure.png)
 
 
 ## **resource.cfg**
