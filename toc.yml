@@ -2,8 +2,8 @@
   href: articles/toc.yml
   topicHref: articles/index.md
 - name: GTA
-  href: gta/toc.yml
-  topicHref: gta/index.md
+  href: altv-docs-gta/toc.yml
+  topicHref: altv-docs-gta/index.md
 - name: JavaScript
   href: altv-types/docs/toc.yml
   topicHref: altv-types/docs/index.md

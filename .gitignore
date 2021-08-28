@@ -14,3 +14,4 @@ templates/*
 !templates/altmp
 coreclr-module/
 altv-types/
+altv-docs-gta/

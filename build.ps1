@@ -106,6 +106,18 @@ try
 
     if($cleanOnly) { exit }
 
+    LogWrap "Checkout GTA repository" {
+        if(Test-Path "./altv-docs-gta/") { return -0x1 }
+        New-Item -ItemType "directory" -Path "./altv-docs-gta" -Force
+        Set-Location -Path "./altv-docs-gta"
+        git init 2>$null
+        git remote add "origin" "https://github.com/altmp/altv-docs-gta/" 2>$null
+        git fetch --depth 1 "origin" "master" 2>$null
+        git reset --hard "FETCH_HEAD" 2>$null
+        git branch --set-upstream-to "origin/master" "master" 2>$null
+        Set-Location $cwd
+    }
+
     LogWrap "Checkout JS repository" {
         if(Test-Path "./altv-types/") { return -0x1 }
         New-Item -ItemType "directory" -Path "./altv-types" -Force

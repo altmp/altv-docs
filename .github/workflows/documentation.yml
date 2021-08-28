@@ -5,9 +5,51 @@ on:
       - master
   repository_dispatch:
     types:
+      - Update GTA documentation
       - Update JS documentation
       - Update C# documentation
 jobs:
+  gta:
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - name: Conditional run
+        id: cond-run
+        run: |
+          if("${{ github.event.action }}" -ne "Update GTA documentation") {
+            Write-Output "::set-output name=skip::true"
+            Write-Output "Step skipped."
+          }
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        with:
+          persist-credentials: false
+          repository: altmp/altv-docs-gta
+          ref: ${{ github.event.client_payload.sha }}
+          path: ./altv-docs-gta
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        with:
+          persist-credentials: false
+          repository: altmp/altv-docs-gta-assets
+          path: ./altv-docs-gta
+      - name: Install dependencies
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          Set-Location -Path "./altv-docs-gta/"
+          yarn install
+      - name: Generate GTA metadata
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          Set-Location -Path "./altv-docs-gta/"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        with:
+          name: gta
+          path: ./altv-docs-gta/
   js:
     runs-on: windows-latest
     continue-on-error: true
@@ -96,6 +138,7 @@ jobs:
     needs:
       - js
       - cs
+      - gta
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -105,6 +148,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+      - name: Checkout GTA repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/altv-docs-gta
+          path: ./altv-docs-gta
       - name: Checkout JS repository
         uses: actions/checkout@v2
         with:
@@ -165,7 +214,7 @@ jobs:
             const AdmZip = require("adm-zip");
             const fs = require("fs");
             const path = require("path");
-            const artifactNames = ["js", "cs"];
+            const artifactNames = ["js", "cs", "gta"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -197,6 +246,17 @@ jobs:
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
         run: |
+          Remove-Item -Path "./altv-docs-gta/" -Recurse
+          if(-not (Test-Path -Path "./gta/gta.tar")) {
+            Move-Item -Path "./gta/"  -Destination "./altv-docs-gta/"
+          } else {
+            Move-Item -Path "./gta/gta.tar"  -Destination "./altv-docs-gta/gta.tar"
+            tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
+            Remove-Item -Path "./altv-docs-gta/gta.tar"
+          }
+          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-docs-gta\api\.manifest" -ErrorAction SilentlyContinue))) {
+            throw "Invalid altv-docs-gta repo manifest."
+          }
           Remove-Item -Path "./altv-types/docs/" -Recurse
           if(-not (Test-Path -Path "./js/js.tar")) {
             Move-Item -Path "./js/"  -Destination "./altv-types/docs"
@@ -261,7 +321,7 @@ jobs:
           script: |
             const fs = require("fs");
             const path = require("path");
-            const artifactNames = ["js", "cs"];
+            const artifactNames = ["js", "cs", "gta"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,

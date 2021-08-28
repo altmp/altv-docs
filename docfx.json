@@ -37,7 +37,7 @@
           "toc.yml",
           "*.md"
         ],
-        "src": "gta",
+        "src": "altv-docs-gta",
         "dest": "gta/"
       },
       {
@@ -63,6 +63,20 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-docs-gta",
+        "dest": "gta/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-docs-gta-assets",
+        "dest": "gta/"
       }
     ],
     "overwrite": [
@@ -84,7 +98,7 @@
         "files": [
           "apidoc/**.md"
         ],
-        "src": "gta",
+        "src": "altv-docs-gta",
         "dest": "gta/"
       }
     ],
