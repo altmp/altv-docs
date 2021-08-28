@@ -10,3 +10,6 @@
 - name: SDK
   href: cpp-sdk/articles/toc.yml
   topicHref: cpp-sdk/articles/index.md
+- name: GTA
+  href: altv-docs-gta/toc.yml
+  topicHref: altv-docs-gta/index.md

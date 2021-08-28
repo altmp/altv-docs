@@ -20,6 +20,11 @@ $requiredRepos=[Ordered]@{
         "ref"="docs";
         "name"="SDK";
     };
+    "./altv-docs-gta/"=@{
+        "repo"="https://github.com/altmp/altv-docs-gta/";
+        "ref"="master";
+        "name"="GTA";
+    };
 }
 $requiredPackages=[Ordered]@{
     "docfx.zip"=@{
@@ -176,6 +181,30 @@ try
     #     git merge "FETCH_HEAD"
     #     git reset --hard "HEAD"
     #     git branch --set-upstream-to "origin/docs" "master"
+    #     Set-Location $cwd
+    # }
+
+    # LogWrap "Checkout GTA repository" {
+    #     if(Test-Path "./altv-docs-gta/") {
+    #         Set-Location -Path "./altv-docs-gta/"
+    #         git fetch --depth 1 "origin" "master"
+    #         if((git status -s -b) -like "*``[*behind *``]") {
+    #             git clean -d -x -f
+    #             git reset --hard "FETCH_HEAD"
+    #             Set-Location $cwd
+    #             Exit-Task (0x0)
+    #         } else {
+    #             Set-Location $cwd
+    #             Exit-Task (-0x1)
+    #         }
+    #     }
+    #     New-Item -ItemType "directory" -Path "./altv-docs-gta" -Force
+    #     Set-Location -Path "./altv-docs-gta"
+    #     git init 2>$null
+    #     git remote add "origin" "https://github.com/altmp/altv-docs-gta/" 2>$null
+    #     git fetch --depth 1 "origin" "master" 2>$null
+    #     git reset --hard "FETCH_HEAD" 2>$null
+    #     git branch --set-upstream-to "origin/master" "master" 2>$null
     #     Set-Location $cwd
     # }
 

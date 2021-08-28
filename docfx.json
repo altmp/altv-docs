@@ -38,6 +38,18 @@
       },
       {
         "files": [
+          "api/**.yml",
+          "api/index.md",
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "src": "altv-docs-gta",
+        "dest": "gta/"
+      },
+      {
+        "files": [
           "toc.yml",
           "index.md",
           "articles/**.md",
@@ -59,6 +71,20 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-docs-gta",
+        "dest": "gta/"
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-docs-gta-assets",
+        "dest": "gta/"
       }
     ],
     "overwrite": [
@@ -75,6 +101,13 @@
         ],
         "src": "coreclr-module/docs",
         "dest": "cs/"
+      },
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "src": "altv-docs-gta",
+        "dest": "gta/"
       }
     ],
     "globalMetadata": {
