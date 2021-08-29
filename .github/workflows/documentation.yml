@@ -137,13 +137,6 @@ jobs:
           repository: altmp/altv-docs-gta
           ref: ${{ github.event.client_payload.sha }}
           path: ./altv-docs-gta
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
-        with:
-          persist-credentials: false
-          repository: altmp/altv-docs-gta-assets
-          path: ./altv-docs-gta
       - name: Install dependencies
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: exit 0
@@ -198,6 +191,12 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
+          path: ./altv-docs-gta
+      - name: Checkout GTA assets repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/altv-docs-gta-assets
           path: ./altv-docs-gta
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
