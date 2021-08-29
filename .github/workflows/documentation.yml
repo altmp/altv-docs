@@ -317,9 +317,6 @@ jobs:
             tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
             Remove-Item -Path "./altv-docs-gta/gta.tar"
           }
-          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-docs-gta\api\.manifest" -ErrorAction SilentlyContinue))) {
-            throw "Invalid altv-docs-gta repo manifest."
-          }
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
