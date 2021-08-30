@@ -310,7 +310,6 @@ jobs:
           }
           Remove-Item -Path "./altv-docs-gta/api" -Recurse
           Remove-Item -Path "./altv-docs-gta/articles" -Recurse
-          Get-ChildItem -Recurse "./gta/"
           if(-not (Test-Path -Path "./gta/gta.tar")) {
             Move-Item -Path "./gta/"  -Destination "./altv-docs-gta/"
           } else {
@@ -318,7 +317,6 @@ jobs:
             tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
             Remove-Item -Path "./altv-docs-gta/gta.tar"
           }
-          Get-ChildItem -Recurse "./altv-docs-gta/"
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
