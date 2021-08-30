@@ -149,7 +149,9 @@ jobs:
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           name: gta
-          path: ./altv-docs-gta/
+          path: |
+            ./altv-docs-gta/api
+            ./altv-docs-gta/articles
   docs:
     runs-on: windows-2019
     needs:
