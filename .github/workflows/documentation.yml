@@ -310,10 +310,11 @@ jobs:
             tar -xvf "./cpp-sdk/sdk.tar" -C "./cpp-sdk/"
             Remove-Item -Path "./cpp-sdk/sdk.tar"
           }
-          Remove-Item -Path "./altv-docs-gta/api" -Recurse
-          Remove-Item -Path "./altv-docs-gta/articles" -Recurse
+          Remove-Item -Path "./altv-docs-gta/api/" -Recurse
+          Remove-Item -Path "./altv-docs-gta/articles/" -Recurse
           if(-not (Test-Path -Path "./gta/gta.tar")) {
-            Move-Item -Path "./gta/"  -Destination "./altv-docs-gta/"
+            Move-Item -Path "./gta/articles/api/"  -Destination "./altv-docs-gta/api/"
+            Move-Item -Path "./gta/articles/"  -Destination "./altv-docs-gta/articles/"
           } else {
             Move-Item -Path "./gta/gta.tar"  -Destination "./altv-docs-gta/gta.tar"
             tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
