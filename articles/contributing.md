@@ -54,7 +54,6 @@ We include community created modules in our documentation and if you want to con
 | ---      | ---
 | JS       | [https://github.com/altmp/altv-types]()
 | C#       | [https://github.com/FabianTerhorst/coreclr-module]()
-| Lua      | [https://github.com/drakeee/altv-lua-module]()
 
 ## Build tools
 

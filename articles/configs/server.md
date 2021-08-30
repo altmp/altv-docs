@@ -36,8 +36,7 @@ timeout: 1
 # An array of all modules that should be loaded
 modules: [
     "js-module",
-    "csharp-module",
-    "lua-module"
+    "csharp-module"
 ]
 # An array of all resources that should be loaded
 resources: [
