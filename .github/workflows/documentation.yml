@@ -142,8 +142,7 @@ jobs:
         run: exit 0
       - name: Generate GTA metadata
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
-        run: |
-          Set-Location -Path "./altv-docs-gta/"
+        run: exit 0
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -282,9 +281,9 @@ jobs:
         run: |
           Remove-Item -Path "./altv-types/docs/" -Recurse
           if(-not (Test-Path -Path "./js/js.tar")) {
-            Move-Item -Path "./js/"  -Destination "./altv-types/docs"
+            Move-Item -Path "./js/" -Destination "./altv-types/docs"
           } else {
-            Move-Item -Path "./js/js.tar"  -Destination "./altv-types/js.tar"
+            Move-Item -Path "./js/js.tar" -Destination "./altv-types/js.tar"
             tar -xvf "./altv-types/js.tar" -C "./altv-types/"
             Remove-Item -Path "./altv-types/js.tar"
           }
@@ -293,9 +292,9 @@ jobs:
           }
           Remove-Item -Path "./coreclr-module/docs/" -Recurse
           if(-not (Test-Path -Path "./cs/cs.tar")) {
-            Move-Item -Path "./cs/"  -Destination "./coreclr-module/docs"
+            Move-Item -Path "./cs/" -Destination "./coreclr-module/docs"
           } else {
-            Move-Item -Path "./cs/cs.tar"  -Destination "./coreclr-module/cs.tar"
+            Move-Item -Path "./cs/cs.tar" -Destination "./coreclr-module/cs.tar"
             tar -xvf "./coreclr-module/cs.tar" -C "./coreclr-module/"
             Remove-Item -Path "./coreclr-module/cs.tar"
           }
@@ -304,19 +303,19 @@ jobs:
           }
           Remove-Item -Path "./cpp-sdk/articles/" -Recurse
           if(-not (Test-Path -Path "./sdk/sdk.tar")) {
-            Move-Item -Path "./sdk/"  -Destination "./cpp-sdk/articles"
+            Move-Item -Path "./sdk/" -Destination "./cpp-sdk/articles"
           } else {
-            Move-Item -Path "./sdk/sdk.tar"  -Destination "./cpp-sdk/sdk.tar"
+            Move-Item -Path "./sdk/sdk.tar" -Destination "./cpp-sdk/sdk.tar"
             tar -xvf "./cpp-sdk/sdk.tar" -C "./cpp-sdk/"
             Remove-Item -Path "./cpp-sdk/sdk.tar"
           }
           Remove-Item -Path "./altv-docs-gta/api/" -Recurse
           Remove-Item -Path "./altv-docs-gta/articles/" -Recurse
           if(-not (Test-Path -Path "./gta/gta.tar")) {
-            Move-Item -Path "./gta/api/"  -Destination "./altv-docs-gta/api/"
-            Move-Item -Path "./gta/articles/"  -Destination "./altv-docs-gta/articles/"
+            Move-Item -Path "./gta/api/" -Destination "./altv-docs-gta/api/"
+            Move-Item -Path "./gta/articles/" -Destination "./altv-docs-gta/articles/"
           } else {
-            Move-Item -Path "./gta/gta.tar"  -Destination "./altv-docs-gta/gta.tar"
+            Move-Item -Path "./gta/gta.tar" -Destination "./altv-docs-gta/gta.tar"
             tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
             Remove-Item -Path "./altv-docs-gta/gta.tar"
           }
