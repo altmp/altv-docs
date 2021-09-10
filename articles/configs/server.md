@@ -33,6 +33,10 @@ streamingDistance: 1500
 migrationDistance: 150
 # The timeout multiplier (must be >= 1)
 timeout: 1
+# The delay that is used when the announceRetryErrorAttempts are reached (in ms)
+announceRetryErrorDelay: 10000
+# Max retries until announceRetryErrorDelay will be used
+announceRetryErrorAttempts: 50
 # An array of all modules that should be loaded
 modules: [
     "js-module",
