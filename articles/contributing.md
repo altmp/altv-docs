@@ -2,16 +2,6 @@
 
 This document includes a set of guidelines for contributing to alt:V documentation.
 
-## Table of Contents
-
-1. [Documentation structure](#documentation-structure)
-1. [Linked repositories](#linked-repositories)
-1. [Build tools](#build-tools)
-1. [Initial setup](#initial-setup)
-1. [Generating and testing](#generating-and-testing)
-1. [Creating articles](#creating-articles)
-1. [Publishing your work](#publishing-your-work)
-
 ## Documentation structure
 
 Structure consists of one or more repositories linked to the core repository (you're currently in it).
