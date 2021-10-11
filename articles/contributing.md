@@ -42,8 +42,8 @@ We include community created modules in our documentation and if you want to con
 
 | Language | Repository
 | ---      | ---
-| JS       | [https://github.com/altmp/altv-types]()
-| C#       | [https://github.com/FabianTerhorst/coreclr-module]()
+| JS       | [https://github.com/altmp/altv-types](https://github.com/altmp/altv-types)
+| C#       | [https://github.com/FabianTerhorst/coreclr-module](https://github.com/FabianTerhorst/coreclr-module)
 
 ## Build tools
 
