@@ -54,14 +54,16 @@ You can see a list of all color codes in the table below:
 
 Here you can find small examples in the different programming languages alt:V offers on how to use logging:
 
-**JavaScript**
+# [Javascript](#tab/tabid-1)
+
 ```js
 alt.log("~r~Hello ~g~World!");
 alt.logWarning("This is a warning");
 alt.logError("This is an error");
 ```
 
-**C#**
+# [C#](#tab/tabid-2)
+
 ```csharp
 ColoredMessage coloredMessage = new ColoredMessage();
 coloredMessage += TextColor.Red;
