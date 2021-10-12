@@ -22,6 +22,8 @@
   href: branches.md
 - name: Permissions System
   href: permissions.md
+- name: Streamer Mode
+  href: streamermode.md
 - name: Setup CDN
   href: cdn.md
 - name: Setup EarlyAuth
