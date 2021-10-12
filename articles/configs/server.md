@@ -12,7 +12,7 @@ host: "0.0.0.0"
 # The port of your server (default 7788)
 port: 7788
 # The amount of players that can play on your server concurrently
-players: 1000
+players: 256
 # The password required to join your server
 password: "mySecretPassword"
 # If the server should be visible on the masterlist in the alt:V client
@@ -28,7 +28,7 @@ description: "My cool server"
 # If the debug mode should be allowed (Debug mode allows debugging functions like reconnect or the CEF debugger)
 debug: false
 # The stream in distance for entities
-streamingDistance: 1500
+streamingDistance: 400
 # The migration distance for entities
 migrationDistance: 150
 # The timeout multiplier (must be >= 1)
