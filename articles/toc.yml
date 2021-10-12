@@ -24,4 +24,5 @@
   href: permissions.md
 - name: Setup CDN
   href: cdn.md
-  
+- name: Setup EarlyAuth
+  href: earlyauth.md
