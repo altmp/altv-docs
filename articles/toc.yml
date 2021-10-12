@@ -11,3 +11,5 @@
   topicHref: configs/index.md
 - name: How to Contribute
   href: contributing.md
+- name: Dimensions
+  href: dimensions.md
