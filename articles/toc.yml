@@ -16,9 +16,12 @@
   href: contributing.md
 - name: Dimensions
   href: dimensions.md
+- name: Synchronization
+  href: synchronization.md
 - name: Branches
   href: branches.md
 - name: Permissions System
   href: permissions.md
 - name: Setup CDN
   href: cdn.md
+  
