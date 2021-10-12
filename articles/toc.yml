@@ -1,3 +1,6 @@
+- name: Troubleshooting
+  href: troubleshooting/
+  topicHref: troubleshooting/index.md
 - name: Changelogs
   href: changelogs/
   topicHref: changelogs/index.md
