@@ -151,11 +151,3 @@ This may happen if an old entry is saved as launch option in your browser.
 5. At "Applications" section select the entry "altv"
 6. At "Action" column select "Always ask"
 7. The next time you will be asked if you want to use the new entry.
-
-* GET only
-  * Return JSON Object
-  * If abused you can be banned from using the API
-
-* GET only
-  * Return JSON Object
-  * If abused you can be banned from using the API
