@@ -9,6 +9,8 @@
   topicHref: getting-started/index.md
 - name: Logging
   href: logging.md
+- name: Master list API
+  href: master_list_api.md
 - name: Config files
   href: configs/
   topicHref: configs/index.md
