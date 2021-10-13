@@ -7,12 +7,10 @@ param(
 $requiredRepos=[Ordered]@{
     "./altv-types/"=@{
         "repo"="https://github.com/altmp/altv-types/";
-        "ref"="master";
         "name"="JS";
     };
     "./coreclr-module/"=@{
         "repo"="https://github.com/FabianTerhorst/coreclr-module";
-        "ref"="release";
         "name"="C#";
     };
     "./cpp-sdk/"=@{
@@ -22,7 +20,6 @@ $requiredRepos=[Ordered]@{
     };
     "./altv-docs-gta/"=@{
         "repo"="https://github.com/altmp/altv-docs-gta/";
-        "ref"="master";
         "name"="GTA";
     };
 }
@@ -95,7 +92,11 @@ try
             # git reset --hard "HEAD"
             # git branch --set-upstream-to "origin/$($el.Value["ref"])" master
             # Set-Location $cwd
-            git clone $el.Value["repo"] --branch $el.Value["ref"] --depth 1 --quiet
+            if (-not $el.Value["ref"]) {
+                git clone $el.Value["repo"] --depth 1 --quiet
+            } else {
+                git clone $el.Value["repo"] --branch $el.Value["ref"] --depth 1 --quiet
+            }
         }
     }
 
