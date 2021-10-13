@@ -10,8 +10,8 @@ function PostCleanup() {
     Remove-Item -Path "${env:TMP}/docfx-plugins-extractsearchindex.zip" -Force 2>&1 >$null
     Remove-Item -Path "${env:TMP}/docfx-tmpls-discordfx.zip" -Force 2>&1 >$null
     if($cleanMetadata) {
+        Remove-Item -Path "${env:TMP}/obj" -Recurse -Force 2>&1 >$null
         Remove-Item -Path "./_site/" -Recurse -Force 2>&1 >$null
-        Remove-Item -Path "./obj" -Recurse -Force 2>&1 >$null
         Remove-Item -Path "./api/**.yml" -Force 2>&1 >$null
         Remove-Item -Path "./altv-types/docs/_site/" -Recurse -Force 2>&1 >$null
         Remove-Item -Path "./altv-types/docs/obj" -Recurse -Force 2>&1 >$null
