@@ -1,4 +1,4 @@
-- name: Server
-  href: server.md
 - name: Client
   href: client.md
+- name: Server
+  href: server.md

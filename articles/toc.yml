@@ -1,16 +1,16 @@
 - name: Troubleshooting
-  href: troubleshooting/
-  topicHref: troubleshooting/index.md
+  href: troubleshooting/toc.yml
+  topicHref: troubleshooting/client.md
 - name: Changelogs
-  href: changelogs/
+  href: changelogs/toc.yml
   topicHref: changelogs/index.md
 - name: Getting Started
-  href: getting-started/
+  href: getting-started/toc.yml
   topicHref: getting-started/index.md
 - name: Logging
   href: logging.md
 - name: Config files
-  href: configs/
+  href: configs/toc.yml
   topicHref: configs/index.md
 - name: How to Contribute
   href: contributing.md
