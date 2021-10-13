@@ -12,7 +12,7 @@ $requiredRepos=[Ordered]@{
     };
     "./coreclr-module/"=@{
         "repo"="https://github.com/FabianTerhorst/coreclr-module";
-        "ref"="master";
+        "ref"="release";
         "name"="C#";
     };
     "./cpp-sdk/"=@{
@@ -86,15 +86,16 @@ try
                     Exit-Task (-0x1)
                 }
             }
-            New-Item -ItemType "directory" -Path $el.Key -Force
-            Set-Location -Path $el.Key
-            git init
-            git remote add "origin" $el.Value["repo"]
-            git fetch --depth 1 "origin" $el.Value["ref"]
-            git merge "FETCH_HEAD"
-            git reset --hard "HEAD"
-            git branch --set-upstream-to "origin/$($el.Value["ref"])" master
-            Set-Location $cwd
+            # New-Item -ItemType "directory" -Path $el.Key -Force
+            # Set-Location -Path $el.Key
+            # git init
+            # git remote add "origin" $el.Value["repo"]
+            # git fetch --depth 1 "origin" $el.Value["ref"]
+            # git merge "FETCH_HEAD"
+            # git reset --hard "HEAD"
+            # git branch --set-upstream-to "origin/$($el.Value["ref"])" master
+            # Set-Location $cwd
+            git clone $el.Value["repo"] --branch $el.Value["ref"] --depth 1 --quiet
         }
     }
 
