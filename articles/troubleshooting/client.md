@@ -6,13 +6,14 @@ Because not every system is the same, various problems can occur with the alt:V 
 
 Because alt:V is using additional technologies, we have a little bit higher Minimum Requirements, than GTA V itself. If your computer doesn't fulfill this requirements, you can still try to run alt:V but the chances are high that some problems will occur.
 
-```
-OS:         Windows 10 64 Bit
-Processor:  Intel Core i5 3470 @ 3.2GHz (4 CPUs)/ AMD X8 FX-8350 @ 4GHz > (8 CPUs)
-Memory:     8 GB RAM
-Graphics:   NVIDIA GTX 660 2GB / AMD HD 7870 2GB
-Storage:    SSD for OS and Game
-```
+> [!div class="nohljsln"]
+> ```
+> OS:         Windows 10 64 Bit
+> Processor:  Intel Core i5 3470 @ 3.2GHz (4 CPUs)/ AMD X8 FX-8350 @ 4GHz > (8 CPUs)
+> Memory:     8 GB RAM
+> Graphics:   NVIDIA GTX 660 2GB / AMD HD 7870 2GB
+> Storage:    SSD for OS and Game
+> ```
 
 # Basic Steps
 1. You need to have Singleplayer launched at least once
