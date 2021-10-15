@@ -26,7 +26,8 @@ The master list api allow you to fetch data from the alt:V master list service.
 ```
 
 ### Server list
-it's a fragment of API's response.
+It's a fragment of API's response.
+
 ```json
 [
     {
