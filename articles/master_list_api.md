@@ -1,6 +1,7 @@
 # Master list API
 
-the master list api allow you to fetch data from the alt:V master list service
+The master list api allow you to fetch data from the alt:V master list service.
+
 ## Information
 
 * GET only
@@ -25,6 +26,7 @@ the master list api allow you to fetch data from the alt:V master list service
 ```
 
 ### Server list
+it's a fragment of API's response.
 ```json
 [
     {
@@ -56,8 +58,7 @@ the master list api allow you to fetch data from the alt:V master list service
         "branch":"release",
         "build":1181,
         "lastUpdate":1596840894273
-    },
-    //...
+    }
 ]
 ```
 
@@ -107,7 +108,7 @@ the master list api allow you to fetch data from the alt:V master list service
     { "t":1612562341,"c":4 }
 ]
 ```
-Description: t = Timestamp in UTC, c = Player Count 
+Description: t = Timestamp in UTC, c = Player Count.
 
 # altstats.net - alt:V Stats API (Unofficial)
 
