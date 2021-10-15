@@ -1,41 +1,31 @@
 # Master list API
+
 the master list api allow you to fetch data from the alt:V master list service
-
-&nbsp;
-
 ## Information
-- GET only
-    - Return JSON Object
-    - If abused you can be banned from using the API
 
-&nbsp;
+* GET only
+* Return JSON Object
+* If abused you can be banned from using the API
 
 ## API Links
 
-&nbsp;
-
-| URL                                        | Description                                                                                             |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
+|                   URL                      |                                        Description                                                      |
+| :----------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
 | https://api.altv.mp/servers                | Statistics - Player Count across all servers & The amount of servers online                             |
 | https://api.altv.mp/servers/list           | Servers - All information known about all servers (Name, Description, IP, Language, Website, Etc.)      |
 | https://api.altv.mp/server/MASTERLIST_ID   | Specific Server - Filters server list for a specific one. Uses "id" which is unique to the server token |
 | https://api.altv.mp/avg/MASTERLIST_ID/TIME | Averages - Returns averages data about the specified server (TIME = 1d, 7d, 31d)                        |
 | https://api.altv.mp/max/MASTERLIST_ID/TIME | Maximum - Returns maximum data about the specified server (TIME = 1d, 7d, 31d)                          |
 
-&nbsp;
-
 ## Response example
-
-&nbsp;
-
 ### Statistics
 
-```
+```json
 { "ServersCount": 64, "playersCount": 1582 }
 ```
 
 ### Server list
-```
+```json
 [
     {
         "id":"ceaac3d1cc22761223beac38386f5ab2",
@@ -72,7 +62,7 @@ the master list api allow you to fetch data from the alt:V master list service
 ```
 
 ### Specific server
-```
+```json
 {
     "active":true,
     "info":{
@@ -110,8 +100,7 @@ the master list api allow you to fetch data from the alt:V master list service
 ```
 
 ### Average / Maximum
-
-```
+```json
 [
     { "t":1612562230,"c":4 },
     { "t":1612562280,"c":4 },
@@ -120,47 +109,29 @@ the master list api allow you to fetch data from the alt:V master list service
 ```
 Description: t = Timestamp in UTC, c = Player Count 
 
-&nbsp;
-
-## altstats.net - alt:V Stats API (Unofficial)
-
-&nbsp;
+# altstats.net - alt:V Stats API (Unofficial)
 
 altstats.net - alt:V Stats is a alternative server list, developed and supported by members of the altMP Team. It has additional statistics about servers like player count for the last 24 hours, 7 days or month and you have a server specific API.
 
 Features like showing the player count for the last month are premium features, you need to pay for them to enable them. 
-
-&nbsp;
-
 ## Information
 
-&nbsp;
-
-- GET only
-    - Return JSON Object
-    - If abused you can be banned from using the API
-    - API can change anytime without notice
-
-&nbsp;
+* GET only
+* Return JSON Object
+* If abused you can be banned from using the API
+* API can change anytime without notice
 
 ## API Links
 
-&nbsp;
-
-| URL                                             | Description                                                     |
-|-------------------------------------------------|-----------------------------------------------------------------|
+|                     URL                         |                           Description                           |
+| :---------------------------------------------: | :-------------------------------------------------------------: |
 | https://api.altstats.net/api/v1/master          | Count - Shows the server and player count for the last 24 hours |
 | https://api.altstats.net/api/v1/server          | Servers - Basic information about all known servers             |
 | https://api.altstats.net/api/v1/server/serverID | Specific Server - Lists you all information about a server      |
 
-&nbsp;
-
 ## Response example
-
-&nbsp;
-
 ### Count
-```
+```json
 [
   {
     "ServerCount": 72,
@@ -177,8 +148,9 @@ Features like showing the player count for the last month are premium features, 
   }
 ]
 ```
+
 ### Servers
-```
+```json
 [
   {
     "others": "..."
@@ -209,8 +181,9 @@ Features like showing the player count for the last month are premium features, 
   }
 ]
 ```
+
 ### Specific server
-```
+```json
 {
   "Id": 330,
   "FoundAt": "2020-01-01T12:41:21.433Z",
