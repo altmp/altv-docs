@@ -109,6 +109,7 @@ It's a fragment of API's response.
     { "t":1612562341,"c":4 }
 ]
 ```
+
 Description: t = Timestamp in UTC, c = Player Count.
 
 # altstats.net - alt:V Stats API (Unofficial)
