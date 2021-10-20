@@ -2,7 +2,9 @@
 After you downloaded and installed the alt:V Multiplayer client you can find the `altv.cfg` file in the installation 
 folder.
 This file contains the settings of the client. Per default this file only contains the branch and the path to your 
-GTA:V installation. However, there are more settings that you can apply. Most of these settings can also be 
+GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.cfg`. However, there 
+are more 
+settings that you can apply. Most of these settings can also be 
 applied in the main menu under `Settings` but some of them need to be set up directly in this file.
 
 ## List of possible client configurations
@@ -16,15 +18,15 @@ applied in the main menu under `Settings` but some of them need to be set up dir
 |   lang                    |   string              |   en                 | Language of your client. |
 |   lastip                  |   string              |   0.0.0.0 (IPv4)     | The ip of the last server you played on.|
 |   netgraph                |   boolean(true/false) |   false              | Shows a netgraph on the bottom left. |
-|   streamerMode            |   boolean(true/false) |   false              | Enables or disables the streamer mode. |
+|   streamerMode            |   boolean(true/false) |   false              | Enables or disables the [streamer mode](~/articles/streamermode.html). |
 |   useExternalConsole      |   boolean(true/false) |   false              | Enables or disables the external console (console popout). |
-|   voiceActivationKey      |   number              |   78 (N)             | Sets the key for Push-to-talk. You can get the key code [here](https://keycode.info/) |
+|   voiceActivationKey      |   number              |   78 (N)             | Sets the key for Push-to-talk. You can get the key code [here](https://keycode.info/). |
 |   voiceActivationEnabled  |   boolean(true/false) |   false              | Enables or disables the voice activity input mode. |
 |   voiceInputSensitivity   |   number              |   20                 | If voiceActivationEnabled is enabled, this option will set the required sensitivity.  |
 |   voiceEnabled            |   boolean(true/false) |   true               | Enables or disables the voice system for the client. |
-|   voiceAutoInputVolume    |   boolean(true/false) |   false              | Enables or disables the automatic determination of the input volume. |
+|   voiceAutoInputVolume    |   boolean(true/false) |   true               | Enables or disables the automatic determination of the input volume. |
 |   voiceInputVolume        |   number              |   100                | Sets the input volume (Range: 0 - 200). |
-|   voiceNoiseSuppression   |   boolean(true/false) |   false              | Enables or disables the noise suppression. |
+|   voiceNoiseSuppression   |   boolean(true/false) |   true               | Enables or disables the noise suppression. |
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
 
 ## Example altv.cfg file
@@ -35,12 +37,12 @@ gtapath: 'C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto V'
 lang: 'en'
 lastip: '127.0.0.1:7788'
 name: 'exampleName'
-netgraph: 'true'
+netgraph: 'false'
 streamerMode: 'false'
 useExternalConsole: 'false'
-voiceActivationEnabled: 'true'
+voiceActivationEnabled: 'false'
 voiceActivationKey: '78'
-voiceAutoInputVolume: 'false'
+voiceAutoInputVolume: 'true'
 voiceEnabled: 'true'
 voiceInputSensitivity: '20'
 voiceInputVolume: '100'
