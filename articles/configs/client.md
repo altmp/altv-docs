@@ -1,13 +1,9 @@
 # The client configuration
-After you downloaded and installed the alt:V Multiplayer client, you can find the `altv.cfg` file in the installation 
-folder.
-This file contains the settings of the client. Per default this file only contains the branch and the path to your 
-GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.cfg`. However, there 
-are more 
-settings that you can apply. Most of these settings can also be 
-applied in the main menu under `Settings` but some of them need to be set up directly in this file.
+
+After you downloaded and installed the alt:V Multiplayer client, you can find the `altv.cfg` file in the installation folder. This file contains the settings of the client. Per default this file only contains the branch and the path to your GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.cfg`. However, there are more settings that you can apply. Most of these settings can also be applied in the main menu under `Settings` but some of them need to be set up directly in this file.
 
 ## List of possible client configurations
+
 | Key                       | Type                  | Default Value        | Description             |
 | ---                       | ---                   | ---                  | --- |
 |   name                    |   string              |   alt:V nickname     | Your name that is displayed on a server. |
@@ -30,6 +26,7 @@ applied in the main menu under `Settings` but some of them need to be set up dir
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
 
 ## Example altv.cfg file
+
 ```yaml
 branch: 'release'
 debug: 'false'
