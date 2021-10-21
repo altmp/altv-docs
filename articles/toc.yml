@@ -42,3 +42,5 @@
   href: cdn.md
 - name: Setup EarlyAuth
   href: earlyauth.md
+- name: Custom Launcher
+  href: customlauncher.md
