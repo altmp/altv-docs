@@ -30,6 +30,8 @@
   href: connectprotocol.md
 - name: Command-line Arguments
   href: commandlineargs.md
+- name: Chromium Embedded Framework
+  href: cef.md
 - name: Server Specifications
   href: serverspecs.md
 - name: Setup CDN
