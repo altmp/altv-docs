@@ -1,6 +1,6 @@
 # CEF - Chromium Embedded Framework
 
-The Chromium Embedded Framework (also known as CEF) is a web browser engine used in alt:V to render clientside webpages and assets - like in your everyday web browser.
+The Chromium Embedded Framework (also known as CEF) is a web browser engine used in alt:V to render clientside webpages and assets - like in your everyday web browser. CEF will use your system locale.
 
 ## Debug Mode
 
