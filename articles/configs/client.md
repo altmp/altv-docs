@@ -1,5 +1,5 @@
 # The client configuration
-After you downloaded and installed the alt:V Multiplayer client you can find the `altv.cfg` file in the installation 
+After you downloaded and installed the alt:V Multiplayer client, you can find the `altv.cfg` file in the installation 
 folder.
 This file contains the settings of the client. Per default this file only contains the branch and the path to your 
 GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.cfg`. However, there 
