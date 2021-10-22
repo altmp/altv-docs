@@ -13,7 +13,8 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 | heap                      | No            |   Shows "Heap benchmark infos" in console.                                        |
 | timers                    | No            |   Shows "Timers benchmark infos" in console.                                      |
 | reconnect [password]      | Yes           |   Reconnects to the same server, password is the server password and optional.    |
-| external_console          | No            |   Open console in a extra window.                                                 |
-| voiceVolume               | No            |   Sets the output volume.                                                         |
-| voiceInputVolume          | No            |   Sets the input volume.                                                          |
+| external_console [0/1]    | No            |   Open console in a extra window.                                                 |
+| voiceVolume [0-200]       | No            |   Sets the output volume.                                                         |
+| voiceInputVolume [0-200]  | No            |   Sets the input volume.                                                          |
 | js-module                 | No            |   Shows informations about the js module.                                         |
+| debugvehs                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
