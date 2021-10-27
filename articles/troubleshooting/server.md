@@ -1,7 +1,7 @@
 # Troubleshoot Server
 
-Sometimes, when you deal with server development, some errors can occur. Most of these errors are repetitive. 
-Therefore, this article collects the most common errors and their solutions.
+Sometimes, when you deal with running a server, some issues can occur. Most of these issues are repetitive and easy 
+to solve. Therefore, this article collects the most common errors and their solutions.
 
 ## Known issues & solutions
 
