@@ -31,7 +31,7 @@
       {
         "files": [
           "**.md",
-          "**/toc.yml",
+          "**/toc.yml"
         ],
         "src": "cpp-sdk/articles/",
         "dest": "sdk/"
@@ -120,7 +120,23 @@
         "branch": "master",
         "apiSpecFolder": "docs/apidoc"
       },
-      "_gitUrlPattern": "github"
+      "_gitUrlPattern": "github",
+      "_lunrTokenSeparator": "[\\s\\-\\.\\(\\)\\[\\]+A-Z]",
+      "_lunrRef": "href",
+      "_lunrFields": {
+        "type": {
+          "boost": 100
+        },
+        "title": {
+          "boost": 25
+        },
+        "keywords": {
+          "boost": 50
+        },
+        "langs": {
+          "boost": 75
+        }
+      }
     },
     "template": [
       "default",
