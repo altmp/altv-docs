@@ -130,13 +130,21 @@
         "title": {
           "boost": 25
         },
-        "keywords": {
+        "keyword": {
           "boost": 50
         },
-        "langs": {
+        "lang": {
           "boost": 75
         }
       }
+    },
+    "fileMetadata": {
+      "langs": {
+        "altv-docs-gta/**": ["js", "csharp"],
+        "altv-types/**": ["js"],
+        "coreclr-module/**": ["csharp"],
+        "cpp-sdk/**": ["cpp"],
+      },
     },
     "template": [
       "default",
