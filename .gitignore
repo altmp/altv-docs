@@ -12,9 +12,13 @@ docfx/
 plugins/
 templates/*
 !templates/altmp
+coreclr-module
 coreclr-module/
+altv-types
 altv-types/
+cpp-sdk
 cpp-sdk/
+altv-docs-gta
 altv-docs-gta/
 altv-docs-gta-assets
 altv-docs-gta-assets/
