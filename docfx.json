@@ -122,7 +122,7 @@
         "apiSpecFolder": "docs/apidoc"
       },
       "_gitUrlPattern": "github",
-      "_searchHelpUrl": "articles/search-help.html",
+      "_searchHelpUrl": "articles/search_help.html",
       "_lunrTokenSeparator": "[\\s\\-\\.\\(\\)\\[\\]+A-Z]",
       "_lunrRef": "href",
       "_lunrFields": {
