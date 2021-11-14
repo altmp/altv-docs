@@ -38,6 +38,13 @@ $requiredPackages=[Ordered]@{
         "dest"="./templates/";
         "name"="DocFx TypeScriptReference";
     };
+    "docfx-plugins-addimagemodal.zip"=@{
+        "repo"="Lhoerion/DocFx.Plugins.AddImageModal";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-addimagemodal/";
+        "dest"="./templates/";
+        "name"="DocFx AddImageModal";
+    };
     "docfx-plugins-extractsearchindex.zip"=@{
         "repo"="Lhoerion/DocFx.Plugins.ExtractSearchIndex";
         "version"=$null;
@@ -254,6 +261,7 @@ try
             "Visual Studio"=GetVisualStudioVersion;
             "DocFx"=GetAssemblyVersion "./docfx/docfx.exe";
             "DocFx TypeScriptReference"=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/DocFx.*.dll";
+            "DocFx AddImageModal"=GetAssemblyVersion "./templates/docfx-plugins-addimagemodal/plugins/DocFx.*.dll";
             "DocFx ExtractSearchIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/DocFx.*.dll";
             "TypeDoc"=GetNodePackageVersion "typedoc";
             "type2docfx"=GetNodePackageVersion "type2docfx";
