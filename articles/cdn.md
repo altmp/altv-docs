@@ -1,6 +1,6 @@
 # Setup CDN
 
-CDN (Content delivery Network) is a function to speedup the download of the ressources for connecting users and to relive the server. The CDN can be provided with any filehosting server that supports HTTP/HTTPS.
+CDN (Content delivery Network) is a function to speedup the download of the resources for connecting users and to relive the server. The CDN can be provided with any filehosting server that supports HTTP/HTTPS.
 
 It's working as followed: The client connects to the CDN Server, which provides the resource files for the client. After the download is complete, the client connects to the alt:V Server.
 
