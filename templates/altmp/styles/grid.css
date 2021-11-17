@@ -1,0 +1,25 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-container .grid-item {
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  word-wrap: break-word;
+  border: 1px solid #202225;
+}
+
+.grid-container .grid-item .grid-item-img {
+  height: 150px;
+  margin-bottom: 5px;
+}
+
+.grid-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
