@@ -43,3 +43,30 @@
 .release-stage.public::before {
   content: "release" !important;
 }
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, max(200px, 100% / 8));
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.grid-container .grid-item {
+  width: 200px;
+  padding: 6px;
+  font-size: 14px;
+  word-wrap: break-word;
+  border: 1px solid #202225;
+}
+
+.grid-container .grid-item .grid-item-img {
+  height: 150px;
+  margin-bottom: 5px;
+}
+
+.grid-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
