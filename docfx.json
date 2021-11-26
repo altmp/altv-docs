@@ -132,10 +132,10 @@
         "title": {
           "boost": 25
         },
-        "keyword": {
+        "keywords": {
           "boost": 50
         },
-        "lang": {
+        "langs": {
           "boost": 75
         }
       }
