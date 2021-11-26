@@ -123,7 +123,7 @@
       },
       "_gitUrlPattern": "github",
       "_searchHelpUrl": "articles/search_help.html",
-      "_lunrTokenSeparator": "[\\s\\-\\.\\(\\)\\[\\]+A-Z]",
+      "_lunrTokenSeparator": "[\\s\\:\\-\\.\\(\\)\\[\\]+\\\"\\'\\<\\>]",
       "_lunrRef": "href",
       "_lunrFields": {
         "type": {
