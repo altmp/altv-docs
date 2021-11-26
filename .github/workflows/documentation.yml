@@ -258,7 +258,7 @@ jobs:
               return;
             }
             for (const artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
-              if (!artifact) continue;
+              if (!artifact || artifact.expired) continue;
               console.log("==> Artifact:", artifact.id);
               console.log(`==> Downloading: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
               const zip = await github.actions.downloadArtifact({
