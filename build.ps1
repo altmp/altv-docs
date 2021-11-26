@@ -62,7 +62,7 @@ $requiredPackages=[Ordered]@{
 }
 
 $global:ProgressPreference='SilentlyContinue'
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/altmp/altv-docs/master/common.ps1" -OutFile "./common.ps1" 2>&1 >$null
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/altmp/altv-docs/$(git rev-parse --abbrev-ref HEAD)/common.ps1" -OutFile "./common.ps1" 2>&1 >$null
 $global:ProgressPreference='Continue'
 if($err -ne $null -or -not (Test-Path "./common.ps1")) { throw "Script common.ps1 not found." }
 . "./common.ps1" $true
