@@ -223,17 +223,27 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.ExtractSearchIndex
-          tag: v1.0.1
+          tag: v1.0.2
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
         run: |
           Expand-Archive -Path "./docfx-plugins-extractsearchindex.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractsearchindex.zip"
+      - name: Download DocFx AddImageModal package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: Lhoerion/DocFx.Plugins.AddImageModal
+          tag: v0.0.2
+          fileName: docfx-plugins-addimagemodal.zip
+      - name: Unzip DocFx AddImageModal package
+        run: |
+          Expand-Archive -Path "./docfx-plugins-addimagemodal.zip" -DestinationPath "./templates/"
+          Remove-Item -Path "./docfx-plugins-addimagemodal.zip"
       - name: Download DocFx DiscordFX package
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DiscordFX
-          latest: true
+          tag: v0.6.17
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFX package
         run: |
