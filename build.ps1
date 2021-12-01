@@ -52,6 +52,13 @@ $requiredPackages=[Ordered]@{
         "dest"="./templates/";
         "name"="DocFx ExtractSearchIndex";
     };
+    "docfx-plugins-extractaffixindex.zip"=@{
+        "repo"="Lhoerion/DocFx.Plugins.ExtractAffixIndex";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-extractaffixindex/";
+        "dest"="./templates/";
+        "name"="DocFx ExtractAffixIndex";
+    };
     "docfx-tmpls-discordfx.zip"=@{
         "repo"="Lhoerion/DiscordFX";
         "version"=$null;
@@ -119,6 +126,7 @@ try
             "DocFx TypeScriptReference"=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/DocFx.*.dll";
             "DocFx AddImageModal"=GetAssemblyVersion "./templates/docfx-plugins-addimagemodal/plugins/DocFx.*.dll";
             "DocFx ExtractSearchIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/DocFx.*.dll";
+            "DocFx ExtractAffixIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractaffixindex/plugins/DocFx.*.dll";
             "TypeDoc"=GetNodePackageVersion "typedoc";
             "type2docfx"=GetNodePackageVersion "type2docfx";
         }
