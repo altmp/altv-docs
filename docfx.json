@@ -152,12 +152,14 @@
       "templates/docfx-plugins-typescriptreference",
       "templates/docfx-plugins-addimagemodal",
       "templates/docfx-plugins-extractsearchindex",
+      "templates/docfx-plugins-extractarticleaffix",
       "templates/discordfx",
       "templates/altmp"
     ],
     "postProcessors": [
       "AddImageModal",
-      "ExtractSearchIndexAlt"
+      "ExtractSearchIndexAlt",
+      "ExtractArticleAffix"
     ],
     "markdownEngineName": "markdig",
     "dest": "_site"

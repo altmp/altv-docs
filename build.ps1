@@ -52,12 +52,12 @@ $requiredPackages=[Ordered]@{
         "dest"="./templates/";
         "name"="DocFx ExtractSearchIndex";
     };
-    "docfx-plugins-extractaffixindex.zip"=@{
-        "repo"="Lhoerion/DocFx.Plugins.ExtractAffixIndex";
+    "docfx-plugins-extractarticleaffix.zip"=@{
+        "repo"="Lhoerion/DocFx.Plugins.ExtractArticleAffix";
         "version"=$null;
-        "predicate"="./templates/docfx-plugins-extractaffixindex/";
+        "predicate"="./templates/docfx-plugins-extractarticleaffix/";
         "dest"="./templates/";
-        "name"="DocFx ExtractAffixIndex";
+        "name"="DocFx ExtractArticleAffix";
     };
     "docfx-tmpls-discordfx.zip"=@{
         "repo"="Lhoerion/DiscordFX";
@@ -69,7 +69,7 @@ $requiredPackages=[Ordered]@{
 }
 
 $global:ProgressPreference='SilentlyContinue'
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/altmp/altv-docs/$(git rev-parse --abbrev-ref HEAD)/common.ps1" -OutFile "./common.ps1" 2>&1 >$null
+Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "https://raw.githubusercontent.com/altmp/altv-docs/$(git rev-parse --abbrev-ref HEAD)/common.ps1" -OutFile "./common.ps1" 2>&1 >$null
 $global:ProgressPreference='Continue'
 if($err -ne $null -or -not (Test-Path "./common.ps1")) { throw "Script common.ps1 not found." }
 . "./common.ps1" $true
@@ -126,7 +126,7 @@ try
             "DocFx TypeScriptReference"=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/DocFx.*.dll";
             "DocFx AddImageModal"=GetAssemblyVersion "./templates/docfx-plugins-addimagemodal/plugins/DocFx.*.dll";
             "DocFx ExtractSearchIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/DocFx.*.dll";
-            "DocFx ExtractAffixIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractaffixindex/plugins/DocFx.*.dll";
+            "DocFx ExtractArticleAffix"=GetAssemblyVersion "./templates/docfx-plugins-extractarticleaffix/plugins/DocFx.*.dll";
             "TypeDoc"=GetNodePackageVersion "typedoc";
             "type2docfx"=GetNodePackageVersion "type2docfx";
         }

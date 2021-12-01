@@ -144,7 +144,7 @@ $versions=@{
     "docfx-plugins-typescriptreference.zip"="v1.1.5";
     "docfx-plugins-extractsearchindex.zip"="v1.0.4";
     "docfx-plugins-addimagemodal.zip"="v0.0.2";
-    "docfx-plugins-extractaffixindex.zip"="v0.0.1";
+    "docfx-plugins-extractarticleaffix.zip"="v0.0.1";
     "docfx-tmpls-discordfx.zip"=$null;
 }
 
