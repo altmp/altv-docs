@@ -46,8 +46,7 @@
 
 .grid-container {
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, max(200px, 100% / 8));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-column-gap: 8px;
   grid-row-gap: 8px;
 }
@@ -69,4 +68,11 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    justify-content: center;
+    grid-template-columns: unset !important;
+  }
 }
