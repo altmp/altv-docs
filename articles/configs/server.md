@@ -52,12 +52,12 @@ voice: {
     bitrate: 64000,
     # The secret for the external server (only needed when using externalHost)
     externalSecret: "secret123",
-    # The external host address
+    # The external host address (leave 127.0.0.1 if voice-server is on same machine)
     externalHost: "127.0.0.1",
     # The external host port
     externalPort: 7798,
-    # The external host public address (should be the ip address of your server)
-    externalPublicHost: "127.0.0.1",
+    # The external host public address (should be the ip address of your server, not localhost!)
+    externalPublicHost: "xx.xx.xx.xx",
     # The external host public port
     externalPublicPort: 7799
 }
@@ -74,4 +74,13 @@ earlyAuthUrl: "https://example.com/login"
 useCdn: true
 # The url for the CDN page
 cdnUrl: "https://cdn.example.com"
+```
+
+The `voice.cfg` file is needed if you are running external altv-voice-server. The settings for using it on same machine as altv-server are:
+```
+host: '0.0.0.0'
+playerHost: '0.0.0.0'
+playerPort: '7799'
+port: '7798'
+secret: 'secret123'
 ```
