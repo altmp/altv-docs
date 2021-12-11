@@ -332,7 +332,7 @@ jobs:
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.2.4
         with:
           name: site
           path: |
