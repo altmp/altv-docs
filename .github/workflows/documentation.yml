@@ -239,6 +239,16 @@ jobs:
         run: |
           Expand-Archive -Path "./docfx-plugins-addimagemodal.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-addimagemodal.zip"
+      - name: Download DocFx ExtractArticleAffix package
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: Lhoerion/DocFx.Plugins.ExtractArticleAffix
+          tag: v0.0.2
+          fileName: docfx-plugins-extractarticleaffix.zip
+      - name: Unzip DocFx ExtractArticleAffix package
+        run: |
+          Expand-Archive -Path "./docfx-plugins-extractarticleaffix.zip" -DestinationPath "./templates/"
+          Remove-Item -Path "./docfx-plugins-extractarticleaffix.zip"
       - name: Download DocFx DiscordFX package
         uses: robinraju/release-downloader@v1
         with:
