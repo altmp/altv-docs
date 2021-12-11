@@ -140,7 +140,7 @@
       }
     },
     "fileMetadata": {
-      "langs": {
+      "lang": {
         "altv-docs-gta/**": ["js", "csharp"],
         "altv-types/**": ["js"],
         "coreclr-module/**": ["csharp"],
