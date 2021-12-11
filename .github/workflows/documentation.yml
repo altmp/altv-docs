@@ -362,7 +362,7 @@ jobs:
           path: ./docs/_site
       - name: Copy GTA assets to output site
         run: |
-          Move-Item -Path "./altv-docs-gta-assets/images" -Destination "./docs/_site/gta/images"
+          mv "./altv-docs-gta-assets/images" "./docs/_site/gta/images" -f
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
