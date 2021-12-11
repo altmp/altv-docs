@@ -335,7 +335,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: site
-          path: ./_site/
+          path: |
+            ./_site/
+            !./_site/gta/images
   deploy:
     name: Deploy GitHub Pages
     runs-on: ubuntu-20.04
@@ -347,11 +349,20 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+      - name: Checkout GTA assets repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          repository: altmp/altv-docs-gta-assets
+          path: ./altv-docs-gta-assets
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
           name: site
           path: ./docs/_site
+      - name: Copy GTA assets to output site
+        run: |
+          Move-Item -Path "./altv-docs-gta-assets/images" -Destination "./docs/_site/gta/images"
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
