@@ -7,6 +7,8 @@
 - name: Getting Started
   href: getting-started/toc.yml
   topicHref: getting-started/index.md
+- name: FAQ
+  href: faq.md
 - name: Logging
   href: logging.md
 - name: Master list API
