@@ -14,6 +14,8 @@
 - name: Config files
   href: configs/toc.yml
   topicHref: configs/index.md
+- name: CDN Links
+  href: cdn_links.md
 - name: How to Contribute
   href: contributing.md
 - name: Dimensions
