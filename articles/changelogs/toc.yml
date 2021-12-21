@@ -1,5 +1,5 @@
-# - name: Release 8.0
-#   href: 8_0.md
+- name: Release 8.0
+  href: 8_0.md
 - name: Release 7.0
   href: 7_0.md
 - name: Release 6.0
