@@ -21,7 +21,7 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 3. Add an exception to your Anti-Virus for alt:V (This Includes Windows Defender).
 4. Avast is even blocking alt:V if you whitelist it!
 5. Ensure alt:V is installed in a directory that is not your Desktop, not your GTA:V Directory and the path does not include any special characters.
-6. Make sure Visual C++ 2015-2019 Redistributeable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Downloadlink</a>
+6. Make sure Visual C++ 2015-2019 Redistributeable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Download link</a>
 7. Ensure you've the latest drivers of all your devices, especially your graphics card
 8. Only use ASCII Characters in your alt:V Path.
 9. Keep Pathing short for alt:V ie. D:/altV
