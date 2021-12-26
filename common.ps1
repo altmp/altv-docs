@@ -145,7 +145,7 @@ $versions=@{
     "docfx-plugins-extractsearchindex.zip"="v1.0.4";
     "docfx-plugins-addimagemodal.zip"="v0.0.4";
     "docfx-plugins-extractarticleaffix.zip"="v0.0.2";
-    "docfx-tmpls-discordfx.zip"=$null;
+    "docfx-tmpls-discordfx.zip"="v0.6.19";
 }
 
 foreach($pair in $versions.GetEnumerator()) {
