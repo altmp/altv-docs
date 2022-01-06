@@ -12,7 +12,6 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 | quit                      | No            |   Closes the game.                                                                |
 | heap                      | No            |   Shows "Heap benchmark infos" in console.                                        |
 | heapspaces                | No            |   Shows "Heap spaces infos" in console.                                           |
-| heapobjects               | No            |   Shows "Heap objects infos" in console.                                          |
 | timers                    | No            |   Shows "Timers benchmark infos" in console.                                      |
 | reconnect [password]      | Yes           |   Reconnects to the same server, password is the server password and optional.    |
 | external_console [0/1]    | No            |   Open console in a extra window.                                                 |
