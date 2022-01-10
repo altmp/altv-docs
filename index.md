@@ -1,6 +1,6 @@
 # alt:V Documentation
 
-alt:V is an alternative multiplayer framework for GTA:V and allows developers and players to player on custom servers. These servers can utilize languages such as C# and JavaScript. Here you'll learn how to work with alt:V in these languages, how to properly setup a project and build out your very own gamemode.
+alt:V is an alternative multiplayer framework for GTA:V and allows developers and players to play on custom servers. These servers can utilize languages such as C# and JavaScript. Here you'll learn how to work with alt:V in these languages, how to properly setup a project and build out your very own gamemode.
 
 Some of our features:
 
