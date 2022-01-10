@@ -244,7 +244,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.ExtractArticleAffix
-          tag: v0.0.3
+          tag: v0.0.4
           fileName: docfx-plugins-extractarticleaffix.zip
       - name: Unzip DocFx ExtractArticleAffix package
         run: |
