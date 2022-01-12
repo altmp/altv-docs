@@ -250,13 +250,13 @@ jobs:
         run: |
           Expand-Archive -Path "./docfx-plugins-extractarticleaffix.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractarticleaffix.zip"
-      - name: Download DocFx DiscordFX package
+      - name: Download DocFx DiscordFx package
         uses: robinraju/release-downloader@v1
         with:
-          repository: Lhoerion/DiscordFX
+          repository: Lhoerion/DiscordFx
           tag: v0.6.19
           fileName: docfx-tmpls-discordfx.zip
-      - name: Unzip DocFx DiscordFX package
+      - name: Unzip DocFx DiscordFx package
         run: |
           Expand-Archive -Path "./docfx-tmpls-discordfx.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-tmpls-discordfx.zip"

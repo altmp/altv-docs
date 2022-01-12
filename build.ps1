@@ -60,11 +60,11 @@ $requiredPackages=[Ordered]@{
         "name"="DocFx ExtractArticleAffix";
     };
     "docfx-tmpls-discordfx.zip"=@{
-        "repo"="Lhoerion/DiscordFX";
+        "repo"="Lhoerion/DiscordFx";
         "version"=$null;
         "predicate"="./templates/discordfx/";
         "dest"="./templates/";
-        "name"="DocFx DiscordFX";
+        "name"="DocFx DiscordFx";
     };
 }
 
