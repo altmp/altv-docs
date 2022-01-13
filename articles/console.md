@@ -19,3 +19,4 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 | voiceInputVolume [0-200]  | No            |   Sets the input volume.                                                          |
 | js-module                 | No            |   Shows informations about the js module.                                         |
 | debugvehs                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
+| rmldebug                  | Yes           |   Shows RMLUI debug window                                                        |
