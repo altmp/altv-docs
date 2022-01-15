@@ -5,8 +5,9 @@ Permissions are set on a resource-by-resource basis and have to be accepted by t
 ## Permission Types
 | Permission   |             Description             |
 | ------ | :-------------------------------: |
-|   Screen Capture  |   This allows a screenshot to be taken of the alt:V process (just GTA) and any webview    |
-|   WebRTC          |   This allows peer-to-peer RTC inside JS                                                  |
+|   Screen Capture      |   This allows a screenshot to be taken of the alt:V process (just GTA) and any webview    |
+|   WebRTC              |   This allows peer-to-peer RTC inside JS                                                  |
+|   Clipboard Access    |   This allows to copy content to users clipboard                                          |
 
 ## Required vs Option Permissions
 
@@ -16,10 +17,12 @@ Permissions can be either be optional or required. When they are optional, this 
 required-permissions: [
     Screen Capture
     WebRTC
+    Clipboard Access
 ]
 
 optional-permissions: [
     Screen Capture
     WebRTC
+    Clipboard Access
 ]
 ```
