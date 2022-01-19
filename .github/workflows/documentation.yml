@@ -373,7 +373,12 @@ jobs:
           path: ./docs/_site
       - name: Copy assets to output site
         run: |
-          mv "./altv-docs-gta-assets/images" "./docs/_site/gta/images" -f
+          DOCFX_CFG=$(cat "./docfx.json")
+          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" -exec bash -c '
+            DEST=$(echo '\'$DOCFX_CFG\'' | jq -r --arg path "$1" ".build .resource[] | select(.src==\$path) | .dest")
+            mv "$1" "$DEST" -f
+          ' _ {} \;
+          ls -Rl
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
