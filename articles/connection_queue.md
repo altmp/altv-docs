@@ -42,12 +42,13 @@ Properties
 | Property Name               | Description                                           |
 | --------------------------- | ----------------------------------------------------- |
 | connectionInfo.name         | Player name.                                          |
-| connectionInfo.socialID     | Player socialID.                                      |
+| connectionInfo.socialID     | Player social club id.                                |
+| connectionInfo.discordID    | Player discord id.                                    |
 | connectionInfo.ip           | Player IP adress.                                     |
 | connectionInfo.hwidHash     | Player hwidHash.                                      |
 | connectionInfo.hwidExHash   | Player hwidExHash.                                    |
 | connectionInfo.authToken    | Player auth token if early auth was used.             |
-| connectionInfo.isDebug      | Wether or not the player client is in debug mode.     |
+| connectionInfo.isDebug      | Whether the player client is in debug mode or not.    |
 | connectionInfo.branch       | Player client branch.                                 |
 | connectionInfo.build        | Player client build.                                  |
 | connectionInfo.cdnUrl       | CDN url if used.                                      |
