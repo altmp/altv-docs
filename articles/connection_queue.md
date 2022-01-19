@@ -59,6 +59,24 @@ Connection info properties
 # [Javascript](#tab/tabid-1)
 
 ```js
+async function getDataFromDatabase() {
+    return new Promise(resolve => setTimeout(resolve(true), 5000));
+}
+
+async function processPlayerInQueue(connectionInfo: alt.ConnectionInfo) {
+    if (await getDataFromDatabase());
+        connectionInfo.accept();
+}
+
+alt.on('connectionQueueAdd', (connectionInfo) => processPlayerInQueue(connectionInfo));
+alt.on('connectionQueueRemove', (connectionInfo) => {
+    console.log("Player removed from the queue, even if I accept the connection now it's handled!");
+});
+```
+
+# [Typescript](#tab/tabid-2)
+
+```ts
 async function getDataFromDatabase(): Promise<true> {
     return new Promise(resolve => setTimeout(resolve(true), 5000));
 }
@@ -74,7 +92,7 @@ alt.on('connectionQueueRemove', (connectionInfo: alt.ConnectionInfo) => {
 });
 ```
 
-# [C#](#tab/tabid-2)
+# [C#](#tab/tabid-3)
 
 ```csharp
 ```
