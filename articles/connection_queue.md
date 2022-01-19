@@ -26,7 +26,7 @@ The connectionQueueRemove event is triggered when you accept / decline the conne
 | connectionQueueAdd    | Event triggered once a player is added to the connection queue     |
 | connectionQueueRemove | Event triggered once a player is removed from the connection queue |
 
-### ConnectionInfo
+### Connection Info
 
 You have access to a connection info class instance as the first parameter of the ``connectionQueueAdd`` and ``connectionQueueRemove`` events.
 
