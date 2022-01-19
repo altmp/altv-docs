@@ -52,3 +52,5 @@
   href: search_help.md
 - name: Connection queue
   href: connection_queue.md
+- name: Auto Reconnect
+  href: auto_reconnect.md
