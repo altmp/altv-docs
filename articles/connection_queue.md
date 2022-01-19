@@ -2,13 +2,11 @@
 
 This article will explain the player connection queue added in the 9.0 update.
 
-## What is connection queue
+## What is a connection queue
 
-> [!NOTE]
-> Due to the current underlying networking, each player in the queue will actually occupy a slot and increase the player count.
+Due to the current underlying networking, each player in the queue will actually occupy a slot and increase the player count.
 
-> [!NOTE]
-> When the player queue is activated, the playerConnect event is triggered once the connection has been accepted
+When the player queue is activated, the playerConnect event is triggered once the connection has been accepted
 
 The connection queue will place the players attempting to connect to the server in a queue. You can then accept or decline the upcoming connection at any moment.
 
@@ -23,8 +21,7 @@ connectionQueue: 'true'
 
 ### Player queue events
 
-> [!NOTE]
-> The connectionQueueRemove event is triggered when you accept / decline the connection or when the player disconnects by canceling the connection.
+The connectionQueueRemove event is triggered when you accept / decline the connection or when the player disconnects by canceling the connection.
 
 | Event Name                 | Description                                                   |
 | --------------------- | ------------------------------------------------------------------ |
