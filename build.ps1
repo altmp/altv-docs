@@ -22,10 +22,10 @@ $requiredRepos=[Ordered]@{
         "repo"="https://github.com/altmp/altv-docs-gta/";
         "name"="GTA";
     };
-    "./altv-docs-gta-assets/"=@{
-        "repo"="https://github.com/altmp/altv-docs-gta-assets/";
+    "./altv-docs-assets/"=@{
+        "repo"="https://github.com/altmp/altv-docs-assets/";
         "ref"="deploy";
-        "name"="GTA assets";
+        "name"="Assets";
     };
 }
 $requiredPackages=[Ordered]@{

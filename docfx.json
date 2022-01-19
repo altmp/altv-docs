@@ -62,28 +62,28 @@
         "files": [
           "images/**"
         ],
-        "src": "altv-types/docs",
+        "src": "altv-docs-assets/altv-docs",
+        "dest": "."
+      },
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "altv-docs-assets/altv-types",
         "dest": "js/"
       },
       {
         "files": [
           "images/**"
         ],
-        "src": "coreclr-module/docs",
+        "src": "altv-docs-assets/coreclr-module",
         "dest": "cs/"
       },
       {
         "files": [
           "images/**"
         ],
-        "src": "altv-docs-gta",
-        "dest": "gta/"
-      },
-      {
-        "files": [
-          "images/**"
-        ],
-        "src": "altv-docs-gta-assets",
+        "src": "altv-docs-assets/altv-docs-gta",
         "dest": "gta/"
       }
     ],
