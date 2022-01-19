@@ -69,7 +69,7 @@ async function processPlayerInQueue(connectionInfo) {
         connectionInfo.accept();
 }
 
-alt.on('connectionQueueAdd', (connectionInfo) => processPlayerInQueue(connectionInfo));
+alt.on('connectionQueueAdd', processPlayerInQueue);
 alt.on('connectionQueueRemove', (connectionInfo) => {
     console.log("Player removed from the queue, even if I accept the connection now it's handled!");
 });
@@ -87,7 +87,7 @@ async function processPlayerInQueue(connectionInfo: alt.ConnectionInfo): Promise
         connectionInfo.accept();
 }
 
-alt.on('connectionQueueAdd', (connectionInfo: alt.ConnectionInfo) => processPlayerInQueue(connectionInfo));
+alt.on('connectionQueueAdd', processPlayerInQueue);
 alt.on('connectionQueueRemove', (connectionInfo: alt.ConnectionInfo) => {
     console.log("Player removed from the queue, even if I accept the connection now it's handled!");
 });
