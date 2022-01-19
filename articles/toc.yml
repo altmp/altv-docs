@@ -50,3 +50,5 @@
   href: customlauncher.md
 - name: Search help
   href: search_help.md
+- name: Connection queue
+  href: connection_queue.md
