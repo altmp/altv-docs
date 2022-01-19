@@ -30,7 +30,7 @@ The connectionQueueRemove event is triggered when you accept / decline the conne
 
 ### ConnectionInfo
 
-You have acces to a connection info class instance as the first parameter of the ``connectionQueueAdd`` and ``connectionQueueRemove`` events.
+You have access to a connection info class instance as the first parameter of the ``connectionQueueAdd`` and ``connectionQueueRemove`` events.
 
 Connection info functions
 
@@ -45,6 +45,7 @@ Connection info properties
 | --------------------------- | ----------------------------------------------------- |
 | connectionInfo.name         | Player name.                                          |
 | connectionInfo.socialID     | Player socialID.                                      |
+| connectionInfo.ip           | Player IP adress.                                     |
 | connectionInfo.hwidHash     | Player hwidHash.                                      |
 | connectionInfo.hwidExHash   | Player hwidExHash.                                    |
 | connectionInfo.authToken    | Player auth token if early auth was used.             |
@@ -63,7 +64,7 @@ async function getDataFromDatabase() {
     return new Promise(resolve => setTimeout(resolve(true), 5000));
 }
 
-async function processPlayerInQueue(connectionInfo: alt.ConnectionInfo) {
+async function processPlayerInQueue(connectionInfo) {
     if (await getDataFromDatabase());
         connectionInfo.accept();
 }
