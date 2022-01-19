@@ -382,7 +382,7 @@ jobs:
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.NIGHTLY_PAT_TOKEN }}
+          personal_token: ${{ secrets.NIGHTLY_PAT_TOKEN }}
           external_repository: altmp/altv-docs-nightly
           publish_dir: ./docs/_site
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
