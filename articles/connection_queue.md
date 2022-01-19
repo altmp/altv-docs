@@ -4,8 +4,8 @@ This article will explain the player connection queue added in the 9.0 update.
 
 ## What is a connection queue
 
-Due to the current underlying networking, each player in the queue will actually occupy a slot and increase the player count.
-When the player queue is activated, the playerConnect event is triggered once the connection has been accepted.
+Due to the current underlying networking, each player in the queue will actually occupy a slot and increase the player count.<br>
+When the player queue is activated, the playerConnect event is triggered once the connection has been accepted.<br>
 The connection queue will place the players attempting to connect to the server in a queue. You can then accept or decline the upcoming connection at any moment.
 
 ## Usage
