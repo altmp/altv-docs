@@ -4,7 +4,7 @@ This article will explain the auto reconnect feature introduced in the 9.0 updat
 
 ## What is auto reconnect
 
-The auto reconnect allow the server to send a post request to the local client in order to initialize a connection / reconnection to the server.<br>
+The auto reconnect allows the server to send a post request to the local client in order to initialize a connection / reconnection to the server.<br>
 This feature is only available when the client and server are in debug mode and is intended for a smoother local development.<br>
 It is important to note that you can also send the post request when you want, meaning it's possible to wait for your server to finish his startup procedure (fetching data from database, loading modules..).
 
