@@ -15,13 +15,13 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 |   --extra-res-folder [path]   |   Path to additional resource folder ([path] needs to be replaced with the the additional resource folder path)   |   |
 |   --justpack                  |   Creates packages and a resources.json for cdn download in the root folder   |   |
 |   --host [host]               |   Specifies the host which the server should bind to ([host] needs to be replaced with the host)   |   |
-|   --port [port]               |   	Specifies the port which the should bind to ([port] needs to be replaced with port)   |   |
+|   --port [port]               |   Specifies the port which the should bind to ([port] needs to be replaced with port)   |   |
+|   --help                     |   Displays help text for all cli arguments    |   |
 
 ## Client launch options
 
 | Key       |             Description             |
 | ------    | :-------------------------------: |
-|   -sandbox            |   Starts client into sandbox mode (Note: currently broken)                                |
 |   -noupdate           |   Skips alt:V updates                                                                     |
 |   -connecturl [url]   |   Directly connects to specfied url ([url] needs to be replaced with the connectionurl)   |
 
