@@ -34,12 +34,12 @@ A single ICO file can store multiple resolutions. You can create such files with
 ## Bit depth
 
 32 bits (16.7M colors & alpha transparency)<br>
-A reference icon ICO file can be found [here](~/altv-docs-gta-assets/images/customlauncher/icon.ico).
+A reference icon ICO file can be found [here](~/altv-docs-assets/altv-docs-gta/images/customlauncher/icon.ico).
 
 ## BMP file as splash screen
 
 The splash screen must have a size of 300x400. And is shown when alt:V is starting GTA V and is making updates.<br>
-A reference splash screen BMP file can be found [here](~/altv-docs-gta-assets/images/customlauncher/splash.bmp).
+A reference splash screen BMP file can be found [here](~/altv-docs-assets/altv-docs-gta/images/customlauncher/splash.bmp).
 
 ## JSON file as manifest
 
@@ -73,4 +73,4 @@ A file named `manifest.json` must be provided with following information:
 
 ## Preview
 
-![Impression of the alt:V custom launcher.](~/altv-docs-gta-assets/images/customlauncher/impression.png)
+![Impression of the alt:V custom launcher.](~/altv-docs-assets/altv-docs-gta/images/customlauncher/impression.png)
