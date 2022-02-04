@@ -95,4 +95,40 @@ alt.on('connectionQueueRemove', (connectionInfo: alt.ConnectionInfo) => {
 # [C#](#tab/tabid-3)
 
 ```csharp
+using AltV.Net.Async;
+using AltV.Net.Types;
+
+namespace Example
+{
+    class ExampleResource : AsyncResource
+    {
+        private async Task<bool> GetDataFromDatabase()
+        {
+            await Task.Delay(5000);
+            return true;
+        }
+
+        private async Task OnConnectionQueueAdd(IConnectionInfo connectionInfo)
+        {
+            if (await this.GetDataFromDatabase())
+                connectionInfo.Accept();
+        }
+
+        private Task OnConnectionQueueRemove(IConnectionInfo _)
+        {
+            Console.WriteLine("Player removed from the queue, even if I accept the connection now it's handled!");
+            return Task.CompletedTask;
+        }
+
+        public override void OnStart()
+        {
+            AltAsync.OnConnectionQueueAdd += this.OnConnectionQueueAdd;
+            AltAsync.OnConnectionQueueRemove += this.OnConnectionQueueRemove;
+        }
+
+        public override void OnStop()
+        {
+        }
+    }
+}
 ```
