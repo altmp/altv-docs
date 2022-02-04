@@ -125,7 +125,10 @@ namespace Example
 
             try
             {
-                await this._httpClient.PostAsync($"http://127.0.0.1:{DebugPort}/reconnect", new StringContent("serverPassword"));
+                await this._httpClient.PostAsync(
+                    $"http://127.0.0.1:{DebugPort}/reconnect",
+                    new StringContent("serverPassword")  // only needed when a password is set in the server.cfg, otherwise pass null instead of StringContent
+                );
             }
             catch (Exception e)
             {
