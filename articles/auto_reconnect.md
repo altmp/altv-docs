@@ -29,7 +29,7 @@ async function getClientStatus() {
 
 async function autoReconnect()  {
     const status = await getClientStatus();
-    if (status !== "MAIN_MENU" || status !== "IN_GAME") {
+    if (status !== "MAIN_MENU" && status !== "IN_GAME") {
         setTimeout(autoReconnect, 2500);
         return;
     }
@@ -68,7 +68,7 @@ async function getClientStatus(): Promise<STATUS> {
 
 async function autoReconnect(): Promise<void> {
     const status = await getClientStatus();
-    if (status !== "MAIN_MENU" || status !== "IN_GAME") {
+    if (status !== "MAIN_MENU" && status !== "IN_GAME") {
         setTimeout(autoReconnect, 2500);
         return;
     }
@@ -89,4 +89,66 @@ autoReconnect();
 # [C#](#tab/tabid-3)
 
 ```csharp
+using AltV.Net.Async;
+using Timer = System.Timers.Timer;
+
+namespace Example
+{
+    class ExampleResource : AsyncResource
+    {
+        private const int DebugPort = 9223;
+
+        private readonly HttpClient _httpClient = new();
+        private readonly Timer _timer = new(2500);
+
+        private async Task<string> GetClientStatus()
+        {
+            try
+            {
+                var response = await this._httpClient.GetAsync($"http://127.0.0.1:{DebugPort}/status");
+                return await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception)
+            {
+                return "ERROR";
+            }
+        }
+
+        private async Task AutoReconnect()
+        {
+            var status = await this.GetClientStatus();
+            if (status != "MAIN_MENU" && status != "IN_GAME")
+            {
+                this._timer.Start();
+                return;
+            }
+
+            try
+            {
+                await this._httpClient.PostAsync(
+                    $"http://127.0.0.1:{DebugPort}/reconnect",
+                    new StringContent("serverPassword")  // only needed when a password is set in the server.cfg, otherwise pass null instead of StringContent
+                );
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public override void OnStart()
+        {
+            this._timer.Elapsed += (_, _) =>
+            {
+                _ = this.AutoReconnect();
+            };
+            
+            _ = this.AutoReconnect();
+        }
+
+        public override void OnStop()
+        {
+        }
+    }
+}
 ```
