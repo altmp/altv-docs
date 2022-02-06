@@ -42,6 +42,7 @@ update.json file contains build number, file locations and sha1 hashes.
         interfaceStr += "<div><input type='checkbox' id='voice' name='voice' value='voice'><label for='voice'>voice</label></div>";
         interfaceStr += "<div><input type='checkbox' id='csharp' name='csharp' value='csharp'><label for='csharp'>csharp-module</label></div>";
         interfaceStr += "<div><input type='checkbox' id='javascript' name='javascript' value='javascript'><label for='javascript'>js-module</label></div>";
+        interfaceStr += "<div><input type='checkbox' id='js-bytecode' name='js-bytecode' value='js-bytecode'><label for='js-bytecode'>js-bytecode-module</label></div>";
         interfaceStr += "<div><input type='checkbox' id='update' name='update' value='update'><label for='update'>update.json</label></div>";
 
         interfaceStr += "<div><button id='generate' onclick='generate()'>Generate Links</button></div>";
@@ -60,8 +61,9 @@ update.json file contains build number, file locations and sha1 hashes.
         let voice = document.getElementById("voice").checked;
         let csharp = document.getElementById("csharp").checked;
         let javascript = document.getElementById("javascript").checked;
+        let bytecodeModule = document.getElementById("js-bytecode").checked;
 
-        document.getElementById("CDN_Link_Generator-links").innerHTML = generateLinks([server, voice, csharp, javascript],branch,os,update);
+        document.getElementById("CDN_Link_Generator-links").innerHTML = generateLinks([server, voice, csharp, javascript, bytecodeModule],branch,os,update);
     }
 
     function generateLinks(selection, branchIndex, osIndex, listUpdate)
@@ -81,7 +83,11 @@ update.json file contains build number, file locations and sha1 hashes.
         if(selection[3])
             returnStr += generateJSLinks(branchIndex, osIndex, listUpdate);
 
-        if(!selection[0] && !selection[1] && !selection[2] && !selection[3])
+        if (selection[4]) {
+            returnStr += generateJSBytecodeLinks(branchIndex, osIndex, listUpdate);
+        }
+
+        if(!selection[0] && !selection[1] && !selection[2] && !selection[3] && !selection[4])
             returnStr += "You didn't select any components :(";
 
         returnStr += "<\/pre>";
@@ -160,6 +166,21 @@ update.json file contains build number, file locations and sha1 hashes.
 
         return returnStr;
     }
+
+    function generateJSBytecodeLinks(branchIndex, osIndex, listUpdate)
+    {
+        let returnStr = "";
+
+        if(listUpdate)
+            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+
+        if(osIndex == 0)
+            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/js-bytecode-module.dll</br>";
+        else
+            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libjs-bytecode-module.so</br>";
+
+        return returnStr;
+    }
 </script>
 ## Linux Server
 
@@ -178,6 +199,13 @@ JS Module
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/update.json
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.83
+>```
+
+JS Bytecode Module
+> [!div class="nohljsln"]
+>```yaml
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/update.json
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/libjs-bytecode-module.so
 >```
 
 Voice Server
@@ -222,6 +250,13 @@ JS Module
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/update.json
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/modules/js-module/js-module.dll
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/modules/js-module/libnode.dll
+>```
+
+JS Bytecode Module
+> [!div class="nohljsln"]
+>```yaml
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/update.json
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/js-bytecode-module.dll
 >```
 
 Voice Server
