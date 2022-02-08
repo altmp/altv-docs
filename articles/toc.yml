@@ -54,3 +54,5 @@
   href: connection_queue.md
 - name: Auto Reconnect
   href: auto_reconnect.md
+- name: Bytecode module
+  href: bytecode_module.md
