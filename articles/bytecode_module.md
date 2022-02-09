@@ -9,8 +9,8 @@ bytecode.
 Also, the structure of the V8 bytecode keeps changing over time and is *barely documented at all*, and there is currently no known public "tool"
 to reverse V8 bytecode into valid JavaScript code.
 
-It is recommended to *only use the bytecode module in production*. This is because the source files are missing for the client, so it is not possible
-to generate a stack trace or any other additional debug information, making debugging errors and other issues a lot harder.
+**It is recommended to *only use the bytecode module in production*. This is because the source files are missing for the client, so it is not possible
+to generate a stack trace or any other additional debug information, making debugging errors and other issues a lot harder.**
 
 ## Setting up the bytecode module
 
