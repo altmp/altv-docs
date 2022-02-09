@@ -44,11 +44,3 @@ First of all, **make sure your code runs without any errors**. If the code has a
 the module will fail to compile.
 
 If the code runs fine without the bytecode module but the module still reports an error, contact us on [Discord](https://discord.altv.mp).
-
-### The server crashes while the bytecode module is compiling files
-
-This is most often caused by using `await` inside a function that is not declared `async`.
-Unfortunately, because of a bug inside the V8 bytecode compiler, this causes a crash that can not be stopped.
-
-So if your server is crashing while compiling the files, check to see if you are using an `await` outside of an `async` function anywhere.
-
