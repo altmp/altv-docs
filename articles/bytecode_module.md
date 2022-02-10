@@ -9,14 +9,14 @@ bytecode.
 Also, the structure of the V8 bytecode keeps changing over time and is *barely documented at all*, and there is currently no known public "tool"
 to reverse V8 bytecode into valid JavaScript code.
 
-It is recommended to *only use the bytecode module in production*. This is because the source files are missing for the client, so it is not possible
-to generate a stack trace or any other additional debug information, making debugging errors and other issues a lot harder.
+**It is recommended to *only use the bytecode module in production*. This is because the source files are missing for the client, so it is not possible
+to generate a stack trace or any other additional debug information, making debugging errors and other issues a lot harder.**
 
 ## Setting up the bytecode module
 
 Setting up the bytecode module is a relatively easy process, just follow the steps below:
 
-1. Download the bytecode module, and place the downloaded `.dll` or `.so` in your `modules` directory
+1. [Download the bytecode module](#download), and place the downloaded `.dll` or `.so` in your `modules` directory
 2. Add `js-bytecode-module` to the `modules` array in the `server.cfg`
 3. *For every resource you want to use the bytecode module for* set the `client-type` in the `resource.cfg` to `jsb`
 4. Start the server
@@ -36,6 +36,13 @@ To do this just:
 
 That array accepts the same paths as the `client-files` option does, so it is possible to include a whole folder for example.
 
+## Download
+
+The module can be downloaded from the following sources:
+1. [The official alt:V downloads page](https://altv.mp/#/downloads)
+2. The CDN directly - [Windows](http://cdn.altv.mp/js-bytecode-module/release/x64_win32/js-bytecode-module.dll) / [Linux](http://cdn.altv.mp/js-bytecode-module/release/x64_linux/libjs-bytecode-module.so)
+3. [The bytecode module releases page](https://github.com/altmp/altv-js-bytecode/releases)
+
 ## Troubleshooting
 
 ### Help! I have an error saying...
@@ -44,11 +51,3 @@ First of all, **make sure your code runs without any errors**. If the code has a
 the module will fail to compile.
 
 If the code runs fine without the bytecode module but the module still reports an error, contact us on [Discord](https://discord.altv.mp).
-
-### The server crashes while the bytecode module is compiling files
-
-This is most often caused by using `await` inside a function that is not declared `async`.
-Unfortunately, because of a bug inside the V8 bytecode compiler, this causes a crash that can not be stopped.
-
-So if your server is crashing while compiling the files, check to see if you are using an `await` outside of an `async` function anywhere.
-
