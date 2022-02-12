@@ -99,6 +99,7 @@
 }
 
 .destinations .card {
+  height: 100%;
   display: flex;
   align-content: stretch;
   align-items: stretch;
@@ -127,7 +128,7 @@
 
 .destinations .card .card-content .card-description {
   margin-block-start: 0.5rem;
-  margin-block-end: 0.5rem;
+  margin-block-end: 0;
   line-height: 1.3;
 }
 
