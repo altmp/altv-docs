@@ -56,7 +56,7 @@
   padding: 6px;
   font-size: 14px;
   word-wrap: break-word;
-  border: 1px solid #202225;
+  border: 1px solid var(--search-bg-color);
 }
 
 .grid-container .grid-item .grid-item-img {
