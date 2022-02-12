@@ -4,9 +4,6 @@
 - name: Changelogs
   href: changelogs/toc.yml
   topicHref: changelogs/index.md
-- name: Getting Started
-  href: getting-started/toc.yml
-  topicHref: getting-started/index.md
 - name: FAQ
   href: faq.md
 - name: Logging
