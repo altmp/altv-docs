@@ -1,3 +1,11 @@
+:root {
+  --gray: #808080;
+  --science-blue: #055DC5;
+  --halloween-orange: #E26E2D;
+  --la-salle-green: #008736;
+  --release-stage-text-color: #FFFFFF;
+}
+
 .release-stage {
   /*display: inline-block;*/
   padding: 0.25em;
@@ -6,27 +14,27 @@
   font-size: 10px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: white;
   border-radius: 0.25em;
-  background-color: #808080;
+  background-color: var(--gray);
 }
 
 .release-stage.alpha {
-  background-color: #055DC5;
+  background-color: var(--science-blue);
 }
 .release-stage.alpha::before {
   content: "alpha";
 }
 
 .release-stage.beta {
-  background-color: #E26E2D;
+  background-color: var(--halloween-orange);
 }
 .release-stage.beta::before {
   content: "beta";
 }
 
 .release-stage.public {
-  background-color: #008736;
+  background-color: var(--la-salle-green);
 }
 .release-stage.public::before {
   content: "public";
