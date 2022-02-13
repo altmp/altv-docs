@@ -1,5 +1,8 @@
 # 9.0-Release
 
+> [!WARNING]
+> This update is the latest.
+
 > [!TIP]
 > This update was released on 04.02.2022
 

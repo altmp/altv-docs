@@ -3,6 +3,9 @@
 > [!WARNING]
 > This update isn't released yet.
 
+> [!TIP]
+> This update was released on 00.00.0000
+
 > [!CAUTION]
 > This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
 
