@@ -224,7 +224,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DocFx.Plugins.ExtractSearchIndex
-          tag: v1.0.4
+          tag: v1.0.5
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
         run: |
@@ -254,7 +254,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DiscordFx
-          tag: v0.6.21
+          tag: v0.6.22
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFx package
         run: |
