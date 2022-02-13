@@ -1,7 +1,7 @@
-- name: Release 10.0
-  href: 10_0.md
-- name: Release 9.0
-  href: 9_0.md
+- name: Upcoming release
+  href: upcoming.md
+- name: Latest release
+  href: index.md
 - name: Release 8.0
   href: 8_0.md
 - name: Release 7.0
