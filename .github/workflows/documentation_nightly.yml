@@ -386,7 +386,6 @@ jobs:
           external_repository: altmp/altv-docs-nightly
           publish_dir: ./docs/_site
           full_commit_message: Deploying to gh-pages from altm/altv-docs@${{ github.sha }} 🚀
-          force_orphan: true
       - name: Post Download artifacts
         if: ${{ always() }}
         uses: geekyeggo/delete-artifact@v1
