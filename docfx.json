@@ -129,10 +129,10 @@
           "boost": 100
         },
         "title": {
-          "boost": 25
+          "boost": 50
         },
         "keyword": {
-          "boost": 50
+          "boost": 25
         },
         "lang": {
           "boost": 75
