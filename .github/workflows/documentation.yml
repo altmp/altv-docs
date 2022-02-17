@@ -23,6 +23,7 @@ jobs:
           }
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           continue-after-seconds: 180
           poll-interval-seconds: 10
@@ -71,6 +72,7 @@ jobs:
           }
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           continue-after-seconds: 180
           poll-interval-seconds: 10
@@ -116,6 +118,7 @@ jobs:
           }
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           continue-after-seconds: 180
           poll-interval-seconds: 10
@@ -146,6 +149,7 @@ jobs:
           }
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           continue-after-seconds: 180
           poll-interval-seconds: 10
