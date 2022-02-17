@@ -24,6 +24,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: js
           timeout: 180000
           delay: 30000
       - name: Setup Node.js
@@ -72,6 +73,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: cs
           timeout: 180000
           delay: 30000
       - name: Checkout repository
@@ -117,6 +119,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: sdk
           timeout: 180000
           delay: 30000
       - name: Checkout repository
@@ -147,6 +150,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: gta
           timeout: 180000
           delay: 30000
       - name: Checkout repository
@@ -183,6 +187,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: docs
           timeout: 180000
           delay: 30000
       - name: Setup Node.js
@@ -383,6 +388,7 @@ jobs:
       - name: Concurrency limiter
         uses: devkeydet/action-environment-queue@v1
         with:
+          environment: deploy
           timeout: 180000
           delay: 30000
       - name: Checkout repository
