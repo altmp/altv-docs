@@ -3,12 +3,12 @@ on:
   push:
     branches:
       - develop
-  repository_dispatch:
-    types:
-      - Update JS documentation
-      - Update C# documentation
-      - Update SDK documentation
-      - Update GTA documentation
+  # repository_dispatch:
+  #   types:
+  #     - Update JS documentation
+  #     - Update C# documentation
+  #     - Update SDK documentation
+  #     - Update GTA documentation
 jobs:
   js:
     runs-on: windows-2019
