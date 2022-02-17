@@ -24,8 +24,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Setup Node.js
         uses: actions/setup-node@v1
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -72,8 +72,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -117,8 +117,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -147,8 +147,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -183,8 +183,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -383,8 +383,8 @@ jobs:
       - name: Concurrency limiter
         uses: softprops/turnstyle@v1
         with:
-          continue-after-seconds: 180000
-          poll-interval-seconds: 30000
+          continue-after-seconds: 180
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
