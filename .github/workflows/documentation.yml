@@ -408,10 +408,16 @@ jobs:
       - name: Copy assets to output site
         run: |
           DOCFX_CFG=$(cat "./docfx.json")
-          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" -exec bash -c '
-          DEST=$(echo '\'$DOCFX_CFG\'' | jq -r --arg path "$1" ".build .resource[] | select(.src==\$path) | .dest")
-          mv "$1" "$DEST" -f
-          ' _ {} \;
+          mkdir -p "altv-docs-assets/altv-docs-gta"
+          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" -print0 | while read -d $'\0' file
+          do
+            DEST=$(echo "$DOCFX_CFG" | jq -r --arg path "$file" '.build .resource[] | select(.src==$path) | .dest')
+            if [ -n "$DEST" ]; then
+              mv "$1" "$DEST"
+            else
+              echo "Destination path not found for \"$file\""
+            fi
+          done
           ls -Rl
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
