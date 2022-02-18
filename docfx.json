@@ -144,8 +144,8 @@
         "altv-docs-gta/**": ["js", "csharp"],
         "altv-types/**": ["js"],
         "coreclr-module/**": ["csharp"],
-        "cpp-sdk/**": ["cpp"],
-      },
+        "cpp-sdk/**": ["cpp"]
+      }
     },
     "template": [
       "default",
