@@ -404,26 +404,26 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: ./docs/_site
+          path: ./_site
       - name: Copy assets to output site
         run: |
           DOCFX_CFG=$(cat "./docfx.json")
-          mkdir -p "altv-docs-assets/altv-docs-gta"
-          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" -print0 | while read -d $'\0' file
+          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" ! -name '.*' -print0 | while read -d $'\0' file
           do
             DEST=$(echo "$DOCFX_CFG" | jq -r --arg path "$file" '.build .resource[] | select(.src==$path) | .dest')
             if [ -n "$DEST" ]; then
-              mv "$1" "$DEST"
+              echo "Destination path \"$DEST\" found for \"$file\""
+              mv "$file" "./_site/$DEST"
             else
               echo "Destination path not found for \"$file\""
             fi
           done
-          ls -Rl
+          ls -Rl ./_site/*/images
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_site
+          publish_dir: ./_site
           cname: docs.altv.mp
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           force_orphan: true
