@@ -413,7 +413,7 @@ jobs:
             DEST=$(echo "$DOCFX_CFG" | jq -r --arg path "$file" '.build .resource[] | select(.src==$path) | .dest')
             if [ -n "$DEST" ]; then
               echo "Destination path \"$DEST\" found for \"$file\""
-              mv $file/* "./_site/$DEST"
+              mv -f $file/* "./_site/$DEST"
             else
               echo "Destination path not found for \"$file\""
             fi
