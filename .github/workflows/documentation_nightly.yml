@@ -413,7 +413,7 @@ jobs:
           path: "."
       - name: Prepare artifact
         run: |
-          Expand-Archive -Path "./site.zip" -DestinationPath "."
+          unzip "./site.zip"
       - name: Copy assets to output site
         run: |
           shopt -s dotglob # Obligatory
