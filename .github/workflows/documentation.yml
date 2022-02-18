@@ -407,6 +407,7 @@ jobs:
           path: ./_site
       - name: Copy assets to output site
         run: |
+          shopt -s dotglob # Obligatory
           DOCFX_CFG=$(cat "./docfx.json")
           find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" ! -name '.*' -print0 | while read -d $'\0' file
           do
@@ -414,10 +415,11 @@ jobs:
             if [ -n "$DEST" ]; then
               echo "Destination path \"$DEST\" found for \"$file\""
               for dir in "$file"/*; do
-                if [ ! -d "$dir" ]; then
-                  mkdir "./_site/$DEST/"$(basename "$dir")
+                dirDest="./_site/$DEST/"$(basename "$dir")
+                if [ ! -d "$dirDest" ]; then
+                  mkdir "$dirDest"
                 fi
-                mv "$dir"/* "./_site/$DEST"$(basename "$dir")
+                mv "$dir"/* "$dirDest"
               done
             else
               echo "Destination path not found for \"$file\""
