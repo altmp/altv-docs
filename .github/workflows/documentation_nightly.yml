@@ -374,13 +374,16 @@ jobs:
           }
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
+      - name: Prepare artifact
+        run: |
+          Remove-Item -Path "./_site/gta/images" -Recurse -Force
+          Compress-Archive -Path "./_site/" -DestinationPath "./site.zip"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2.2.4
         with:
           name: site
           path: |
-            ./_site/
-            !./_site/gta/images
+            ./site.zip
   deploy:
     name: Deploy GitHub Pages
     runs-on: ubuntu-20.04
@@ -403,11 +406,14 @@ jobs:
           persist-credentials: false
           repository: altmp/altv-docs-assets
           path: ./altv-docs-assets
-      - name: Download artifacts
+      - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: ./_site
+          path: "."
+      - name: Prepare artifact
+        run: |
+          Expand-Archive -Path "./site.zip" -DestinationPath "."
       - name: Copy assets to output site
         run: |
           shopt -s dotglob # Obligatory
