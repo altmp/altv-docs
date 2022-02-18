@@ -3,9 +3,6 @@
 > [!WARNING]
 > This update isn't released yet.
 
-> [!TIP]
-> This update was released on 00.00.0000
-
 > [!CAUTION]
 > This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
 
@@ -49,6 +46,7 @@
 > - getServerConfig method
 > - optimized synced meta data
 > - enable xenon mod when setting headlight color
+> - support for resources in subfolders
 > ```
 
 ### Fixed
@@ -57,6 +55,7 @@
 > ```yaml
 > - blip rotation setter
 > - vehicles created on resource start will be missing in resource start
+> - empty resources got sended to client
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
@@ -72,4 +71,5 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - resource class
+> - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
 > ```
