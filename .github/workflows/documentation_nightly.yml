@@ -21,6 +21,12 @@ jobs:
             Write-Output "::set-output name=skip::true"
             Write-Output "Step skipped."
           }
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   if: ${{ steps.cond-run.outputs.skip != 'true' }}
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Setup Node.js
         uses: actions/setup-node@v1
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -64,6 +70,12 @@ jobs:
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   if: ${{ steps.cond-run.outputs.skip != 'true' }}
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -104,6 +116,12 @@ jobs:
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   if: ${{ steps.cond-run.outputs.skip != 'true' }}
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -129,6 +147,12 @@ jobs:
             Write-Output "::set-output name=skip::true"
             Write-Output "Step skipped."
           }
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   if: ${{ steps.cond-run.outputs.skip != 'true' }}
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -160,6 +184,11 @@ jobs:
       - gta
     if: "contains(github.event.head_commit.message, 'Update documentation') || startsWith(github.event.action, 'Update')"
     steps:
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -355,6 +384,11 @@ jobs:
     needs:
       - docs
     steps:
+      # - name: Concurrency limiter
+      #   uses: softprops/turnstyle@v1
+      #   with:
+      #     continue-after-seconds: 480
+      #     poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -395,9 +429,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.NIGHTLY_PRIVATE_KEY }}
-          external_repository: altmp/altv-docs-nightly
           publish_dir: ./_site
-          full_commit_message: Deploying to gh-pages from altm/altv-docs@${{ github.sha }} 🚀
+          external_repository: altmp/altv-docs-nightly
+          full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           force_orphan: false
       - name: Post Download artifacts
         if: ${{ always() }}
