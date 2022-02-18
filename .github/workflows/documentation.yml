@@ -432,7 +432,7 @@ jobs:
           publish_dir: ./_site
           cname: docs.altv.mp
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
-          force_orphan: true
+          force_orphan: false
       - name: Post Download artifacts
         if: ${{ always() }}
         uses: geekyeggo/delete-artifact@v1
