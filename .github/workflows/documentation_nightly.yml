@@ -449,6 +449,8 @@ jobs:
         with:
           name: site
       - name: Download previous job artifacts
+        uses: Lhoerion/actions-purge-artifacts@master
+      - name: Download previous job artifacts
         uses: actions/github-script@v4
         with:
           result-encoding: json
