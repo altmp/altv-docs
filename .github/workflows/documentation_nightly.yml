@@ -369,21 +369,34 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
-          path: ./docs/_site
+          path: ./_site
       - name: Copy assets to output site
         run: |
+          shopt -s dotglob # Obligatory
           DOCFX_CFG=$(cat "./docfx.json")
-          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" -exec bash -c '
-            DEST=$(echo '\'$DOCFX_CFG\'' | jq -r --arg path "$1" ".build .resource[] | select(.src==\$path) | .dest")
-            mv "$1" "$DEST" -f
-          ' _ {} \;
-          ls -Rl
+          find "altv-docs-assets/" -mindepth 1 -maxdepth 1 -type "d" ! -name '.*' -print0 | while read -d $'\0' file
+          do
+            DEST=$(echo "$DOCFX_CFG" | jq -r --arg path "$file" '.build .resource[] | select(.src==$path) | .dest')
+            if [ -n "$DEST" ]; then
+              echo "Destination path \"$DEST\" found for \"$file\""
+              for dir in "$file"/*; do
+                dirDest="./_site/$DEST/"$(basename "$dir")
+                if [ ! -d "$dirDest" ]; then
+                  mkdir "$dirDest"
+                fi
+                mv "$dir"/* "$dirDest"
+              done
+            else
+              echo "Destination path not found for \"$file\""
+            fi
+          done
+          ls -Rl ./_site/*/images
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.NIGHTLY_PRIVATE_KEY }}
           external_repository: altmp/altv-docs-nightly
-          publish_dir: ./docs/_site
+          publish_dir: ./_site
           full_commit_message: Deploying to gh-pages from altm/altv-docs@${{ github.sha }} 🚀
           force_orphan: false
       - name: Post Download artifacts
