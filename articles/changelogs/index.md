@@ -20,7 +20,10 @@
 > - 9.4:
 >    - Fixed bytecode related issues
 > - 9.5:
->    - fixed ENB compatibility
+>    - Fixed ENB compatibility
+> - 9.6:
+>    - Added cloth validation for overwritten gta dlc's, custom clothes & props
+>    - Reduced AttachmentExtension pool & extendet AnimStore pool
 > ```
 
 ## Client
