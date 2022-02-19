@@ -47,6 +47,8 @@
 > - optimized synced meta data
 > - enable xenon mod when setting headlight color
 > - support for resources in subfolders
+> - error message when binding to invalid host address
+> - serverStarted event
 > ```
 
 ### Fixed
@@ -56,6 +58,7 @@
 > - blip rotation setter
 > - vehicles created on resource start will be missing in resource start
 > - empty resources got sended to client
+> - last command being executed when pressed enter
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
