@@ -450,6 +450,11 @@ jobs:
           name: site
       - name: Download previous job artifacts
         uses: Lhoerion/actions-purge-artifacts@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          expire_strategy: 1
+          artifact_name: |
+            github-pages
       - name: Download previous job artifacts
         uses: actions/github-script@v4
         with:
