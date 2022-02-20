@@ -41,7 +41,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
           path: ./altv-types
       - name: Install dependencies
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -85,7 +85,7 @@ jobs:
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'dev' }}
           path: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
@@ -131,7 +131,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/cpp-sdk
-          ref: ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'docs' }}
           path: ./cpp-sdk
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -162,7 +162,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
-          ref: ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
           path: ./altv-docs-gta
       - name: Install dependencies
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
