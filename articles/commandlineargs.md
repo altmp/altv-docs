@@ -32,14 +32,3 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 |   start [resourcename]    |   Starts a server resource by name    |
 |   stop [resourcename]     |   Stops a server resource by name     |
 |   restart [resourcename]  |   Restarts a server resource by name  |
-
-## Client Commands
-
-| Key       |             Description             |
-| ------    | :-------------------------------: |
-|   netgraph 0/1            |   Shows a netgraph on the minimap for fps and network informations    |
-|   reconnect [password]    |   Reconnect to a server if debug is true                              |
-|   quit                    |   Closing the game                                                    |
-|   heap                    |   Shows V8 Engine allocation information                              |
-|   timers                  |   Shows how many timers a resource is using                           |
-|   debugvehs               |   Shows streamed vehicles information                                 |
