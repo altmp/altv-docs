@@ -17,6 +17,9 @@
 > - loading rml document from string
 > - alt.setMinimapComponentPosition
 > - alt.setMinimapIsRectangle
+> - branch validation to launcher config
+> - alt.getScreenResolution
+> - windowResolutionChange event
 > ```
 
 ### Fixed
@@ -28,6 +31,8 @@
 > - serverside blip attached to entity is not deleted with entity
 > - serverside created blip API category setter doesent update
 > - resolution change did not apply for rmlui
+> - webview visible setter before view is initialized didn't worked
+> - webview size and pos parameter in constructor
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -49,6 +54,7 @@
 > - support for resources in subfolders
 > - error message when binding to invalid host address
 > - serverStarted event
+> - boat anchor setter & getter
 > ```
 
 ### Fixed
@@ -59,6 +65,7 @@
 > - vehicles created on resource start will be missing in resource start
 > - empty resources got sended to client
 > - last command being executed when pressed enter
+> - checkpoint destroy
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
