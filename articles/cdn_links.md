@@ -101,15 +101,16 @@ update.json file contains build number, file locations and sha1 hashes.
 
         if(listUpdate)
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>"
+            returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/update.json</br>"
 
         if(osIndex == 0)
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
         else
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
 
-        returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/data/vehmodels.bin</br>";
-        returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/data/vehmods.bin</br>"
-        returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/data/clothes.bin</br>"
+        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
+        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
+        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
 
         return returnStr;
     }
@@ -220,9 +221,10 @@ Server
 >```yaml
 >https://cdn.altv.mp/server/${BRANCH}/x64_linux/update.json
 >https://cdn.altv.mp/server/${BRANCH}/x64_linux/altv-server
->https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/vehmodels.bin
->https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/vehmods.bin
->https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/clothes.bin
+>https://cdn.altv.mp/data/${BRANCH}/update.json
+>https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
 >```
 
 Other Stuff
@@ -271,9 +273,10 @@ Server
 >```yaml
 >https://cdn.altv.mp/server/${BRANCH}/x64_win32/update.json
 >https://cdn.altv.mp/server/${BRANCH}/x64_win32/altv-server.exe
->https://cdn.altv.mp/server/${BRANCH}/x64_win32/data/vehmodels.bin
->https://cdn.altv.mp/server/${BRANCH}/x64_win32/data/vehmods.bin
->https://cdn.altv.mp/server/${BRANCH}/x64_win32/data/clothes.bin
+>https://cdn.altv.mp/data/${BRANCH}/update.json
+>https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
 >```
 
 Other Stuff
