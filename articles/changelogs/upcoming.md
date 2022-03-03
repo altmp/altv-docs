@@ -20,6 +20,7 @@
 > - branch validation to launcher config
 > - alt.getScreenResolution
 > - windowResolutionChange event
+> - webview size and pos getter & setter
 > ```
 
 ### Fixed
@@ -55,6 +56,7 @@
 > - error message when binding to invalid host address
 > - serverStarted event
 > - boat anchor setter & getter
+> - node inspector for js module via server.cfg entry (see https://docs.altv.mp/articles/configs/server.html for references)
 > ```
 
 ### Fixed
