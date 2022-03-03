@@ -42,6 +42,16 @@ modules: [
     "js-module",
     "csharp-module"
 ]
+# Settings related to js-module
+js-module: {
+    # Enable node.js inspector
+    inspector: {
+        # Define inspector ip
+        host: 127.0.0.1,
+        # Define inspector port
+        port: 9229
+    }
+}
 # An array of all resources that should be loaded
 resources: [
     "myResource"
