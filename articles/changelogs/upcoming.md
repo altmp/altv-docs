@@ -57,6 +57,7 @@
 > - serverStarted event
 > - boat anchor setter & getter
 > - node inspector for js module via server.cfg entry (see https://docs.altv.mp/articles/configs/server.html for references)
+> - source-maps, custom-loader, heap-profiler server.cfg entry for js module
 > ```
 
 ### Fixed

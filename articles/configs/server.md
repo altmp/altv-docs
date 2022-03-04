@@ -50,7 +50,13 @@ js-module: {
         host: 127.0.0.1,
         # Define inspector port
         port: 9229
-    }
+    },
+    # https://nodejs.org/api/cli.html#--enable-source-maps
+    source-maps: true,
+    # https://nodejs.org/api/cli.html#--heap-prof
+    heap-profiler: true,
+    # https://nodejs.org/api/cli.html#--experimental-loadermodule
+    custom-loader: "module"
 }
 # An array of all resources that should be loaded
 resources: [
