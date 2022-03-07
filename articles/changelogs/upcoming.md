@@ -56,8 +56,8 @@
 > - error message when binding to invalid host address
 > - serverStarted event
 > - boat anchor setter & getter
-> - node inspector for js module via server.cfg entry (see https://docs.altv.mp/articles/configs/server.html for references)
-> - source-maps, custom-loader, heap-profiler server.cfg entry for js module
+> - node inspector, source-maps, custom-loader, heap-profiler, profiler server.cfg entry for js module (see https://docs.altv.mp/articles/configs/server.html for references)
+> - props & clothes setters returns a bool now
 > ```
 
 ### Fixed

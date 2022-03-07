@@ -56,7 +56,9 @@ js-module: {
     # https://nodejs.org/api/cli.html#--heap-prof
     heap-profiler: true,
     # https://nodejs.org/api/cli.html#--experimental-loadermodule
-    custom-loader: "module"
+    custom-loader: "module",
+    # Enable profiler
+    profiler: true,
 }
 # An array of all resources that should be loaded
 resources: [
