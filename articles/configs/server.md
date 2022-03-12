@@ -55,10 +55,14 @@ js-module: {
     source-maps: true,
     # https://nodejs.org/api/cli.html#--heap-prof
     heap-profiler: true,
-    # https://nodejs.org/api/cli.html#--experimental-loadermodule
-    custom-loader: "module",
     # Enable profiler
     profiler: true,
+    # https://nodejs.org/api/cli.html#--experimental-fetch
+    global-fetch: true,
+    # https://nodejs.org/api/cli.html#--experimental-global-webcrypto
+    global-webcrypto: true,
+    # https://nodejs.org/api/cli.html#--experimental-network-imports
+    network-imports: true
 }
 # An array of all resources that should be loaded
 resources: [
