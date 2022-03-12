@@ -158,7 +158,7 @@ update.json file contains build number, file locations and sha1 hashes.
         if(osIndex == 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.83</br>";
+            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
 
         if(osIndex == 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
@@ -199,7 +199,7 @@ JS Module
 >```yaml
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/update.json
 >https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
->https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.83
+>https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.102
 >```
 
 JS Bytecode Module
