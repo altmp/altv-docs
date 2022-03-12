@@ -56,7 +56,7 @@
 > - error message when binding to invalid host address
 > - serverStarted event
 > - boat anchor setter & getter
-> - node inspector, source-maps, custom-loader, heap-profiler, profiler server.cfg entry for js module (see https://docs.altv.mp/articles/configs/server.html for references)
+> - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
 > - props & clothes setters returns a bool now
 > ```
 
@@ -85,4 +85,11 @@
 > ```yaml
 > - resource class
 > - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
+> ```
+
+## JS Module
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Updated nodeJS to v17.7.0
 > ```
