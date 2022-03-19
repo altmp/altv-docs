@@ -18,33 +18,33 @@ import alt from "alt-server";
 
 const DEBUG_PORT = 9223;
 
-async function getClientStatus() {
+async function getLocalClientStatus() {
     try {
-        const response = await fetch(`http://127.0.0.1:${DEBUG_PORT}/status`);
-        return Promise.resolve(response.text());
+        const response = await fetch(`http://127.0.0.1:${this.DEBUG_PORT}/status`);
+        return response.text();
     } catch (error) {
-        return Promise.resolve("ERROR");
+        return "ERROR";
     }
 }
 
-async function autoReconnect()  {
-    const status = await getClientStatus();
+async function connectLocalClient() {
+    const status = await getLocalClientStatus();
+    if (status === "ERROR") return;
     if (status !== "MAIN_MENU" && status !== "IN_GAME") {
-        setTimeout(autoReconnect, 2500);
-        return;
+        setTimeout(() => this.connectLocalClient(), 2500);
     }
 
     try {
         await fetch(`http://127.0.0.1:${DEBUG_PORT}/reconnect`, {
             method: "POST",
-            body: "serverPassword" // only needed when a password is set in the server.cfg
+            body: "serverPassword", // only needed when a password is set in the server.cfg
         });
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 }
 
-autoReconnect();
+connectLocalClient();
 ```
 
 # [Typescript](#tab/tabid-2)
@@ -53,37 +53,43 @@ autoReconnect();
 import fetch from "node-fetch";
 import alt from "alt-server";
 
-type STATUS = "LOADING" | "MAIN_MENU" | "DOWNLOADING_FILES" | "CONNECTING" | "IN_GAME" | "DISCONNECTING" | "ERROR";
+type STATUS =
+    | "LOADING"
+    | "MAIN_MENU"
+    | "DOWNLOADING_FILES"
+    | "CONNECTING"
+    | "IN_GAME"
+    | "DISCONNECTING"
+    | "ERROR";
 const DEBUG_PORT = 9223;
 
-async function getClientStatus(): Promise<STATUS> {
+async function getLocalClientStatus(): Promise<STATUS> {
     try {
         const response = await fetch(`http://127.0.0.1:${DEBUG_PORT}/status`);
-        const body = response.text() as unknown as STATUS;
-        return Promise.resolve(body);
+        return response.text() as unknown as STATUS;
     } catch (error) {
-        return Promise.resolve("ERROR");
+        return "ERROR";
     }
 }
 
-async function autoReconnect(): Promise<void> {
-    const status = await getClientStatus();
+async function connectLocalClient(): Promise<void> {
+    const status = await getLocalClientStatus();
+    if (status === "ERROR") return;
     if (status !== "MAIN_MENU" && status !== "IN_GAME") {
-        setTimeout(autoReconnect, 2500);
-        return;
+        setTimeout(() => this.connectLocalClient(), 2500);
     }
 
     try {
         await fetch(`http://127.0.0.1:${DEBUG_PORT}/reconnect`, {
             method: "POST",
-            body: "serverPassword" // only needed when a password is set in the server.cfg
+            body: "serverPassword", // only needed when a password is set in the server.cfg
         });
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 }
 
-autoReconnect();
+connectLocalClient();
 ```
 
 # [C#](#tab/tabid-3)
@@ -101,7 +107,7 @@ namespace Example
         private readonly HttpClient _httpClient = new();
         private readonly Timer _timer = new(2500);
 
-        private async Task<string> GetClientStatus()
+        private async Task<string> GetLocalClientStatus()
         {
             try
             {
@@ -114,9 +120,10 @@ namespace Example
             }
         }
 
-        private async Task AutoReconnect()
+        private async Task ConnectLocalClient()
         {
-            var status = await this.GetClientStatus();
+            var status = await this.GetLocalClientStatus();
+            if (status == "ERROR") return;
             if (status != "MAIN_MENU" && status != "IN_GAME")
             {
                 this._timer.Start();
@@ -140,10 +147,10 @@ namespace Example
         {
             this._timer.Elapsed += (_, _) =>
             {
-                _ = this.AutoReconnect();
+                _ = this.ConnectLocalClient();
             };
-            
-            _ = this.AutoReconnect();
+
+            _ = this.ConnectLocalClient();
         }
 
         public override void OnStop()
