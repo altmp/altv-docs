@@ -21,6 +21,7 @@
 > - alt.getScreenResolution
 > - windowResolutionChange event
 > - webview size and pos getter & setter
+> - alt.utils class
 > ```
 
 ### Fixed
@@ -34,6 +35,7 @@
 > - resolution change did not apply for rmlui
 > - webview visible setter before view is initialized didn't worked
 > - webview size and pos parameter in constructor
+> - pixelation in rmlui when resolution changes
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -58,6 +60,7 @@
 > - boat anchor setter & getter
 > - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
 > - props & clothes setters returns a bool now
+> - collision & frozen setter, getter
 > ```
 
 ### Fixed
@@ -85,6 +88,7 @@
 > ```yaml
 > - resource class
 > - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
+> - stringToSHA256 method
 > ```
 
 ## JS Module
