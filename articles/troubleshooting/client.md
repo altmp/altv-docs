@@ -83,11 +83,11 @@ If you are stuck under the world after launching alt:V or see a grey world (<a h
 5. More detailed description can be found <a href="https://www.amd.com/en/support/kb/faq/dh-017">here</a>
 
 #### Webview not rendering on Linux
-If Webbview is not rendering in Linux, you might be missing required libraries in the `/cef` folder. To allow CEF to load properly you must copy the missing libraries from `/libs` to `/cef`. See below a list of files that need to be copied for CEF to work.
+If Webview is not rendering in Linux, you might be missing required libraries in the `/cef` folder. To allow CEF to load properly you must copy the missing libraries from `/libs` to `/cef`. See below a list of files that need to be copied for CEF to work.
 
 (Tested using [Wine-GE](https://github.com/GloriousEggroll/wine-ge-custom/releases) and [Lutris](https://lutris.net/) with GTA:V downloaded from Windows version of Steam)
 
-##### Files to be Copied
+##### Files to be copied into `/cef` directory
 
 -   libcef.dll
 -   icudtl.dat
