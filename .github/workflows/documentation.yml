@@ -283,7 +283,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Lhoerion/DiscordFx
-          tag: v0.6.22
+          tag: v0.6.23
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFx package
         run: |
