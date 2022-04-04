@@ -22,6 +22,8 @@
 > - windowResolutionChange event
 > - webview size and pos getter & setter
 > - alt.utils class
+> - isRemote getter for blips
+> - increased 2d volume of sound api
 > ```
 
 ### Fixed
@@ -72,6 +74,7 @@
 > - empty resources got sended to client
 > - last command being executed when pressed enter
 > - checkpoint destroy
+> - utf-8 with BOM destroyed server.cfg
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
