@@ -37,35 +37,35 @@ $requiredPackages=[Ordered]@{
         "name"="DocFx";
     };
     "docfx-plugins-typescriptreference.zip"=@{
-        "repo"="Lhoerion/DocFx.Plugins.TypeScriptReference";
+        "repo"="Unnvaldr/DocFx.Plugins.TypeScriptReference";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-typescriptreference/";
         "dest"="./templates/";
         "name"="DocFx TypeScriptReference";
     };
     "docfx-plugins-addimagemodal.zip"=@{
-        "repo"="Lhoerion/DocFx.Plugins.AddImageModal";
+        "repo"="Unnvaldr/DocFx.Plugins.AddImageModal";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-addimagemodal/";
         "dest"="./templates/";
         "name"="DocFx AddImageModal";
     };
     "docfx-plugins-extractsearchindex.zip"=@{
-        "repo"="Lhoerion/DocFx.Plugins.ExtractSearchIndex";
+        "repo"="Unnvaldr/DocFx.Plugins.ExtractSearchIndex";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-extractsearchindex/";
         "dest"="./templates/";
         "name"="DocFx ExtractSearchIndex";
     };
     "docfx-plugins-extractarticleaffix.zip"=@{
-        "repo"="Lhoerion/DocFx.Plugins.ExtractArticleAffix";
+        "repo"="Unnvaldr/DocFx.Plugins.ExtractArticleAffix";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-extractarticleaffix/";
         "dest"="./templates/";
         "name"="DocFx ExtractArticleAffix";
     };
     "docfx-tmpls-discordfx.zip"=@{
-        "repo"="Lhoerion/DiscordFx";
+        "repo"="Unnvaldr/DiscordFx";
         "version"=$null;
         "predicate"="./templates/discordfx/";
         "dest"="./templates/";
