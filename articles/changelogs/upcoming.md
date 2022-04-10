@@ -63,6 +63,8 @@
 > - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
 > - props & clothes setters returns a bool now
 > - collision & frozen setter, getter
+> - don't disable props when inside a bike, helicopter, submarine
+> - cancelable requestControl event
 > ```
 
 ### Fixed
