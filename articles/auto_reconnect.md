@@ -14,24 +14,25 @@ It is important to note that you can also send the post request when you want, m
 
 ```js
 import fetch from "node-fetch";
-import alt from "alt-server";
 
+const RETRY_DELAY = 2500;
 const DEBUG_PORT = 9223;
 
 async function getLocalClientStatus() {
     try {
-        const response = await fetch(`http://127.0.0.1:${this.DEBUG_PORT}/status`);
+        const response = await fetch(`http://127.0.0.1:${DEBUG_PORT}/status`);
         return response.text();
     } catch (error) {
-        return "ERROR";
+        return null;
     }
 }
 
 async function connectLocalClient() {
     const status = await getLocalClientStatus();
-    if (status === "ERROR") return;
+    if (status === null) return;
+
     if (status !== "MAIN_MENU" && status !== "IN_GAME") {
-        setTimeout(() => this.connectLocalClient(), 2500);
+        setTimeout(() => connectLocalClient(), RETRY_DELAY);
     }
 
     try {
@@ -51,32 +52,34 @@ connectLocalClient();
 
 ```ts
 import fetch from "node-fetch";
-import alt from "alt-server";
 
-type STATUS =
-    | "LOADING"
-    | "MAIN_MENU"
-    | "DOWNLOADING_FILES"
-    | "CONNECTING"
-    | "IN_GAME"
-    | "DISCONNECTING"
-    | "ERROR";
+const enum STATUS {
+    LOADING = "LOADING",
+    MAIN_MENU = "MAIN_MENU",
+    DOWNLOADING_FILES = "DOWNLOADING_FILES",
+    CONNECTING = "CONNECTING",
+    IN_GAME = "IN_GAME",
+    DISCONNECTING = "DISCONNECTING",
+}
+
+const RETRY_DELAY = 2500;
 const DEBUG_PORT = 9223;
 
-async function getLocalClientStatus(): Promise<STATUS> {
+async function getLocalClientStatus(): Promise<STATUS | null> {
     try {
         const response = await fetch(`http://127.0.0.1:${DEBUG_PORT}/status`);
         return response.text() as unknown as STATUS;
     } catch (error) {
-        return "ERROR";
+        return null;
     }
 }
 
 async function connectLocalClient(): Promise<void> {
     const status = await getLocalClientStatus();
-    if (status === "ERROR") return;
-    if (status !== "MAIN_MENU" && status !== "IN_GAME") {
-        setTimeout(() => this.connectLocalClient(), 2500);
+    if (status === null) return;
+
+    if (status !== STATUS.MAIN_MENU && status !== STATUS.IN_GAME) {
+        setTimeout(() => connectLocalClient(), RETRY_DELAY);
     }
 
     try {
