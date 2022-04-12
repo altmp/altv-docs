@@ -24,6 +24,10 @@
 > - 9.6:
 >    - Added cloth validation for overwritten gta dlc's, custom clothes & props
 >    - Reduced AttachmentExtension pool & extendet AnimStore pool
+> - 9.7:
+>    - Add support for latest Rockstar Launcher Update
+> - 9.8:
+>    - alt.isKeyDown returned true when key was pressed but game not focused
 > ```
 
 ## Client

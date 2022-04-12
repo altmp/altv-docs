@@ -21,6 +21,9 @@
 > - alt.getScreenResolution
 > - windowResolutionChange event
 > - webview size and pos getter & setter
+> - alt.utils class
+> - isRemote getter for blips
+> - increased 2d volume of sound api
 > ```
 
 ### Fixed
@@ -34,6 +37,7 @@
 > - resolution change did not apply for rmlui
 > - webview visible setter before view is initialized didn't worked
 > - webview size and pos parameter in constructor
+> - pixelation in rmlui when resolution changes
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -58,6 +62,9 @@
 > - boat anchor setter & getter
 > - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
 > - props & clothes setters returns a bool now
+> - collision & frozen setter, getter
+> - don't disable props when inside a bike, helicopter, submarine
+> - cancelable requestControl event
 > ```
 
 ### Fixed
@@ -69,6 +76,7 @@
 > - empty resources got sended to client
 > - last command being executed when pressed enter
 > - checkpoint destroy
+> - utf-8 with BOM destroyed server.cfg
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
@@ -85,6 +93,7 @@
 > ```yaml
 > - resource class
 > - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
+> - stringToSHA256 method
 > ```
 
 ## JS Module
