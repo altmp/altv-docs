@@ -19,6 +19,9 @@ update.json file contains build number, file locations and sha1 hashes.
 
     document.getElementById("CDN_Link_Generator-interface").innerHTML = generateInterface();
 
+    /**
+     * @returns {string}
+     */
     function generateInterface()
     {
         let interfaceStr = "";
@@ -52,6 +55,9 @@ update.json file contains build number, file locations and sha1 hashes.
         return interfaceStr;
     }
 
+    /**
+     * @returns {void}
+     */
     function generate()
     {
         let branch = Number.parseInt(document.getElementById("branch").value, 10);
@@ -66,6 +72,13 @@ update.json file contains build number, file locations and sha1 hashes.
         document.getElementById("CDN_Link_Generator-links").innerHTML = generateLinks([server, voice, csharp, javascript, bytecodeModule],branch,os,update);
     }
 
+    /**
+     * @param {boolean[]} selection
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateLinks(selection, branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -95,6 +108,12 @@ update.json file contains build number, file locations and sha1 hashes.
         return returnStr;
     }
 
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateServerLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -115,6 +134,12 @@ update.json file contains build number, file locations and sha1 hashes.
         return returnStr;
     }
 
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateVoiceServerLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -130,6 +155,12 @@ update.json file contains build number, file locations and sha1 hashes.
         return returnStr;
     }
 
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateCSLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -148,6 +179,12 @@ update.json file contains build number, file locations and sha1 hashes.
         return returnStr;
     }
 
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateJSLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -170,6 +207,12 @@ update.json file contains build number, file locations and sha1 hashes.
         return returnStr;
     }
 
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateJSBytecodeLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
