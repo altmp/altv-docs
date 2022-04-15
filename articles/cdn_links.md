@@ -13,6 +13,11 @@ update.json file contains build number, file locations and sha1 hashes.
 </br>
 <div id="CDN_Link_Generator-links"> </div>
 
+<style>
+label {
+    display: block;
+}
+</style>
 <script>
     const branchArray = ["release", "rc", "dev"];
     const osArray = ["x64_win32", "x64_linux"];
