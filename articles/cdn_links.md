@@ -54,8 +54,8 @@ update.json file contains build number, file locations and sha1 hashes.
 
     function generate()
     {
-        let branch = document.getElementById("branch").value;
-        let os = document.getElementById("os").value;
+        let branch = Number.parseInt(document.getElementById("branch").value, 10);
+        let os = Number.parseInt(document.getElementById("os").value, 10);
         let update = document.getElementById("update").checked;
         let server = document.getElementById("server").checked;
         let voice = document.getElementById("voice").checked;
@@ -103,7 +103,7 @@ update.json file contains build number, file locations and sha1 hashes.
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>"
             returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/update.json</br>"
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
         else
             returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
@@ -122,7 +122,7 @@ update.json file contains build number, file locations and sha1 hashes.
         if(listUpdate)
             returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server.exe</br>";
         else
             returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server</br>";
@@ -140,7 +140,7 @@ update.json file contains build number, file locations and sha1 hashes.
         returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.dll</br>";
         returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.runtimeconfig.json</br>";
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/csharp-module.dll</br>";
         else
             returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libcsharp-module.so</br>";
@@ -155,14 +155,14 @@ update.json file contains build number, file locations and sha1 hashes.
         if(listUpdate)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
         else if(branchArray.indexOf("dev") === branchIndex)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
         else
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.83</br>";
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
         else
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libjs-module.so</br>";
@@ -177,7 +177,7 @@ update.json file contains build number, file locations and sha1 hashes.
         if(listUpdate)
             returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
-        if(osIndex == 0)
+        if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/js-bytecode-module.dll</br>";
         else
             returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libjs-bytecode-module.so</br>";
