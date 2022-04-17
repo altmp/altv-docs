@@ -139,16 +139,82 @@ function Exit-Task {
     }
 }
 
-$versions=@{
-    "docfx.zip"="v2.58";
-    "docfx-plugins-typescriptreference.zip"="v1.1.5";
-    "docfx-plugins-extractsearchindex.zip"="v1.0.5";
-    "docfx-plugins-addimagemodal.zip"="v0.0.4";
-    "docfx-plugins-extractarticleaffix.zip"="v0.0.4";
-    "docfx-tmpls-discordfx.zip"="v0.6.23";
+$requiredRepos=[Ordered]@{
+    "./altv-types/"=@{
+        "repo"="https://github.com/altmp/altv-types/";
+        "name"="JS";
+    };
+    "./coreclr-module/"=@{
+        "repo"="https://github.com/FabianTerhorst/coreclr-module";
+        "name"="C#";
+    };
+    "./cpp-sdk/"=@{
+        "repo"="https://github.com/altmp/cpp-sdk/";
+        "ref"="docs";
+        "name"="SDK";
+    };
+    "./altv-docs-gta/"=@{
+        "repo"="https://github.com/altmp/altv-docs-gta/";
+        "name"="GTA";
+    };
+    "./altv-docs-assets/"=@{
+        "repo"="https://github.com/altmp/altv-docs-assets/";
+        "ref"="deploy";
+        "name"="Assets";
+    };
+}
+$requiredPackages=[Ordered]@{
+    "docfx.zip"=@{
+        "repo"="dotnet/docfx";
+        "version"=$null;
+        "predicate"="./docfx/docfx.exe";
+        "dest"="./docfx/";
+        "name"="DocFx";
+    };
+    "docfx-plugins-typescriptreference.zip"=@{
+        "repo"="Unnvaldr/DocFx.Plugins.TypeScriptReference";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-typescriptreference/";
+        "dest"="./templates/";
+        "name"="DocFx TypeScriptReference";
+    };
+    "docfx-plugins-addimagemodal.zip"=@{
+        "repo"="Unnvaldr/DocFx.Plugins.AddImageModal";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-addimagemodal/";
+        "dest"="./templates/";
+        "name"="DocFx AddImageModal";
+    };
+    "docfx-plugins-extractsearchindex.zip"=@{
+        "repo"="Unnvaldr/DocFx.Plugins.ExtractSearchIndex";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-extractsearchindex/";
+        "dest"="./templates/";
+        "name"="DocFx ExtractSearchIndex";
+    };
+    "docfx-plugins-extractarticleaffix.zip"=@{
+        "repo"="Unnvaldr/DocFx.Plugins.ExtractArticleAffix";
+        "version"=$null;
+        "predicate"="./templates/docfx-plugins-extractarticleaffix/";
+        "dest"="./templates/";
+        "name"="DocFx ExtractArticleAffix";
+    };
+    "docfx-tmpls-discordfx.zip"=@{
+        "repo"="Unnvaldr/DiscordFx";
+        "version"=$null;
+        "predicate"="./templates/discordfx/";
+        "dest"="./templates/";
+        "name"="DocFx DiscordFx";
+    };
 }
 
-foreach($pair in $versions.GetEnumerator()) {
-    if(-not $requiredPackages.Contains($pair.Key)) { continue }
-    $requiredPackages[$pair.Key]["version"]=$pair.Value
+$GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
+$GITHUB_ENV=[Ordered]@{}
+($GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] })
+foreach($el in $requiredPackages.GetEnumerator()) {
+    $envKey=$el.Key.ToUpper().Replace('-', '_').Replace(".ZIP", "")
+    if (-not ($GITHUB_ENV.Contains($envKey))) {
+        continue
+    }
+    $el.Value["version"]=$GITHUB_ENV[$envKey]
 }
