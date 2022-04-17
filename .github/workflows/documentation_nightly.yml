@@ -243,21 +243,12 @@ jobs:
       - gta
     if: "github.event_name == 'workflow_dispatch' || startsWith(github.event.action, 'Update')"
     steps:
-      - name: Conditional run
-        id: cond-run
-        run: |
-          $commitBody=$(git log ${{github.event.head_commit.tree_id}} -1 --pretty=format:"%b")
-          if("${{ startsWith(github.event.action, 'Update') }}" -eq $true -or $commitBody -like "*``[docs``]*") {
-            Write-Output "::set-output name=skip::true"
-            Write-Host "Step skipped." -ForegroundColor "Red"
-          }
       # - name: Concurrency limiter
       #   uses: softprops/turnstyle@v1
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
       - name: Fetch version manifest
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
           $REPO="${env:GITHUB_REPOSITORY}"
@@ -266,29 +257,24 @@ jobs:
           New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
           Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
       - name: Load version manifest
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Setup Node.js
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: Checkout repository
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/checkout@v2
         with:
           persist-credentials: false
       - name: Checkout JS repository
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           repository: altmp/altv-types
           path: ./altv-types
       - name: Checkout C# repository
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -302,14 +288,12 @@ jobs:
           ref: docs
           path: ./cpp-sdk
       - name: Checkout GTA repository
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
           path: ./altv-docs-gta
       - name: Checkout assets repository
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -317,81 +301,67 @@ jobs:
           ref: deploy
           path: ./altv-docs-assets
       - name: Download DocFx package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
           fileName: docfx.zip
       - name: Unzip DocFx package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
           Remove-Item -Path "docfx.zip"
       - name: Download DocFx TypeScriptReference package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.TypeScriptReference
           tag: ${{ env.DOCFX_PLUGINS_TYPESCRIPTREFERENCE }}
           fileName: docfx-plugins-typescriptreference.zip
       - name: Unzip DocFx TypeScriptReference package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx-plugins-typescriptreference.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-typescriptreference.zip"
       - name: Download DocFx ExtractSearchIndex package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractSearchIndex
           tag: ${{ env.DOCFX_PLUGINS_EXTRACTSEARCHINDEX }}
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx-plugins-extractsearchindex.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractsearchindex.zip"
       - name: Download DocFx AddImageModal package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.AddImageModal
           tag: ${{ env.DOCFX_PLUGINS_ADDIMAGEMODAL }}
           fileName: docfx-plugins-addimagemodal.zip
       - name: Unzip DocFx AddImageModal package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx-plugins-addimagemodal.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-addimagemodal.zip"
       - name: Download DocFx ExtractArticleAffix package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractArticleAffix
           tag: ${{ env.DOCFX_PLUGINS_EXTRACTARTICLEAFFIX }}
           fileName: docfx-plugins-extractarticleaffix.zip
       - name: Unzip DocFx ExtractArticleAffix package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx-plugins-extractarticleaffix.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractarticleaffix.zip"
       - name: Download DocFx DiscordFx package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DiscordFx
           tag: ${{ env.DOCFX_TMPLS_DISCORDFX }}
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFx package
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Expand-Archive -Path "./docfx-tmpls-discordfx.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-tmpls-discordfx.zip"
-      - if: ${{ steps.cond-run.outputs.skip != 'true' }}
-        run: npm install adm-zip
+      - run: npm install adm-zip
       - name: Download previous job artifacts
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/github-script@v4
         with:
           script: |
@@ -427,10 +397,8 @@ jobs:
               adm.extractAllTo(filePath, true);
             }
       - name: Download current job artifacts
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Remove-Item -Path "./altv-types/docs/" -Recurse
           if(-not (Test-Path -Path "./js/js.tar")) {
@@ -473,22 +441,17 @@ jobs:
             Remove-Item -Path "./altv-docs-gta/gta.tar"
           }
       - name: Build docs
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: ./docfx/docfx "./docfx.json"
       - name: Prepare artifact
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         run: |
           Remove-Item -Path "./_site/gta/images" -Recurse -Force
           Compress-Archive -Path "./_site/" -DestinationPath "./site.zip"
       - name: Upload artifacts
-        if: ${{ steps.cond-run.outputs.skip != 'true' }}
         uses: actions/upload-artifact@v2.2.4
         with:
           name: site
           path: |
             ./site.zip
-    outputs:
-      cond-run_skip: ${{ steps.cond-run.outputs.skip }}
   deploy:
     name: Deploy GitHub Pages
     runs-on: ubuntu-20.04
