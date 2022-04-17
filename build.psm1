@@ -1,9 +1,3 @@
-param(
-    [bool] $bypass=$false
-)
-
-if(-not $bypass) { throw "This script should not be executed from the console!" }
-
 function PostCleanup() {
     Remove-Item -Path "${env:TMP}/docfx.zip" -Force 2>&1 >$null
     Remove-Item -Path "${env:TMP}/docfx-plugins-typescriptreference.zip" -Force 2>&1 >$null
@@ -23,6 +17,7 @@ function PostCleanup() {
         Remove-Item -Path "./coreclr-module/docs/api/.manifest" -Force 2>&1 >$null
     }
 }
+Export-ModuleMember -Function PostCleanup
 
 function GetAssemblyVersion([string] $file) {
     if(-not (Test-Path -Path $file)) { return "not found" }
@@ -33,6 +28,7 @@ function GetAssemblyVersion([string] $file) {
         ($ver | Select -SkipLast 1) -Join '.'
     }
 }
+Export-ModuleMember -Function GetAssemblyVersion
 
 function GetVisualStudioVersion() {
     if(-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe")) { return "not found" }
@@ -43,10 +39,12 @@ function GetVisualStudioVersion() {
         "none"
     }
 }
+Export-ModuleMember -Function GetVisualStudioVersion
 
 function GetNodePackageManager() {
     return ((Get-Command "yarn" -ea SilentlyContinue), (Get-Command "npm" -ea SilentlyContinue) -ne $null)[0]
 }
+Export-ModuleMember -Function GetNodePackageManager
 
 function GetNodePackageVersion([string] $package) {
     $pkgCmd=GetNodePackageManager
@@ -58,6 +56,7 @@ function GetNodePackageVersion([string] $package) {
         npm view $package version
     }
 }
+Export-ModuleMember -Function GetNodePackageVersion
 
 function RunNodePackage([string] $package) {
     $pkgCmd=GetNodePackageManager
@@ -68,12 +67,14 @@ function RunNodePackage([string] $package) {
         npx $package $args
     }
 }
+Export-ModuleMember -Function RunNodePackage
 
 function IsVisualStudioInstalled() {
     if(-not (Test-Path "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe")) { $false; return }
     $instances=& "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -products * -requires Microsoft.NetCore.Component.SDK -latest -format json | ConvertFrom-Json
     $instances.Length -gt 0
 }
+Export-ModuleMember -Function IsVisualStudioInstalled
 
 function FetchAndDownloadRelease([string] $repo, [string] $path, [string] $archive, [string] $tag=$null) {
     $global:ProgressPreference='SilentlyContinue'
@@ -84,6 +85,7 @@ function FetchAndDownloadRelease([string] $repo, [string] $path, [string] $archi
     $global:ProgressPreference='Continue'
     return ([int]$? - 1)
 }
+Export-ModuleMember -Function FetchAndDownloadRelease
 
 function ExtractArchive([string] $path, [string] $dest) {
     if(-not (Test-Path -Path $path)) { throw "Cannot find path $path because it does not exist." }
@@ -96,14 +98,17 @@ function ExtractArchive([string] $path, [string] $dest) {
     $global:ProgressPreference='Continue'
     return ([int]$? - 1)
 }
+Export-ModuleMember -Function ExtractArchive
 
-function Run-Task {
+function Start-Task {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$false)]
         [string] $caption,
         [Parameter(Mandatory=$false)]
         [ScriptBlock] $scriptBlock,
+        [Parameter(Mandatory=$false)]
+        [Array] $arguments,
         [Parameter(Mandatory=$false)]
         [ScriptBlock] $predicate={ $true }
     )
@@ -113,7 +118,7 @@ function Run-Task {
         }
         Write-Host -NoNewline "$caption . . . "
         $action={ Exit-Task $(if($LastExitCode -ne 0x0) { $LastExitCode } else { 1 - [int]$? }) }
-        $strm=Invoke-Command -ScriptBlock ([ScriptBlock]::Create("do{" + $scriptBlock.ToString() + "`n" + $action.ToString() + "}while(`$false);")) -ErrorVariable err *>&1
+        $strm=Invoke-Command -ScriptBlock ([ScriptBlock]::Create("do{" + $scriptBlock.ToString() + "`n" + $action.ToString() + "}while(`$false);")) -ArgumentList $arguments -ErrorVariable err *>&1
         # $verb=$strm | ?{ $_ -is [System.Management.Automation.VerboseRecord] }
         # $err=$strm | ?{ $_ -is [System.Management.Automation.ErrorRecord] }
         # $info=$strm | ?{ $_ -is [System.Management.Automation.InformationRecord] } | ?{ $_.Tags -ne "ExitCode" }
@@ -131,6 +136,7 @@ function Run-Task {
         Write-Host -NoNewline ($strm | ?{ $_.Tags -eq "Output" } | %{ $_.MessageData })
     }
 }
+Export-ModuleMember -Function Start-Task
 
 function Exit-Task {
     [CmdletBinding()]
@@ -143,16 +149,110 @@ function Exit-Task {
         break
     }
 }
+Export-ModuleMember -Function Exit-Task
 
-[Flags()]
-enum StrategyType {
-    Core = 1
-    JavaScript = 2
-    CSharp = 4
-    Cpp = 8
-    GTA = 16
-    All = 255
+$pipeline=([ScriptBlock]::Create({
+    New-Item -ItemType "Directory" -Path "$tmpd" 2>&1 >$null
+
+    if($cleanOnly) { exit }
+
+    foreach($el in $requiredRepos.GetEnumerator()) {
+        if (-not ($el.Value["strategy"].HasFlag($strategy))) {
+            continue
+        }
+        Start-Task "Checkout $($el.Value["name"]) repository" {
+            $el=$args[0]
+            $cwd=$args[1]
+            if(Test-Path $el.Key) {
+                Set-Location -Path $el.Key
+                git fetch --depth 1 "origin" $el.Value["ref"]
+                if((git status -s -b) -like "*``[*behind *``]") {
+                    git clean -d -x -f
+                    git reset --hard "FETCH_HEAD"
+                    Set-Location $cwd
+                    Exit-Task (0x0)
+                } else {
+                    Set-Location $cwd
+                    Exit-Task (-0x1)
+                }
+            }
+            if (-not $el.Value["ref"]) {
+                git clone $el.Value["repo"] --depth 1 --quiet
+            } else {
+                git clone $el.Value["repo"] --branch $el.Value["ref"] --depth 1 --quiet
+            }
+        } @($el, $cwd)
+    }
+
+    foreach($el in $requiredPackages.GetEnumerator()) {
+        if (-not ($el.Value["strategy"].HasFlag($strategy))) {
+            continue
+        }
+        Start-Task "Downloading $($el.Value["name"]) package" {
+            $el=$args[0]
+            $tmpd=$args[1]
+            if(Test-Path $el.Value["predicate"]) { Exit-Task (-0x1) }
+            FetchAndDownloadRelease $el.Value["repo"] "$tmpd/" $el.Value["archive_name"] $el.Value["version"]
+        } @($el, $tmpd)
+        Start-Task "Extracting $($el.Value["name"]) package" {
+            $el=$args[0]
+            $tmpd=$args[1]
+            if(Test-Path $el.Value["predicate"]) { Exit-Task (-0x1) }
+            ExtractArchive "$tmpd/$($el.Value["archive_name"])" $el.Value["dest"]
+        } @($el, $tmpd)
+    }
+
+    Start-Task "Tools version" {
+        $cwd=$args[0]
+        Set-Location $cwd
+        $tools=[Ordered]@{
+            "Node.js"=(node -v);
+            "Yarn/npm"=GetNodePackageVersion;
+            "Visual Studio"=GetVisualStudioVersion;
+            "DocFx"=GetAssemblyVersion "./docfx/docfx.exe";
+            "DocFx TypeScriptReference"=GetAssemblyVersion "./templates/docfx-plugins-typescriptreference/plugins/DocFx.*.dll";
+            "DocFx AddImageModal"=GetAssemblyVersion "./templates/docfx-plugins-addimagemodal/plugins/DocFx.*.dll";
+            "DocFx ExtractSearchIndex"=GetAssemblyVersion "./templates/docfx-plugins-extractsearchindex/plugins/DocFx.*.dll";
+            "DocFx ExtractArticleAffix"=GetAssemblyVersion "./templates/docfx-plugins-extractarticleaffix/plugins/DocFx.*.dll";
+            "TypeDoc"=GetNodePackageVersion "typedoc";
+            "type2docfx"=GetNodePackageVersion "type2docfx";
+        }
+        Write-Information -Tags "Output" -MessageData ($tools | Format-Table | Out-String)
+    } @($cwd)
+
+    Start-Task "Generating JS project metadata" {
+        $cwd=$args[0]
+        Set-Location -Path "./altv-types/docs/"
+        $pkgCmd=GetNodePackageManager
+        if(-not $pkgCmd) { Exit-Task (0x1) }
+        if(-not (Test-Path "../node_modules/")) { & $pkgCmd install }
+        RunNodePackage "typedoc" --options "./typedoc.json"
+        RunNodePackage "type2docfx" "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "master" --disableAlphabetOrder
+        Set-Location $cwd
+    } @($cwd) { ($requiredTasks["generate-js"]["strategy"]).HasFlag($strategy) }
+    Start-Task "Generating C# project metadata" {
+        if(IsVisualStudioInstalled) {
+            ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
+        } else {
+            New-Item -Path "./coreclr-module/docs/api/toc.yml" -Value "# Autogenerated file to prevent missing file error`n[]`n" -Force
+            Exit-Task (-0x1)
+        }
+    } { ($requiredTasks["generate-cs"]["strategy"]).HasFlag($strategy) }
+
+    ./docfx/docfx build "docfx.json" --intermediateFolder "$tmpd/obj/" --serve -p $port
+}))
+
+Add-Type @'
+[System.Flags()]
+public enum StrategyType {
+    Core = 1,
+    JavaScript = 2,
+    CSharp = 4,
+    Cpp = 8,
+    GTA = 16,
+    All = 255,
 }
+'@
 
 $requiredRepos=[Ordered]@{
     "./altv-types/"=@{
@@ -248,19 +348,25 @@ $requiredTasks=[Ordered]@{
     };
 }
 
+$tmpd="${env:TMP}/altv-docs"
+
 # if (Test-Path -Path "Env:\GITHUB_ENV") {
 #     foreach($el in $requiredPackages.GetEnumerator()) {
 #         Write-Output "$($el.Key.Replace('-', '_').ToUpper())=$($el.Value["version"])" | Out-File -FilePath $Env:GITHUB_ENV -Encoding 'UTF-8' -Append
 #     }
 # }
 
-$GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
-$GITHUB_ENV=[Ordered]@{}
-($GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] })
-foreach($el in $requiredPackages.GetEnumerator()) {
-    $envKey=$el.Key.ToUpper().Replace('-', '_')
-    if (-not ($GITHUB_ENV.Contains($envKey))) {
-        continue
+{
+    $GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
+    $GITHUB_ENV=[Ordered]@{}
+    ($GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] })
+    foreach($el in $requiredPackages.GetEnumerator()) {
+        $envKey=$el.Key.ToUpper().Replace('-', '_')
+        if (-not ($GITHUB_ENV.Contains($envKey))) {
+            continue
+        }
+        $el.Value["version"]=$GITHUB_ENV[$envKey]
     }
-    $el.Value["version"]=$GITHUB_ENV[$envKey]
 }
+
+Export-ModuleMember -Variable requiredRepos, requiredPackages, requiredTasks, tmpd, pipeline
