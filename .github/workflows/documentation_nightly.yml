@@ -30,6 +30,20 @@ jobs:
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
+      - name: Fetch version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+          $REPO="${env:GITHUB_REPOSITORY}"
+          $ENV_PATH=".github/variables"
+          $RAWGIT="https://raw.githubusercontent.com"
+          New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+          Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
+      - name: Load version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        uses: tw3lveparsecs/github-actions-setvars@v0.1
+        with:
+          envFilePath: ./.github/variables/vars.env
       - name: Setup Node.js
         uses: actions/setup-node@v1
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -79,6 +93,20 @@ jobs:
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
+      - name: Fetch version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+          $REPO="${env:GITHUB_REPOSITORY}"
+          $ENV_PATH=".github/variables"
+          $RAWGIT="https://raw.githubusercontent.com"
+          New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+          Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
+      - name: Load version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        uses: tw3lveparsecs/github-actions-setvars@v0.1
+        with:
+          envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -92,7 +120,7 @@ jobs:
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
         with:
           repository: dotnet/docfx
-          tag: v2.58
+          tag: ${{ env.DOCFX }}
           fileName: docfx.zip
       - name: Unzip DocFx package
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -125,6 +153,20 @@ jobs:
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
+      - name: Fetch version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+          $REPO="${env:GITHUB_REPOSITORY}"
+          $ENV_PATH=".github/variables"
+          $RAWGIT="https://raw.githubusercontent.com"
+          New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+          Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
+      - name: Load version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        uses: tw3lveparsecs/github-actions-setvars@v0.1
+        with:
+          envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -156,6 +198,20 @@ jobs:
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
+      - name: Fetch version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        run: |
+          $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+          $REPO="${env:GITHUB_REPOSITORY}"
+          $ENV_PATH=".github/variables"
+          $RAWGIT="https://raw.githubusercontent.com"
+          New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+          Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
+      - name: Load version manifest
+        if: ${{ steps.cond-run.outputs.skip != 'true' }}
+        uses: tw3lveparsecs/github-actions-setvars@v0.1
+        with:
+          envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
         uses: actions/checkout@v2
         if: ${{ steps.cond-run.outputs.skip != 'true' }}
@@ -192,6 +248,18 @@ jobs:
       #   with:
       #     continue-after-seconds: 480
       #     poll-interval-seconds: 10
+      - name: Fetch version manifest
+        run: |
+          $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+          $REPO="${env:GITHUB_REPOSITORY}"
+          $ENV_PATH=".github/variables"
+          $RAWGIT="https://raw.githubusercontent.com"
+          New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+          Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
+      - name: Load version manifest
+        uses: tw3lveparsecs/github-actions-setvars@v0.1
+        with:
+          envFilePath: ./.github/variables/vars.env
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -236,7 +304,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: dotnet/docfx
-          tag: v2.58
+          tag: ${{ env.DOCFX }}
           fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
@@ -246,7 +314,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.TypeScriptReference
-          tag: v1.1.5
+          tag: ${{ env.DOCFX_PLUGINS_TYPESCRIPTREFERENCE }}
           fileName: docfx-plugins-typescriptreference.zip
       - name: Unzip DocFx TypeScriptReference package
         run: |
@@ -256,7 +324,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractSearchIndex
-          tag: v1.0.5
+          tag: ${{ env.DOCFX_PLUGINS_EXTRACTSEARCHINDEX }}
           fileName: docfx-plugins-extractsearchindex.zip
       - name: Unzip DocFx ExtractSearchIndex package
         run: |
@@ -266,7 +334,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.AddImageModal
-          tag: v0.0.4
+          tag: ${{ env.DOCFX_PLUGINS_ADDIMAGEMODAL }}
           fileName: docfx-plugins-addimagemodal.zip
       - name: Unzip DocFx AddImageModal package
         run: |
@@ -276,7 +344,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractArticleAffix
-          tag: v0.0.4
+          tag: ${{ env.DOCFX_PLUGINS_EXTRACTARTICLEAFFIX }}
           fileName: docfx-plugins-extractarticleaffix.zip
       - name: Unzip DocFx ExtractArticleAffix package
         run: |
@@ -286,7 +354,7 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: Unnvaldr/DiscordFx
-          tag: v0.6.23
+          tag: ${{ env.DOCFX_TMPLS_DISCORDFX }}
           fileName: docfx-tmpls-discordfx.zip
       - name: Unzip DocFx DiscordFx package
         run: |
