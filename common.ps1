@@ -103,9 +103,14 @@ function Run-Task {
         [Parameter(Mandatory=$false)]
         [string] $caption,
         [Parameter(Mandatory=$false)]
-        [ScriptBlock] $scriptBlock
+        [ScriptBlock] $scriptBlock,
+        [Parameter(Mandatory=$false)]
+        [ScriptBlock] $predicate={ $true }
     )
     process {
+        if (-not $(Invoke-Command -ScriptBlock $predicate)) {
+            return
+        }
         Write-Host -NoNewline "$caption . . . "
         $action={ Exit-Task $(if($LastExitCode -ne 0x0) { $LastExitCode } else { 1 - [int]$? }) }
         $strm=Invoke-Command -ScriptBlock ([ScriptBlock]::Create("do{" + $scriptBlock.ToString() + "`n" + $action.ToString() + "}while(`$false);")) -ErrorVariable err *>&1
@@ -139,80 +144,121 @@ function Exit-Task {
     }
 }
 
+[Flags()]
+enum StrategyType {
+    Core = 1
+    JavaScript = 2
+    CSharp = 4
+    Cpp = 8
+    GTA = 16
+    All = 255
+}
+
 $requiredRepos=[Ordered]@{
     "./altv-types/"=@{
         "repo"="https://github.com/altmp/altv-types/";
         "name"="JS";
+        "strategy"=([StrategyType]::Core + [StrategyType]::JavaScript);
     };
     "./coreclr-module/"=@{
         "repo"="https://github.com/FabianTerhorst/coreclr-module";
         "name"="C#";
+        "strategy"=([StrategyType]::Core + [StrategyType]::CSharp);
     };
     "./cpp-sdk/"=@{
         "repo"="https://github.com/altmp/cpp-sdk/";
         "ref"="docs";
         "name"="SDK";
+        "strategy"=([StrategyType]::Core + [StrategyType]::Cpp);
     };
     "./altv-docs-gta/"=@{
         "repo"="https://github.com/altmp/altv-docs-gta/";
         "name"="GTA";
+        "strategy"=([StrategyType]::Core + [StrategyType]::GTA);
     };
     "./altv-docs-assets/"=@{
         "repo"="https://github.com/altmp/altv-docs-assets/";
         "ref"="deploy";
         "name"="Assets";
+        "strategy"=([StrategyType]::All);
     };
 }
 $requiredPackages=[Ordered]@{
-    "docfx.zip"=@{
+    "docfx"=@{
+        "archive_name"="docfx.zip";
         "repo"="dotnet/docfx";
         "version"=$null;
         "predicate"="./docfx/docfx.exe";
         "dest"="./docfx/";
         "name"="DocFx";
+        "strategy"=([StrategyType]::All);
     };
-    "docfx-plugins-typescriptreference.zip"=@{
+    "docfx-plugins-typescriptreference"=@{
+        "archive_name"="docfx-plugins-typescriptreference.zip";
         "repo"="Unnvaldr/DocFx.Plugins.TypeScriptReference";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-typescriptreference/";
         "dest"="./templates/";
         "name"="DocFx TypeScriptReference";
+        "strategy"=([StrategyType]::Core + [StrategyType]::JavaScript);
     };
-    "docfx-plugins-addimagemodal.zip"=@{
+    "docfx-plugins-addimagemodal"=@{
+        "archive_name"="docfx-plugins-addimagemodal.zip";
         "repo"="Unnvaldr/DocFx.Plugins.AddImageModal";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-addimagemodal/";
         "dest"="./templates/";
         "name"="DocFx AddImageModal";
+        "strategy"=([StrategyType]::All);
     };
-    "docfx-plugins-extractsearchindex.zip"=@{
+    "docfx-plugins-extractsearchindex"=@{
+        "archive_name"="docfx-plugins-extractsearchindex.zip";
         "repo"="Unnvaldr/DocFx.Plugins.ExtractSearchIndex";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-extractsearchindex/";
         "dest"="./templates/";
         "name"="DocFx ExtractSearchIndex";
+        "strategy"=([StrategyType]::All);
     };
-    "docfx-plugins-extractarticleaffix.zip"=@{
+    "docfx-plugins-extractarticleaffix"=@{
+        "archive_name"="docfx-plugins-extractarticleaffix.zip";
         "repo"="Unnvaldr/DocFx.Plugins.ExtractArticleAffix";
         "version"=$null;
         "predicate"="./templates/docfx-plugins-extractarticleaffix/";
         "dest"="./templates/";
         "name"="DocFx ExtractArticleAffix";
+        "strategy"=([StrategyType]::All);
     };
-    "docfx-tmpls-discordfx.zip"=@{
+    "docfx-tmpls-discordfx"=@{
+        "archive_name"="docfx-tmpls-discordfx.zip";
         "repo"="Unnvaldr/DiscordFx";
         "version"=$null;
         "predicate"="./templates/discordfx/";
         "dest"="./templates/";
         "name"="DocFx DiscordFx";
+        "strategy"=([StrategyType]::All);
     };
 }
+$requiredTasks=[Ordered]@{
+    "generate-js"=@{
+        "strategy"=([StrategyType]::Core + [StrategyType]::JavaScript);
+    };
+    "generate-cs"=@{
+        "strategy"=([StrategyType]::Core + [StrategyType]::CSharp);
+    };
+}
+
+# if (Test-Path -Path "Env:\GITHUB_ENV") {
+#     foreach($el in $requiredPackages.GetEnumerator()) {
+#         Write-Output "$($el.Key.Replace('-', '_').ToUpper())=$($el.Value["version"])" | Out-File -FilePath $Env:GITHUB_ENV -Encoding 'UTF-8' -Append
+#     }
+# }
 
 $GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
 $GITHUB_ENV=[Ordered]@{}
 ($GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] })
 foreach($el in $requiredPackages.GetEnumerator()) {
-    $envKey=$el.Key.ToUpper().Replace('-', '_').Replace(".ZIP", "")
+    $envKey=$el.Key.ToUpper().Replace('-', '_')
     if (-not ($GITHUB_ENV.Contains($envKey))) {
         continue
     }
