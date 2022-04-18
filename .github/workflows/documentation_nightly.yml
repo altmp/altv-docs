@@ -20,7 +20,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.action }}" -ne "Update JS documentation" -and "${{ github.event.inputs.regen-artifacts }}" -eq "true") {
+          if("${{ github.event.action }}" -ne "Update JS documentation" -and "${{ github.event.inputs.regen-artifacts }}" -ne "true") {
             Write-Output "::set-output name=skip::true"
             Write-Output "Step skipped."
           }
@@ -83,7 +83,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.action }}" -ne "Update C# documentation" -and "${{ github.event.inputs.regen-artifacts }}" -eq "true") {
+          if("${{ github.event.action }}" -ne "Update C# documentation" -and "${{ github.event.inputs.regen-artifacts }}" -ne "true") {
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
@@ -143,7 +143,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.action }}" -ne "Update SDK documentation" -and "${{ github.event.inputs.regen-artifacts }}" -eq "true") {
+          if("${{ github.event.action }}" -ne "Update SDK documentation" -and "${{ github.event.inputs.regen-artifacts }}" -ne "true") {
             Write-Output "::set-output name=skip::true"
             Write-Host "Step skipped." -ForegroundColor "Red"
           }
@@ -188,7 +188,7 @@ jobs:
       - name: Conditional run
         id: cond-run
         run: |
-          if("${{ github.event.action }}" -ne "Update GTA documentation" -and "${{ github.event.inputs.regen-artifacts }}" -eq "true") {
+          if("${{ github.event.action }}" -ne "Update GTA documentation" -and "${{ github.event.inputs.regen-artifacts }}" -ne "true") {
             Write-Output "::set-output name=skip::true"
             Write-Output "Step skipped."
           }
