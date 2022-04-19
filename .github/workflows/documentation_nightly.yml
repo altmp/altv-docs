@@ -375,7 +375,7 @@ jobs:
             const AdmZip = require("adm-zip");
             const fs = require("fs");
             const path = require("path");
-            const devPrefix = "${{ !env.PRODUCTION && 'nightly-' }}";
+            const devPrefix = "${{ !env.PRODUCTION && 'nightly-' || '' }}";
             const artifactNames = ["js", "cs", "sdk", "gta"].map(name => devPrefix + name);
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
@@ -408,7 +408,7 @@ jobs:
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
         run: |
-          $devPrefix="${{ !env.PRODUCTION && 'nightly-' }}";
+          $devPrefix="${{ !env.PRODUCTION && 'nightly-' || '' }}";
           Remove-Item -Path "./altv-types/docs/" -Recurse
           if(-not (Test-Path -Path "./$($devPrefix)js/js.tar")) {
             Move-Item -Path "./$($devPrefix)js/" -Destination "./altv-types/docs"
