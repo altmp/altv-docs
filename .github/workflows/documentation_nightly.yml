@@ -66,8 +66,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch version manifest
-        uses: ./.github/actions/load-version-manifest
       - name: Load version manifest
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
@@ -121,8 +119,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch version manifest
-        uses: ./.github/actions/load-version-manifest
       - name: Load version manifest
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
@@ -173,8 +169,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch version manifest
-        uses: ./.github/actions/load-version-manifest
       - name: Load version manifest
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
@@ -213,8 +207,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch version manifest
-        uses: ./.github/actions/load-version-manifest
       - name: Load version manifest
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
@@ -265,8 +257,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Fetch version manifest
-        uses: ./.github/actions/load-version-manifest
       - name: Load version manifest
         uses: tw3lveparsecs/github-actions-setvars@v0.1
         with:
