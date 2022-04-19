@@ -376,7 +376,7 @@ jobs:
             const fs = require("fs");
             const path = require("path");
             const devPrefix = "${{ !env.PRODUCTION && 'nightly-' }}";
-            const artifactNames = ["js", "cs", "sdk", "gta"];
+            const artifactNames = ["js", "cs", "sdk", "gta"].map(name => devPrefix + name);
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -386,8 +386,7 @@ jobs:
               console.log("No artifacts found");
               return;
             }
-            for (const _artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
-              const artifact = devPrefix + _artifact;
+            for (const artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
               if (!artifact || artifact.expired) continue;
               console.log("==> Artifact:", artifact.id);
               console.log(`==> Downloading: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
