@@ -22,6 +22,7 @@ on:
       - Update GTA documentation
 env:
   PRODUCTION: ${{ github.event.inputs.environment == 'prod' }}
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   bootstrap:
     runs-on: ubuntu-latest
@@ -56,12 +57,6 @@ jobs:
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'js') }}
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -109,12 +104,6 @@ jobs:
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'cs') }}
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -159,12 +148,6 @@ jobs:
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'sdk') }}
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -197,12 +180,6 @@ jobs:
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'gta') }}
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -247,12 +224,6 @@ jobs:
       - gta
     if: always()
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -468,12 +439,6 @@ jobs:
       - docs
     if: always() && needs.docs.result == 'success'
     steps:
-      - name: Concurrency limiter
-        uses: softprops/turnstyle@v1
-        if: "env.PRODUCTION == 'true'"
-        with:
-          continue-after-seconds: 480
-          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
