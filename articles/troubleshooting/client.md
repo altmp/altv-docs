@@ -15,7 +15,7 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 > Storage:    SSD for OS and Game
 > ```
 
-## Basic Steps
+## Basic Steps (it's recommended to try ALL OF THEM first for any problem)
 1. You need to have Singleplayer launched at least once
 2. Try Running as Admin
 3. Add an exception to your Anti-Virus for alt:V (This Includes Windows Defender).
@@ -29,6 +29,7 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 11. If the Steam version is stuck on "Load alt:V Client", try killing the Steam process(es). (Also try and remove Steam from autostart.)
 12. You must have a clean version of GTA V. Graphics mods like Redux or Natural Vision must not be present in your GTA V installation.
 13. If your game is crashing on joining a server try a server without mods (eg Freeroam servers). If its working on such server, contact the server team of the server you are crashing at.
+14. Try restarting your PC
 
 ## Known Problems & Solutions
 
