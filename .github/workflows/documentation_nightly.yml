@@ -2,16 +2,26 @@ name: Documentation Nightly
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'Where to deploy changes'
+        required: true
+        default: 'dev' 
+        type: choice
+        options:
+        - dev
+        - prod
       regen-artifacts:
         description: 'Regenerate artifacts (when expired or missing)'
         required: false
         type: boolean
-  # repository_dispatch:
-  #   types:
-  #     - Update JS documentation
-  #     - Update C# documentation
-  #     - Update SDK documentation
-  #     - Update GTA documentation
+  repository_dispatch:
+    types:
+      - Update JS documentation
+      - Update C# documentation
+      - Update SDK documentation
+      - Update GTA documentation
+env:
+  PRODUCTION: ${{ github.event.inputs.environment == 'prod' }}
 jobs:
   bootstrap:
     runs-on: ubuntu-latest
@@ -46,11 +56,12 @@ jobs:
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'js') }}
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -85,19 +96,27 @@ jobs:
           npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "${{ github.event.client_payload.sha }}" --disableAlphabetOrder
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: "env.PRODUCTION"
         with:
           name: js
+          path: ./altv-types/docs/
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: "!env.PRODUCTION"
+        with:
+          name: nightly-js
           path: ./altv-types/docs/
   cs:
     runs-on: windows-2019
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'cs') }}
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -129,19 +148,27 @@ jobs:
         run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: ${{ env.PRODUCTION }}
         with:
           name: cs
+          path: ./coreclr-module/docs/
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ !env.PRODUCTION }}
+        with:
+          name: nightly-cs
           path: ./coreclr-module/docs/
   sdk:
     runs-on: windows-2019
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'sdk') }}
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -161,19 +188,27 @@ jobs:
           path: ./cpp-sdk
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: ${{ env.PRODUCTION }}
         with:
           name: sdk
+          path: ./cpp-sdk/articles/
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ !env.PRODUCTION }}
+        with:
+          name: nightly-sdk
           path: ./cpp-sdk/articles/
   gta:
     runs-on: windows-latest
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'gta') }}
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -197,8 +232,17 @@ jobs:
         run: exit 0
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
+        if: "env.PRODUCTION"
         with:
           name: gta
+          path: |
+            ./altv-docs-gta/api
+            ./altv-docs-gta/articles
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: "!env.PRODUCTION"
+        with:
+          name: nightly-gta
           path: |
             ./altv-docs-gta/api
             ./altv-docs-gta/articles
@@ -211,11 +255,12 @@ jobs:
       - gta
     if: always()
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -330,6 +375,7 @@ jobs:
             const AdmZip = require("adm-zip");
             const fs = require("fs");
             const path = require("path");
+            const devPrefix = "${{ !env.PRODUCTION && 'nightly-' }}";
             const artifactNames = ["js", "cs", "sdk", "gta"];
             const artifacts = (await github.actions.listArtifactsForRepo({
               owner: context.repo.owner,
@@ -340,7 +386,8 @@ jobs:
               console.log("No artifacts found");
               return;
             }
-            for (const artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
+            for (const _artifact of artifactNames.map(el => artifacts.find(el2 => el2.name === el))) {
+              const artifact = devPrefix + _artifact;
               if (!artifact || artifact.expired) continue;
               console.log("==> Artifact:", artifact.id);
               console.log(`==> Downloading: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
@@ -362,45 +409,46 @@ jobs:
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
         run: |
+          $devPrefix="${{ !env.PRODUCTION && 'nightly-' }}";
           Remove-Item -Path "./altv-types/docs/" -Recurse
-          if(-not (Test-Path -Path "./js/js.tar")) {
-            Move-Item -Path "./js/" -Destination "./altv-types/docs"
+          if(-not (Test-Path -Path "./$($devPrefix)js/js.tar")) {
+            Move-Item -Path "./$($devPrefix)js/" -Destination "./altv-types/docs"
           } else {
-            Move-Item -Path "./js/js.tar" -Destination "./altv-types/js.tar"
-            tar -xvf "./altv-types/js.tar" -C "./altv-types/"
-            Remove-Item -Path "./altv-types/js.tar"
+            Move-Item -Path "./$($devPrefix)js/$($devPrefix)js.tar" -Destination "./altv-types/$($devPrefix)js.tar"
+            tar -xvf "./altv-types/$($devPrefix)js.tar" -C "./altv-types/"
+            Remove-Item -Path "./altv-types/$($devPrefix)js.tar"
           }
           if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-types\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
             throw "Invalid altv-types repo manifest."
           }
           Remove-Item -Path "./coreclr-module/docs/" -Recurse
-          if(-not (Test-Path -Path "./cs/cs.tar")) {
-            Move-Item -Path "./cs/" -Destination "./coreclr-module/docs"
+          if(-not (Test-Path -Path "./$($devPrefix)cs/$($devPrefix)cs.tar")) {
+            Move-Item -Path "./$($devPrefix)cs/" -Destination "./coreclr-module/docs"
           } else {
-            Move-Item -Path "./cs/cs.tar" -Destination "./coreclr-module/cs.tar"
-            tar -xvf "./coreclr-module/cs.tar" -C "./coreclr-module/"
-            Remove-Item -Path "./coreclr-module/cs.tar"
+            Move-Item -Path "./$($devPrefix)cs/$($devPrefix)cs.tar" -Destination "./coreclr-module/$($devPrefix)cs.tar"
+            tar -xvf "./coreclr-module/$($devPrefix)cs.tar" -C "./coreclr-module/"
+            Remove-Item -Path "./coreclr-module/$($devPrefix)cs.tar"
           }
           if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "coreclr-module\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
             throw "Invalid coreclr-module repo manifest."
           }
           Remove-Item -Path "./cpp-sdk/articles/" -Recurse
-          if(-not (Test-Path -Path "./sdk/sdk.tar")) {
-            Move-Item -Path "./sdk/" -Destination "./cpp-sdk/articles"
+          if(-not (Test-Path -Path "./$($devPrefix)sdk/$($devPrefix)sdk.tar")) {
+            Move-Item -Path "./$($devPrefix)sdk/" -Destination "./cpp-sdk/articles"
           } else {
-            Move-Item -Path "./sdk/sdk.tar" -Destination "./cpp-sdk/sdk.tar"
-            tar -xvf "./cpp-sdk/sdk.tar" -C "./cpp-sdk/"
-            Remove-Item -Path "./cpp-sdk/sdk.tar"
+            Move-Item -Path "./$($devPrefix)sdk/$($devPrefix)sdk.tar" -Destination "./cpp-sdk/$($devPrefix)sdk.tar"
+            tar -xvf "./cpp-sdk/$($devPrefix)sdk.tar" -C "./cpp-sdk/"
+            Remove-Item -Path "./cpp-sdk/$($devPrefix)sdk.tar"
           }
           Remove-Item -Path "./altv-docs-gta/api/" -Recurse
           Remove-Item -Path "./altv-docs-gta/articles/" -Recurse
-          if(-not (Test-Path -Path "./gta/gta.tar")) {
-            Move-Item -Path "./gta/api/" -Destination "./altv-docs-gta/api/"
-            Move-Item -Path "./gta/articles/" -Destination "./altv-docs-gta/articles/"
+          if(-not (Test-Path -Path "./$($devPrefix)gta/$($devPrefix)gta.tar")) {
+            Move-Item -Path "./$($devPrefix)gta/api/" -Destination "./altv-docs-gta/api/"
+            Move-Item -Path "./$($devPrefix)gta/articles/" -Destination "./altv-docs-gta/articles/"
           } else {
-            Move-Item -Path "./gta/gta.tar" -Destination "./altv-docs-gta/gta.tar"
-            tar -xvf "./altv-docs-gta/gta.tar" -C "./altv-docs-gta/"
-            Remove-Item -Path "./altv-docs-gta/gta.tar"
+            Move-Item -Path "./$($devPrefix)gta/$($devPrefix)gta.tar" -Destination "./altv-docs-gta/$($devPrefix)gta.tar"
+            tar -xvf "./altv-docs-gta/$($devPrefix)gta.tar" -C "./altv-docs-gta/"
+            Remove-Item -Path "./altv-docs-gta/$($devPrefix)gta.tar"
           }
       - name: Build docs
         run: ./docfx/docfx "./docfx.json"
@@ -410,8 +458,16 @@ jobs:
           Compress-Archive -Path "./_site/" -DestinationPath "./site.zip"
       - name: Upload artifacts
         uses: actions/upload-artifact@v2.2.4
+        if: "env.PRODUCTION"
         with:
           name: site
+          path: |
+            ./site.zip
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2.2.4
+        if: "!env.PRODUCTION"
+        with:
+          name: nightly-site
           path: |
             ./site.zip
   deploy:
@@ -421,11 +477,12 @@ jobs:
       - docs
     if: always() && needs.docs.result == 'success'
     steps:
-      # - name: Concurrency limiter
-      #   uses: softprops/turnstyle@v1
-      #   with:
-      #     continue-after-seconds: 480
-      #     poll-interval-seconds: 10
+      - name: Concurrency limiter
+        uses: softprops/turnstyle@v1
+        if: "env.PRODUCTION"
+        with:
+          continue-after-seconds: 480
+          poll-interval-seconds: 10
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -438,8 +495,15 @@ jobs:
           path: ./altv-docs-assets
       - name: Download artifact
         uses: actions/download-artifact@v2
+        if: "env.PRODUCTION"
         with:
           name: site
+          path: "."
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        if: "!env.PRODUCTION"
+        with:
+          name: nightly-site
           path: "."
       - name: Prepare artifact
         run: |
@@ -467,6 +531,16 @@ jobs:
           ls -Rl ./_site/*/images
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
+        if: "env.PRODUCTION"
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          cname: docs.altv.mp
+          full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
+          force_orphan: false
+      - name: Deploy page
+        uses: peaceiris/actions-gh-pages@v3
+        if: "!env.PRODUCTION"
         with:
           deploy_key: ${{ secrets.NIGHTLY_PRIVATE_KEY }}
           publish_dir: ./_site
@@ -480,6 +554,7 @@ jobs:
           name: site
       - name: Download previous job artifacts
         uses: Lhoerion/actions-purge-artifacts@master
+        if: "env.PRODUCTION"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           expire_strategy: 1
@@ -488,3 +563,14 @@ jobs:
             cs
             sdk
             gta
+      - name: Download previous job artifacts
+        uses: Lhoerion/actions-purge-artifacts@master
+        if: "!env.PRODUCTION"
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          expire_strategy: 1
+          artifact_name: |
+            nightly-js
+            nightly-cs
+            nightly-sdk
+            nightly-gta
