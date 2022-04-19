@@ -76,6 +76,9 @@ jobs:
           repository: altmp/altv-types
           ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
           path: ./altv-types
+      - name: Checkout latest commit
+        run: git checkout $(git rev-parse HEAD)
+        working-directory: ./altv-types
       - name: Install dependencies
         run: |
           Set-Location -Path "./altv-types/docs/"
@@ -119,6 +122,9 @@ jobs:
           repository: FabianTerhorst/coreclr-module
           ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'dev' }}
           path: ./coreclr-module
+      - name: Checkout latest commit
+        run: git checkout $(git rev-parse HEAD)
+        working-directory: ./coreclr-module
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1
         with:
@@ -163,6 +169,9 @@ jobs:
           repository: altmp/cpp-sdk
           ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'docs' }}
           path: ./cpp-sdk
+      - name: Checkout latest commit
+        run: git checkout $(git rev-parse HEAD)
+        working-directory: ./cpp-sdk
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: "env.PRODUCTION == 'true'"
@@ -195,6 +204,9 @@ jobs:
           repository: altmp/altv-docs-gta
           ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
           path: ./altv-docs-gta
+      - name: Checkout latest commit
+        run: git checkout $(git rev-parse HEAD)
+        working-directory: ./altv-docs-gta
       - name: Install dependencies
         run: exit 0
       - name: Generate GTA metadata
