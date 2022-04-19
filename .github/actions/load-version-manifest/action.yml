@@ -1,0 +1,12 @@
+name: Load version manifest
+runs:
+  using: "composite"
+  steps:
+    - shell: pwsh
+      run: |
+        $BRANCH="${env:GITHUB_REF}".Replace("refs/heads/", "")
+        $REPO="${env:GITHUB_REPOSITORY}"
+        $ENV_PATH=".github/variables"
+        $RAWGIT="https://raw.githubusercontent.com"
+        New-Item -ItemType "Directory" -Path "./$ENV_PATH" -Force 2>&1 >$null
+        Invoke-WebRequest -UseBasicParsing -Headers @{"Cache-Control"="no-cache"} "$RAWGIT/$REPO/$BRANCH/$ENV_PATH/vars.env" -OutFile "./$ENV_PATH/vars.env"
