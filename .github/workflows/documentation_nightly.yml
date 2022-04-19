@@ -484,33 +484,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           expire_strategy: 1
           artifact_name: |
-            github-pages
-      - name: Download previous job artifacts
-        uses: actions/github-script@v4
-        with:
-          result-encoding: json
-          script: |
-            const fs = require("fs");
-            const path = require("path");
-            const artifactNames = ["js", "cs", "sdk", "gta"];
-            const artifacts = (await github.actions.listArtifactsForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              run_id: context.runId
-            })).data.artifacts;
-            if (!artifacts.length) {
-              console.log("No artifacts found");
-              return;
-            }
-            for (let i = artifacts.length - 1; i >= 0; i--) {
-              const artifact = artifacts[i];
-              if (!artifact || artifacts.reduce((acc, val) => (val.name === artifact.name ? ++acc : acc), 0) <= 1) continue;
-              console.log("==> Artifact:", artifact.id);
-              console.log(`==> Removing: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
-              await github.actions.deleteArtifact({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                artifact_id: artifact.id
-              });
-              artifact.name = null;
-            }
+            js
+            cs
+            sdk
+            gta
