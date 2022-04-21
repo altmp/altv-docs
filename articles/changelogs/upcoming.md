@@ -24,6 +24,8 @@
 > - alt.utils class
 > - isRemote getter for blips
 > - increased 2d volume of sound api
+> - discord oAuth api
+> - alt.isCursorVisible()
 > ```
 
 ### Fixed
@@ -65,6 +67,7 @@
 > - collision & frozen setter, getter
 > - don't disable props when inside a bike, helicopter, submarine
 > - cancelable requestControl event
+> - hasAutoAttachTrailer to vehicleModelInfo
 > ```
 
 ### Fixed
