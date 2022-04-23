@@ -341,7 +341,7 @@ jobs:
           Expand-Archive -Path "./docfx-tmpls-discordfx.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-tmpls-discordfx.zip"
       - run: npm install adm-zip
-      - name: Download previous job artifacts
+      - name: Download latest artifacts
         uses: actions/github-script@v4
         with:
           script: |
@@ -378,7 +378,7 @@ jobs:
               })
               adm.extractAllTo(filePath, true);
             }
-      - name: Download current job artifacts
+      - name: Download run artifacts
         uses: actions/download-artifact@v2
       - name: Unpack artifacts
         run: |
@@ -520,7 +520,7 @@ jobs:
         uses: geekyeggo/delete-artifact@v1
         with:
           name: site
-      - name: Download previous job artifacts
+      - name: Purge older artifacts
         uses: Unnvaldr/actions-purge-artifacts@master
         if: "env.PRODUCTION == 'true'"
         with:
@@ -531,7 +531,7 @@ jobs:
             cs
             sdk
             gta
-      - name: Download previous job artifacts
+      - name: Purge older artifacts
         uses: Unnvaldr/actions-purge-artifacts@master
         if: "env.PRODUCTION == 'false'"
         with:
