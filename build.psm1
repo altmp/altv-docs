@@ -181,6 +181,10 @@ $pipeline=([ScriptBlock]::Create({
             } else {
                 git clone $el.Value["repo"] --branch $el.Value["ref"] --depth 1 --quiet
             }
+            if ($el.Value["submodules"] -ne $false) {
+                Set-Location -Path $el.Key
+                git submodule update --init
+            }
         } @($el, $cwd)
     }
 
@@ -259,28 +263,33 @@ $requiredRepos=[Ordered]@{
         "repo"="https://github.com/altmp/altv-types/";
         "name"="JS";
         "strategy"=([StrategyType]::Core + [StrategyType]::JavaScript);
+        "submodules"=$false;
     };
     "./coreclr-module/"=@{
         "repo"="https://github.com/FabianTerhorst/coreclr-module";
         "name"="C#";
         "strategy"=([StrategyType]::Core + [StrategyType]::CSharp);
+        "submodules"=$false;
     };
     "./cpp-sdk/"=@{
         "repo"="https://github.com/altmp/cpp-sdk/";
         "ref"="docs";
         "name"="SDK";
         "strategy"=([StrategyType]::Core + [StrategyType]::Cpp);
+        "submodules"=$false;
     };
     "./altv-docs-gta/"=@{
         "repo"="https://github.com/altmp/altv-docs-gta/";
         "name"="GTA";
         "strategy"=([StrategyType]::Core + [StrategyType]::GTA);
+        "submodules"=$true;
     };
     "./altv-docs-assets/"=@{
         "repo"="https://github.com/altmp/altv-docs-assets/";
         "ref"="deploy";
         "name"="Assets";
         "strategy"=([StrategyType]::All);
+        "submodules"=$false;
     };
 }
 $requiredPackages=[Ordered]@{
