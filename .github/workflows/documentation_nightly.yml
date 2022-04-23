@@ -521,7 +521,7 @@ jobs:
         with:
           name: site
       - name: Download previous job artifacts
-        uses: Lhoerion/actions-purge-artifacts@master
+        uses: Unnvaldr/actions-purge-artifacts@master
         if: "env.PRODUCTION == 'true'"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -532,7 +532,7 @@ jobs:
             sdk
             gta
       - name: Download previous job artifacts
-        uses: Lhoerion/actions-purge-artifacts@master
+        uses: Unnvaldr/actions-purge-artifacts@master
         if: "env.PRODUCTION == 'false'"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
