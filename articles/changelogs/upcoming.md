@@ -26,6 +26,7 @@
 > - increased 2d volume of sound api
 > - discord oAuth api
 > - alt.isCursorVisible()
+> - c# module
 > ```
 
 ### Fixed
@@ -40,6 +41,7 @@
 > - webview visible setter before view is initialized didn't worked
 > - webview size and pos parameter in constructor
 > - pixelation in rmlui when resolution changes
+> - resource import/export
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -68,6 +70,7 @@
 > - don't disable props when inside a bike, helicopter, submarine
 > - cancelable requestControl event
 > - hasAutoAttachTrailer to vehicleModelInfo
+> - isAccepted getter to ConnectionInfo
 > ```
 
 ### Fixed
