@@ -30,6 +30,8 @@
 >    - alt.isKeyDown returned true when key was pressed but game not focused
 > - 9.10:
 >    - Add support for GTA version 2612
+> - 9.12:
+>    - Crashfix for GTA version 2612
 > ```
 
 ## Client
