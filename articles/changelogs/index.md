@@ -32,6 +32,8 @@
 >    - Add support for GTA version 2612
 > - 9.12:
 >    - Crashfix for GTA version 2612
+> - 9.13:
+>    - Disable placeholder files from gta version 2612
 > ```
 
 ## Client
