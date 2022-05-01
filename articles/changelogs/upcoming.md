@@ -27,6 +27,8 @@
 > - discord oAuth api
 > - alt.isCursorVisible()
 > - c# module
+> - console connect command
+> - important missing ipls will be loaded by default now
 > ```
 
 ### Fixed
@@ -42,6 +44,7 @@
 > - webview size and pos parameter in constructor
 > - pixelation in rmlui when resolution changes
 > - resource import/export
+> - missing collision for helicopters, what caused explosions
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -59,11 +62,9 @@
 > ```yaml
 > - getServerConfig method
 > - optimized synced meta data
-> - enable xenon mod when setting headlight color
 > - support for resources in subfolders
 > - error message when binding to invalid host address
 > - serverStarted event
-> - boat anchor setter & getter
 > - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
 > - props & clothes setters returns a bool now
 > - collision & frozen setter, getter
