@@ -84,6 +84,7 @@
 > - last command being executed when pressed enter
 > - checkpoint destroy
 > - utf-8 with BOM destroyed server.cfg
+> - GetResourceExports crashed the server
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
@@ -109,6 +110,7 @@
 > ```yaml
 > - Updated nodeJS to v17.7.0
 > - Fixed emitClient & emitClientRaw not sending events properly when passing an array of players
+> - Fixed JS module reserved commands are sent to users
 > ```
 
 ## C# Server Module
