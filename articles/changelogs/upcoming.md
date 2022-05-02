@@ -26,7 +26,7 @@
 > - increased 2d volume of sound api
 > - discord oAuth api
 > - alt.isCursorVisible()
-> - c# module
+> - c# client module (limited to dev branch + debug mode enabled until finished)
 > - console connect command
 > - important missing ipls will be loaded by default now
 > ```
@@ -109,4 +109,33 @@
 > ```yaml
 > - Updated nodeJS to v17.7.0
 > - Fixed emitClient & emitClientRaw not sending events properly when passing an array of players
+> ```
+
+## C# Server Module
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Now AltV.Net NuGet depends on AltV.Net.Shared and AltV.Net.CApi. Consider that, if you specify dlls manually to move/deploy
+> - Floating point values now can be received as int in the events and meta
+> - Alt.Server was deprecated, use Alt.Core instead
+> - Function.Create was deprecated, use Alt.CreateFunction instead
+> - MValueBuffer2 constructor was deprecated, use Alt.CreateMValueBuffer instead
+> - MValueWriter2 constructor was deprecated, use Alt.CreateMValueWriter instead
+> - MValueObject old constructor was deprecated, use one with ICore as first argument
+> - MValueArray old constructor was deprecated, use one with ICore as first argument 
+> - MValueAdapters API was deprecated, use corrseponding method from Alt instead
+> - VehicleBuilder was deprecated, use Vehicle constructor instead
+> - IColShape.IsPlayerIn was deprecated, use IColShape.IsEntityIn instead
+> - IColShape.IsVehicleIn was deprecated, use IColShape.IsEntityIn instead
+> - ICheckpoint.IsPlayerIn was deprecated, use ICheckpoint.IsEntityIn instead
+> - ICheckpoint.IsVehicleIn was deprecated, use ICheckpoint.IsEntityIn instead
+> ```
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - IServer was renamed to ICore
+> - IEntityPool, IBaseObjectPool and IBaseBaseObjectPool method signatures were changed. (now they return a nullable entity, instead of returning boolean and entity via out variable)
+> - Alt.GetAll* methods now return IReadOnlyCollection instead of ICollection
 > ```
