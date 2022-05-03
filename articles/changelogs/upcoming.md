@@ -20,7 +20,8 @@
 > - branch validation to launcher config
 > - alt.getScreenResolution
 > - windowResolutionChange event
-> - webview size and pos getter & setter
+> - webview size setter & getter
+> - webview pos getter
 > - alt.utils class
 > - isRemote getter for blips
 > - increased 2d volume of sound api
