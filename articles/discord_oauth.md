@@ -24,6 +24,7 @@ To create a new application you need to:
 ## Client-side code
 
 ```js
+// Enter the client id here
 const DISCORD_APP_ID = '1234567890';
 
 async function getOAuthToken() {
