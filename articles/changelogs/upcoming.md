@@ -30,6 +30,7 @@
 > - c# client module (limited to dev branch + debug mode enabled until finished)
 > - console connect command
 > - important missing ipls will be loaded by default now
+> - moved CEF cache path to alt:V CEF folder
 > ```
 
 ### Fixed
@@ -73,6 +74,7 @@
 > - cancelable requestControl event
 > - hasAutoAttachTrailer to vehicleModelInfo
 > - isAccepted getter to ConnectionInfo
+> - arm64 build support
 > ```
 
 ### Fixed
@@ -86,6 +88,8 @@
 > - checkpoint destroy
 > - utf-8 with BOM destroyed server.cfg
 > - GetResourceExports crashed the server
+> - calling OnCreateBaseObject for objects that got created before other resource existed
+> - netowner reset on migration in few cases
 > ```
 
 <!-- ### <span style="color: red;">Breaking changes</span>
