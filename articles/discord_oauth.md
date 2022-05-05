@@ -1,4 +1,4 @@
-﻿# Introduction
+﻿# Discord OAuth
 
 The Discord OAuth (Open Authorization) is used to identify a user by the usage of a Discord account.
 By using the built-in OAuth token request you'll receive a token which can be used to identify the user against the
