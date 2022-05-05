@@ -30,7 +30,6 @@
 > - c# client module (limited to dev branch + debug mode enabled until finished)
 > - console connect command
 > - important missing ipls will be loaded by default now
-> - moved CEF cache path to alt:V CEF folder
 > ```
 
 ### Fixed
@@ -38,7 +37,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - clientside created blips didn't delete on reconnect
-> - Rockstar launcher detected unexpected Files
+> - Rockstar launcher detected unexpected Files because of cef cache
 > - serverside blip attached to entity is not deleted with entity
 > - serverside created blip API category setter doesent update
 > - resolution change did not apply for rmlui
