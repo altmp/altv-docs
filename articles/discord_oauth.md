@@ -14,7 +14,7 @@ Discord api.
 Before you can use the OAuth token you need to create a Discord application.
 <br>
 To create a new application you need to:
-- Open the [Discord Developer Portal](https://discord.com/developers/applications) and login with your discord account</li>
+- Open the [Discord Developer Portal](https://discord.com/developers/applications) and login with your discord account
 - Click the "New Application" button on the top right
 - Fill in your applications name and click on create
 - Go to "OAuth2" and then "General"
@@ -64,6 +64,5 @@ alt.onClient('token', async (player, token) => {
     // Example of returned properties
     alt.log(`Id: ${request.data.id}`);
     alt.log(`Name: ${request.data.username}#${request.data.discriminator}`);
-    alt.log(`Mail: ${request.data.email}`);
 });
 ```
