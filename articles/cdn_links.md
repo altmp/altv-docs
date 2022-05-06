@@ -199,7 +199,7 @@ label {
 
         if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
-        else if(branchArray.indexOf("dev") === branchIndex)
+        else if(branchArray.indexOf("dev") === branchIndex || branchArray.indexOf("rc") === branchIndex)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
         else
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.83</br>";
