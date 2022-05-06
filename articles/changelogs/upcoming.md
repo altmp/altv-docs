@@ -22,14 +22,14 @@
 > - windowResolutionChange event
 > - webview size setter & getter
 > - webview pos getter
-> - alt.utils class
 > - isRemote getter for blips
 > - increased 2d volume of sound api
 > - discord oAuth api
 > - alt.isCursorVisible()
-> - c# client module (limited to dev branch + debug mode enabled until finished)
+> - c# client module
 > - console connect command
 > - important missing ipls will be loaded by default now
+> - disable idle cam flag also disables vehicle idle cam now
 > ```
 
 ### Fixed
@@ -106,6 +106,7 @@
 > - resource class
 > - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
 > - stringToSHA256 method
+> - alt.Utils class
 > ```
 
 ## JS Module
