@@ -123,6 +123,8 @@
       "_gitUrlPattern": "github",
       "_searchHelpUrl": "articles/search_help.html",
       "_lunrTokenSeparator": "[\\s\\:\\-\\.\\(\\)\\[\\]+\\\"\\'\\<\\>]",
+      "_lunrSimilarityB": 0.0,
+      "_lunrSimilarityK1": 1.2,
       "_lunrRef": "href",
       "_lunrFields": {
         "type": {
