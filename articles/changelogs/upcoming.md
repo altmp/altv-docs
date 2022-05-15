@@ -8,12 +8,12 @@
 
 ## Client
 
-<!-- ### Added
+### Added
 
 > [!div class="nohljsln"]
 > ```yaml
-> - windowFocusChange Event
-> ``` -->
+> - local currentWeaponRecoil, currentWeaponSpread, currentWeaponDamage, currentWeaponRange getter
+> ```
 
 <!-- ### Fixed
 
