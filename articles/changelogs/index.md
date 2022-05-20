@@ -133,6 +133,8 @@
 > - IColShape.IsVehicleIn was deprecated, use IColShape.IsEntityIn instead
 > - ICheckpoint.IsPlayerIn was deprecated, use ICheckpoint.IsEntityIn instead
 > - ICheckpoint.IsVehicleIn was deprecated, use ICheckpoint.IsEntityIn instead
+> - All entity async methods, and AltAsync async methods except for entity creation ones were deprecated. Use async entities instead. For more info see Async article in C# docs
+> - AltInteractions Trigger method did trigger all types at once. Now, there's a TriggerAll method for that.
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
