@@ -53,5 +53,5 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Updated nodeJS launch options to support native ECMAScript module loader by default (removed experimental loader warning)
->   → The js-module automatically detects esm files if one of the described cases are fullfilled, see: [NodeJS esm enabling](https://nodejs.org/docs/latest-v17.x/api/esm.html#enabling)
+>   → The js-module automatically detects esm files if one of the described cases are fullfilled, see: https://nodejs.org/docs/latest-v17.x/api/esm.html#enabling
 > ```
