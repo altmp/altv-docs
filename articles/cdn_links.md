@@ -254,7 +254,7 @@ JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
 >https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/libjs-bytecode-module.so
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/modules/libjs-bytecode-module.so
 >```
 
 Voice Server
@@ -306,7 +306,7 @@ JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
 >https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/js-bytecode-module.dll
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/modules/js-bytecode-module.dll
 >```
 
 Voice Server
