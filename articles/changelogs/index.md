@@ -13,6 +13,11 @@
 > ```yaml
 > - 10.1:
 >    - Fixed problems with syncedMetaData
+> - 10.2
+>    - Fixed a crash on connect if ressource is missing
+>    - Fixed a crash related to cef
+>    - Fixed a crash related to vehicles
+>    - CEF cache didnt get cleared
 > ```
 
 ## Client
