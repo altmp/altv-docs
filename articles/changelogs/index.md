@@ -9,6 +9,12 @@
 > [!CAUTION]
 > This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
 
+> [!div class="nohljsln"]
+> ```yaml
+> - 10.1:
+>    - Fixed problems with syncedMetaData
+> ```
+
 ## Client
 
 ### Added
