@@ -242,7 +242,7 @@ Alt.OnPlayerConnect += (player, reason) =>
 
 A synced meta is distributed to all resources & clients and can be used in the following ways:
 
-- Global (applied to old)
+- Global (applied to alt)
 - Bound to an entity (applied to a player or vehicle)
 
 # [JS](#tab/tab3-0)
