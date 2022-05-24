@@ -27,6 +27,8 @@
 >   - Fixed discord oAuth api
 >   - Prevent alt:V from starting, if it's installed in GTA:V folder
 >   - Add ascii check for paths
+> - 10.5:
+>   - Removed ascii check for paths
 > ```
 
 ## Client
