@@ -64,6 +64,12 @@ js-module: {
     # https://nodejs.org/api/cli.html#--experimental-network-imports
     network-imports: true
 }
+# Settings related to c#-module
+csharp-module {
+    # Disable dependency (NuGet) check and download at server startup, this is recommended if you have a bad connection to the NuGet server (e.g china)
+    disableDependencyDownload: true
+}
+
 # An array of all resources that should be loaded
 resources: [
     "myResource"
