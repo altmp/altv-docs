@@ -199,10 +199,8 @@ label {
 
         if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
-        else if(branchArray.indexOf("dev") === branchIndex)
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.83</br>";
+            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
 
         if(osIndex === 0)
             returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
@@ -226,9 +224,9 @@ label {
             returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/js-bytecode-module.dll</br>";
+            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-bytecode-module.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libjs-bytecode-module.so</br>";
+            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-bytecode-module.so</br>";
 
         return returnStr;
     }
@@ -256,7 +254,7 @@ JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
 >https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/libjs-bytecode-module.so
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/modules/libjs-bytecode-module.so
 >```
 
 Voice Server
@@ -308,7 +306,7 @@ JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
 >https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/js-bytecode-module.dll
+>https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/modules/js-bytecode-module.dll
 >```
 
 Voice Server

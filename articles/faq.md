@@ -2,7 +2,7 @@
 
 Here you can see Frequently Asked Question and its answers.
 
-## Will the limits of GTA V be increased?
+## Will the limits of GTA:V be increased?
 
 Some limits have already been increased. If you need an increased limit for something the alt:V team hasn't thought of yet, you can create a [GitHub Issue](https://github.com/altmp/altv-issues/issues) about it, and add descriptive steps on how to reach that limit.
 

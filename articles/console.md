@@ -8,15 +8,16 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 
 |       Command         |               Debug needed            |            Description           |
 | :-------------------: | :-----------------------------------: |:-------------------------------: |
-| netgraph [0/1]            | No            |   Shows a netgraph on the minimap for fps and network informations.               |
-| quit                      | No            |   Closes the game.                                                                |
-| heap                      | No            |   Shows "Heap benchmark infos" in console.                                        |
-| heapspaces                | No            |   Shows "Heap spaces infos" in console.                                           |
-| timers                    | No            |   Shows "Timers benchmark infos" in console.                                      |
-| reconnect [password]      | Yes           |   Reconnects to the same server, password is the server password and optional.    |
-| external_console [0/1]    | No            |   Open console in a extra window.                                                 |
-| voiceVolume [0-200]       | No            |   Sets the output volume.                                                         |
-| voiceInputVolume [0-200]  | No            |   Sets the input volume.                                                          |
-| js-module                 | No            |   Shows informations about the js module.                                         |
-| debugvehs                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
-| rmldebug                  | Yes           |   Shows RMLUI debug window                                                        |
+| netgraph [0/1]                            | No            |   Shows a netgraph on the minimap for fps and network informations.               |
+| quit                                      | No            |   Closes the game.                                                                |
+| heap                                      | No            |   Shows "Heap benchmark infos" in console.                                        |
+| heapspaces                                | No            |   Shows "Heap spaces infos" in console.                                           |
+| timers                                    | No            |   Shows "Timers benchmark infos" in console.                                      |
+| reconnect [password]                      | Yes           |   Reconnects to the same server, password is the server password and optional.    |
+| external_console [0/1]                    | No            |   Open console in a extra window.                                                 |
+| voiceVolume [0-200]                       | No            |   Sets the output volume.                                                         |
+| voiceInputVolume [0-200]                  | No            |   Sets the input volume.                                                          |
+| js-module                                 | No            |   Shows informations about the js module.                                         |
+| debugvehs                                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
+| rmldebug                                  | Yes           |   Shows RMLUI debug window                                                        |
+| connect [ip:port or url] [password?]      | No            |   Connects to a server.                                                           |
