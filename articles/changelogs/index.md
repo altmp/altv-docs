@@ -29,6 +29,13 @@
 >   - Add ascii check for paths
 > - 10.5:
 >   - Removed ascii check for paths
+> - 10.6:
+>   - Fixed a common crash regarding to mlo's and vehicles
+> - 10.7:
+>   - Show broken asset warnings only in debug mode
+> - 10.8:
+>   - Add handling for invalid archetypes to avoid crashes
+>   - Add 2 more fixes to avoid crashes
 > ```
 
 ## Client
