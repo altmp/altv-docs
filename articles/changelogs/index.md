@@ -36,6 +36,9 @@
 > - 10.8:
 >   - Add handling for invalid archetypes to avoid crashes
 >   - Add 2 more fixes to avoid crashes
+> - 10.9:
+>   - Fixed a crash related to weapons
+>   - Fixed 2 crashes related to clothes
 > ```
 
 ## Client

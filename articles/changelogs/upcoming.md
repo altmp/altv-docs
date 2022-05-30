@@ -13,6 +13,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - local currentWeaponRecoil, currentWeaponSpread, currentWeaponDamage, currentWeaponRange getter
+> - Save external console position and reapply on every start
 > ```
 
 <!-- ### Fixed
