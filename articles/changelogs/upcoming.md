@@ -31,14 +31,15 @@
 > ```yaml
 > - isSpawned getter
 > - currentAnimationDict & currentAnimationName getter
+> - improved client-files wildcard support in ressource.cfg
 > ```
 
-<!-- ### Fixed
+### Fixed
 
 > [!div class="nohljsln"]
 > ```yaml
-> - blip rotation setter
-> ``` -->
+> - Fix frozen and collision setter
+> ```
 
 ## Server & Client
 
