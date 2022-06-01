@@ -39,6 +39,8 @@
 > - 10.9:
 >   - Fixed a crash related to weapons
 >   - Fixed 2 crashes related to clothes
+> - 10.10:
+>   - Fix a hook which was broken after 10.9
 > ```
 
 ## Client
