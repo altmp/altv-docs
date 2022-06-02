@@ -1,6 +1,6 @@
 # Synchronization
 
-If a thing or entity is synchronized it means that if it the same on all clients and don't need manual afford.
+When a thing or entity is synchronized, it means it is the same on all clients and requires no manual synchronization.
 
 Here is an list of things that may be synchronized:
 
