@@ -14,14 +14,16 @@
 > ```yaml
 > - local currentWeaponRecoil, currentWeaponSpread, currentWeaponDamage, currentWeaponRange getter
 > - Save external console position and reapply on every start
+> - vehicle lockState, petrolTankHealth getter
 > ```
 
-<!-- ### Fixed
+### Fixed
 
 > [!div class="nohljsln"]
 > ```yaml
->
-> ``` -->
+> - weapon auto swap flag disabled vehicle weapons
+> - playPedAmbientSpeechWithVoiceNative native
+> ```
 
 ## Server
 
@@ -39,6 +41,9 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Fix frozen and collision setter
+> - Bicycles don't work sometimes
+> - Size property doesn't work for areablip
+> - playAmbientSpeech method
 > ```
 
 ## Server & Client
