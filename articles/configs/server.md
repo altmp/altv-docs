@@ -72,6 +72,9 @@ csharp-module: {
 # An array of all resources that should be loaded
 resources: [
     "myResource"
+    # Since alt:V 10.0 you can also use resources in subdirectories
+    "vehicles/firstVehicle",
+    "vehicles/secondVehicle"
 ]
 # Voice configuration (needs to be set to enable voice chat)
 voice: {
