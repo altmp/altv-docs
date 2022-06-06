@@ -12,7 +12,7 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - local currentWeaponRecoil, currentWeaponSpread, currentWeaponDamage, currentWeaponRange getter
+> - weapondata api
 > - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
 > ```
