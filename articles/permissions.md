@@ -26,3 +26,6 @@ optional-permissions: [
     Clipboard Access
 ]
 ```
+
+> [!TIP]
+> To check if a user has approved the respective permission the method [alt.getPermissionState](https://docs.altv.mp/js/api/alt-client.html#_altmp_altv_types_alt_client_getPermissionState) can be used.
