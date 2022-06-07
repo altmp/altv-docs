@@ -15,6 +15,7 @@
 > - weapondata api
 > - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
+> - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
 > ```
 
 ### Fixed
