@@ -24,3 +24,8 @@ Based on these statistics one could assume the **minimum specifications** for a 
 - Disk Space (Depends on Database and Script)
 
 This will always be subject to change based on upcoming features or performance changes.
+
+## Used ports
+
+By default alt:V uses port 7788 (TCP & UDP) if no [CDN](~/articles/cdn.md) is used. If you are using a CDN, only UDP is used.
+The port can be changed in the [server.cfg](~/articles/configs/server.md).
