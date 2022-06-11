@@ -24,6 +24,7 @@
 > ```yaml
 > - weapon auto swap flag disabled vehicle weapons
 > - playPedAmbientSpeechWithVoiceNative native
+> - RMLUI style property
 > ```
 
 ## Server
@@ -62,4 +63,5 @@
 > ```yaml
 > - Updated nodeJS launch options to support native ECMAScript module loader by default (removed experimental loader warning)
 >   → The js-module automatically detects esm files if one of the described cases are fullfilled, see: https://nodejs.org/docs/latest-v17.x/api/esm.html#enabling
+> - Added extra-cli-args to server.cfg
 > ```
