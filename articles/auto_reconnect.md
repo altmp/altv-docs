@@ -103,6 +103,7 @@ connectLocalClient();
 
 ```csharp
 using AltV.Net.Async;
+using System.Runtime.Serialization;
 using Timer = System.Timers.Timer;
 
 namespace Example
@@ -115,28 +116,44 @@ namespace Example
         private readonly HttpClient _httpClient = new();
         private readonly Timer _timer = new(RetryDelay);
 
-        private async Task<string> GetLocalClientStatus()
+        private enum ClientStatus
+        {
+            [EnumMember(Value = "LOADING")] Loading,
+            [EnumMember(Value = "MAIN_MENU")] MainMenu,
+            [EnumMember(Value = "DOWNLOADING_FILES")] DownloadingFiles,
+            [EnumMember(Value = "CONNECTING")] Connecting,
+            [EnumMember(Value = "IN_GAME")] InGame,
+            [EnumMember(Value = "DISCONNECTING")] Disconnecting,
+            [EnumMember(Value = "ERROR")] Error
+        }
+
+        private async Task<ClientStatus> GetLocalClientStatus()
         {
             try
             {
-                return await _httpClient.GetStringAsync($"http://127.0.0.1:{DebugPort}/status");
+                var status = await _httpClient.GetStringAsync($"http://127.0.0.1:{DebugPort}/status");
+                var enumValue = typeof(ClientStatus).GetFields()
+                    .FirstOrDefault(f => f.GetCustomAttribute<EnumMemberAttribute>()?.Value == status)?
+                    .GetValue(null);
+    
+                return enumValue != null ? (ClientStatus)enumValue : ClientStatus.Error;
             }
-            catch (Exception)
+            catch
             {
-                return "ERROR";
+                return ClientStatus.Error;
             }
         }
 
         private async Task ConnectLocalClient()
         {
             var status = await GetLocalClientStatus();
-            if (status == "ERROR") return;
-            if (status != "MAIN_MENU" && status != "IN_GAME" && !_timer.Enabled)
+            if (status == ClientStatus.Error) return;
+            if (status != ClientStatus.MainMenu && status != ClientStatus.InGame && !_timer.Enabled)
             {
                 _timer.Start();
                 return;
             }
-            if (status == "IN_GAME" && _timer.Enabled)
+            if (status == ClientStatus.InGame && _timer.Enabled)
             {
                 _timer.Stop();
                 return;
