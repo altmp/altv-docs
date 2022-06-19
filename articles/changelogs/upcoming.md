@@ -25,6 +25,7 @@
 > - weapon auto swap flag disabled vehicle weapons
 > - playPedAmbientSpeechWithVoiceNative native
 > - RMLUI style property
+> - "This PC" crashes the game directory selection dialog
 > ```
 
 ## Server
@@ -36,6 +37,7 @@
 > - isSpawned getter
 > - currentAnimationDict & currentAnimationName getter
 > - improved client-files wildcard support in ressource.cfg
+> - error message when setting tire smoke color or headlight color without correct mod enabled
 > ```
 
 ### Fixed
