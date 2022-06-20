@@ -16,6 +16,7 @@
 > - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
 > - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
+> - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth getter & setter
 > ```
 
 ### Fixed
@@ -26,6 +27,7 @@
 > - playPedAmbientSpeechWithVoiceNative native
 > - RMLUI style property
 > - "This PC" crashes the game directory selection dialog
+> - vehicle gear setter
 > ```
 
 ## Server
@@ -48,6 +50,7 @@
 > - Bicycles don't work sometimes
 > - Size property doesn't work for areablip
 > - playAmbientSpeech method
+> - removed clothing & appearance missmatch message
 > ```
 
 ## Server & Client
