@@ -16,7 +16,7 @@
 > - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
 > - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
-> - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth getter & setter
+> - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth, fuelLevel, engineTemperature, oilLevel getter & setter
 > ```
 
 ### Fixed
