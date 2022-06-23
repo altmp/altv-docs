@@ -3,16 +3,13 @@
 > [!WARNING]
 > This update isn't released yet.
 
-> [!CAUTION]
-> This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
-
 ## Client
 
 ### Added
 
 > [!div class="nohljsln"]
 > ```yaml
-> - weapondata api
+> - weapondata api (https://docs.altv.mp/js/api/alt-client.WeaponData.html)
 > - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
 > - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
@@ -39,7 +36,8 @@
 > - isSpawned getter
 > - currentAnimationDict & currentAnimationName getter
 > - improved client-files wildcard support in ressource.cfg
-> - error message when setting tire smoke color or headlight color without correct mod enabled
+> - autoenable headlightcolor mod if headlightColor setter is used
+> - autoenable tireSmokeColor mod if tireSmokeColor setter is used
 > ```
 
 ### Fixed
