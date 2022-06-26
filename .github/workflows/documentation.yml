@@ -501,11 +501,12 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: "env.PRODUCTION == 'true'"
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.RELEASE_PRIVATE_KEY }}
           publish_dir: ./_site
-          cname: docs.altv.mp
+          external_repository: altmp/altv-docs-release
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           force_orphan: false
+          cname: docs.altv.mp
       - name: Deploy page
         uses: peaceiris/actions-gh-pages@v3
         if: "env.PRODUCTION == 'false'"
