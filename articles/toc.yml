@@ -57,3 +57,5 @@
   href: discord_oauth.md
 - name: Meta data
   href: meta_data.md
+- name: External voice server
+  href: external_voice_server.md

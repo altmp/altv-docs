@@ -62,7 +62,9 @@ js-module: {
     # https://nodejs.org/api/cli.html#--experimental-global-webcrypto
     global-webcrypto: true,
     # https://nodejs.org/api/cli.html#--experimental-network-imports
-    network-imports: true
+    network-imports: true,
+    # Add extra cli arguments to the node environment https://nodejs.org/api/cli.html
+    extra-cli-args: ["--inspect=127.0.0.1:9229", "--max-old-space-size=8192"]
 }
 # Settings related to c#-module
 csharp-module: {
@@ -72,6 +74,9 @@ csharp-module: {
 # An array of all resources that should be loaded
 resources: [
     "myResource"
+    # Since alt:V 10.0 you can also use resources in subdirectories
+    "vehicles/firstVehicle",
+    "vehicles/secondVehicle"
 ]
 # Voice configuration (needs to be set to enable voice chat)
 voice: {
