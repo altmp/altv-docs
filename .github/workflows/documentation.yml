@@ -1,4 +1,4 @@
-name: Documentation Nightly
+name: Documentation
 on:
   workflow_dispatch:
     inputs:
