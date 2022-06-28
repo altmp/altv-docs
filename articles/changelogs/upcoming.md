@@ -14,6 +14,8 @@
 > - vehicle lockState, petrolTankHealth getter
 > - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
 > - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth, fuelLevel, engineTemperature, oilLevel getter & setter
+> - persistent localstorage for early auth
+> - loadDefaultIpls method
 > ```
 
 ### Fixed
@@ -25,6 +27,7 @@
 > - RMLUI style property
 > - "This PC" crashes the game directory selection dialog
 > - vehicle gear setter
+> - permission dialog for optional permissions
 > ```
 
 ## Server
@@ -38,6 +41,7 @@
 > - improved client-files wildcard support in ressource.cfg
 > - autoenable headlightcolor mod if headlightColor setter is used
 > - autoenable tireSmokeColor mod if tireSmokeColor setter is used
+> - allow installation in appdata folder
 > ```
 
 ### Fixed
