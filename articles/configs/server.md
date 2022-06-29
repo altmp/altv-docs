@@ -37,6 +37,8 @@ timeout: 1
 announceRetryErrorDelay: 10000
 # Max retries until announceRetryErrorDelay will be used
 announceRetryErrorAttempts: 50
+# Max players which can connect with the same ip address
+duplicatePlayers: 4096
 # An array of all modules that should be loaded
 modules: [
     "js-module",
