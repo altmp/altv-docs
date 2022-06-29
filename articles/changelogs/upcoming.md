@@ -36,12 +36,14 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - isSpawned getter
+> - isSpawned, discordID getter
 > - currentAnimationDict & currentAnimationName getter
 > - improved client-files wildcard support in ressource.cfg
 > - autoenable headlightcolor mod if headlightColor setter is used
 > - autoenable tireSmokeColor mod if tireSmokeColor setter is used
 > - allow installation in appdata folder
+> - isEntityIn colshape method with entityID
+> - duplicatePlayers config entry (see [server config article](~/articles/configs/server.md))
 > ```
 
 ### Fixed
@@ -62,6 +64,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - animationChange event
+> - player forwardSpeed & strafeSpeed getter
 > ```
 
 ## JS Module
