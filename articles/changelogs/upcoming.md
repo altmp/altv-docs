@@ -44,6 +44,9 @@
 > - allow installation in appdata folder
 > - isEntityIn colshape method with entityID
 > - duplicatePlayers config entry (see [server config article](~/articles/configs/server.md))
+> - vehicle lightState setter & getter
+> - vehicle setTimedExplosion method
+> - vehicle timedExplosionTime, timedExplosionCulprit, hasTimedExplosion getter
 > ```
 
 ### Fixed
