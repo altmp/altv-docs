@@ -21,7 +21,7 @@ on:
       - Update SDK documentation
       - Update GTA documentation
 env:
-  PRODUCTION: ${{ github.event.inputs.environment == 'prod' }}
+  PRODUCTION: ${{ github.event.inputs.environment == 'prod' || github.event.action != '' }}
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   bootstrap:
