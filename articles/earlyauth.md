@@ -59,5 +59,28 @@ To request the alt:V from a player, you can use the snipped below in your early 
 </script>
 ```
 
+## Store and retrieve data
+Since the CEF cache is flushed between restarts, there is an alternative to store data persistently using alt:V LocalStorage.
+The following snippet explains how to use it:
+```html
+<script>
+    // Subscribe to the localStorage event to get the requested data
+    alt.on("localStorage", (key, value) => {
+        if (key === "lastLogin") {
+            // Do something with the retrieved data, stored in the variable "value"
+        }
+    });
+    
+    // Request the data for a key of the LocalStorage
+    // alt.emit("requestLocalStorage", key);
+    alt.emit("requestLocalStorage", "lastLogin");
+    
+    // Store data in the LocalStorage
+    // alt.emit("setLocalStorage", key, value);
+    alt.emit("setLocalStorage", "lastLogin", Date.now());
+</script>
+```
+This data is now persistently stored until the alt:V client's cache folder is deleted.
+
 ## Extra informations
 If you want to close your early auth window, you have to use `alt.emit('closeMe')`
