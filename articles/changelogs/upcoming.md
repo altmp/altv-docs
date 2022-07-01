@@ -3,6 +3,17 @@
 > [!WARNING]
 > This update isn't released yet.
 
+## Launcher
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Fixed "This PC" crashes the game directory selection dialog
+> - Fixed Startmenu shortcut
+> - allow installation in appdata folder (default installation)
+> - redesigned installation menu
+> - improved high resolution support
+> ```
+
 ## Client
 
 ### Added
@@ -25,7 +36,6 @@
 > - weapon auto swap flag disabled vehicle weapons
 > - playPedAmbientSpeechWithVoiceNative native
 > - RMLUI style property
-> - "This PC" crashes the game directory selection dialog
 > - vehicle gear setter
 > - permission dialog for optional permissions
 > ```
@@ -41,7 +51,6 @@
 > - improved client-files wildcard support in ressource.cfg
 > - autoenable headlightcolor mod if headlightColor setter is used
 > - autoenable tireSmokeColor mod if tireSmokeColor setter is used
-> - allow installation in appdata folder
 > - isEntityIn colshape method with entityID
 > - duplicatePlayers config entry (see [server config article](~/articles/configs/server.md))
 > - vehicle lightState setter & getter
