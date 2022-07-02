@@ -3,6 +3,9 @@
 > [!WARNING]
 > This update isn't released yet.
 
+> [!CAUTION]
+> This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
+
 ## Launcher
 
 > [!div class="nohljsln"]
@@ -88,4 +91,14 @@
 > - Updated nodeJS launch options to support native ECMAScript module loader by default (removed experimental loader warning)
 >   → The js-module automatically detects esm files if one of the described cases are fullfilled, see: https://nodejs.org/docs/latest-v17.x/api/esm.html#enabling
 > - Added extra-cli-args to server.cfg
+> ```
+
+## C# Module
+
+### <span style="color: red;">Contains Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Breaking Change: Async baseobject classes now don't have generic arguments (`AsyncPlayer<IPlayer>` -> `AsyncPlayer`)
+> - Added new optional API that makes any API call on any thread fully safe, more info in csharp Discord channel pinned messages
 > ```
