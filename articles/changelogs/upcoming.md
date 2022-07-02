@@ -27,6 +27,7 @@
 > - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth, fuelLevel, engineTemperature, oilLevel getter & setter
 > - persistent localstorage for early auth
 > - loadDefaultIpls method
+> - voiceControlsEnabled, rmlControlsEnabled getter
 > ```
 
 ### Fixed
@@ -47,7 +48,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - isSpawned, discordID getter
-> - currentAnimationDict & currentAnimationName getter
+> - player currentAnimationDict, currentAnimationName, currentInterior getter
 > - improved client-files wildcard support in ressource.cfg
 > - autoenable headlightcolor mod if headlightColor setter is used
 > - autoenable tireSmokeColor mod if tireSmokeColor setter is used
@@ -56,6 +57,7 @@
 > - vehicle lightState setter & getter
 > - vehicle setTimedExplosion method
 > - vehicle timedExplosionTime, timedExplosionCulprit, hasTimedExplosion getter
+> - playerInteriorChange event
 > ```
 
 ### Fixed
