@@ -101,4 +101,7 @@
 > ```yaml
 > - Breaking Change: Async baseobject classes now don't have generic arguments (`AsyncPlayer<IPlayer>` -> `AsyncPlayer`)
 > - Added new optional API that makes any API call on any thread fully safe, more info in csharp Discord channel pinned messages
+> - Fixed OnPlayerDamage async attribute event handler
+> - Added Alt.GetEntityById
+> - Added Alt.Core.IsMainThread
 > ```
