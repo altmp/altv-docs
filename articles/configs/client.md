@@ -24,6 +24,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   voiceInputVolume        |   number              |   100                | Sets the input volume (Range: 0 - 200). |
 |   voiceNoiseSuppression   |   boolean(true/false) |   true               | Enables or disables the noise suppression. |
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
+|   earlyAuthTestURL        |   string              |   -                  | URL to your early auth website. Only usable in rc & dev branch. |
 
 ## Example altv.cfg file
 
