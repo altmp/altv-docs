@@ -42,6 +42,7 @@
 > - RMLUI style property
 > - vehicle gear setter
 > - permission dialog for optional permissions
+> - disable idle camera flag disabled cinema camera by Key "R" (by default)
 > ```
 
 ## Server
