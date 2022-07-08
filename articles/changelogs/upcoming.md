@@ -15,6 +15,7 @@
 > - allow installation in appdata folder (default installation)
 > - redesigned installation menu
 > - improved high resolution support
+> - added uninstaller
 > ```
 
 ## Client
@@ -42,6 +43,7 @@
 > - RMLUI style property
 > - vehicle gear setter
 > - permission dialog for optional permissions
+> - cinematic camera key in vehicles while idlecam flag used
 > ```
 
 ## Server
@@ -61,6 +63,7 @@
 > - vehicle setTimedExplosion method
 > - vehicle timedExplosionTime, timedExplosionCulprit, hasTimedExplosion getter
 > - playerInteriorChange event
+> - optimized stream synced meta data
 > ```
 
 ### Fixed
