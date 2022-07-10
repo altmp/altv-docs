@@ -32,6 +32,7 @@
 > - persistent localstorage for early auth
 > - loadDefaultIpls method
 > - voiceControlsEnabled, rmlControlsEnabled getter
+> - alt.isPointOnScreen
 > ```
 
 ### Fixed
@@ -64,6 +65,7 @@
 > - vehicle timedExplosionTime, timedExplosionCulprit, hasTimedExplosion getter
 > - playerInteriorChange event
 > - optimized stream synced meta data
+> - interiorLocation getter
 > ```
 
 ### Fixed
