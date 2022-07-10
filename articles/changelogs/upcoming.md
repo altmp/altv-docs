@@ -32,6 +32,7 @@
 > - persistent localstorage for early auth
 > - loadDefaultIpls method
 > - voiceControlsEnabled, rmlControlsEnabled getter
+> - sender element to rmlui events
 > ```
 
 ### Fixed
