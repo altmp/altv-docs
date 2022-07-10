@@ -32,7 +32,6 @@
 > - persistent localstorage for early auth
 > - loadDefaultIpls method
 > - voiceControlsEnabled, rmlControlsEnabled getter
-> - alt.isPointOnScreen
 > ```
 
 ### Fixed
