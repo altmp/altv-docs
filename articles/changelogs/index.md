@@ -1,46 +1,25 @@
-# 10.0-Release
+# 11.0-Release
 
 > [!WARNING]
 > This update is the latest.
 
 > [!TIP]
-> This update was released on 20.05.2022
+> This update was released on 15.07.2022
 
 > [!CAUTION]
 > This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
 
+## Launcher
+
 > [!div class="nohljsln"]
 > ```yaml
-> - 10.1:
->    - Fixed problems with syncedMetaData
-> - 10.2:
->    - Fixed a crash on connect if ressource is missing
->    - Fixed a crash related to cef
->    - Fixed a crash related to vehicles
->    - CEF cache didnt get cleared
-> - 10.3:
->   - Fixed a crash related to disconnects
->   - Fixed a crash related to early auth
->   - Fixed a crash related to webviews
->   - Disabled default ipl loading
-> - 10.4:
->   - Fixed discord oAuth api
->   - Prevent alt:V from starting, if it's installed in GTA:V folder
->   - Add ascii check for paths
-> - 10.5:
->   - Removed ascii check for paths
-> - 10.6:
->   - Fixed a common crash regarding to mlo's and vehicles
-> - 10.7:
->   - Show broken asset warnings only in debug mode
-> - 10.8:
->   - Add handling for invalid archetypes to avoid crashes
->   - Add 2 more fixes to avoid crashes
-> - 10.9:
->   - Fixed a crash related to weapons
->   - Fixed 2 crashes related to clothes
-> - 10.10:
->   - Fix a hook which was broken after 10.9
+> - Fixed "This PC" crashes the game directory selection dialog
+> - Fixed Startmenu shortcut
+> - allow installation in appdata folder (default installation)
+> - redesigned installation menu
+> - improved high resolution support
+> - added uninstaller
+> - improved download progessbar on installation
 > ```
 
 ## Client
@@ -49,47 +28,27 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - windowFocusChange Event
-> - netOwnerChange event for local player ownership changes
-> - loading rml document from string
-> - alt.setMinimapComponentPosition
-> - alt.setMinimapIsRectangle
-> - branch validation to launcher config
-> - alt.getScreenResolution
-> - windowResolutionChange event
-> - webview size setter & getter
-> - webview pos getter
-> - isRemote getter for blips
-> - increased 2d volume of sound api
-> - discord oAuth api
-> - alt.isCursorVisible()
-> - c# client module
-> - console connect command
-> - important missing ipls will be loaded by default now
-> - disable idle cam flag also disables vehicle idle cam now
+> - weapondata api (https://docs.altv.mp/js/api/alt-client.WeaponData.html)
+> - Save external console position and reapply on every start
+> - vehicle lockState, petrolTankHealth getter
+> - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
+> - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth, fuelLevel, engineTemperature, oilLevel getter & setter
+> - persistent localstorage for early auth
+> - loadDefaultIpls method
+> - voiceControlsEnabled, rmlControlsEnabled getter
+> - sender element to rmlui events
 > ```
 
 ### Fixed
 
 > [!div class="nohljsln"]
 > ```yaml
-> - clientside created blips didn't delete on reconnect
-> - Rockstar launcher detected unexpected Files because of cef cache
-> - serverside blip attached to entity is not deleted with entity
-> - serverside created blip API category setter doesent update
-> - resolution change did not apply for rmlui
-> - webview visible setter before view is initialized didn't worked
-> - webview size and pos parameter in constructor
-> - pixelation in rmlui when resolution changes
-> - resource import/export
-> - missing collision for helicopters, what caused explosions
-> ```
-
-### <span style="color: red;">Breaking changes</span>
-
-> [!div class="nohljsln"]
-> ```yaml
-> - disabled document.execCommand in webviews
+> - weapon auto swap flag disabled vehicle weapons
+> - playPedAmbientSpeechWithVoiceNative native
+> - RMLUI style property
+> - vehicle gear setter
+> - permission dialog for optional permissions
+> - cinematic camera key in vehicles while idlecam flag used
 > ```
 
 ## Server
@@ -98,34 +57,29 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - getServerConfig method
-> - optimized synced meta data
-> - support for resources in subfolders
-> - error message when binding to invalid host address
-> - serverStarted event
-> - node inspector, source-maps, heap-profiler, profiler server.cfg entry for js module, global-fetch, global-webcrypto, network-imports (see https://docs.altv.mp/articles/configs/server.html for references)
-> - props & clothes setters returns a bool now
-> - collision & frozen setter, getter
-> - don't disable props when inside a bike, helicopter, submarine
-> - cancelable requestControl event
-> - hasAutoAttachTrailer to vehicleModelInfo
-> - isAccepted getter to ConnectionInfo
-> - arm64 build support
+> - isSpawned, discordID getter
+> - player currentAnimationDict, currentAnimationName, currentInterior getter
+> - improved client-files wildcard support in ressource.cfg
+> - autoenable headlightcolor mod if headlightColor setter is used
+> - autoenable tireSmokeColor mod if tireSmokeColor setter is used
+> - isEntityIn colshape method with entityID
+> - duplicatePlayers config entry (see [server config article](~/articles/configs/server.md))
+> - vehicle lightState setter & getter
+> - vehicle setTimedExplosion method
+> - vehicle timedExplosionTime, timedExplosionCulprit, hasTimedExplosion getter
+> - playerInteriorChange event
+> - optimized stream synced meta data
 > ```
 
 ### Fixed
 
 > [!div class="nohljsln"]
 > ```yaml
-> - blip rotation setter
-> - vehicles created on resource start will be missing in resource start
-> - empty resources got sended to client
-> - last command being executed when pressed enter
-> - checkpoint destroy
-> - utf-8 with BOM destroyed server.cfg
-> - GetResourceExports crashed the server
-> - calling OnCreateBaseObject for objects that got created before other resource existed
-> - netowner reset on migration in few cases
+> - Fix frozen and collision setter
+> - Bicycles don't work sometimes
+> - Size property doesn't work for areablip
+> - playAmbientSpeech method
+> - removed clothing & appearance missmatch message
 > ```
 
 ## Server & Client
@@ -134,48 +88,28 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - resource class
-> - resourceStop and resourceStart events now support async functions, and will wait until the async function is resolved
-> - stringToSHA256 method
-> - alt.Utils class
+> - animationChange event
+> - player forwardSpeed & strafeSpeed getter
 > ```
 
 ## JS Module
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Updated nodeJS to v17.7.0
-> - Fixed emitClient & emitClientRaw not sending events properly when passing an array of players
-> - Fixed JS module reserved commands are sent to users
+> - Updated nodeJS launch options to support native ECMAScript module loader by default (removed experimental loader warning)
+>   → The js-module automatically detects esm files if one of the described cases are fullfilled, see: https://nodejs.org/docs/latest-v17.x/api/esm.html#enabling
+> - Added extra-cli-args to server.cfg
 > ```
 
-## C# Server Module
+## C# Module
+
+### <span style="color: red;">Contains Breaking changes</span>
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Now AltV.Net NuGet depends on AltV.Net.Shared and AltV.Net.CApi. Consider that, if you specify dlls manually to move/deploy
-> - Floating point values now can be received as int in the events and meta
-> - Alt.Server was deprecated, use Alt.Core instead
-> - Function.Create was deprecated, use Alt.CreateFunction instead
-> - MValueBuffer2 constructor was deprecated, use Alt.CreateMValueBuffer instead
-> - MValueWriter2 constructor was deprecated, use Alt.CreateMValueWriter instead
-> - MValueObject old constructor was deprecated, use one with ICore as first argument
-> - MValueArray old constructor was deprecated, use one with ICore as first argument 
-> - MValueAdapters API was deprecated, use corrseponding method from Alt instead
-> - VehicleBuilder was deprecated, use Vehicle constructor instead
-> - IColShape.IsPlayerIn was deprecated, use IColShape.IsEntityIn instead
-> - IColShape.IsVehicleIn was deprecated, use IColShape.IsEntityIn instead
-> - ICheckpoint.IsPlayerIn was deprecated, use ICheckpoint.IsEntityIn instead
-> - ICheckpoint.IsVehicleIn was deprecated, use ICheckpoint.IsEntityIn instead
-> - All entity async methods, and AltAsync async methods except for entity creation ones were deprecated. Use async entities instead. For more info see Async article in C# docs
-> - AltInteractions Trigger method did trigger all types at once. Now, there's a TriggerAll method for that.
-> ```
-
-### <span style="color: red;">Breaking changes</span>
-
-> [!div class="nohljsln"]
-> ```yaml
-> - IServer was renamed to ICore
-> - IEntityPool, IBaseObjectPool and IBaseBaseObjectPool method signatures were changed. (now they return a nullable entity, instead of returning boolean and entity via out variable)
-> - Alt.GetAll* methods now return IReadOnlyCollection instead of ICollection
+> - Breaking Change: Async baseobject classes now don't have generic arguments (`AsyncPlayer<IPlayer>` -> `AsyncPlayer`)
+> - Added new optional API that makes any API call on any thread fully safe, more info in csharp Discord channel pinned messages
+> - Fixed OnPlayerDamage async attribute event handler
+> - Added Alt.GetEntityById
+> - Added Alt.Core.IsMainThread
 > ```
