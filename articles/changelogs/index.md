@@ -39,7 +39,6 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - weapondata api (https://docs.altv.mp/js/api/alt-client.WeaponData.html)
-> - Save external console position and reapply on every start
 > - vehicle lockState, petrolTankHealth getter
 > - focusdata api (overrideFocus, clearFocus, focusOverrideEntity, etc)
 > - WheelCamber, WheelTrackWidth, WheelHeight, WheelTyreRadius, WheelRimRadius, WheelTyreWidth, fuelLevel, engineTemperature, oilLevel getter & setter
