@@ -9,6 +9,16 @@
 > [!CAUTION]
 > This update contains **breaking changes**, which can potentially break the functionality of your gamemode, please verify and change accordingly.
 
+> [!div class="nohljsln"]
+> ```yaml
+> - 11.1:
+>    - Fixed problems with streamSyncedMeta
+> - 11.2:
+>    - Fixed currentammo getter
+> - 11.3:
+>    - Crashes related to vehicle windows
+> ```
+
 ## Launcher
 
 > [!div class="nohljsln"]

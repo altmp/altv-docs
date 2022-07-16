@@ -11,6 +11,7 @@
 > ```yaml
 > - weapondata playerDamageModifier getter & setter
 > - isPointOnScreen method
+> - vehicle engineOn getter
 > ```
 
 ## Server
