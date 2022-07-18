@@ -90,7 +90,7 @@ If Webview is not rendering in Linux, you might be missing required libraries in
 
 ##### Files to be copied into `/cef` directory
 
--   libcef.dll
+-   libce2.dll
 -   icudtl.dat
 -   snapshot_blob.bin
 -   chrome_elf.dll
