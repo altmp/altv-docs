@@ -12,6 +12,14 @@
 > - weapondata playerDamageModifier getter & setter
 > - isPointOnScreen method
 > - vehicle engineOn getter
+> - localplayer getWeaponAmmo getter
+> ```
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Connect to server via ipv6 adress
 > ```
 
 ## Server
