@@ -1,7 +1,7 @@
 # Nametag example
 
 This article deals with name tags as RmlUi example.
-All used files for this example can be found in the following [repository](https://github.com/deluvas1911/altv-rml-example).
+All used files for this example can be found in the following [repository](https://github.com/altmp/altv-example-resources/tree/master/rml-nametags).
 
 ## Requirements
 
