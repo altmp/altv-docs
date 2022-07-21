@@ -18,7 +18,7 @@ These topics will be discussed in more detail in the respective subsections.
 | (Global) Synced Meta | Entities, Alt | Server             | Client & Server    | The data is settable on every entity (player & vehicle). Every client can fetch the data.                                                     |
 | Stream Synced Meta   | Entities      | Server             | Client & Server    | This is similar to the synced meta, but the data gets only transferred when the entity is in streaming range of the client fetching the data. |
 
-## Meta
+## Usage
 
 A meta is set by using the method setMeta on the class alt or an entity (player or vehicle).
 The meta is only available on the same side that it has been set and can be fetched by all resources.
@@ -467,3 +467,54 @@ Alt.OnPlayerConnect += (player, reason) =>
 };
 ```
 ---
+
+## Remarks
+
+> [!WARNING] 
+> The meta change events are only called if the (new) data is not yet known to the client.
+> If this data is already known, it must be queried & processed independently, for example via the gameEntityCreate event.
+
+Let's take the example case of a **streamSyncedMeta** with the key `trackWidth`, which sets the track width of a vehicle.
+
+The event `streamSyncedMetaChange` is only called here if the client does not yet know this value.\
+If you now leave the streaming range and then return to it, the vehicle is created, but no 'streamSyncedMetaChange' event is triggered.\
+To ensure that the values are always applied, the `gameEntityCreate` event must also be used.
+
+Here is an example:
+
+# [Server](#tab/tab5-0)
+
+```js
+const vehicle = new alt.Vehicle("t20", 0, 0, 72, 0, 0, 0);
+vehicle.setStreamSyncedMeta("trackWidth", 0.85);
+```
+
+# [Client](#tab/tab5-1)
+
+```js
+// This is called when the meta is communicated to the client for the first time
+alt.on("streamSyncedMetaChange", (entity, key, newValue, oldValue) => {
+    if (key === "trackWidth") setTrackWidth(entity, newValue);
+});
+
+// This is called as soon as the vehicle is created on the client
+// Here we check if the vehicle has the meta and if so process it
+alt.on("gameEntityCreate", (entity) => {
+    if (entity.hasStreamSyncedMeta("trackWidth")) {
+        const trackWidth = entity.getStreamSyncedMeta("trackWidth");
+        setTrackWidth(entity, trackWidth);
+    }
+});
+
+// If applicable, the `gameEntityDestroy` event can be used to undo changes that should only exist as long as the entity exists.
+alt.on("gameEntityDestroy", (entity) => {
+   // Remove meta changes for example 
+});
+
+// To avoid duplicating the code in both events we move it to its own function
+function setTrackWidth(entity, trackWidth) {
+    for (let i = 0; i < entity.wheelsCount; i++) {
+        entity.setWheelTrackWidth(i, trackWidth);
+    }
+}
+```
