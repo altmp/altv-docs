@@ -506,6 +506,11 @@ alt.on("gameEntityCreate", (entity) => {
     }
 });
 
+// If applicable, the `gameEntityDestroy` event can be used to undo changes that should only exist as long as the entity exists.
+alt.on("gameEntityDestroy", (entity) => {
+   // Remove meta changes for example 
+});
+
 // To avoid duplicating the code in both events we move it to its own function
 function setTrackWidth(entity, trackWidth) {
     for (let i = 0; i < entity.wheelsCount; i++) {
