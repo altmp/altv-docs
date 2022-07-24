@@ -12,7 +12,7 @@
 > - weapondata playerDamageModifier getter & setter
 > - isPointOnScreen method
 > - vehicle engineOn getter
-> - localplayer getWeaponAmmo, weapons, weaponComponents getter
+> - localplayer getWeaponAmmo, weapons, getWeaponComponents getter
 > - localplayer hasWeapon method
 > - cef getEventListeners method
 > ```
