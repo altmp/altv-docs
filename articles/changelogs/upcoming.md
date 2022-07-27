@@ -5,6 +5,13 @@
 
 ## Client
 
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - some natives got renamed
+> ```
+
 ### Added
 
 > [!div class="nohljsln"]
@@ -15,6 +22,7 @@
 > - localplayer getWeaponAmmo, weapons, getWeaponComponents getter
 > - localplayer hasWeapon method
 > - cef getEventListeners method
+> - few new natives
 > ```
 
 ### Fixed
