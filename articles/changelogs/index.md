@@ -18,6 +18,12 @@
 >    - Dont load gta update dummy files
 > - 12.4:
 >    - Fixed gta pool crashes
+> - 12.5:
+>    - Fixed Crashes related to gadgets
+> - 12.6:
+>    - Added spawned event on modelchange
+>    - Fixed licensehash
+>    - Fixed blips
 > ```
 
 ## Client
