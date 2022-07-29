@@ -357,7 +357,7 @@ $requiredTasks=[Ordered]@{
     };
 }
 
-$tmpd="${env:TMP}/altv-docs"
+$tmpd="${env:TEMP}/altv-docs"
 
 # if (Test-Path -Path "Env:\GITHUB_ENV") {
 #     foreach($el in $requiredPackages.GetEnumerator()) {
