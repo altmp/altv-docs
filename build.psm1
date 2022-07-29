@@ -357,7 +357,7 @@ $requiredTasks=[Ordered]@{
     };
 }
 
-$tmpd="${env:TEMP}/altv-docs"
+$tmpd=Join-Path -Path $([System.IO.Path]::GetTempPath()) -ChildPath "altv-docs"
 
 # if (Test-Path -Path "Env:\GITHUB_ENV") {
 #     foreach($el in $requiredPackages.GetEnumerator()) {
