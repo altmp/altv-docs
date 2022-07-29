@@ -26,7 +26,7 @@ function RunThroughMonoIfOnUnix([string] $prog) {
         @("mono", $prog) -Join ' '
     }
 }
-Export-ModuleMember -Function IsOnUnixPlatform
+Export-ModuleMember -Function RunThroughMonoIfOnUnix
 
 function GetAssemblyVersion([string] $file) {
     if(-not (Test-Path -Path $file)) { return "not found" }
