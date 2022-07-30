@@ -24,6 +24,8 @@
 >    - Added spawned event on modelchange
 >    - Fixed licensehash
 >    - Fixed blips
+> - 12.7:
+>    - More blip fixes
 > ```
 
 ## Client

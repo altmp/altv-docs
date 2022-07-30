@@ -30,6 +30,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Connect to server via ipv6 adress
+> - resource deps with subfolder clientside
 > ```
 
 ## Server
