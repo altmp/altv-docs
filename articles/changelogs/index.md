@@ -26,6 +26,8 @@
 >    - Fixed blips
 > - 12.7:
 >    - More blip fixes
+> - 12.8:
+>    - Fixed Blip route
 > ```
 
 ## Client
