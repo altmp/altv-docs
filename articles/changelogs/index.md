@@ -28,6 +28,8 @@
 >    - More blip fixes
 > - 12.8:
 >    - Fixed Blip route
+> - 12.9:
+>    - Fixed Resolving of dependencies inside sub directories failed clientside
 > ```
 
 ## Client

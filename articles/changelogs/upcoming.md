@@ -23,6 +23,7 @@
 > - localplayer hasWeapon method
 > - cef getEventListeners method
 > - few new natives
+> - logDebug to prints custom log if client is in debugmode
 > ```
 
 ### Fixed
