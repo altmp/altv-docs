@@ -30,6 +30,8 @@
 >    - Fixed Blip route
 > - 12.9:
 >    - Fixed Resolving of dependencies inside sub directories failed clientside
+> - 12.10:
+>    - Fixed one more crash related to dependencies reload
 > ```
 
 ## Client
