@@ -85,7 +85,8 @@ voice: {
     # The bitrate of the voice server
     bitrate: 64000,
     # The secret for the external server (only needed when using externalHost)
-    externalSecret: "secret123",
+    # The secret must consist of numeric values only
+    externalSecret: "1234567890",
     # The external host address (leave 127.0.0.1, if voice-server is on same machine)
     externalHost: "127.0.0.1",
     # The external host port

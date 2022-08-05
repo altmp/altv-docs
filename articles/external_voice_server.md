@@ -38,7 +38,8 @@ voice: {
     # The bitrate of the voice server
     bitrate: 64000,
     # Secret shared between the alt:V server and the external voice server
-    externalSecret: "https://youtu.be/tieoP-tNZM8",
+    # The secret must consist of numeric values only
+    externalSecret: "1234567890",
     # The external host address (leave 127.0.0.1, if voice-server is on same machine)
     externalHost: "127.0.0.1",
     # The external host port
