@@ -101,6 +101,8 @@ tags: [
     "Freeroam",
     "Cool"
 ]
+# Enables the connection queue
+connectionQueue: "true"
 # Should early auth be used for your server
 useEarlyAuth: true
 # The url for the early auth login page (only used when useEarlyAuth is true)
