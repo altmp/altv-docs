@@ -55,19 +55,19 @@ js-module: {
         # Define inspector port
         port: 9229
     },
-    # https://nodejs.org/api/cli.html#--enable-source-maps
+    # "https://nodejs.org/api/cli.html#--enable-source-maps"
     source-maps: true,
-    # https://nodejs.org/api/cli.html#--heap-prof
+    # "https://nodejs.org/api/cli.html#--heap-prof"
     heap-profiler: true,
     # Enable profiler
     profiler: true,
-    # https://nodejs.org/api/cli.html#--experimental-fetch
+    # "https://nodejs.org/api/cli.html#--experimental-fetch"
     global-fetch: true,
-    # https://nodejs.org/api/cli.html#--experimental-global-webcrypto
+    # "https://nodejs.org/api/cli.html#--experimental-global-webcrypto"
     global-webcrypto: true,
-    # https://nodejs.org/api/cli.html#--experimental-network-imports
+    # "https://nodejs.org/api/cli.html#--experimental-network-imports"
     network-imports: true,
-    # Add extra cli arguments to the node environment https://nodejs.org/api/cli.html
+    # Add extra cli arguments to the node environment "https://nodejs.org/api/cli.html"
     extra-cli-args: ["--inspect=127.0.0.1:9229", "--max-old-space-size=8192"]
 }
 # Settings related to c#-module
