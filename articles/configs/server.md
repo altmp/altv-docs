@@ -17,6 +17,8 @@ players: 256
 password: "mySecretPassword"
 # If the server should be visible on the masterlist in the alt:V client
 announce: true
+# Token to announce the server to the masterlist
+token: "superSecretToken"
 # The gamemode your server is running
 gamemode: "Freeroam"
 # The website of your server
