@@ -24,6 +24,9 @@
 > - cef getEventListeners method
 > - few new natives
 > - logDebug to prints custom log if client is in debugmode
+> - Object api
+> - increased weapon component pool
+> - eval option to worker
 > ```
 
 ### Fixed
@@ -50,4 +53,5 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - player, blips, vehicles all getter are readonly now (server & client)
+> - emitClient & emitClientRaw with null, use emitAllClients & emitAllClientsRaw instead
 > ```
