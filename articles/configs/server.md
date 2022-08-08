@@ -102,13 +102,13 @@ tags: [
     "Cool"
 ]
 # Enables the connection queue
-connectionQueue: "true"
+connectionQueue: false
 # Should early auth be used for your server
-useEarlyAuth: true
+useEarlyAuth: false
 # The url for the early auth login page (only used when useEarlyAuth is true)
 earlyAuthUrl: "https://example.com/login"
 # Should a CDN be used for your server
-useCdn: true
+useCdn: false
 # The url for the CDN page
 cdnUrl: "https://cdn.example.com"
 ```
