@@ -101,7 +101,8 @@ tags: [
     "Freeroam",
     "Cool"
 ]
-# Enables the connection queue
+# Should connection queue be enabled for your server.
+# ConnectionQueueAdd & ConnectionQueueRemove serverside events are required to accept or decline connections
 connectionQueue: false
 # Should early auth be used for your server
 useEarlyAuth: false
