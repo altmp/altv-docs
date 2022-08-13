@@ -374,17 +374,15 @@ $tmpd=Join-Path -Path $([System.IO.Path]::GetTempPath()) -ChildPath "altv-docs"
 #     }
 # }
 
-{
-    $GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
-    $GITHUB_ENV=[Ordered]@{}
-    ($GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] })
-    foreach($el in $requiredPackages.GetEnumerator()) {
-        $envKey=$el.Key.ToUpper().Replace('-', '_')
-        if (-not ($GITHUB_ENV.Contains($envKey))) {
-            continue
-        }
-        $el.Value["version"]=$GITHUB_ENV[$envKey]
+$GITHUB_ENV_RAW=(Get-Content -Path "./.github/variables/vars.env")
+$GITHUB_ENV=[Ordered]@{}
+$GITHUB_ENV_RAW | %{ $tmp=$_.Split('='); $GITHUB_ENV[$tmp[0]]=$tmp[1] }
+foreach($el in $requiredPackages.GetEnumerator()) {
+    $envKey=$el.Key.ToUpper().Replace('-', '_')
+    if (-not ($GITHUB_ENV.Contains($envKey))) {
+        continue
     }
+    $el.Value["version"]=$GITHUB_ENV[$envKey]
 }
 
 Export-ModuleMember -Variable requiredRepos, requiredPackages, requiredTasks, tmpd, pipeline
