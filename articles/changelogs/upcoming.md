@@ -58,3 +58,13 @@
 > - player, blips, vehicles all getter are readonly now (server & client)
 > - emitClient & emitClientRaw with null, use emitAllClients & emitAllClientsRaw instead
 > ```
+
+## C# Server Module
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - IPlayer DiscordId changed type from strint to long
+> - IConnectionInfo DiscordUserId changed type from strint to long
+> ```
