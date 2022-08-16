@@ -65,6 +65,6 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - IPlayer DiscordId changed type from strint to long
-> - IConnectionInfo DiscordUserId changed type from strint to long
+> - IPlayer DiscordId changed type from string to long
+> - IConnectionInfo DiscordUserId changed type from string to long
 > ```
