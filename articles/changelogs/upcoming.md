@@ -27,6 +27,7 @@
 > - Object api
 > - increased weapon component pool
 > - eval option to worker
+> - weapon shoot event
 > ```
 
 ### Fixed
@@ -35,6 +36,8 @@
 > ```yaml
 > - Connect to server via ipv6 adress
 > - resource deps with subfolder clientside
+> - memorybuffer method
+> - playermodel getter returned new value with a delay
 > ```
 
 ## Server
