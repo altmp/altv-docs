@@ -26,7 +26,6 @@
 > - logDebug to prints custom log if client is in debugmode
 > - Object api
 > - increased weapon component pool
-> - eval option to worker
 > - weapon shoot event
 > ```
 
@@ -38,6 +37,7 @@
 > - resource deps with subfolder clientside
 > - memorybuffer method
 > - playermodel getter returned new value with a delay
+> - clear focus data didn't reset on disconnect
 > ```
 
 ## Server
@@ -48,6 +48,14 @@
 > ```yaml
 > - Master server used default interface even if bound to different ip
 > ```
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - attachTo now takes boneid instead of boneindex
+> ```
+
 
 ## JS Module
 
