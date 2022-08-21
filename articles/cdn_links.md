@@ -135,6 +135,9 @@ label {
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
+        if (branchArray[branchIndex] == "dev") {
+            returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
+        }
 
         return returnStr;
     }
@@ -273,6 +276,7 @@ Server
 >https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
 >https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/pedmodels.bin
 >```
 
 Other Stuff
@@ -325,6 +329,7 @@ Server
 >https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
 >https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
+>https://cdn.altv.mp/data/${BRANCH}/data/pedmodels.bin
 >```
 
 Other Stuff
