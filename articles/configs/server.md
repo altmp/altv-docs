@@ -41,6 +41,14 @@ announceRetryErrorDelay: 10000
 announceRetryErrorAttempts: 50
 # Max players which can connect with the same ip address
 duplicatePlayers: 4096
+
+# Define the map bound size
+mapBoundsMinX: 10000 # values are considered negative
+mapBoundsMinY: 10000 # values are considered negative
+mapBoundsMaxX: 65536
+mapBoundsMaxY: 65536
+mapCellAreaSize: 100 #smaller areas uses more ram and less cpu
+
 # An array of all modules that should be loaded
 modules: [
     "js-module",
