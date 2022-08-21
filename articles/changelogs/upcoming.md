@@ -47,6 +47,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Master server used default interface even if bound to different ip
+> - getServerConfig() does not return variable values properly that start with numeric characters
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
