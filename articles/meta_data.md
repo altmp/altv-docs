@@ -7,6 +7,8 @@ Likewise, data such as the current weather can also be bound to a resource as a 
 this value (global meta).
 These topics will be discussed in more detail in the respective subsections.
 
+<iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/4oQTVkx5GA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Types
 
 ## Overview
