@@ -240,7 +240,7 @@ $pipeline=([ScriptBlock]::Create({
         if(-not $pkgCmd) { Exit-Task (0x1) }
         if(-not (Test-Path "../node_modules/")) { & $pkgCmd install }
         RunNodePackage "typedoc" --options "./typedoc.json"
-        RunNodePackage "type2docfx" "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "master" --disableAlphabetOrder
+        RunNodePackage "type2docfx" "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "master" --tocAlphabetOrderOnly
         Set-Location $cwd
     } @($cwd) { ($requiredTasks["generate-js"]["strategy"]).HasFlag($strategy) }
     Start-Task "Generating C# project metadata" {
