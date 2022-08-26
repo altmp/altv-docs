@@ -56,6 +56,8 @@ jobs:
     runs-on: windows-2019
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'js') }}
+    env:
+      SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -74,7 +76,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-types
-          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
+          ref: ${{ env.SOURCE_BRANCH }}
           path: ./altv-types
       - name: Checkout latest commit
         run: git checkout $(git rev-parse HEAD)
@@ -89,7 +91,7 @@ jobs:
           Push-Location -Path "../"
           npx typedoc --options "./docs/typedoc.json"
           Pop-Location
-          npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}" --disableAlphabetOrder
+          npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "${{ env.SOURCE_BRANCH }}" --disableAlphabetOrder
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         if: "env.PRODUCTION == 'true'"
@@ -106,6 +108,8 @@ jobs:
     runs-on: windows-2019
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'cs') }}
+    env:
+      SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'dev' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -120,7 +124,7 @@ jobs:
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
-          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'dev' }}
+          ref: ${{ env.SOURCE_BRANCH }}
           path: ./coreclr-module
       - name: Checkout latest commit
         run: git checkout $(git rev-parse HEAD)
@@ -153,6 +157,8 @@ jobs:
     runs-on: windows-2019
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'sdk') }}
+    env:
+      SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'docs' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -167,7 +173,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/cpp-sdk
-          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'docs' }}
+          ref: ${{ env.SOURCE_BRANCH }}
           path: ./cpp-sdk
       - name: Checkout latest commit
         run: git checkout $(git rev-parse HEAD)
@@ -188,6 +194,8 @@ jobs:
     runs-on: windows-latest
     needs: bootstrap
     if: ${{ needs.bootstrap.outputs.isSkipped == 'false' || contains(needs.bootstrap.outputs.isSkipped, 'gta') }}
+    env:
+      SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -202,7 +210,7 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
-          ref: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
+          ref: ${{ env.SOURCE_BRANCH }}
           path: ./altv-docs-gta
       - name: Checkout latest commit
         run: git checkout $(git rev-parse HEAD)
