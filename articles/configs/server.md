@@ -49,6 +49,9 @@ mapBoundsMaxX: 65536
 mapBoundsMaxY: 65536
 mapCellAreaSize: 100 #smaller areas uses more ram and less cpu
 
+# Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2
+entityWorkerCount: 8
+
 # An array of all modules that should be loaded
 modules: [
     "js-module",
