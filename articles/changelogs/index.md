@@ -32,6 +32,8 @@
 >    - Fixed Resolving of dependencies inside sub directories failed clientside
 > - 12.10:
 >    - Fixed one more crash related to dependencies reload
+> - 12.11:
+>    - Helicopter's explosion bug
 > ```
 
 ## Client
