@@ -26,7 +26,7 @@
 > - logDebug to prints custom log if client is in debugmode
 > - Object api
 > - increased weapon component pool
-> - weapon shoot event
+> - weapon shoot & weapon change event
 > ```
 
 ### Fixed
@@ -55,6 +55,15 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - attachTo now takes boneid instead of boneindex
+> ```
+
+## Server & Client
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - blip route didn't update when setting pos
 > ```
 
 
