@@ -76,7 +76,28 @@ alt.on("globalMetaChange", (key, newValue, oldValue) => {
 });
 ```
 
-# [C#](#tab/tab1-1)
+# [TS](#tab/tab1-1)
+
+Meta declaration in the interface (can be added to .ts or .d.ts file)
+
+```ts
+declare module "alt-shared" {
+  // extending interface by interface merging
+  export interface ICustomGlobalMeta {
+    metaKey: string
+  }
+}
+```
+
+The usage is the same as in JS:
+
+**Server & Client**
+
+```ts
+const metaValue /* string | undefined */  = alt.getMeta("metaKey");
+```
+
+# [C#](#tab/tab1-2)
 
 Applying a global meta
 
@@ -161,7 +182,7 @@ alt.on("playerConnect", (player) => {
         alt.log("Meta isn't set");
     }
     // Fetch and save the value of the local meta
-    const metaValue = player.getMeta("username");
+    const metaValue = player.getLocalMeta("username");
     // Delete the meta (only available on server)
     player.deleteLocalMeta("username");
 });
@@ -211,7 +232,34 @@ alt.on("localMetaChange", (key, oldValue, newValue) => {
 });
 ```
 
-# [C#](#tab/tab2-1)
+# [TS](#tab/tab2-1)
+
+Meta declaration in the interface (can be added to .ts or .d.ts file)
+
+```ts
+declare module "alt-shared" {
+  // extending interface by interface merging
+  export interface ICustomPlayerLocalMeta {
+    username: string
+  }
+}
+```
+
+The usage is the same as in JS:
+
+**Server**
+
+```ts
+const metaValue /* string | undefined */ = player.getLocalMeta("username");
+```
+
+**Client**
+
+```ts
+const metaValue /* string | undefined */ = alt.getLocalMeta("username");
+```
+
+# [C#](#tab/tab2-2)
 
 **Server**
 
@@ -341,7 +389,34 @@ alt.on("syncedMetaChange", (entity, key, oldValue, newValue) => {
 });
 ```
 
-# [C#](#tab/tab3-1)
+# [TS](#tab/tab3-1)
+
+Meta declaration in the interface (can be added to .ts or .d.ts file)
+
+```ts
+declare module "alt-shared" {
+  // extending interface by interface merging
+
+  export interface ICustomGlobalSyncedMeta {
+    globalMetaKey: string
+  }
+
+  export interface ICustomPlayerSyncedMeta {
+    playerMetaKey: string
+  }
+}
+```
+
+The usage is the same as in JS:
+
+**Server & Client**
+
+```ts
+const globalMetaValue /* string | undefined */ = alt.getSyncedMeta("globalMetaKey");
+const playerMetaValue /* string | undefined */ = player.getSyncedMeta("playerMetaKey");
+```
+
+# [C#](#tab/tab3-2)
 
 **Server**
 
@@ -413,35 +488,55 @@ alt.on("streamSyncedMetaChange", (entity, key, newValue, oldValue) => {
 
 **Client**
 
-Checking if stream synced meta is set
+Listening for stream synced meta changes (basically the same as on the server side)
 
 ```js
-alt.on("spawned", () => {
-    // Check if the global synced meta is set
-    if (alt.hasSyncedMeta("metaKey")) {
-        alt.log("Meta is set");
-    } else {
-        alt.log("Meta isn't set");
-    }
-    // Fetch and save the value of the meta
-    const metaValue = alt.getSyncedMeta("metaKey");
-});
-```
-
-Listening for stream synced meta changes
-
-```js
-alt.on("streamSyncedMetaChange", (entity, key, oldValue, newValue) => {
-    // This event gets called when a synced meta changes which is applied to an entity  
-    // You can also check it yourself by using the entity.hasSyncedMeta(key) method
-    if (entity.hasSyncedMeta("metaKey")) {
-        const metaValue = entity.getSyncedMeta("metaKey");
+alt.on("streamSyncedMetaChange", (entity, key, newValue, oldValue) => {
+    // This event gets called when a stream synced meta changes which is applied to an entity  
+    // You can also check it yourself by using the entity.hasStreamSyncedMeta(key) method
+    if (entity.hasStreamSyncedMeta("metaKey")) {
+        const metaValue = entity.getStreamSyncedMeta("metaKey");
         // <Do something with the value>
     }
 });
 ```
 
-# [C#](#tab/tab4-1)
+# [TS](#tab/tab4-1)
+
+Meta declaration in the interface (can be added to .ts or .d.ts file)
+
+```ts
+declare module "alt-shared" {
+  // extending interface by interface merging
+
+  // alt.Player and alt.Vehicle
+  export interface ICustomEntityStreamSyncedMeta {
+    entityMetaKey: string
+  }
+
+  // only alt.Player
+  export interface ICustomPlayerStreamSyncedMeta {
+    playerMetaKey: number
+  }
+
+  // only alt.Vehicle
+  export interface ICustomVehicleStreamSyncedMeta {
+    vehicleMetaKey: boolean
+  }
+}
+```
+
+The usage is the same as in JS:
+
+**Server & Client**
+
+```ts
+const entityMetaValue /* string | undefined */ = entity.getSyncedMeta("entityMetaKey");
+const playerMetaValue /* number | undefined */ = player.getSyncedMeta("playerMetaKey");
+const vehicleMetaValue /* boolean | undefined */ = vehicle.getSyncedMeta("vehicleMetaKey");
+```
+
+# [C#](#tab/tab4-2)
 
 **Server**
 
