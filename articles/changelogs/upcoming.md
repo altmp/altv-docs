@@ -42,6 +42,14 @@
 
 ## Server
 
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - getPedModelInfoByHash method
+> - bones info to getVehicleModelInfoByHash method
+> ```
+
 ### Fixed
 
 > [!div class="nohljsln"]
