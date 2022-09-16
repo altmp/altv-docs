@@ -49,6 +49,12 @@ mapBoundsMaxX: 65536
 mapBoundsMaxY: 65536
 mapCellAreaSize: 100 #smaller areas uses more ram and less cpu
 
+# Defines the rate (miliseconds) in which colshape calculations should occur (dev/13.0-dev32 and higher)
+colShapeTickRate: 200
+
+# Defines the used logging streams (console, file, stdconsole) for the server (dev/13.0-dev32 and higher)
+logStreams: [ console, file ]
+
 # Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2
 entityWorkerCount: 8
 
