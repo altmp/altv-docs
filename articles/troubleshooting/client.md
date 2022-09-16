@@ -20,16 +20,17 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 2. Try Running as Admin
 3. Add an exception to your Anti-Virus for alt:V (This Includes Windows Defender).
 4. Avast is even blocking alt:V if you whitelist it!
-5. Ensure alt:V is installed in a directory that is not your Desktop, not your GTA:V Directory and the path does not include any special characters.
-6. Make sure Visual C++ 2015-2019 Redistributeable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Download link</a>
-7. Ensure you've the latest drivers of all your devices, especially your graphics card
-8. Only use ASCII Characters in your alt:V Path.
-9. Keep Pathing short for alt:V ie. D:/altV
-10. Use Windows 10
-11. If the Steam version is stuck on "Load alt:V Client", try killing the Steam process(es). (Also try and remove Steam from autostart.)
-12. You must have a clean version of GTA V. Graphics mods like Redux or Natural Vision must not be present in your GTA V installation.
-13. If your game is crashing on joining a server try a server without mods (eg Freeroam servers). If its working on such server, contact the server team of the server you are crashing at.
-14. Try restarting your PC
+5. Try setting up 1.1.1.1 & 8.8.8.8 as your [DNS servers](https://developers.google.com/speed/public-dns/docs/using).
+6. Ensure alt:V is installed in a directory that is not your Desktop, not your GTA:V Directory and the path does not include any special characters.
+7. Make sure Visual C++ 2015-2019 Redistributeable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Download link</a>
+8. Ensure you've the latest drivers of all your devices, especially your graphics card
+9. Only use ASCII Characters in your alt:V Path.
+10. Keep Pathing short for alt:V ie. D:/altV
+11. Use Windows 10
+12. If the Steam version is stuck on "Load alt:V Client", try killing the Steam process(es). (Also try and remove Steam from autostart.)
+13. You must have a clean version of GTA V. Graphics mods like Redux or Natural Vision must not be present in your GTA V installation.
+14. If your game is crashing on joining a server try a server without mods (eg Freeroam servers). If its working on such server, contact the server team of the server you are crashing at.
+15. Try restarting your PC
 
 ## Known Problems & Solutions
 
