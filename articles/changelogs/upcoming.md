@@ -48,6 +48,8 @@
 > ```yaml
 > - getPedModelInfoByHash method
 > - bones info to getVehicleModelInfoByHash method
+> - toggleWorldProfiler
+> - worldProfiler serverconfig entry
 > ```
 
 ### Fixed
