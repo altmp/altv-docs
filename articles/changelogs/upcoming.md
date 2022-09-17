@@ -50,6 +50,7 @@
 > - bones info to getVehicleModelInfoByHash method
 > - toggleWorldProfiler
 > - worldProfiler serverconfig entry
+> - playerConnectDenied event
 > ```
 
 ### Fixed
