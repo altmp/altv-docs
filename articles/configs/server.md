@@ -58,6 +58,12 @@ logStreams: [ console, file ]
 # Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2
 entityWorkerCount: 8
 
+# Profiling entity creation, systems like streaming etc
+worldProfiler: {
+    port: 7797,
+    host: 0.0.0.0
+}
+
 # An array of all modules that should be loaded
 modules: [
     "js-module",
