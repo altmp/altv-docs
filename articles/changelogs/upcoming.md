@@ -27,6 +27,7 @@
 > - Object api
 > - increased weapon component pool
 > - weapon shoot & weapon change event
+> - once method to webview
 > ```
 
 ### Fixed
@@ -75,6 +76,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - blip route didn't update when setting pos
+> - Blips' heading indicator showed as a dollar sign
 > ```
 
 
