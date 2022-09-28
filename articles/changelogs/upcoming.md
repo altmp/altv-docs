@@ -18,7 +18,7 @@
 > ```yaml
 > - weapondata playerDamageModifier getter & setter
 > - isPointOnScreen method
-> - vehicle engineOn getter
+> - vehicle engineOn, getWheelSurfaceMaterial getter
 > - localplayer getWeaponAmmo, weapons, getWeaponComponents getter
 > - localplayer hasWeapon method
 > - cef getEventListeners method
@@ -39,6 +39,7 @@
 > - memorybuffer method
 > - playermodel getter returned new value with a delay
 > - clear focus data didn't reset on disconnect
+> - some natives didn't return boolean correctly (js clientside)
 > ```
 
 ## Server
