@@ -31,7 +31,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 ```toml
 branch = "release"
 debug = false
-gtapath = "C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto V"
+gtapath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Grand Theft Auto V"
 lang = "en"
 lastip = "127.0.0.1:7788"
 name = "exampleName"
