@@ -1,6 +1,6 @@
 # The client configuration
 
-After you downloaded and installed the alt:V Multiplayer client, you can find the `altv.cfg` file in the installation folder. This file contains the settings of the client. Per default this file only contains the branch and the path to your GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.cfg`. However, there are more settings that you can apply. Most of these settings can also be applied in the main menu under `Settings` but some of them need to be set up directly in this file.
+After you downloaded and installed the alt:V Multiplayer client, you can find the `altv.toml` file in the installation folder. This file contains the settings of the client. Per default this file only contains the branch and the path to your GTA:V installation. After the first launch of alt:V there are more settings available in the `altv.toml`. However, there are more settings that you can apply. Most of these settings can also be applied in the main menu under `Settings` but some of them need to be set up directly in this file.
 
 ## List of possible client configurations
 
@@ -26,24 +26,24 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
 |   earlyAuthTestURL        |   string              |   -                  | URL to your early auth website. Only usable in rc & dev branch. |
 
-## Example altv.cfg file
+## Example altv.toml file
 
-```yaml
-branch: 'release'
-debug: 'false'
-gtapath: 'C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto V'
-lang: 'en'
-lastip: '127.0.0.1:7788'
-name: 'exampleName'
-netgraph: 'false'
-streamerMode: 'false'
-useExternalConsole: 'false'
-voiceActivationEnabled: 'false'
-voiceActivationKey: '78'
-voiceAutoInputVolume: 'true'
-voiceEnabled: 'true'
-voiceInputSensitivity: '20'
-voiceInputVolume: '100'
-voiceNoiseSuppression: 'true'
-voiceVolume: '100'
+```toml
+branch = "release"
+debug = false
+gtapath = "C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto V"
+lang = "en"
+lastip = "127.0.0.1:7788"
+name = "exampleName"
+netgraph = false
+streamerMode = false
+useExternalConsole = false
+voiceActivationEnabled = false
+voiceActivationKey = 78
+voiceAutoInputVolume = false
+voiceEnabled = false
+voiceInputSensitivity = 20
+voiceInputVolume = false
+voiceNoiseSuppression = false
+voiceVolume = false
 ```
