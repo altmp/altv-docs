@@ -88,6 +88,7 @@
 > - Blips' heading indicator showed as a dollar sign
 > ```
 
+
 ## JS Module
 
 ### <span style="color: red;">Breaking changes</span>
