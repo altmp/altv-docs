@@ -72,6 +72,14 @@
 
 ## Server & Client
 
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Automatically change all configurations for Client (alt.cfg/history.servers) to [toml](https://toml.io/en/) format
+> - Change all configurations for Server (server.cfg/resource.cfg/stream.cfg) to [toml](https://toml.io/en/) format by using the command line argument "--convert-config-format" on server start
+> ```
+
 ### Fixed
 
 > [!div class="nohljsln"]
