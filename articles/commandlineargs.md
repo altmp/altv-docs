@@ -16,7 +16,8 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 |   --justpack                  |   Creates packages and a resources.json for cdn download in the root folder   |   |
 |   --host [host]               |   Specifies the host which the server should bind to ([host] needs to be replaced with the host)   |   |
 |   --port [port]               |   Specifies the port which the should bind to ([port] needs to be replaced with port)   |   |
-|   --help                     |   Displays help text for all cli arguments    |   |
+|   --convert-config-format     |   Converts all ".cfg" config files to ".toml" format   |   |
+|   --help                      |   Displays help text for all cli arguments    |   |
 
 ## Client launch options
 
