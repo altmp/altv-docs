@@ -31,22 +31,21 @@ Now you only have to start the voice server and continue with the integration of
 
 ## Integrate external voice server
 
-To integrate the alt:V server only small adjustments to the server.cfg are necessary:
+To integrate the alt:V server only small adjustments to the server.toml are necessary:
 
-```yaml
-voice: {
-    # The bitrate of the voice server
-    bitrate: 64000,
-    # Secret shared between the alt:V server and the external voice server
-    # The secret must consist of numeric values only
-    externalSecret: "1234567890",
-    # The external host address (leave 127.0.0.1, if voice-server is on same machine)
-    externalHost: "127.0.0.1",
-    # The external host port
-    externalPort: 7798,
-    # The external host public address (should be the ip address of your server, not localhost!)
-    externalPublicHost: "xx.xx.xx.xx",
-    # The external host public port
-    externalPublicPort: 7799
-}
+```toml
+[voice]
+# The bitrate of the voice server
+bitrate = 64000
+# The secret for the external server (only needed when using externalHost)
+# The secret must consist of numeric values only
+externalSecret = "1234567890"
+# The external host address (leave 127.0.0.1, if voice-server is on same machine)
+externalHost = "127.0.0.1"
+# The external host port
+externalPort = 7798
+# The external host public address (should be the ip address of your server, not localhost!)
+externalPublicHost = "xx.xx.xx.xx"
+# The external host public port
+externalPublicPort = 7799
 ```
