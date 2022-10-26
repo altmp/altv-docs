@@ -28,6 +28,7 @@
 > - increased weapon component pool
 > - weapon shoot & weapon change event
 > - once method to webview
+> - dashboard light getters and setters
 > ```
 
 ### Fixed
@@ -40,6 +41,7 @@
 > - playermodel getter returned new value with a delay
 > - clear focus data didn't reset on disconnect
 > - some natives didn't return boolean correctly (js clientside)
+> - rmlui cursor setting
 > ```
 
 ## Server

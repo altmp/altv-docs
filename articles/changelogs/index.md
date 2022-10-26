@@ -34,6 +34,11 @@
 >    - Fixed one more crash related to dependencies reload
 > - 12.11:
 >    - Helicopter's explosion bug
+> - 12.12:
+>    - Add support for GTA version 2699.16
+> - 12.13:
+>    - Fixed armor setter
+>    - Fixed towtruck sync
 > ```
 
 ## Client
