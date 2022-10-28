@@ -39,6 +39,14 @@
 > - 12.13:
 >    - Fixed armor setter
 >    - Fixed towtruck sync
+> - 12.14:
+>    - Fixed vehicle extras
+> - 12.15:
+>    - Fix struct natives
+> - 12.16:
+>    - Add logs for current crashes
+> - 12.17:
+>    - Apply some more crash fixes
 > ```
 
 ## Client
