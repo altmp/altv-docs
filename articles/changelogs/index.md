@@ -47,6 +47,8 @@
 >    - Add logs for current crashes
 > - 12.17:
 >    - Apply some more crash fixes
+> - 12.18:
+>    - Apply some more crash fixes
 > ```
 
 ## Client
