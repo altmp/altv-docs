@@ -47,6 +47,17 @@
 >    - Add logs for current crashes
 > - 12.17:
 >    - Apply some more crash fixes
+> - 12.18:
+>    - Fix player position setter
+>    - Fix crashes
+> - 12.19:
+>    - Fix crashes
+> - 12.20:
+>    - Fix crashdump generation
+> - 12.21:
+>    - Fix player position setter
+> - 12.22:
+>    - Fix explosion, projectile, fire events
 > ```
 
 ## Client
