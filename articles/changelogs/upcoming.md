@@ -51,9 +51,8 @@
 > - getPedModelInfoByHash method
 > - bones info to getVehicleModelInfoByHash method
 > - toggleWorldProfiler
-> - worldProfiler server config entry
+> - worldProfiler serverconfig entry
 > - playerConnectDenied event
-> - sendPlayerName server config entry to disable sending player name from server on connect
 > ```
 
 ### Fixed
