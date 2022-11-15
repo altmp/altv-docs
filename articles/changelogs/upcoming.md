@@ -28,7 +28,6 @@
 > - increased weapon component pool
 > - weapon shoot & weapon change event
 > - once method to webview
-> - sendPlayerName to disable sending player name from server on connect
 > ```
 
 ### Fixed
@@ -52,8 +51,9 @@
 > - getPedModelInfoByHash method
 > - bones info to getVehicleModelInfoByHash method
 > - toggleWorldProfiler
-> - worldProfiler serverconfig entry
+> - worldProfiler server config entry
 > - playerConnectDenied event
+> - sendPlayerName server config entry to disable sending player name from server on connect
 > ```
 
 ### Fixed
