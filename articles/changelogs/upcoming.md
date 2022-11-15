@@ -58,6 +58,7 @@
 > - sendPlayerNames server config entry to disable sending player name to all clients on connect
 > - player sendNames property
 > - sendNames parameter to accept method in connection queue (default is true)
+> - player dimension change event
 > ```
 
 ### Fixed
