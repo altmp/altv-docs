@@ -28,6 +28,7 @@
 > - increased weapon component pool
 > - weapon shoot & weapon change event
 > - once method to webview
+> - sendPlayerName to disable sending player from server name on connect
 > ```
 
 ### Fixed
