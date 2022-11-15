@@ -78,6 +78,9 @@ useCdn = false
 # The url for the CDN page
 cdnUrl = "https://cdn.example.com"
 
+# Should alt:V server send all clients player name on connect
+sendPlayerNames = true
+
 # An array of all resources that should be loaded
 resources = [
     "myResource",
