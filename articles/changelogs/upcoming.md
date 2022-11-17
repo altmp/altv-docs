@@ -115,4 +115,5 @@
 > ```yaml
 > - IPlayer DiscordId changed type from string to long
 > - IConnectionInfo DiscordUserId changed type from string to long
+> - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
 > ```
