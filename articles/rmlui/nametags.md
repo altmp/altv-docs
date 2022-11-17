@@ -160,6 +160,8 @@ alt.on("gameEntityDestroy", (entity) => {
     container.removeChild(rmlElement);
     // ... and ending its existence.
     rmlElement.destroy();
+    // Delete from nametag map
+    nameTags.delete(entity);
 
     // If there are no more nametags left we stop the everyTick to save performance
     if (tickHandle === undefined || nameTags.size > 0) return;

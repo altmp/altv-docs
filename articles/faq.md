@@ -29,7 +29,7 @@ Another way would be to support us financially on [Patreon](https://www.patreon.
 ## How can I get a token for Masterlist?
 
 You need to message the discord bot Master-Bot#3667 and write him the message "token".
-You need to be at least 24h on our [Discord](https://discord.altv.mp/).
+You need to be at least 31d on our [Discord](https://discord.altv.mp/).
 
 ## Is a token needed for development?
 

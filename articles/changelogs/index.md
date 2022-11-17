@@ -34,6 +34,30 @@
 >    - Fixed one more crash related to dependencies reload
 > - 12.11:
 >    - Helicopter's explosion bug
+> - 12.12:
+>    - Add support for GTA version 2699.16
+> - 12.13:
+>    - Fixed armor setter
+>    - Fixed towtruck sync
+> - 12.14:
+>    - Fixed vehicle extras
+> - 12.15:
+>    - Fix struct natives
+> - 12.16:
+>    - Add logs for current crashes
+> - 12.17:
+>    - Apply some more crash fixes
+> - 12.18:
+>    - Fix player position setter
+>    - Fix crashes
+> - 12.19:
+>    - Fix crashes
+> - 12.20:
+>    - Fix crashdump generation
+> - 12.21:
+>    - Fix player position setter
+> - 12.22:
+>    - Fix explosion, projectile, fire events
 > ```
 
 ## Client
