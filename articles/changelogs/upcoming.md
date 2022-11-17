@@ -59,6 +59,8 @@
 > - player sendNames property
 > - sendNames parameter to accept method in connection queue (default is true)
 > - player dimension change event
+> - Warning when DLC resource name not only contain lowercase letters, numbers or "-"/"_" as special character or its not starting with a letter
+> - Add pedmodels.bin file to server data
 > ```
 
 ### Fixed
@@ -114,4 +116,5 @@
 > ```yaml
 > - IPlayer DiscordId changed type from string to long
 > - IConnectionInfo DiscordUserId changed type from string to long
+> - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
 > ```
