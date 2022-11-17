@@ -60,6 +60,7 @@
 > - sendNames parameter to accept method in connection queue (default is true)
 > - player dimension change event
 > - Warning when DLC resource name not only contain lowercase letters, numbers or "-"/"_" as special character or its not starting with a letter
+> - Add pedmodels.bin file to server data
 > ```
 
 ### Fixed
