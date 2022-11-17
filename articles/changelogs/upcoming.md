@@ -61,6 +61,8 @@
 > - player dimension change event
 > - Warning when DLC resource name not only contain lowercase letters, numbers or "-"/"_" as special character or its not starting with a letter
 > - Add pedmodels.bin file to server data
+> - scriptMaxSpeed, hybridExtraActive, hybridExtraState, counterMeasureCount, rocketRefuelSpeed properties to vehicle
+> - getWeaponCapacity & setWeaponCapacity methods
 > ```
 
 ### Fixed
