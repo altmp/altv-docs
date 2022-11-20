@@ -63,7 +63,7 @@
 > - Add pedmodels.bin file to server data
 > - scriptMaxSpeed, hybridExtraActive, hybridExtraState, counterMeasureCount, rocketRefuelSpeed properties to vehicle
 > - getWeaponCapacity & setWeaponCapacity methods
-> - getLocalMetaDataKeys method
+> - getLocalMetaKeys method
 > ```
 
 ### Fixed
@@ -96,9 +96,8 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - getSyncedMetaDataKeys, getStreamSyncedMetaDataKeys, getMetaDataKeys methods
+> - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
 > ```
-
 
 ### Fixed
 
