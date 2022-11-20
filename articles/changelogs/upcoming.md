@@ -73,6 +73,7 @@
 > - Master server used default interface even if bound to different ip
 > - getServerConfig() does not return variable values properly that start with numeric characters
 > - server connected to external voice server with --justpack argument
+> - setting password during runtime didn't work
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
