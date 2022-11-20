@@ -63,6 +63,7 @@
 > - Add pedmodels.bin file to server data
 > - scriptMaxSpeed, hybridExtraActive, hybridExtraState, counterMeasureCount, rocketRefuelSpeed properties to vehicle
 > - getWeaponCapacity & setWeaponCapacity methods
+> - getLocalMetaDataKeys method
 > ```
 
 ### Fixed
@@ -90,6 +91,14 @@
 > - Automatically change all configurations for Client (alt.cfg/history.servers) to [toml](https://toml.io/en/) format
 > - Change all configurations for Server (server.cfg/resource.cfg/stream.cfg) to [toml](https://toml.io/en/) format by using the command line argument "--convert-config-format" on server start
 > ```
+
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - getSyncedMetaDataKeys, getStreamSyncedMetaDataKeys, getMetaDataKeys methods
+> ```
+
 
 ### Fixed
 
