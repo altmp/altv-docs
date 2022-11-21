@@ -61,6 +61,9 @@
 > - player dimension change event
 > - Warning when DLC resource name not only contain lowercase letters, numbers or "-"/"_" as special character or its not starting with a letter
 > - Add pedmodels.bin file to server data
+> - scriptMaxSpeed, hybridExtraActive, hybridExtraState, counterMeasureCount, rocketRefuelSpeed properties to vehicle
+> - getWeaponCapacity & setWeaponCapacity methods
+> - getLocalMetaKeys method
 > ```
 
 ### Fixed
@@ -70,6 +73,7 @@
 > - Master server used default interface even if bound to different ip
 > - getServerConfig() does not return variable values properly that start with numeric characters
 > - server connected to external voice server with --justpack argument
+> - setting password during runtime didn't work
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -87,6 +91,13 @@
 > ```yaml
 > - Automatically change all configurations for Client (alt.cfg/history.servers) to [toml](https://toml.io/en/) format
 > - Change all configurations for Server (server.cfg/resource.cfg/stream.cfg) to [toml](https://toml.io/en/) format by using the command line argument "--convert-config-format" on server start
+> ```
+
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
 > ```
 
 ### Fixed
