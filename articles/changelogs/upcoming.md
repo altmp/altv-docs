@@ -108,6 +108,14 @@
 > - Blips' heading indicator showed as a dollar sign
 > ```
 
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Connection info authToken has a limit of 255 characters
+> ```
+
+
 
 ## JS Module
 
