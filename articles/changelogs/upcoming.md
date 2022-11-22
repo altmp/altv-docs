@@ -81,6 +81,8 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - attachTo now takes boneid instead of boneindex
+> - Connection info authToken has a limit of 255 characters
+> - removed removeEntity event
 > ```
 
 ## Server & Client
@@ -107,15 +109,6 @@
 > - blip route didn't update when setting pos
 > - Blips' heading indicator showed as a dollar sign
 > ```
-
-### <span style="color: red;">Breaking changes</span>
-
-> [!div class="nohljsln"]
-> ```yaml
-> - Connection info authToken has a limit of 255 characters
-> ```
-
-
 
 ## JS Module
 
