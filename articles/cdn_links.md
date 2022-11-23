@@ -135,7 +135,7 @@ label {
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
         returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
-        if (branchArray[branchIndex] == "dev") {
+        if (branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") {
             returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
         }
 
