@@ -387,7 +387,7 @@ jobs:
               adm.extractAllTo(filePath, true);
             }
       - name: Download run artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
       - name: Unpack artifacts
         run: |
           $isProduction=$${{ env.PRODUCTION }}
@@ -470,13 +470,13 @@ jobs:
           repository: altmp/altv-docs-assets
           path: ./altv-docs-assets
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: site
           path: "."
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-site
@@ -526,7 +526,7 @@ jobs:
           force_orphan: false
       - name: Post Download artifacts
         if: ${{ always() }}
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v2
         with:
           name: site
       - name: Purge older artifacts
