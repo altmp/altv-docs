@@ -100,6 +100,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
+> - entityCreate, entityRemove event
 > ```
 
 ### Fixed
