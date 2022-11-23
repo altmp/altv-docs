@@ -359,7 +359,7 @@ jobs:
             const isProduction = ${{ env.PRODUCTION }};
             const devPrefix = !isProduction ? 'nightly-' : '';
             const artifactNames = ["js", "cs", "sdk", "gta"].map(name => devPrefix + name);
-            const artifacts = (await github.actions.listArtifactsForRepo({
+            const artifacts = (await github.rest.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: context.runId
