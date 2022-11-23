@@ -372,7 +372,7 @@ jobs:
               if (!artifact || artifact.expired) continue;
               console.log("==> Artifact:", artifact.id);
               console.log(`==> Downloading: ${artifact.name}.zip (${(artifact.size_in_bytes / 1000000).toFixed(2)}MB)`);
-              const zip = await github.actions.downloadArtifact({
+              const zip = await github.rest.actions.downloadArtifact({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 artifact_id: artifact.id,
