@@ -82,7 +82,6 @@
 > ```yaml
 > - attachTo now takes boneid instead of boneindex
 > - Connection info authToken has a limit of 255 characters
-> - removed removeEntity event
 > ```
 
 ## Server & Client
@@ -100,7 +99,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
-> - entityRemove, baseObjectCreate, baseObjectRemove events
+> - baseObjectCreate, baseObjectRemove events
 > ```
 
 ### Fixed
