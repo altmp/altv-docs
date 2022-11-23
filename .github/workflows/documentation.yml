@@ -60,7 +60,7 @@ jobs:
       SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Load version manifest
@@ -68,11 +68,11 @@ jobs:
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 16.x
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-types
@@ -93,13 +93,13 @@ jobs:
           Pop-Location
           npx type2docfx "./api/.manifest" "./api/" --basePath "." --sourceUrl "https://github.com/altmp/altv-types" --sourceBranch "${{ env.SOURCE_BRANCH }}" --tocAlphabetOrderOnly
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: js
           path: ./altv-types/docs/
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-js
@@ -112,7 +112,7 @@ jobs:
       SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'dev' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Load version manifest
@@ -120,7 +120,7 @@ jobs:
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
@@ -130,7 +130,7 @@ jobs:
         run: git checkout $(git rev-parse HEAD)
         working-directory: ./coreclr-module
       - name: Download DocFx package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
@@ -142,13 +142,13 @@ jobs:
       - name: Generate C# metadata
         run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: cs
           path: ./coreclr-module/docs/
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-cs
@@ -161,7 +161,7 @@ jobs:
       SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'docs' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Load version manifest
@@ -169,7 +169,7 @@ jobs:
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/cpp-sdk
@@ -179,13 +179,13 @@ jobs:
         run: git checkout $(git rev-parse HEAD)
         working-directory: ./cpp-sdk
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: sdk
           path: ./cpp-sdk/articles/
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-sdk
@@ -198,7 +198,7 @@ jobs:
       SOURCE_BRANCH: ${{ github.event.client_payload && github.event.client_payload.sha || 'master' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Load version manifest
@@ -206,7 +206,7 @@ jobs:
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
@@ -220,7 +220,7 @@ jobs:
       - name: Generate GTA metadata
         run: exit 0
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: gta
@@ -228,7 +228,7 @@ jobs:
             ./altv-docs-gta/api
             ./altv-docs-gta/articles
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-gta
@@ -245,7 +245,7 @@ jobs:
     if: always()
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Load version manifest
@@ -253,43 +253,43 @@ jobs:
         with:
           envFilePath: ./.github/variables/vars.env
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 16.x
       - name: Checkout JS repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-types
           path: ./altv-types
       - name: Checkout C# repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: FabianTerhorst/coreclr-module
           path: ./coreclr-module
       - name: Checkout SDK repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/cpp-sdk
           ref: docs
           path: ./cpp-sdk
       - name: Checkout GTA repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-docs-gta
           path: ./altv-docs-gta
       - name: Checkout assets repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-docs-assets
           ref: deploy
           path: ./altv-docs-assets
       - name: Download DocFx package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
@@ -299,7 +299,7 @@ jobs:
           Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
           Remove-Item -Path "docfx.zip"
       - name: Download DocFx TypeScriptReference package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: Unnvaldr/DocFx.Plugins.TypeScriptReference
           tag: ${{ env.DOCFX_PLUGINS_TYPESCRIPTREFERENCE }}
@@ -309,7 +309,7 @@ jobs:
           Expand-Archive -Path "./docfx-plugins-typescriptreference.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-typescriptreference.zip"
       - name: Download DocFx ExtractSearchIndex package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractSearchIndex
           tag: ${{ env.DOCFX_PLUGINS_EXTRACTSEARCHINDEX }}
@@ -319,7 +319,7 @@ jobs:
           Expand-Archive -Path "./docfx-plugins-extractsearchindex.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractsearchindex.zip"
       - name: Download DocFx AddImageModal package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: Unnvaldr/DocFx.Plugins.AddImageModal
           tag: ${{ env.DOCFX_PLUGINS_ADDIMAGEMODAL }}
@@ -329,7 +329,7 @@ jobs:
           Expand-Archive -Path "./docfx-plugins-addimagemodal.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-addimagemodal.zip"
       - name: Download DocFx ExtractArticleAffix package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: Unnvaldr/DocFx.Plugins.ExtractArticleAffix
           tag: ${{ env.DOCFX_PLUGINS_EXTRACTARTICLEAFFIX }}
@@ -339,7 +339,7 @@ jobs:
           Expand-Archive -Path "./docfx-plugins-extractarticleaffix.zip" -DestinationPath "./templates/"
           Remove-Item -Path "./docfx-plugins-extractarticleaffix.zip"
       - name: Download DocFx DiscordFx package
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.6
         with:
           repository: Unnvaldr/DiscordFx
           tag: ${{ env.DOCFX_TMPLS_DISCORDFX }}
@@ -350,7 +350,7 @@ jobs:
           Remove-Item -Path "./docfx-tmpls-discordfx.zip"
       - run: npm install adm-zip
       - name: Download latest artifacts
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const AdmZip = require("adm-zip");
@@ -439,14 +439,14 @@ jobs:
           Remove-Item -Path "./_site/gta/images" -Recurse -Force
           Compress-Archive -Path "./_site/" -DestinationPath "./site.zip"
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'true'"
         with:
           name: site
           path: |
             ./site.zip
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-site
@@ -460,11 +460,11 @@ jobs:
     if: always() && needs.docs.result == 'success'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
       - name: Checkout assets repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
           repository: altmp/altv-docs-assets
