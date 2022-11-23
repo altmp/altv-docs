@@ -82,6 +82,7 @@
 > ```yaml
 > - attachTo now takes boneid instead of boneindex
 > - Connection info authToken has a limit of 255 characters
+> - config cli argument only works with toml configs now
 > ```
 
 ## Server & Client
