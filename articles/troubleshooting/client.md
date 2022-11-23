@@ -46,6 +46,12 @@ These steps are only for Rockstar Games Launcher and Epic Games Versions.
 1. Go to your GTA directory
 2. Delete steam_api64.dll from the GTA directory
 
+#### Epic Games launcher is starting
+These steps are only for Rockstar Games Launcher and Steam Versions.
+
+1. Go to your GTA directory
+2. Delete EOSSDK-Win64-Shipping.dll from the GTA directory
+
 #### FPS Problems
 1. Launch Singleplayer
 2. Go to Graphics Settings

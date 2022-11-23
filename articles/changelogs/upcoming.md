@@ -28,6 +28,7 @@
 > - increased weapon component pool
 > - weapon shoot & weapon change event
 > - once method to webview
+> - dashboard light getters and setters
 > ```
 
 ### Fixed
@@ -40,6 +41,7 @@
 > - playermodel getter returned new value with a delay
 > - clear focus data didn't reset on disconnect
 > - some natives didn't return boolean correctly (js clientside)
+> - rmlui cursor setting
 > ```
 
 ## Server
@@ -51,8 +53,17 @@
 > - getPedModelInfoByHash method
 > - bones info to getVehicleModelInfoByHash method
 > - toggleWorldProfiler
-> - worldProfiler serverconfig entry
+> - worldProfiler server config entry
 > - playerConnectDenied event
+> - sendPlayerNames server config entry to disable sending player name to all clients on connect
+> - player sendNames property
+> - sendNames parameter to accept method in connection queue (default is true)
+> - player dimension change event
+> - Warning when DLC resource name not only contain lowercase letters, numbers or "-"/"_" as special character or its not starting with a letter
+> - Add pedmodels.bin file to server data
+> - scriptMaxSpeed, hybridExtraActive, hybridExtraState, counterMeasureCount, rocketRefuelSpeed properties to vehicle
+> - getWeaponCapacity & setWeaponCapacity methods
+> - getLocalMetaKeys method
 > ```
 
 ### Fixed
@@ -61,6 +72,8 @@
 > ```yaml
 > - Master server used default interface even if bound to different ip
 > - getServerConfig() does not return variable values properly that start with numeric characters
+> - server connected to external voice server with --justpack argument
+> - setting password during runtime didn't work
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
@@ -68,9 +81,27 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - attachTo now takes boneid instead of boneindex
+> - Connection info authToken has a limit of 255 characters
+> - config cli argument only works with toml configs now
 > ```
 
 ## Server & Client
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Automatically change all configurations for Client (alt.cfg/history.servers) to [toml](https://toml.io/en/) format
+> - Change all configurations for Server (server.cfg/resource.cfg/stream.cfg) to [toml](https://toml.io/en/) format by using the command line argument "--convert-config-format" on server start
+> ```
+
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
+> - baseObjectCreate, baseObjectRemove events
+> ```
 
 ### Fixed
 
@@ -79,7 +110,6 @@
 > - blip route didn't update when setting pos
 > - Blips' heading indicator showed as a dollar sign
 > ```
-
 
 ## JS Module
 
@@ -99,4 +129,5 @@
 > ```yaml
 > - IPlayer DiscordId changed type from string to long
 > - IConnectionInfo DiscordUserId changed type from string to long
+> - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
 > ```
