@@ -113,12 +113,30 @@
 
 ## JS Module
 
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Utils.inspect (ported util.inspect from NodeJS with small differences)
+> - functions & classes in Utils (e.g. drawText3d, loadMapArea, Timeout class, etc.)
+> - log, logDebug, logError, logWarning now use alt.Utils.inspect
+> - baseObjectCreate, baseObjectRemove events
+> - player.spawn(model, pos) overload
+> ```
+
+### Fixed
+> [!div class="nohljsln"]
+> ```yaml
+> - HandlingData.handlingNameHash returned wrong hash
+> ```
+
 ### <span style="color: red;">Breaking changes</span>
 
 > [!div class="nohljsln"]
 > ```yaml
 > - player, blips, vehicles all getter are readonly now (server & client)
 > - emitClient & emitClientRaw with null, use emitAllClients & emitAllClientsRaw instead
+> - Worker is deprecated
 > ```
 
 ## C# Server Module
