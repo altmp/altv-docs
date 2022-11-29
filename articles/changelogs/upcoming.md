@@ -74,6 +74,8 @@
 > - getServerConfig() does not return variable values properly that start with numeric characters
 > - server connected to external voice server with --justpack argument
 > - setting password during runtime didn't work
+> - server crash with invalid carcols.meta
+> - server crash when enabling stdconsole without console enabled
 > ```
 
 ### <span style="color: red;">Breaking changes</span>
