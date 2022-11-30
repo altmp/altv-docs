@@ -20,4 +20,4 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 | js-module                                 | No            |   Shows informations about the js module.                                         |
 | debugvehs                                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
 | rmldebug                                  | Yes           |   Shows RMLUI debug window                                                        |
-| connect [ip:port or url] [password?]      | No            |   Connects to a server.                                                           |
+| connect [ip:port or url] [password?]      | Yes           |   Connects to a server.                                                           |
