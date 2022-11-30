@@ -26,6 +26,7 @@
 > - logDebug to prints custom log if client is in debugmode
 > - Object api
 > - increased weapon component pool
+> - increased decal defs pool (20000-20249 decal ids which copy settings from id 10000)
 > - weapon shoot & weapon change event
 > - once method to webview
 > - dashboard light getters and setters
