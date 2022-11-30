@@ -164,6 +164,13 @@ NVIDIA Display Container LS
 #### alt:V is asking for installation directory when launching from browser
 This may happen if an old entry is saved as launch option in your browser.
 
+#### Integrity check of resource failed
+It can happen because there is not enough free space on your disk.
+If you have enough free space, try the following:
+1. Open alt:V Launcher folder
+2. Delete cache folder
+3. Connect to the server again
+
 ###### Firefox
 1. Press the Menu Button (Burger Menu)
 2. Select "Options"
