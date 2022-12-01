@@ -22,11 +22,11 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 4. Avast is even blocking alt:V if you whitelist it!
 5. Try setting up different [DNS servers](https://developers.google.com/speed/public-dns/docs/using) (you can e.g. use [Cloudflare DNS](https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/), [Google DNS](https://developers.google.com/speed/public-dns), ...).
 6. Ensure alt:V is installed in a directory that is not your Desktop, not your GTA:V Directory and the path does not include any special characters.
-7. Make sure Visual C++ 2015-2019 Redistributeable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Download link</a>
+7. Make sure Visual C++ 2015-2019 Redistributable is installed. <a href="https://aka.ms/vs/16/release/VC_redist.x64.exe" target="_blank">Download link</a>
 8. Ensure you've the latest drivers of all your devices, especially your graphics card
 9. Only use ASCII Characters in your alt:V Path.
-10. Keep Pathing short for alt:V ie. D:/altV
-11. Use Windows 10
+10. Keep the path short to the alt:V directory, i.e. D:/altV
+11. Use Windows 10 or higher
 12. If the Steam version is stuck on "Load alt:V Client", try killing the Steam process(es). (Also try and remove Steam from autostart.)
 13. You must have a clean version of GTA V. Graphics mods like Redux or Natural Vision must not be present in your GTA V installation.
 14. If your game is crashing on joining a server try a server without mods (eg Freeroam servers). If its working on such server, contact the server team of the server you are crashing at.
@@ -35,7 +35,7 @@ Because alt:V is using additional technologies, we have a little bit higher Mini
 ## Known Problems & Solutions
 
 #### RageMP is starting
-This happens when RageMP was installed in the GTA directory. You can install it afterwards in a seperate folder.
+This happens when RageMP was installed in the GTA directory. You can install it afterwards in a separate folder.
 
 1. Go to your GTA directory.
 2. Delete all RageMP files and folder from it.
@@ -132,7 +132,7 @@ Another problem can be that your user don't have enough permission on the alt:V 
 3. Change the mouse setting to another.
 
 #### Something else hooked DirectX context. Try to shutdown programs that can do it... (Riva Tuner, Fraps, etc.)
-Close Programms like Riva Tuner, Fraps or Streamlabs OBS
+Close programs like Riva Tuner, Fraps or Streamlabs OBS
 
 #### Failed to fetch updates
 This is normally an error that occurs when your connection is interrupted while updating the alt:V client or an AntiVirus is blocking the download. Try disabling your AntiVirus, if that doesn't help try it again later.
