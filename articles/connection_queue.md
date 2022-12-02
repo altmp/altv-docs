@@ -12,9 +12,9 @@ The connection queue will place the players attempting to connect to the server 
 
 ### Config
 
-You have to set / add the following field in your server.cfg
-```json
-connectionQueue: 'true'
+You have to set / add the following field in your server.toml
+```toml
+connectionQueue = true
 ```
 
 ### Player queue events
