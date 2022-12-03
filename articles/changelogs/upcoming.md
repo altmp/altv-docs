@@ -27,7 +27,7 @@
 > - Object api
 > - increased weapon component pool
 > - increased decal defs pool (20000-20249 decal ids which copy settings from id 10000)
-> - weapon shoot & weapon change event
+> - weapon shoot, weapon change, weapondamage event
 > - once method to webview
 > - dashboard light getters and setters
 > ```
