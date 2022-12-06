@@ -123,7 +123,6 @@
 > - Utils.inspect (ported util.inspect from NodeJS with small differences)
 > - functions & classes in Utils (e.g. drawText3d, loadMapArea, Timeout class, etc.)
 > - log, logDebug, logError, logWarning now use alt.Utils.inspect
-> - baseObjectCreate, baseObjectRemove events
 > - player.spawn(model, pos) overload
 > ```
 
