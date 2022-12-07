@@ -151,6 +151,7 @@
 > - IConnectionInfo DiscordUserId changed type from string to long
 > - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
 > - Refs were removed (Ref classes, .TryCreateRef etc)
+> - ToAsync now returns null when providing async context
 > ```
 
 ### Changed
