@@ -151,3 +151,31 @@
 > - IConnectionInfo DiscordUserId changed type from string to long
 > - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
 > ```
+
+### Changed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Async events do not force entities to exist anymore (previously it was guaranteed that if entity exists at async event start, it will exist until async event finishes)
+> ```
+
+### Added
+> [!div class="nohljsln"]
+> ```yaml
+> - After entity is destroyed getters return last available information instead of throwing exception or returning default. This behavior can be reverted by setting "Alt.CacheEntities" to "false"
+> - Added ability to configure behavior of handling setter/getter call on non existent entity via "Alt.ThrowIfEntityDoesNotExist". Default value is "false"
+> ```
+
+## C# Client Module
+
+### Fixed
+> [!div class="nohljsln"]
+> ```yaml
+> - Func<bool> returned invalid result when invoked if sandboxing is enabled
+> ```
+
+### Added
+> [!div class="nohljsln"]
+> ```yaml
+> - AltAsync.WaitFor
+> ```
