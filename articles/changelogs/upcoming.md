@@ -177,5 +177,5 @@
 ### Added
 > [!div class="nohljsln"]
 > ```yaml
-> - AltAsync.WaitFor
+> - AltAsync.WaitFor allows to wait asynchronously for some result. After awaiting the function automatically returns you to main thread
 > ```
