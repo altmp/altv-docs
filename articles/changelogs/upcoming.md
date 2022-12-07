@@ -150,6 +150,7 @@
 > - IPlayer DiscordId changed type from string to long
 > - IConnectionInfo DiscordUserId changed type from string to long
 > - By AsyncResource constructor the default of "forceAsyncBaseObjects" is set to "true". To go back to old behavior you need to set "false"
+> - Refs were removed (Ref classes, .TryCreateRef etc)
 > ```
 
 ### Changed
@@ -157,6 +158,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Async events do not force entities to exist anymore (previously it was guaranteed that if entity exists at async event start, it will exist until async event finishes)
+> - ToAsync does not force entity to exist anymore. If base entity will be destroyed, async entity will fallback to cached value (or default for specific type, if caching is disabled)
 > ```
 
 ### Added
