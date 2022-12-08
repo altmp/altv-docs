@@ -10,21 +10,21 @@ First of all, the voice server must be downloaded, the links for this can be fou
 
 After the download, the voice server can be placed on any server (it can also be the same device as the alt:V server).
 
-To configure it create a file named voice.cfg, add the following content and adjust it accordingly:
+To configure it create a file named voice.toml, add the following content and adjust it accordingly:
 
-```yaml
+```toml
 # IP address of the external voice server used to receive the alt:V servers voice connection
 # Can be a private ip or 0.0.0.0 to accept all
-host: '0.0.0.0'
+host = '0.0.0.0'
 # Port used in combination with the ip above
-port: '7798'
+port = 7798
 # IP address which is used to receive the clients connections
 # Should be a public ip or 0.0.0.0 to accept all
-playerHost: '0.0.0.0'
+playerHost = '0.0.0.0'
 # Port used for the clients connections
-playerPort: '7799'
+playerPort = 7799
 # Secret shared between the alt:V server and the external voice server
-secret: 'https://youtu.be/tieoP-tNZM8'
+secret = 1234567890
 ```
 
 Now you only have to start the voice server and continue with the integration of the alt:V server.
@@ -39,7 +39,7 @@ To integrate the alt:V server only small adjustments to the server.toml are nece
 bitrate = 64000
 # The secret for the external server (only needed when using externalHost)
 # The secret must consist of numeric values only
-externalSecret = "1234567890"
+externalSecret = 1234567890
 # The external host address (leave 127.0.0.1, if voice-server is on same machine)
 externalHost = "127.0.0.1"
 # The external host port
