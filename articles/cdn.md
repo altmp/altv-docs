@@ -18,8 +18,8 @@ In this tutorial following example values are used:
 
 ## Step-by-Step Example
 
-1. Add `useCdn: true` to `server.toml`.
-2. Add `cdnUrl: "http://connect.example.com"` to `server.toml`.
+1. Add `useCdn = true` to `server.toml`.
+2. Add `cdnUrl = "http://connect.example.com"` to `server.toml`.
 3. Start you server with params `--host 127.0.0.1 --port 7788 --justpack`
 4. Add all generated files from the folder `cdn_upload` to your CDN Server, the files should be placed in the root of the domain. (You should be abble to access `connect.json` under `http://connect.example.com/connect.json`).
 5. For direct connect use your cdnUrl `connect.example.com`
