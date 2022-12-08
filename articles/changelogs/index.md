@@ -6,6 +6,14 @@
 > [!TIP]
 > This update was released on 07.12.2022
 
+> [!div class="nohljsln"]
+> ```yaml
+> - 13.2:
+>    - Fixed client & server crash
+> - 13.3:
+>    - Fixed more client & server crash related to events
+> ```
+
 ## Client
 
 ### <span style="color: red;">Breaking changes</span>
