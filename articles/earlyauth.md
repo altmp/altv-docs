@@ -5,7 +5,7 @@ It's working as followed: A client connects to the server over the server list, 
 
 > [!TIP]
 > To test Early Auth in rc or dev branch, make sure your clients [altv.toml](~/articles/configs/client.md) file contains the following setting:
-> ```
+> ```yaml
 > earlyAuthTestURL = 'http://url_or_ip_to_your_early_auth:3000/earlyauth.html'
 > ```
 
