@@ -17,8 +17,8 @@ to generate a stack trace or any other additional debug information, making debu
 Setting up the bytecode module is a relatively easy process, just follow the steps below:
 
 1. [Download the bytecode module](#download), and place the downloaded `.dll` or `.so` in your `modules` directory
-2. Add `js-bytecode-module` to the `modules` array in the `server.cfg`
-3. *For every resource you want to use the bytecode module for* set the `client-type` in the `resource.cfg` to `jsb`
+2. Add `js-bytecode-module` to the `modules` array in the `server.toml`
+3. *For every resource you want to use the bytecode module for* set the `client-type` in the `resource.toml` to `jsb`
 4. Start the server
 
 Now every time you start the server you should get logs similiar to this one:
@@ -32,7 +32,7 @@ all its dependencies (modules imported with the `import` statement), it is not p
 So these have to be manually specified, so they are also compiled.
 To do this just:
 
-5. Add all files that should additionally be compiled to the `extra-compile-files` array in the `resource.cfg`
+5. Add all files that should additionally be compiled to the `extra-compile-files` array in the `resource.toml`
 
 That array accepts the same paths as the `client-files` option does, so it is possible to include a whole folder for example.
 

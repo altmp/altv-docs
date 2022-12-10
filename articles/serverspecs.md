@@ -28,4 +28,4 @@ This will always be subject to change based on upcoming features or performance 
 ## Used ports
 
 By default alt:V uses port 7788 (TCP & UDP) if no [CDN](~/articles/cdn.md) is used. If you are using a CDN, only UDP is used.
-The port can be changed in the [server.cfg](~/articles/configs/server.md).
+The port can be changed in the [server.toml](~/articles/configs/server.md).
