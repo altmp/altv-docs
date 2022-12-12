@@ -4,7 +4,7 @@ The idea behind Streamer Mode is to hide selected webviews (often used for HUD a
 
 ## How to activate streamer mode?
 
-Open your alt:V folder and open the altv.cfg file with Notepad++ or Notepad and add `streamerMode: 'true'` to the end of the file. If a line with `streamerMode` already exist, modify the parameter `false` to `true`. Restart your game and now Streamer Mode is enabled.
+Open your alt:V folder and open the altv.toml file with Notepad++ or Notepad and add `streamerMode = true` to the end of the file. If a line with `streamerMode` already exist, modify the parameter `false` to `true`. Restart your game and now Streamer Mode is enabled.
 
 ## How to script with streamer mode?
 
