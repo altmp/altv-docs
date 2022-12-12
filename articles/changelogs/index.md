@@ -50,6 +50,17 @@
 >    - Colshape improvement
 >    - Improve vehicle base64 setter
 >    - Add checks when serializing entities
+> - 13.22:
+>    - Improve emits inside disconnect event  (js module only)
+>    - Serverside crash fix
+> - 13.23:
+>    - Serverside crash fix
+> - 13.24:
+>    - Fixed hasExtra property in getVehicleModelInfoByHash for modded vehicles
+>    - Fix server crash
+>    - Improve server performance
+> - 13.25:
+>    - Fixed vehicle extra reading crash for modded vehicles
 > ```
 
 ## Client
