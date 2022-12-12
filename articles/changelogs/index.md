@@ -46,6 +46,10 @@
 >    - Fix position setter
 > - 13.20:
 >    - Fix position setter, fix neon getter (js module only)
+> - 13.21:
+>    - Colshape improvement
+>    - Improve vehicle base64 setter
+>    - Add checks when serializing entities
 > ```
 
 ## Client
