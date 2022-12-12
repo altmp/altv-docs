@@ -12,6 +12,44 @@
 >    - Fixed client & server crash
 > - 13.3:
 >    - Fixed more client & server crash related to events
+> - 13.4:
+>    - Improve event performance
+> - 13.5:
+>    - Serverside improvements
+> - 13.6:
+>    - Serverside improvements
+> - 13.7:
+>    - Serverside improvements
+> - 13.8:
+>    - Serverside improvements
+> - 13.9:
+>    - Add more event validations
+> - 13.10:
+>    - Serverside improvements & crash fix
+> - 13.11:
+>    - Serverside improvements
+> - 13.12:
+>    - Fixed death event
+> - 13.13:
+>    - Serverside improvements
+> - 13.14:
+>    - Serverside improvements & crash fixes
+> - 13.15:
+>    - Serverside improvements, vehicle base64 setter & getter improvements, improve weapons & weapons component getter
+> - 13.16:
+>    - Improve streaming & fix migrations checks
+> - 13.17:
+>    - Improve vehicle base64 setter & getter
+> - 13.18:
+>    - Improve blips performance, fix vehicle creation
+> - 13.19:
+>    - Fix position setter
+> - 13.20:
+>    - Fix position setter, fix neon getter (js module only)
+> - 13.21:
+>    - Colshape improvement
+>    - Improve vehicle base64 setter
+>    - Add checks when serializing entities
 > ```
 
 ## Client
