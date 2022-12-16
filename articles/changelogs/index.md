@@ -61,6 +61,15 @@
 >    - Improve server performance
 > - 13.25:
 >    - Fixed vehicle extra reading crash for modded vehicles
+> - 13.26:
+>    - Improve dlc parser crashes
+> - 13.27:
+>    - Add Support GTA 2802
+> - 13.28:
+>    - 3d webview crashes
+>    - fix ressource loading
+> - 13.29:
+>    - attachto api
 > ```
 
 ## Client
