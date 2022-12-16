@@ -70,6 +70,8 @@
 >    - fix ressource loading
 > - 13.29:
 >    - attachto api
+> - 13.30:
+>    - fix ressource loading
 > ```
 
 ## Client
