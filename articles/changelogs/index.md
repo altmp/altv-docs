@@ -88,6 +88,8 @@
 > - 13.36:
 >    - improve asset loading
 >    - Multiple cleanups and improvements
+> - 13.37:
+>    - Improve caching
 > ```
 
 ## Client
