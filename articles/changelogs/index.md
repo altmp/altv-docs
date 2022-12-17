@@ -78,6 +78,16 @@
 >    - Revert 13.31
 > - 13.33:
 >    - fix 3d webviews
+> - 13.34:
+>    - Fix crashes in scriptById getter
+>    - Fix crash in istalking  getter
+> - 13.35:
+>    - Improve networking
+>    - Fix addExplosion native
+>    - Small fix for setExtra
+> - 13.36:
+>    - improve asset loading
+>    - Multiple cleanups and improvements
 > ```
 
 ## Client
