@@ -23,7 +23,7 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 
 | Key       |             Description             |
 | ------    | :-------------------------------: |
-|   -noupdate           |   Skips alt:V updates                                                                     |
+|   -noupdate           |   Skips alt:V updates (only works on the dev [branch](https://docs.altv.mp/articles/branches.html#dev-development)) |
 |   -connecturl [url]   |   Directly connects to specfied url ([url] needs to be replaced with the connectionurl)   |
 
 ## Server Commands
