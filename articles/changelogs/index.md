@@ -90,6 +90,13 @@
 >    - Multiple cleanups and improvements
 > - 13.37:
 >    - Improve caching
+> - 13.38:
+>    - Disabled mod folder
+>    - Fix clear blood damage sync
+> - 13.39:
+>    - Fix multiple server crash cases
+>    - Only one logfile got created clientside
+>    - Invalid polys fix was broken after gta update
 > ```
 
 ## Client
