@@ -9,5 +9,5 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - stamina getter & setter
+> - 
 > ```

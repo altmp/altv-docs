@@ -97,6 +97,18 @@
 >    - Fix multiple server crash cases
 >    - Only one logfile got created clientside
 >    - Invalid polys fix was broken after gta update
+> - 13.40:
+>    - Fixed Servercrash on disconnect
+> - 13.41:
+>    - improved health setter/getter
+> - 13.42:
+>    - Added clientside stamina getter & setter
+>    - Added clientside maxStamina getter & setter
+>    - Added more informations to pedmodelinfos
+>    - Maybe fix bytecode crashes
+>    - (JS) extendet client utils timeouts
+>    - (JS) Fixed resource valid getter
+>    - (JS) Changed name of roofstate getter & setter
 > ```
 
 ## Client
