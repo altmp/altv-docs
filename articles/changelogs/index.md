@@ -105,10 +105,12 @@
 >    - Added clientside stamina getter & setter
 >    - Added clientside maxStamina getter & setter
 >    - Added more informations to pedmodelinfos
->    - Maybe fix bytecode crashes
->    - (JS) extendet client utils timeouts
 >    - (JS) Fixed resource valid getter
 >    - (JS) Changed name of roofstate getter & setter
+> - 13.43:
+>    - Reverted client js changes
+> - 13.44:
+>    - (JS) extendet client utils timeouts
 > ```
 
 ## Client
