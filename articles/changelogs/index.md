@@ -104,7 +104,7 @@
 > - 13.42:
 >    - Added clientside stamina getter & setter
 >    - Added clientside maxStamina getter & setter
->    - Added more informations to pedmodelinfos
+>    - Added more informations to pedmodelinfos (type, dlcName, defaultUnarmedWeapon, movementClipSet)
 >    - (JS) Fixed resource valid getter
 >    - (JS) Changed name of roofstate getter & setter
 > - 13.43:
