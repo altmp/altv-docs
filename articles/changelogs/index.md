@@ -111,6 +111,8 @@
 >    - Reverted client js changes
 > - 13.44:
 >    - (JS) extendet client utils timeouts
+> - 13.45:
+>    - Add Support GTA 2824
 > ```
 
 ## Client
