@@ -124,18 +124,18 @@ label {
         let returnStr = "";
 
         if(listUpdate)
-            returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>"
-            returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/update.json</br>"
+            returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>"
+            returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/update.json</br>"
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
+            returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
         else
-            returnStr += "https://cdn.altv.mp/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
+            returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
 
-        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
-        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
-        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
-        returnStr += "https://cdn.altv.mp/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
 
         return returnStr;
     }
@@ -151,12 +151,12 @@ label {
         let returnStr = "";
 
         if(listUpdate)
-            returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+            returnStr += "https://cdn.alt-mp.com/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server.exe</br>";
+            returnStr += "https://cdn.alt-mp.com/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server.exe</br>";
         else
-            returnStr += "https://cdn.altv.mp/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server</br>";
+            returnStr += "https://cdn.alt-mp.com/voice-server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-voice-server</br>";
 
         return returnStr;
     }
@@ -172,15 +172,15 @@ label {
         let returnStr = "";
 
         if(listUpdate)
-            returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+            returnStr += "https://cdn.alt-mp.com/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
-        returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.dll</br>";
-        returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.runtimeconfig.json</br>";
+        returnStr += "https://cdn.alt-mp.com/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.dll</br>";
+        returnStr += "https://cdn.alt-mp.com/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/AltV.Net.Host.runtimeconfig.json</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/csharp-module.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/csharp-module.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libcsharp-module.so</br>";
+            returnStr += "https://cdn.alt-mp.com/coreclr-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libcsharp-module.so</br>";
 
         return returnStr;
     }
@@ -196,17 +196,17 @@ label {
         let returnStr = "";
 
         if(listUpdate)
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.102</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libjs-module.so</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libjs-module.so</br>";
 
         return returnStr;
     }
@@ -222,12 +222,12 @@ label {
         let returnStr = "";
 
         if(listUpdate)
-            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+            returnStr += "https://cdn.alt-mp.com/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
 
         if(osIndex === 0)
-            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-bytecode-module.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-bytecode-module.dll</br>";
         else
-            returnStr += "https://cdn.altv.mp/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-bytecode-module.so</br>";
+            returnStr += "https://cdn.alt-mp.com/js-bytecode-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-bytecode-module.so</br>";
 
         return returnStr;
     }
@@ -237,52 +237,52 @@ label {
 CoreClr/C# Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.dll
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.runtimeconfig.json
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/modules/libcsharp-module.so
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.dll
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.runtimeconfig.json
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_linux/modules/libcsharp-module.so
 >```
 
 JS Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
->https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.102
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.102
 >```
 
 JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_linux/modules/libjs-bytecode-module.so
+>https://cdn.alt-mp.com/js-bytecode-module/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/js-bytecode-module/${BRANCH}/x64_linux/modules/libjs-bytecode-module.so
 >```
 
 Voice Server
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/voice-server/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/voice-server/${BRANCH}/x64_linux/altv-voice-server
+>https://cdn.alt-mp.com/voice-server/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/voice-server/${BRANCH}/x64_linux/altv-voice-server
 >```
 
 Server
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/server/${BRANCH}/x64_linux/update.json
->https://cdn.altv.mp/server/${BRANCH}/x64_linux/altv-server
->https://cdn.altv.mp/data/${BRANCH}/update.json
->https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
->https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
->https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
->https://cdn.altv.mp/data/${BRANCH}/data/pedmodels.bin
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_linux/altv-server
+>https://cdn.alt-mp.com/data/${BRANCH}/update.json
+>https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >```
 
 Other Stuff
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/others/server.cfg
->https://cdn.altv.mp/others/start.sh
->https://cdn.altv.mp/samples/resources.zip
+>https://cdn.alt-mp.com/others/server.cfg
+>https://cdn.alt-mp.com/others/start.sh
+>https://cdn.alt-mp.com/samples/resources.zip
 >```
 
 ## Windows Server
@@ -290,57 +290,57 @@ Other Stuff
 CoreClr/C# Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_win32/AltV.Net.Host.dll
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_win32/AltV.Net.Host.runtimeconfig.json
->https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_win32/modules/csharp-module.dll
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_win32/AltV.Net.Host.dll
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_win32/AltV.Net.Host.runtimeconfig.json
+>https://cdn.alt-mp.com/coreclr-module/${BRANCH}/x64_win32/modules/csharp-module.dll
 >```
 
 JS Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/modules/js-module/js-module.dll
->https://cdn.altv.mp/js-module/${BRANCH}/x64_win32/modules/js-module/libnode.dll
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/modules/js-module/js-module.dll
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/modules/js-module/libnode.dll
 >```
 
 JS Bytecode Module
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/js-bytecode-module/${BRANCH}/x64_win32/modules/js-bytecode-module.dll
+>https://cdn.alt-mp.com/js-bytecode-module/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/js-bytecode-module/${BRANCH}/x64_win32/modules/js-bytecode-module.dll
 >```
 
 Voice Server
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/voice-server/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/voice-server/${BRANCH}/x64_win32/altv-voice-server.exe
+>https://cdn.alt-mp.com/voice-server/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/voice-server/${BRANCH}/x64_win32/altv-voice-server.exe
 >```
 
 Server
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/server/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/server/${BRANCH}/x64_win32/altv-server.exe
->https://cdn.altv.mp/data/${BRANCH}/update.json
->https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin
->https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin
->https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
->https://cdn.altv.mp/data/${BRANCH}/data/pedmodels.bin
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_win32/altv-server.exe
+>https://cdn.alt-mp.com/data/${BRANCH}/update.json
+>https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >```
 
 Other Stuff
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/others/server.cfg
->https://cdn.altv.mp/others/start.sh
->https://cdn.altv.mp/samples/resources.zip
+>https://cdn.alt-mp.com/others/server.cfg
+>https://cdn.alt-mp.com/others/start.sh
+>https://cdn.alt-mp.com/samples/resources.zip
 >```
 
 ## Client
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.altv.mp/client/${BRANCH}/x64_win32/update.json
->https://cdn.altv.mp/client/${BRANCH}/x64_win32/altv.exe
+>https://cdn.alt-mp.com/client/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/client/${BRANCH}/x64_win32/altv.exe
 >```

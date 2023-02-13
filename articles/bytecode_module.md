@@ -40,7 +40,7 @@ That array accepts the same paths as the `client-files` option does, so it is po
 
 The module can be downloaded from the following sources:
 1. [The official alt:V downloads page](https://altv.mp/#/downloads)
-2. The CDN directly - [Windows](http://cdn.altv.mp/js-bytecode-module/release/x64_win32/js-bytecode-module.dll) / [Linux](http://cdn.altv.mp/js-bytecode-module/release/x64_linux/libjs-bytecode-module.so)
+2. The CDN directly - [Windows](http://cdn.alt-mp.com/js-bytecode-module/release/x64_win32/js-bytecode-module.dll) / [Linux](http://cdn.alt-mp.com/js-bytecode-module/release/x64_linux/libjs-bytecode-module.so)
 3. [The bytecode module releases page](https://github.com/altmp/altv-js-bytecode/releases)
 
 ## Troubleshooting
