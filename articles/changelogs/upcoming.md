@@ -23,6 +23,7 @@
 > - downloadspeed setting
 > - Updated cef to v103
 > - general new UI
+> - clear console command
 > ```
 
 ### Fixed
@@ -33,6 +34,9 @@
 > - The Win key got blocked by active webview in the game
 > - Ipv6 support
 > - wrong menu after connect rejection
+> - webview freezed on FileDialog
+> - cursor type didnt reset on webview destroy
+> - crashdump location folder
 > ```
 
 ## Server
@@ -51,6 +55,8 @@
 > ```yaml
 > - (server) Display source path on deprecated methods usage
 > - (Server) Automatically fix paths with special characters
+> - (Server) Updated nodeJS to 18.13.1
+> - (Client) Updated v8 to 10.2
 > ```
 
 ### Fixed
