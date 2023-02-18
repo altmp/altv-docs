@@ -147,6 +147,12 @@
         "altv-types/**": ["js"],
         "coreclr-module/**": ["csharp"],
         "cpp-sdk/**": ["cpp"]
+      },
+      "_gitContribute": {
+        "cpp-sdk/**": {
+          "branch": "docs",
+          "apiSpecFolder": "docs/apidoc"
+        }
       }
     },
     "template": [
