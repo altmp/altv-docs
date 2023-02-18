@@ -21,3 +21,4 @@ If the console is opened the Game Controls are disabled, which can be checked wi
 | debugvehs                                 | No            |   Shows "Streamed in server vehicles info" in console.                            |
 | rmldebug                                  | Yes           |   Shows RMLUI debug window                                                        |
 | connect [ip:port or url] [password?]      | Yes           |   Connects to a server.                                                           |
+| clear                                     | No            |   Clears the console.                                                             |
