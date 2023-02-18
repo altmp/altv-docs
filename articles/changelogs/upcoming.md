@@ -33,6 +33,7 @@
 > - The Win key got blocked by active webview in the game
 > - Ipv6 support
 > - wrong menu after connect rejection
+> - Crashlogs are back in the alt:V client folder
 > ```
 
 ## Server
