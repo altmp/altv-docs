@@ -1,4 +1,4 @@
-function PostCleanup() {
+function PostCleanup([bool] $cleanMetadata=$false) {
     Remove-Item -Path "${env:TMP}/docfx.zip" -Force 2>&1 >$null
     Remove-Item -Path "${env:TMP}/docfx-plugins-typescriptreference.zip" -Force 2>&1 >$null
     Remove-Item -Path "${env:TMP}/docfx-plugins-extractsearchindex.zip" -Force 2>&1 >$null
