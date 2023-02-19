@@ -215,7 +215,6 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - getSyncedMetaKeys, getStreamSyncedMetaKeys, getMetaKeys methods
-> - baseObjectCreate, baseObjectRemove events
 > ```
 
 ### Fixed
