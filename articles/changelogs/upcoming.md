@@ -24,6 +24,7 @@
 > - Updated cef to v103
 > - general new UI
 > - clear console command
+> - ime support for rmlui
 > ```
 
 ### Fixed
@@ -37,6 +38,9 @@
 > - webview freezed on FileDialog
 > - cursor type didnt reset on webview destroy
 > - crashdump location folder
+> - cursor in iframe inputs wasnt visible
+> - scrolling in iframes
+> - rmlui clipboard
 > ```
 
 ## Server
@@ -55,8 +59,10 @@
 > ```yaml
 > - (server) Display source path on deprecated methods usage
 > - (Server) Automatically fix paths with special characters
+> - (Server) partial TextEncoder and TextDecoder
 > - (Server) Updated nodeJS to 18.13.1
 > - (Client) Updated v8 to 10.2
+> - Allow emitting typed arrays
 > ```
 
 ### Fixed
