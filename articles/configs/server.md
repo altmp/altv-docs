@@ -108,8 +108,6 @@ source-maps = true
 heap-profiler = true
 # Enable profiler
 profiler = true
-# "https://nodejs.org/api/cli.html#--experimental-fetch"
-global-fetch = true
 # "https://nodejs.org/api/cli.html#--experimental-global-webcrypto"
 global-webcrypto = true
 # "https://nodejs.org/api/cli.html#--experimental-network-imports"
