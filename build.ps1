@@ -25,6 +25,6 @@ try
 finally
 {
     Set-Location $cwd
-    PostCleanup
+    PostCleanup $cleanMetadata
     Remove-Module $module
 }
