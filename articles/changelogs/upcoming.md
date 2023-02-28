@@ -41,6 +41,7 @@
 > - cursor in iframe inputs wasnt visible
 > - scrolling in iframes
 > - rmlui clipboard
+> - blips & object are not destroyed on resource stop
 > ```
 
 ## Server

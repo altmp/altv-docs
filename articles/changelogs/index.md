@@ -113,6 +113,13 @@
 >    - (JS) extendet client utils timeouts
 > - 13.45:
 >    - Add Support GTA 2824
+> - 13.46:
+>    - More fixes for GTA 2824
+> - 13.47:
+>    - Just some internal serverside changes
+> - 13.48:
+>    - Add Support GTA 2845
+>    - Updated NodeJS Module to v18
 > ```
 
 ## Client
