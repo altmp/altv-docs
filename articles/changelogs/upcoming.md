@@ -41,7 +41,9 @@
 > - cursor in iframe inputs wasnt visible
 > - scrolling in iframes
 > - rmlui clipboard
-> - blips & object are not destroyed on resource stop
+> - blips & object got not destroyed on resource stop
+> - vehiclelayout meta
+> - alt + f4 in vehicle stopped vehicle immediately
 > ```
 
 ## Server
