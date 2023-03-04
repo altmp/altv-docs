@@ -32,7 +32,6 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Disconnection modal displayed twice after reconnect
-> - The Win key got blocked by active webview in the game
 > - Ipv6 support
 > - wrong menu after connect rejection
 > - webview freezed on FileDialog
