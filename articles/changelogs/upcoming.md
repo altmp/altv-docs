@@ -72,3 +72,24 @@
 > ```yaml
 > - (client) webview, audio, websocket & rml geteventhandler returned removed ones
 > ```
+
+## C# Module
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - OnRemove() method replaced by OnDestroy()
+> ```
+
+### Added
+> [!div class="nohljsln"]
+> ```yaml
+> - alt:V custom .NET project template 
+> ```
+
+### Rework
+> [!div class="nohljsln"]
+> ```yaml
+> - Mark Remove() method as deprecated and add Destroy() method for consistent alt:V api
+> ```
