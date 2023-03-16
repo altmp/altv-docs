@@ -43,6 +43,7 @@
 > - blips & object got not destroyed on resource stop
 > - vehiclelayout meta
 > - alt + f4 in vehicle stopped vehicle immediately
+> - crash while pressing ESC after ressource restart
 > ```
 
 ## Server
@@ -71,4 +72,6 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - (client) webview, audio, websocket & rml geteventhandler returned removed ones
+> - (client) crash in vehicle handling if entity is invalid
+> - (client) Internal error. Icu error when using for example toLocaleString
 > ```
