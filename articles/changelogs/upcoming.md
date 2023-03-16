@@ -75,3 +75,24 @@
 > - (client) crash in vehicle handling if entity is invalid
 > - (client) Internal error. Icu error when using for example toLocaleString
 > ```
+
+## C# Module
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - OnRemove() method replaced by OnDestroy()
+> ```
+
+### Added
+> [!div class="nohljsln"]
+> ```yaml
+> - alt:V custom .NET project template 
+> ```
+
+### Rework
+> [!div class="nohljsln"]
+> ```yaml
+> - Mark Remove() method as deprecated and add Destroy() method for consistent alt:V api
+> ```

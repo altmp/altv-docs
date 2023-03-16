@@ -57,6 +57,11 @@ These steps are only for Rockstar Games Launcher and Steam Versions.
 2. Go to Graphics Settings
 3. Set MSAA to Off
 
+#### Interface not responsive
+1. Launch Singleplayer
+2. Go to "Keyboard / Mouse" settings
+3. Change "Mouse Input Method" to "Raw Input"
+
 #### Webview lagging
 This can reduce the webview performance, but may fix input lags:
 
