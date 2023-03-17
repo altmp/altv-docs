@@ -91,6 +91,12 @@
 > - alt:V custom .NET project template 
 > ```
 
+### Fixed
+> [!div class="nohljsln"]
+> ```yaml
+> - (client) weapondata using properties
+> ```
+
 ### Rework
 > [!div class="nohljsln"]
 > ```yaml

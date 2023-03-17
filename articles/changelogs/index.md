@@ -293,6 +293,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Func<bool> returned invalid result when invoked if sandboxing is enabled
+> - (server) Alt.GetPedModelInfo()
 > ```
 
 ### Added
