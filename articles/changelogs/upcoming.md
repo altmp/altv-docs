@@ -93,6 +93,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - alt:V custom .NET project template 
+> - (client) Add all missing vehicle properties
 > ```
 
 ### Fixed
