@@ -25,6 +25,9 @@
 > - general new UI
 > - clear console command
 > - ime support for rmlui
+> - error message in launcher, if gta:v start fails
+> - language selection on installation
+> - debug & branch cli arg
 > ```
 
 ### Fixed
@@ -44,6 +47,7 @@
 > - vehiclelayout meta
 > - alt + f4 in vehicle stopped vehicle immediately
 > - crash while pressing ESC after ressource restart
+> - launcher shortcut was system wide
 > ```
 
 ## Server
