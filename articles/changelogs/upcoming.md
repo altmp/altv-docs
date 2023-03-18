@@ -27,7 +27,7 @@
 > - ime support for rmlui
 > - error message in launcher, if gta:v start fails
 > - language selection on installation
-> - debug cli arg
+> - debug & branch cli arg
 > ```
 
 ### Fixed
@@ -48,6 +48,7 @@
 > - alt + f4 in vehicle stopped vehicle immediately
 > - crash while pressing ESC after ressource restart
 > - launcher shortcut was system wide
+> - website url of a server was always lowercase
 > ```
 
 ## Server
