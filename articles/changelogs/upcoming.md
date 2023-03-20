@@ -5,6 +5,13 @@
 
 ## Client
 
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - disabled cloth sync if setted via native
+> ```
+
 ### Added
 
 > [!div class="nohljsln"]
@@ -49,6 +56,7 @@
 > - crash while pressing ESC after ressource restart
 > - launcher shortcut was system wide
 > - website url of a server was always lowercase
+> - inputs in webviews didnt trigger focus & blur events
 > ```
 
 ## Server
