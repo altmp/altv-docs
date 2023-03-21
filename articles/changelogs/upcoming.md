@@ -57,6 +57,9 @@
 > - launcher shortcut was system wide
 > - website url of a server was always lowercase
 > - inputs in webviews didnt trigger focus & blur events
+> - GTA Sound options didnt save
+> - webview stayed unfocus if data url was used
+> - cloning ped in pause menu disappeared all UI's
 > ```
 
 ## Server
@@ -77,6 +80,7 @@
 > - (Server) Automatically fix paths with special characters
 > - (Server) partial TextEncoder and TextDecoder
 > - (Server) Updated nodeJS to 18.13.1
+> - (Server) Possible to modify damage value in weapondamage event
 > - (Client) Updated v8 to 10.2
 > - Allow emitting typed arrays
 > ```
