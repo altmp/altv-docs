@@ -34,7 +34,9 @@
 > - ime support for rmlui
 > - error message in launcher, if gta:v start fails
 > - language selection on installation
-> - debug & branch cli arg
+> - debug, branch & skipprocessconfirmation cli arg
+> - installer & uninstaller rework
+> - general launcher rework
 > ```
 
 ### Fixed
