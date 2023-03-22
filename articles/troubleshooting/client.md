@@ -52,6 +52,11 @@ These steps are only for Rockstar Games Launcher and Steam Versions.
 1. Go to your GTA directory
 2. Delete EOSSDK-Win64-Shipping.dll from the GTA directory
 
+#### Timeout when starting game
+1. Go to your alt:V directory
+2. Open the altv.toml with your prefered editor (e.g. notepad)
+3. Add `gameTimeout = 120` at the bottom, where 120 (seconds) is the maximum waiting time
+
 #### FPS Problems
 1. Launch Singleplayer
 2. Go to Graphics Settings
