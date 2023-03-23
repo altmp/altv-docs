@@ -137,6 +137,10 @@ label {
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
 
+        if (branchArray[branchIndex] == "dev") {
+            returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
+        }
+        
         return returnStr;
     }
 
@@ -275,6 +279,7 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
 >```
 
 Other Stuff
@@ -328,6 +333,7 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
 >```
 
 Other Stuff
