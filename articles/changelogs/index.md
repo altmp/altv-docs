@@ -120,6 +120,8 @@
 > - 13.48:
 >    - Add Support GTA 2845
 >    - Updated NodeJS Module to v18
+> - 13.49:
+>    - Fix testProbeAgainstWater native
 > ```
 
 ## Client
