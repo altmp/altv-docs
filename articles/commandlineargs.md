@@ -6,7 +6,7 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 
 ## Server launch options
 
-| Key   |             Description             |             Notes             |
+| Key   |             Description            |             Notes                 |
 | ------ | :-------------------------------: | :-------------------------------: |
 |   --config [path]             |   Path to server config file ([path] needs to be replaced with config path)   |   |
 |   --logfile [path]            |   Path to log file, will only output one log file to specific path instead of putting them into the log folder ([path] needs to be replaced with log path)         |   Has higher priority then --logfolder   |
@@ -21,7 +21,7 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 
 ## Client launch options
 
-| Key       |             Description             |
+| Key       |             Description           |
 | ------    | :-------------------------------: |
 |   -noupdate                 |   Skips alt:V updates (only works on the dev [branch](https://docs.altv.mp/articles/branches.html#dev-development)) |
 |   -connecturl [url]         |   Directly connects to specfied url ([url] needs to be replaced with the connectionurl)   |
@@ -31,8 +31,14 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 
 ## Server Commands
 
-| Key       |             Description             |
+| Key       |             Description           |
 | ------    | :-------------------------------: |
 |   start [resourcename]    |   Starts a server resource by name    |
 |   stop [resourcename]     |   Stops a server resource by name     |
 |   restart [resourcename]  |   Restarts a server resource by name  |
+
+## Client Commands
+
+| Key       |             Description           |
+| ------    | :-------------------------------: |
+| clear     |   Clear console buffer            |
