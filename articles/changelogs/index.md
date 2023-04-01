@@ -5,6 +5,15 @@
 
 > [!TIP]
 > This update was released on 31.03.2023
+
+> [!div class="nohljsln"]
+> ```yaml
+> - 14.1:
+>    - Wrong playercount
+> - 14.2:
+>    - Some cef core fixes
+> ```
+
 ## Client
 
 ### <span style="color: red;">Breaking changes</span>
