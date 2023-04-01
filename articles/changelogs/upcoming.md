@@ -16,6 +16,8 @@
 > - audio, checkpoint, webview all getter
 > - audio, webview id getter
 > - audio, blip remoteid getter
+> - worldObjectStreamIn & worldObjectStreamOut event
+> - audio filter api
 > ```
 
 ### Fixed
@@ -42,8 +44,8 @@
 > - colshape & blip, voicechannel id getter
 > - checkpoint all getter
 > - extend resource limit to 4GB
+> - added priority, filter getter & setter for voiceserver
 > - Synced virtual entitys
-> - Synced Ped's
 > - Synced Objects
 > ```
 
