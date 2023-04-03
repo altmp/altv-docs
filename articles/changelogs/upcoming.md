@@ -45,8 +45,16 @@
 > - checkpoint all getter
 > - extend resource limit to 4GB
 > - added priority, filter getter & setter for voiceserver
+> - player playAnimation, clearTasks method
 > - Synced virtual entitys
 > - Synced Objects
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Dead body position sync
+> - vehicle angular interpolator
 > ```
 
 ## JS Module

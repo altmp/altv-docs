@@ -9,9 +9,13 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - 14.1:
->    - Wrong playercount
+>    - Fixed Wrong playercount
 > - 14.2:
->    - Some cef core fixes
+>    - Fixed Some cef core fixes
+> - 14.3:
+>    - Fixed cef performance issues
+> - 14.4:
+>    - Fixed some master server problems
 > ```
 
 ## Client
