@@ -174,6 +174,10 @@ NVIDIA Display Container LS
 #### alt:V is asking for installation directory when launching from browser
 This may happen if an old entry is saved as launch option in your browser.
 
+#### Launcher does not open/crashes while opening
+Sometimes a faulty driver can cause some issues in the launcher.
+If you have a `C:\Windows\USB Vibration\dr100&110\811EZFRD64.dll` - either rename the file, or remove it.
+
 #### Integrity check of resource failed
 It can happen because there is not enough free space on your disk.
 If you have enough free space, try the following:
