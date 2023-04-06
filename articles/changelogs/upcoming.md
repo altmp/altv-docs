@@ -46,6 +46,7 @@
 > - extend resource limit to 4GB
 > - added priority, filter getter & setter for voiceserver
 > - player playAnimation, clearTasks method
+> - streamsyncedmeta for checkpoints
 > - Synced virtual entitys
 > - Synced Objects
 
