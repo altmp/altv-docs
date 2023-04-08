@@ -14,10 +14,11 @@
 > - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE flag to keep engines on when leaving a vehicle
 > - worldObjectPositionChange event
 > - audio, checkpoint, webview all getter
-> - audio, webview id getter
+> - audio, webview, httpclien, websocketclient id getter
 > - audio, blip remoteid getter
 > - worldObjectStreamIn & worldObjectStreamOut event
 > - audio filter api
+> - markers api
 > ```
 
 ### Fixed
@@ -47,6 +48,7 @@
 > - added priority, filter getter & setter for voiceserver
 > - player playAnimation, clearTasks method
 > - streamsyncedmeta for checkpoints
+> - vehicle quaternion setter & getter
 > - Synced virtual entitys
 > - Synced Objects
 
