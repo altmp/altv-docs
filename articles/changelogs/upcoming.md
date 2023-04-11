@@ -18,7 +18,6 @@
 > - audio, blip remoteid getter
 > - worldObjectStreamIn & worldObjectStreamOut event
 > - audio filter api
-> - markers api
 > ```
 
 ### Fixed
@@ -49,8 +48,7 @@
 > - player playAnimation, clearTasks method
 > - streamsyncedmeta for checkpoints
 > - vehicle quaternion setter & getter
-> - Synced virtual entitys
-> - Synced Objects
+> ```
 
 ### Fixed
 
@@ -58,6 +56,19 @@
 > ```yaml
 > - Dead body position sync
 > - vehicle angular interpolator
+> - vehicle flickers when the netowner changes
+> ```
+
+## Server & Client
+> [!div class="nohljsln"]
+> ```yaml
+> - getByID & getByRemoteID method for baseobjects
+> - getMetaKeys & getSyncedMetaKeys methods
+> - objects Api
+> - ped's Api
+> - virtual entitys api
+> - markers api
+> - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee player getter
 > ```
 
 ## JS Module
