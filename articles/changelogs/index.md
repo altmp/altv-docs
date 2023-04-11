@@ -26,6 +26,17 @@
 >    - Masterserver fixes
 > - 14.9:
 >    - Masterserver fixes
+> - 14.10:
+>    - Masterserver fixes
+> - 14.11:
+>    - CI Changes
+> - 14.13:
+>    - Streamermode fixes
+> - 14.14:
+>    - Freeze on huge amount of entities fix
+>    - Vehicle teleport on owner change fix
+>    - Vehicle angular velocity shuttering fix
+>    - Dead body sync fix
 > ```
 
 ## Client
