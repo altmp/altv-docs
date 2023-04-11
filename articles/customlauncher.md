@@ -29,7 +29,7 @@ The following data can be included optionally to customize the interface:
 - A logo with a resolution of 128x128 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
 - A UI background with a resolution of 1920x1080 or 3840x2160 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/loading_screen.png)]
 - A color to replace the primary color of the interface [[Example 1](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)] [[Example 2](~/altv-docs-assets/altv-docs-gta/images/customlauncher/color_customization.png)]
-- The link to an RSS feed. The exact format of the RSS feed is covered in the following topics." [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
+- The link to an RSS feed. The exact format of the RSS feed is covered in the following topics. [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
 
 Once you have fulfilled all requirements and prepared the necessary media, join our [Discord server](https://discord.altv.mp/) and contact a member of the Public Relations team.
 
