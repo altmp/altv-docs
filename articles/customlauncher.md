@@ -1,76 +1,156 @@
-# Custom Launcher
+# Introduction
 
-You may want to brand your server experience from starting the game to playing on the server, if you want to make a own custom launcher and it's required to join your server, you need to open source it and the server isn't allowed to be listed on masterlist. As an alternative to creating your own launcher, it is possible to customize the official launcher. In this article you will be able to get information, how to get the official custom launcher, what you can modify and how you can modify it.
+> [!CAUTION]
+> Custom launchers that are required to connect to the server are only allowed if they are fully open source and the server is not listed on the masterlist.
 
-# How to get the official custom launcher?
+As an alternative to the custom launcher, it is possible to obtain a branded launcher.
 
-You must support alt:V as a [Diamond Altruist on Patreon](https://www.patreon.com/altVMP/), there is currently no other way.
+The branded launcher is available from the Patreon "Diamond" tier or higher and features several server-specific displays such as an RSS feed, launcher and UI background, logo, primary color, and server name.\
+In order for a user to activate this branding, a "Apply server skin" checkbox is shown when connecting to the server, which is enabled by default.
 
-# What can be modified in the official custom launcher?
+This article explains what information is required and how to request it.
 
-These features can currently be used, more may be added in the future:
+# Samples
 
-* Splash screen can be replaced with own Logo
-* Icon can be replaced with own Logo
-* Your servers will be displayed on the home screen of alt:V
-* You can add a custom RSS feed with news from your project
-* Own download link for your launcher hosted on alt:V CDN.
+You can check out the following examples for some of the available customizations:
 
-# How can I modify the official custom launcher?
+- [Launcher background](~/altv-docs-assets/altv-docs-gta/images/customlauncher/launcher_splash.png)
+- [Interface background and RSS feed](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)
+- [Loading screen](~/altv-docs-assets/altv-docs-gta/images/customlauncher/loading_screen.png)
+- [Activate the skin](~/altv-docs-assets/altv-docs-gta/images/customlauncher/apply_skin.png)
 
-After getting [Diamond Altruist on Patreon](https://www.patreon.com/altVMP/), connect your Discord Account with Patreon. If the linking process is finished, contact a member of the Public Relations Team. You need to provide us following things, so we can setup the launcher for you:
+# Requesting a launcher
 
-## ICO file as Icon
+To request a launcher, you must have an active Patreon membership at the "Diamond" level or higher.
 
-A single ICO file can store multiple resolutions. You can create such files with various software (eg [ICOconverter.com](https://www.icoconverter.com/)) we need following settings:
+The following data can be included optionally to customize the interface:
+- **All images must be in PNG format**
+- A launcher background with a resolution of 300x400 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/launcher_splash.png)]
+- A logo with a resolution of 128x128 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
+- A UI background with a resolution of 1920x1080 or 3840x2160 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/loading_screen.png)]
+- A color to replace the primary color of the interface [[Example 1](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)] [[Example 2](~/altv-docs-assets/altv-docs-gta/images/customlauncher/color_customization.png)]
+- The link to an RSS feed. The exact format of the RSS feed is covered in the following topics. [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
 
-## Sizes
+Once you have fulfilled all requirements and prepared the necessary media, join our [Discord server](https://discord.altv.mp/) and contact a member of the Public Relations team.
 
-* 16 pixels
-* 32 pixels
-* 48 pixels
-* 256 pixels
+# RSS Feed
 
-## Bit depth
+## Title
 
-32 bits (16.7M colors & alpha transparency)<br>
-A reference icon ICO file can be found [here](~/altv-docs-assets/altv-docs-gta/images/customlauncher/icon.ico).
+The title of the RSS feed is visible above the feed. If the 'title' property of the RSS feed is an empty string, the translation of 'Latest news' in the users language will be used instead.
 
-## BMP file as splash screen
+## Item Properties
 
-The splash screen must have a size of 300x400. And is shown when alt:V is starting GTA V and is making updates.<br>
-A reference splash screen BMP file can be found [here](~/altv-docs-assets/altv-docs-gta/images/customlauncher/splash.bmp).
+The following properties of the RSS feed entries are processed by the launcher:
 
-## JSON file as manifest
+| Property    | Required | Description                                                                                                            |
+|-------------|----------|------------------------------------------------------------------------------------------------------------------------|
+| title       | No       | Title of the post, displayed at the beginning of the post                                                              |
+| link        | No       | Opens in the browser when the user clicks on the post                                                                  |
+| pubDate     | Yes      | Date of publication of the post. Displayed at the end in the user's language-specific formatting                       |
+| description | Yes      | Content of the post. Use of various HTML elements is allowed. The allowed elements are covered in the following topic. |
+| dc:creator  | No       | Creator of the post. Allows the use of HTML.                                                                           |
 
-A file named `manifest.json` must be provided with following information:
+## HTML usage
 
-1. *branch* - Used branch for the alt:V server (release, rc, dev)
-2. *name* - Your project name (for more infomations you can take look at the screenshot below)
-3. *rss* - The url to your rss feed for news
-4. *servers* - List of servers you want to show on the home page
-    1. *name* - Name of the server
-    2. *url* - Connect url to the server (https://cdn.example.com/ or host:port)
-    3. *id* - Masterlist id of your server (can be found [here](~/articles/master_list_api.md))
+The following HTML elements are allowed and can be used in the RSS feed:\
+address, article, aside, footer, header, h1, h2, h3, h4, h5, h6, hgroup, main, nav, section, blockquote, dd, div, dl, dt, figcaption, figure, hr, li, main, ol, p, pre, ul, a, abbr, b, bdi, bdo, br, cite, code, data, dfn, em, i, kbd, mark, q, rb, rp, rt, rtc, ruby, s, samp, small, span, strong, sub, sup, time, u, var, wbr, caption, col, colgroup, table, tbody, td, tfoot, th, thead, tr, img, del
 
-## Example file
+## Special elements
 
-> [!div class="nohljsln"]
->```json
->{
->  "branch": "release",
->  "name": "Your Project Name",
->  "rss": "https://example.com/rss",
->  "servers": [
->    {
->      "name": "Your server name",
->      "url": "ConnectUrl",
->      "id": "ServerId"
->    }
->  ]
->}
->```
+> [!TIP]
+> Unless otherwise specified, the display styles of the elements listed below follow the display style of Discord.
 
-## Preview
+### Spoiler
 
-![Impression of the alt:V custom launcher.](~/altv-docs-assets/altv-docs-gta/images/customlauncher/impression.png)
+```html
+<span data-spoiler>content</span>
+```
+
+Displays a spoiler that can be revealed by the user clicking on it.
+
+### Localized strings
+
+```html
+<!-- Localized string without arguments -->
+<span data-localized>LOCALIZATION_KEY</span>
+
+<!-- Localized string with arguments -->
+<span data-localized="localization argument">LOCALIZATION_KEY</span>
+```
+
+A list of translated strings can be found in the [altv-locales](https://github.com/altmp/altv-locales/tree/master) repository.
+
+The usage of the localized strings is only possible in the properties `description` and `dc:creator`.
+
+### Timestamps
+
+```html
+<span data-timestamp="F">1675455031</span>
+```
+
+The timestamp behaves like a timestamp in Discord and displays the respective time in the user's timezone.\
+The content of the span is a Unix timestamp and the possible [formats](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles) are based on Discords syntax.
+
+If no other format is specified, the "F" format is used by default.
+
+### Mentions
+
+```html
+<span data-mention="255, 0, 0">@zziger</span>
+```
+
+Displays a mention. As the value of the attribute, a color in RGB syntax separated by a comma can be specified.\
+If no value is specified, Discord's default mention color is used.
+
+### Images
+
+#### Emoji
+
+```html
+<img data-emoji src="https://emoji/icon/url.png" alt="emojiname">
+```
+
+Displays an image as a small inline element (1.375em height).\
+Allowed in the description and dc:creator properties.
+
+#### Image row
+
+```html
+<span data-images>
+    <img src="https://image/one/url.png" alt="image one">
+    <img src="https://image/two/url.png" alt="image two">
+    <img src="https://image/three/url.png" alt="image three">
+</span>
+```
+
+Displays the given images in a horizontally scrollable list. The scrollbar is only shown when the width exceeds the possible display. Recommended for example for galleries.
+
+### Quote
+
+```html
+<blockquote>quote content</blockquote>
+```
+
+Displays the specified content as a quote.
+
+### Code
+
+#### Inline
+
+```html
+<code>Inline code</code>
+```
+
+Displays the specified text as code without line breaks.
+
+#### Block
+
+```html
+<pre>
+    <code>
+        Multi line
+        Code block
+    </code>
+</pre>
+```
