@@ -18,6 +18,7 @@
 > - audio, blip remoteid getter
 > - worldObjectStreamIn & worldObjectStreamOut event
 > - audio filter api
+> - colshape api
 > ```
 
 ### Fixed
@@ -48,6 +49,7 @@
 > - player playAnimation, clearTasks method
 > - streamsyncedmeta for checkpoints
 > - vehicle quaternion setter & getter
+> - objects Api
 > ```
 
 ### Fixed
@@ -64,11 +66,11 @@
 > ```yaml
 > - getByID & getByRemoteID method for baseobjects
 > - getMetaKeys & getSyncedMetaKeys methods
-> - objects Api
 > - ped's Api
 > - virtual entitys api
 > - markers api
 > - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee player getter
+> - metachange event
 > ```
 
 ## JS Module

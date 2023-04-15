@@ -37,6 +37,10 @@
 >    - Vehicle teleport on owner change fix
 >    - Vehicle angular velocity shuttering fix
 >    - Dead body sync fix
+> - 14.15:
+>    - Revert Vehicle angular velocity shuttering fix
+> - 14.16:
+>    - Vehicle angular velocity shuttering fix
 > ```
 
 ## Client
