@@ -19,6 +19,10 @@
 > - worldObjectStreamIn & worldObjectStreamOut event
 > - audio filter api
 > - colshape api
+> - textlabel api
+> - dimension getter for localplayer
+> - httpclient, rmldocument, websocketclient, webview getbyID method
+> - blip getByScriptID method
 > ```
 
 ### Fixed
