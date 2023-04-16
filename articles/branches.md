@@ -24,4 +24,4 @@ This branch isn't public and can only be used by developers of alt:V. This icon 
 
 # How to change the Branch?
 
-Changing the branch is easy, for the client you need to open the altv.cfg and change the branch to the value you want to use (release, rc, dev). For the server you need to download the new files for the branch you want again from the alt:V Website.
+Changing the branch is easy, for the client you need to open the altv.toml and change the branch to the value you want to use (release, rc, dev). For the server you need to download the new files for the branch you want again from the alt:V Website.

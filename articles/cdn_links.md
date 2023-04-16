@@ -285,7 +285,6 @@ Server
 Other Stuff
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.alt-mp.com/others/server.cfg
 >https://cdn.alt-mp.com/others/start.sh
 >https://cdn.alt-mp.com/samples/resources.zip
 >```
@@ -339,7 +338,6 @@ Server
 Other Stuff
 > [!div class="nohljsln"]
 >```yaml
->https://cdn.alt-mp.com/others/server.cfg
 >https://cdn.alt-mp.com/others/start.sh
 >https://cdn.alt-mp.com/samples/resources.zip
 >```
