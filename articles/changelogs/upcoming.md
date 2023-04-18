@@ -21,7 +21,7 @@
 > - colshape api
 > - textlabel api
 > - dimension getter for localplayer
-> - httpclient, rmldocument, websocketclient, webview getbyID method
+> - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
 > - blip getByScriptID method
 > ```
 
@@ -32,9 +32,17 @@
 > - minimap textures couldn't be replaced
 > - ap1_* ytds, vehshare.ytd, hud.ytd, minimap.ytd couldn't be replaced
 > - gfx couldn't be replaced
+> - cef flickering while marker is visible (native.drawRect(0, 0, 0, 0, 0, 0, 0, 0) workaround is no longer needed)
 > ```
 
 ## Server
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Removed BeforeConnect event
+> ```
 
 ### Added
 
@@ -54,6 +62,8 @@
 > - streamsyncedmeta for checkpoints
 > - vehicle quaternion setter & getter
 > - objects Api
+> - player socialClubName getter
+> - socialClubName info in connectioInfo
 > ```
 
 ### Fixed
