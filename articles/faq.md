@@ -34,7 +34,3 @@ You need to be at least 31d on our [Discord](https://discord.altv.mp/).
 ## Is a token needed for development?
 
 No, a token isn't needed to develop on alt:V, the token is only needed to announce your server on Masterlist.
-
-## Whats the difference between alt:V vs other platforms?
-
-There's a document which sums up all core differences between each platforms: [Available Here](https://docs.google.com/spreadsheets/d/1g1LpSoPFQcXmUHUA__3KArFRH55TL49iSs2cT52jBi4)
