@@ -244,6 +244,8 @@ jobs:
       - gta
     if: always()
     steps:
+      - name: safe
+        run: git config --global --add safe.directory "*"
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
