@@ -287,7 +287,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          repository: Ptr147/altv-docs-assets
+          repository: altmp/altv-docs-assets
           ref: deploy
           path: ./altv-docs-assets
       - name: Download DocFx package
@@ -469,7 +469,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          repository: Ptr147/altv-docs-assets
+          repository: altmp/altv-docs-assets
           path: ./altv-docs-assets
       - name: Download artifact
         uses: actions/download-artifact@v3
