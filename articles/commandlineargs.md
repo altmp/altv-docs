@@ -1,44 +1,44 @@
-# Command-line Arguments
+# 命令行参数
 
-Command line arguments means you'll likely need to pass them to individual '.exe' or compiled server or client versions.
+命令行参数意味着您可能需要将它们传递给单独的'.exe'或编译的服务器或客户端版本。
 
-`<exe or file> --option1 --option2 --option3`
+`<exe 或文件> --option1 --option2 --option3`
 
-## Server launch options
+## 服务器启动选项
 
-| Key   |             Description            |             Notes                 |
+| 键   |             描述            |             注释                 |  
 | ------ | :-------------------------------: | :-------------------------------: |
-|   --config [path]             |   Path to server config file ([path] needs to be replaced with config path)   |   |
-|   --logfile [path]            |   Path to log file, will only output one log file to specific path instead of putting them into the log folder ([path] needs to be replaced with log path)         |   Has higher priority then --logfolder   |
-|   --logfolder [path]          |   Path to log folder ([path] needs to be replaced with log folder path)   |   	Has lower priority then --logfile   |
-|   --no-logfile                |   Disables the logging to log files   |   |
-|   --extra-res-folder [path]   |   Path to additional resource folder ([path] needs to be replaced with the the additional resource folder path)   |   |
-|   --justpack                  |   Creates packages and a resources.json for cdn download in the root folder   |   |
-|   --host [host]               |   Specifies the host which the server should bind to ([host] needs to be replaced with the host)   |   |
-|   --port [port]               |   Specifies the port which the should bind to ([port] needs to be replaced with port)   |   |
-|   --convert-config-format     |   Converts all ".cfg" config files to ".toml" format   |   |
-|   --help                      |   Displays help text for all cli arguments    |   |
+|   --config [路径]             |   服务器配置文件路径([路径]需要替换为配置路径)   |   |
+|   --logfile [路径]            |   日志文件路径,将只输出一个日志文件到指定路径,而不是将它们放入日志文件夹([路径]需要替换为日志路径)         |   优先级高于--logfolder   |
+|   --logfolder [路径]          |   日志文件夹路径([路径]需要替换为日志文件夹路径)   |       优先级低于--logfile   |
+|   --no-logfile                |   禁用日志记录到日志文件   |   |
+|   --extra-res-folder [路径]   |   额外资源文件夹路径([路径]需要替换为额外资源文件夹路径)   |   |
+|   --justpack                  |   在根文件夹中创建包和resources.json供cdn下载   |   | 
+|   --host [主机]               |   指定服务器应绑定的主机([主机]需要替换为主机)   |   |
+|   --port [端口]               |   指定服务器应绑定的端口([端口]需要替换为端口)   |   |
+|   --convert-config-format     |   将所有".cfg"配置文件转换为".toml"格式   |   |
+|   --help                      |   显示所有cli参数的帮助文本    |   |
 
-## Client launch options
+## 客户端启动选项
 
-| Key       |             Description           |
+| 键       |             描述           | 
 | ------    | :-------------------------------: |
-|   -noupdate                 |   Skips alt:V updates (only works on the dev [branch](https://docs.altv.mp/articles/branches.html#dev-development)) |
-|   -connecturl [url]         |   Directly connects to specfied url ([url] needs to be replaced with the connectionurl)   |
-|   -debug                    |   Enables debug mode   |
-|   -branch [branch]          |   Sets the branch to use ([branch] needs to be replaced with release, rc or dev)   |
-|   -skipprocessconfirmation  |   Skips the confirmation message for closing an already running GTA V / alt:V instance   |
+|   -noupdate                 |   跳过alt:V更新(仅在dev [https://docs.altv.mp/articles/branches.html#dev-development)分支上有效) |
+|   -connecturl [url]         |   直接连接到指定的url([url]需要替换为连接url)   |
+|   -debug                    |   启用调试模式   |
+|   -branch [分支]          |   设置要使用的分支([分支]需要替换为release、rc或dev)   |
+|   -skipprocessconfirmation  |   跳过关闭已运行的GTA V/alt:V实例的确认消息   |  
 
-## Server Commands
+## 服务器命令
 
-| Key       |             Description           |
+| 键       |             描述           | 
 | ------    | :-------------------------------: |
-|   start [resourcename]    |   Starts a server resource by name    |
-|   stop [resourcename]     |   Stops a server resource by name     |
-|   restart [resourcename]  |   Restarts a server resource by name  |
+|   start [resourcename]    |   按名称启动服务器资源    |  
+|   stop [resourcename]     |   按名称停止服务器资源     |
+|   restart [resourcename]  |   按名称重启服务器资源  |
 
-## Client Commands
+## 客户端命令
 
-| Key       |             Description           |
+| 键       |             描述           |
 | ------    | :-------------------------------: |
-| clear     |   Clear console buffer            |
+| clear     |   清除控制台缓冲区            |
