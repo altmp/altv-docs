@@ -1,31 +1,31 @@
-# Server Specifications
+# 服务器规格
 
-## What should you buy?
-When working with alt:V it's hard to determine what kind of server you should be expected to purchase when running a server.
-Below are some general specifications with average player counts to help you determine what kind and type of server you need.
+## 你应该买什么?
+在使用alt:V时,很难确定运行服务器时应预期购买什么类型的服务器。
+下面是一些常见的规格和平均玩家数量,以帮助您确定需要什么类型和规格的服务器。
 
-## Interesting Facts
+## 有趣的事实
 
-These are facts and similarities seen across all servers.
+这些是所有服务器共有的事实和相似之处。
 
-- The average mid-tier server utilizes 6-42% of their CPU. This is based on players and other factors.
-- The average mid-tier server has a player count of roughly 300-600 players at peak hours.
-- The average mid-tier server has RAM usage less than 1.25GB.
-- The average mid-tier server has around 8 cores.
-- The average mid-tier server is clocked at 3.7ghz
+- 平均中等服务器的CPU利用率为6-42%。这取决于玩家数量和其他因素。 
+- 平均中等服务器在高峰时段约有300-600名玩家。
+- 平均中等服务器的RAM使用量少于1.25GB。
+- 平均中等服务器有约8个核心。
+- 平均中等服务器的时钟频率为3.7GHz  
 
-## Minimum Server Specification
+## 最小服务器规格  
 
-Based on these statistics one could assume the **minimum specifications** for a performant server **above 100 players**.
+根据这些统计数据,可以假定**超过100名玩家**的高性能服务器的**最小规格**如下。
 
-- CPU 3.2ghz
-- 4 Cores
-- 4 GB of RAM (Additional for Databases, etc.)
-- Disk Space (Depends on Database and Script)
+- CPU 3.2GHz  
+- 4 个核心  
+- 4 GB RAM(数据库等额外需求)  
+- 磁盘空间(取决于数据库和脚本)  
 
-This will always be subject to change based on upcoming features or performance changes.
+这将因即将推出的新功能或性能变化而不断变化。
 
-## Used ports
+## 使用的端口  
 
-By default alt:V uses port 7788 (TCP & UDP) if no [CDN](~/articles/cdn.md) is used. If you are using a CDN, only UDP is used.
-The port can be changed in the [server.toml](~/articles/configs/server.md).
+默认情况下,如果不使用[CDN](~/articles/cdn.md),alt:V使用端口7788(TCP和UDP)。如果使用CDN,只使用UDP。  
+可以在[server.toml](~/articles/configs/server.md)中更改端口。
