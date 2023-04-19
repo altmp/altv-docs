@@ -48,4 +48,4 @@ jobs:
         run: dotnet tool install -g docfx
 
       - name: Build documentation
-        run: docfx build ./docfx.json 
+        run: docfx build /home/runner/work/altv-docs-cn/altv-docs-cn/docfx.json 
