@@ -1,9 +1,9 @@
-# Getting Started
+# 入门  
 
-This is the documentation for getting started with RmlUi.
+这是 RmlUi 入门的文档。
 
-Read [Introduction](introduction.md) to get a overview about RmlUi.
+阅读 [简介](introduction.md) 以概述 RmlUi。  
 
-Read [Nametags](nametags.md) for information on how to display nametags with RmlUi.
+阅读 [姓名标签](nametags.md) 以了解如何使用 RmlUi 显示姓名标签。
 
-Read [Debugging](debugging.md) for an introduction how to debug RmlUi.
+阅读 [调试](debugging.md) 以了解如何调试 RmlUi。
