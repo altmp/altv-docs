@@ -513,7 +513,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.RELEASE_PRIVATE_KEY }}
           publish_dir: ./_site
-          external_repository: altv-docs-assets/altv-docs-release
+          external_repository: Ptr147/altv-docs-release
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           force_orphan: false
           cname: docs.altv.mp
@@ -523,7 +523,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.NIGHTLY_PRIVATE_KEY }}
           publish_dir: ./_site
-          external_repository: altv-docs-assets/altv-docs-nightly
+          external_repository: Ptr147/altv-docs-nightly
           full_commit_message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           force_orphan: false
       - name: Post Download artifacts
