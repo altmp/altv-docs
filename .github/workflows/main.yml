@@ -1,6 +1,4 @@
-yaml
 name: DocFX
-
 on: [push]
 
 jobs:
