@@ -1,37 +1,37 @@
-# Introduction to RmlUi
+# RmlUi 简介
 
-This article describes what RmlUi is and the benefits of using it.
+本文介绍了 RmlUi 是什么及使用它的好处。
 
-## What is RmlUi
+## RmlUi 是什么
 
-RmlUi is a [open-source](https://github.com/mikke89/RmlUi), light-weight C++ library that supports XHTML1 and CSS2.\
-Due to the direct implementation in the alt:V client as well as the lower function set, RmlUi has a much higher performance, which allows updates that take place every frame.\
-Because of the fact that only CSS2 is supported, not all css functions are available.\
-This may mean that existing CSS code for a CEF WebView might not work with RmlUi and may require customization.\
-More information about this can be found in the [RmlUi documentation](https://mikke89.github.io/RmlUiDoc/pages/rcss.html).
+RmlUi 是一个[开源](https://github.com/mikke89/RmlUi),轻量级的 C++ 库,支持 XHTML1 和 CSS2。  
+由于直接在 alt:V 客户端实现以及较低的功能集,RmlUi 的性能要高得多,可以每帧更新。  
+由于只支持 CSS2,因此不是所有 css 函数都可用。  
+这可能意味着为 CEF WebView 编写的现有 CSS 代码可能与 RmlUi 不兼容,可能需要定制。  
+更多信息可以在 [RmlUi 文档](https://mikke89.github.io/RmlUiDoc/pages/rcss.html) 中找到。
 
-## Comparison to CEF WebView
+## 与 CEF WebView 的比较  
 
-**Advantages**
+**优点**  
 
-- lower resource consumption
-- direct control by the alt:V client, resulting in:
-- better performance
-- higher update rate
+- 资源消耗更低  
+- 由 alt:V 客户端直接控制,导致:  
+- 性能更高  
+- 更高的更新频率  
 
-**Disadvantages**
+**缺点**  
 
-- less functionality due to XHTML1 and CSS2 standards
-- no support for UI frameworks (for example VueJS, React, Angular, ...)
+- 由于 XHTML1 和 CSS2 标准,功能较少  
+- 不支持 UI 框架(例如 VueJS、React、Angular 等)  
 
-## When to use RmlUi
+## 何时使用 RmlUi
 
-Due to the lower functionality and the lack of support for UI frameworks, the use of RmlUi is recommended only for simple sites or sites that benefit from a higher update rate.\
-For example, the display of [name tags](nametags.md) which are positioned relative to the respective entity requires a high update rate which is not possible using a CEF WebView. 
+由于功能较少和不支持 UI 框架,只建议在简单的网站或受益于更高更新频率的网站使用 RmlUi。  
+例如,显示[姓名标签](nametags.md)(相对于各实体定位),需要很高的更新频率,使用 CEF WebView 无法实现。
 
-## Documentation
+## 文档  
 
-The programming language specific documentation can be found under the respective module documentation:
+特定编程语言的文档可以在各自的模块文档下找到:
 
 - JavaScript
   - [RmlDocument](http://docs.altv.mp/js/api/alt-client.RmlDocument.html)
