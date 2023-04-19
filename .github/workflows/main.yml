@@ -2,41 +2,41 @@ name: DocFX
 on: [push]
 
 jobs:
-  build:
+  checkout_repos:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - name: Checkout altv-docs-gta
+      - name: Checkout altv-docs-gta  
         uses: actions/checkout@v2
         with: 
           repository: Ptr147/altv-docs-gta
           path: articles
           
-      - name: Checkout coreclr-module
+      - name: Checkout coreclr-module   
         uses: actions/checkout@v2
         with: 
           repository: Ptr147/coreclr-module
-          path: articles
+          path: articles  
           
-      - name: Checkout altv-types
+      - name: Checkout altv-types    
         uses: actions/checkout@v2
         with: 
           repository: Ptr147/altv-types
-          path: articles
-      
+          path: articles   
+          
       - name: Checkout cpp-sdk
         uses: actions/checkout@v2
         with: 
           repository: Ptr147/cpp-sdk
           path: articles
-          
+  
+  build:
+    runs-on: ubuntu-latest
+    needs: checkout_repos
+    steps:  
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.x 
+          dotnet-version: 6.0.x   
 
       - name: Install DocFX
         run: dotnet tool install -g docfx
