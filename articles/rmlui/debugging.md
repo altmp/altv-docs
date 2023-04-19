@@ -1,32 +1,32 @@
-# Debugging RmlUi
+# 调试 RmlUi  
 
-This article describes basic steps of how to debug RmlUi.
+本文描述了如何调试 RmlUi 的基本步骤。
 
-> [!TIP]
-> For debugging purposes the font `rmlui-debugger-font` can be used.
-> This font doesn't has to be loaded but only contains a limited character set.
+> [!TIP]  
+> 为调试目的可以使用字体`rmlui-debugger-font`。  
+> 此字体不需要加载,但只包含有限的字符集。
 
-## Integrated debug tool
+## 集成式调试工具
 
-To inspect an RmlUi document alt:V has an integrated debugging tool, which can be activated via the F8 Console with the command **rmldebug**.
+为了检查 RmlUi 文档,alt:V 具有集成的调试工具,可通过F8控制台使用 **rmldebug** 命令激活。
 
-After entering the command, a bar with the following options will appear on the screen:
+输入命令后,屏幕上将出现以下选项的栏:
 
-- Event Log
-- Element Info
-- Outlines
+- 事件日志  
+- 元素信息  
+- 轮廓  
 
-### Event Log
+### 事件日志
 
-In the event log the different log levels can be activated and deactivated.\
-If errors occur on the part of RmlUi, they are displayed in this window.
+在事件日志中可以激活和停用不同的日志级别。  
+如果 RmlUi 方面出现错误,它们将显示在此窗口中。
 
-### Element Info
+### 元素信息
 
-After activating the Element Info, an RmlUi element can be selected on the screen.\
-On the right edge of the screen the respective properties of the element (Attributes, properties, events, ancestors and more) are displayed.\
-Additionally there are buttons at the top of the screen, which can force different states (e.g. hover or focus) of the respective element.
+激活元素信息后,可以在屏幕上选择一个 RmlUi 元素。  
+屏幕右边显示所选元素的相关属性(属性、属性、事件、祖先等)。  
+此外,屏幕顶部还有按钮,可以强制所选元素的不同状态(例如悬停或聚焦)。
 
-### Outlines
+### 轮廓  
 
-If the outlines are activated, all RmlUi elements are outlined with a red box.
+如果激活轮廓,则所有 RmlUi 元素将用红色框勾勒出轮廓。
