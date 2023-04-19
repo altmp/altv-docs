@@ -1,25 +1,25 @@
-# Setup CDN
+# 设置CDN 
 
-CDN (Content delivery Network) is a function to speedup the download of the resources for connecting users and to relive the server. The CDN can be provided with any filehosting server that supports HTTP/HTTPS.
+CDN(内容分发网络)是一个加快连接用户资源下载和减轻服务器负载的功能。CDN可以通过任何支持HTTP/HTTPS的文件托管服务器提供。
 
-It's working as followed: The client connects to the CDN Server, which provides the resource files for the client. After the download is complete, the client connects to the alt:V Server.
+它的工作流程如下:客户端连接到CDN服务器,CDN服务器为客户端提供资源文件。下载完成后,客户端连接到alt:V服务器。
 
-# Step-by-Step Tutorial
+# 步骤教程
 
-## Example values
+## 示例
 
-In this tutorial following example values are used:
+在本教程中使用以下示例:
 
-| Key   |             Value             |             Description             |
-| ------ | :-------------------------------: | :-------------------------------: |
-|   cdnUrl      |   http://connect.example.com/ |   The url to the cdn server.          |
-|   Server IP   |   127.0.0.1                   |   The IP address of the alt:V server. |
-|   Server Port |   7788                        |   The Port of the alt:V server.       |
+| 键   |       值        |         描述          | 
+| :--: | :-----------: | :-----------------: |  
+| cdnUrl  | http://connect.example.com/ | CDN服务器的URL。 |
+| 服务器IP   |   127.0.0.1         | alt:V服务器的IP地址。|
+| 服务器端口 |   7788                | alt:V服务器的端口。   |
 
-## Step-by-Step Example
+## 步骤示例
 
-1. Add `useCdn = true` to `server.toml`.
-2. Add `cdnUrl = "http://connect.example.com"` to `server.toml`.
-3. Start you server with params `--host 127.0.0.1 --port 7788 --justpack`
-4. Add all generated files from the folder `cdn_upload` to your CDN Server, the files should be placed in the root of the domain. (You should be abble to access `connect.json` under `http://connect.example.com/connect.json`).
-5. For direct connect use your cdnUrl `connect.example.com`
+1. 在`server.toml`中添加`useCdn = true`。
+2. 在`server.toml`中添加`cdnUrl = "http://connect.example.com"`。
+3. 使用参数`--host 127.0.0.1 --port 7788 --justpack`启动您的服务器。
+4. 将`cdn_upload`文件夹中的所有生成文件添加到您的CDN服务器,文件应放在域的根目录下。(您应该能够在`http://connect.example.com/connect.json`下访问`connect.json`)。 
+5. 用于直接连接,使用您的cdnUrl `connect.example.com`。
