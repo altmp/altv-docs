@@ -5,6 +5,9 @@ jobs:
   checkout_repos:
     runs-on: ubuntu-latest
     steps:
+      - name: to safe directory
+        run: /usr/bin/git config --global --add safe.directory /home/runner/work/altv-docs-cn/altv-docs-cn
+        
       - name: Checkout
         uses: actions/checkout@v2
         
