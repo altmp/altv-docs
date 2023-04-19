@@ -1,27 +1,27 @@
-# Branches
+# 分支
 
-In alt:V there are multiple development branches, which represent different development states of the alt:V client and server. The server and the client needs to be on the same branch to be able to connect. For normal users the release branch is recommended.
+在 alt:V 中有多个开发分支,代表 alt:V 客户端和服务器的不同开发状态。服务器和客户端需要在同一分支上才能连接。对普通用户来说,推荐使用发布分支。
 
-# Branch Overview
+# 分支概览
 
-Here you will get a overview of the available branches:
+这里将概述可用分支:
 
-## Release
+## 发布
 
-This branch is for production, it is consider as stable. This is the only branch, where the masterlist is available. If you run a public server, this server should run this branch. The icon is colored green.
+此分支用于生产,被视为稳定版本。这是唯一提供主列表的分支。如果您运行公共服务器,此服务器应运行此分支。图标呈绿色。
 
-## RC (Release Candidate)
+## RC(发布候选)
 
-This branch is for the next update, every update that will come to release will be at least 1-2 weeks before in this branch. It can be considered as mostly stable, here the last bugs will be fixed before they are merged to release. If you run a public server, you should use this branch before updates to update your server code to a new version of alt:V. The icon is colored orange.
+此分支用于下一个更新,发布到发布分支的每个更新至少提前1-2周在此分支上。它可以被视为基本稳定,在合并到发布分支之前,这里将修复最后的bug。如果您运行公共服务器,在更新之前应使用此分支来更新服务器代码以升级到 alt:V 的新版本。图标呈橙色。
 
-## Dev (Development)
+## Dev(开发)
 
-This branch contains the newest features, not all features will be moved to RC. This branch can contain bugs and unfinished features, the features also can change. If you want the newest features you can test them on this branch and help us finding bugs. The icon is colored blue.
+此分支包含最新功能,不是所有功能都会移至RC。此分支可能包含bug和未完成的功能,功能也可能发生变化。如果您想要最新功能,可以在此分支上测试并帮助我们找到bug。图标呈蓝色。
 
-## Internal
+## 内部
 
-This branch isn't public and can only be used by developers of alt:V. This icon is colored violet.
+此分支不是公开的,只能由 alt:V 的开发者使用。此图标呈紫色。
 
-# How to change the Branch?
+# 如何更改分支?
 
-Changing the branch is easy, for the client you need to open the altv.toml and change the branch to the value you want to use (release, rc, dev). For the server you need to download the new files for the branch you want again from the alt:V Website.
+更改分支很简单,对于客户端,您需要打开altv.toml并将分支更改为您想使用的值(release、rc、dev)。对于服务器,您需要再次从 alt:V 网站下载您想要使用的分支的新文件。
