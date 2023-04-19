@@ -1,17 +1,17 @@
-# Streamer Mode
+# 流媒体模式
 
-The idea behind Streamer Mode is to hide selected webviews (often used for HUD and Interfaces) to recording and streaming software like OBS. The software needs to record GTA V in "Game Capture"-Mode, this mode doesn't record overlays.
+流媒体模式的理念是隐藏选定的网页视图(通常用于HUD和界面),使其不被OBS等录制和流媒体软件记录。该软件需要在"游戏捕获"模式下记录GTA V,此模式不会记录覆盖物。
 
-## How to activate streamer mode?
+## 如何激活流媒体模式?
 
-Open your alt:V folder and open the altv.toml file with Notepad++ or Notepad and add `streamerMode = true` to the end of the file. If a line with `streamerMode` already exist, modify the parameter `false` to `true`. Restart your game and now Streamer Mode is enabled.
+打开alt:V文件夹,使用Notepad++或记事本打开altv.toml文件,在文件末尾添加`streamerMode = true`。如果已存在带有`streamerMode`的行,请将参数`false`修改为`true`。重启游戏,现在流媒体模式已启用。
 
-## How to script with streamer mode?
+## 如何在流媒体模式下脚本?
 
-To create a webview which isn't rendered in streamer mode, you need to set the overlay parameter from webview constructor to `true`. The default value of the overlay parameter is `false` if the argument isn't specified.
+要创建在流媒体模式下不呈现的网页视图,需要将网页视图构造函数的参数overlay设置为`true`。如果未指定参数,overlay参数的默认值为`false`。
 
-Here you can see an example on how to hide a webview from streaming software in streamer mode:
+这里您可以看到一个示例,说明如何在流媒体模式下隐藏网页视图以避免流媒体软件录制:
 
 ```js
-let webview = new alt.WebView("https://altv.mp", true);
+let webview = new alt.WebView("https://altv.mp", true); 
 ```
