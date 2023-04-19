@@ -81,6 +81,9 @@ cdnUrl = "https://cdn.example.com"
 # Should alt:V server send all clients player name on connect
 sendPlayerNames = true
 
+# Spawn player automatically at 0,0,71 after connect
+spawnAfterConnect = true
+
 # An array of all resources that should be loaded
 resources = [
     "myResource",

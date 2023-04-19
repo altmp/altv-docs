@@ -23,6 +23,7 @@
 > - dimension getter for localplayer
 > - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
 > - blip getByScriptID method
+> - multiple webviews can be focused
 > ```
 
 ### Fixed
@@ -64,6 +65,7 @@
 > - objects Api
 > - player socialClubName getter
 > - socialClubName info in connectioInfo
+> - option (spawnAfterConnect = true) to spawn player automatically at position 0,0,71
 > ```
 
 ### Fixed
