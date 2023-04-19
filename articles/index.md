@@ -1,7 +1,7 @@
-# General
-The documentation for the alt:V related unassigned things.
+# 概述 
+与 alt:V 相关但未指派的文档。
 
-## Overview
+## 概览
 <section class="destinations">
   <div class="grid-container">
     <div class="grid-item">
@@ -12,11 +12,11 @@ The documentation for the alt:V related unassigned things.
         <div class="card-content">
           <a href="faq.md" class="card-header">
             <span>
-              F.A.Q.
+              常见问题
             </span>
           </a>
           <p class="card-description">
-            Read most asked questions by the community.
+            阅读社区最常问的问题。
           </p>
         </div>
       </div>
@@ -29,11 +29,11 @@ The documentation for the alt:V related unassigned things.
         <div class="card-content">
           <a href="troubleshooting/client.md" class="card-header">
             <span>
-              Troubleshooting
+              故障排除
             </span>
           </a>
           <p class="card-description">
-            Read about possible fixes for your problem.
+            阅读有关您问题的可能解决方案。
           </p>
         </div>
       </div>
@@ -46,11 +46,11 @@ The documentation for the alt:V related unassigned things.
         <div class="card-content">
           <a href="changelogs/index.md" class="card-header">
             <span>
-              Changelogs
+              更新日志
             </span>
           </a>
           <p class="card-description">
-            Read about upcoming changes.
+            阅读有关即将发生的更改。
           </p>
         </div>
       </div>
