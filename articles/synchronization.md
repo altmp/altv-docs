@@ -1,34 +1,34 @@
-# Synchronization
+# 同步
 
-When a thing or entity is synchronized, it means it is the same on all clients and requires no manual synchronization.
+当某物或实体被同步时,意味着它在所有客户端上都是相同的,不需要手动同步。
 
-Here is an list of things that may be synchronized:
+以下是可能同步的列表:
 
-<ul>
-    <li>Player Clothing</li>
-    <li>Player Appearance</li>
-    <li>Player Animations</li>
-    <li>Player Tasks</li>
-    <li>Player Driving Tasks</li>
-    <li>Players on Ladders</li>
-    <li>Players Shooting</li>
-    <li>Players Fist Fighting</li>
-    <li>Players Rolling</li>
-    <li>Players Crouching (Have to change stance.)</li>
-    <li>Players Crawling (Have to change stance.)</li>
-    <li>Vehicle Damage</li>
-    <li>Vehicle Mods</li>
-    <li>Vehicle Colors</li>
-    <li>Vehicle Movement</li>
-    <li>Vehicle Crashing</li>
-    <li>Objects from Tasks</li>
-    <li>Swimming</li>
-    <li>Diving</li>
-    <li>Waves (If weather is synchronized)</li>
-    <li>Wind Turbines</li>
-    <li>Street Lights</li>
-    <li>Moving Stunt Props</li>
-    <li>Anything that uses Network Time</li>
+<ul> 
+    <li>玩家服装</li>
+    <li>玩家外观</li>
+    <li>玩家动画</li>
+    <li>玩家任务</li> 
+    <li>玩家驾驶任务</li>
+    <li>玩家在梯子上</li>
+    <li>玩家射击</li>
+    <li>玩家拳击</li>
+    <li>玩家翻滚</li>
+    <li>玩家蹲下(必须改变姿势)</li>
+    <li>玩家爬行(必须改变姿势)</li>
+    <li>车辆损坏</li>
+    <li>车辆改装</li>
+    <li>车辆颜色</li>
+    <li>车辆移动</li>
+    <li>车辆碰撞</li>
+    <li>任务中的对象</li>
+    <li>游泳</li>
+    <li>潜水</li>
+    <li>波浪(如果天气被同步)</li> 
+    <li>风力涡轮机</li>
+    <li>街灯</li>
+    <li>移动特技道具</li>
+    <li>任何使用网络时间的东西</li>
 </ul>
 
-This synchronization can be confirmed with upwards of 600+ players.
+该同步已确认可支持600+玩家。
