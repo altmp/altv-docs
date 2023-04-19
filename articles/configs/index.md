@@ -1,17 +1,17 @@
-# Config files in alt:V
+# alt:V 中的配置文件  
 
-This article will explain the different types of config files and the use of config files in alt:V.
+本文将解释 alt:V 中不同类型的配置文件及配置文件使用情况。
 
-## What are config files used for
+## 配置文件用于何种目的
 
-Config files are the files that give alt:V information about your server configuration.<br>
-In a config file you specify e.g. your server name, the amount of slots, the type of your resource etc.<br>
-There are several different config files in alt:V, which all have their own set of configuration options, usage and location.
+配置文件是为 alt:V 提供服务器配置信息的文件。<br>  
+在配置文件中,您可以指定服务器名称、插槽数量、资源类型等。<br>  
+alt:V 中有几种不同的配置文件,各自有自己的配置选项、用途和位置。
 
-## Important rules about the config files
+## 关于配置文件的重要规则  
 
-1. The config is written in [TOML format](https://toml.io/en/)
-2. Every line only contains one configuration option
-3. Every configuration option is a key value pair, so it starts with the `key`, then a `=` to seperate the key and the value, and after that the `value`
-4. Lines that start with a hashtag (`#`) are ignored and can be used for comments
-5. Empty lines are ignored
+1. 配置以[TOML格式](https://toml.io/en/)书写 
+2. 每行只包含一个配置选项
+3. 每个配置选项都是键值对,所以它以`键`开始,然后用`=`分隔键和值,然后是`值` 
+4. 以井号(`#`)开头的行将被忽略,可用于注释
+5. 空行将被忽略
