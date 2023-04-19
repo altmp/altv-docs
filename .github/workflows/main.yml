@@ -5,6 +5,9 @@ jobs:
   checkout_repos:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Checkout altv-docs-gta  
         uses: actions/checkout@v2
         with: 
