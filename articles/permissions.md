@@ -1,18 +1,19 @@
-# Permissions System
+# 权限系统  
 
-Permissions are set on a resource-by-resource basis and have to be accepted by the user joining the server
+权限是以每个资源为基础设置的,并且必须被加入服务器的用户接受。
 
-## Permission Types
+## 权限类型  
 
-| Permission       |                                     Description                                      |
-| ---------------- | :----------------------------------------------------------------------------------: |
-| Screen Capture   | This allows a screenshot to be taken of the alt:V process (just GTA) and any webview |
-| WebRTC           |                        This allows peer-to-peer RTC inside JS                        |
-| Clipboard Access |                    This allows to copy content to users clipboard                    |
+| 权限       |                                     描述                                      |
+| ---------------- | :----------------------------------------------------------------------------------: |  
+| 屏幕截图   | 这允许对alt:V 进程(仅限GTA)和任何Web视图进行屏幕截图 |
+| WebRTC           |                        这允许JS内部进行点对点RTC                        |
+| 剪贴板访问 |                    这允许复制内容到用户的剪贴板                    |
 
-## Required vs Option Permissions
+## 必需与可选权限  
 
-Permissions can be either be optional or required. When they are optional, this will still allow the player to join the server if they don't agree to it however you will no longer have access to the features for which the permission covers. Required permissions behave differently in the fact that if the user does not accept them then they will be unable to access the server.
+权限可以是可选的或必需的。当它们是可选的时,即使用户不同意它们也仍允许玩家加入服务器,但是您将无法访问权限所涵盖的功能。必需的权限的行为不同,如果用户不接受它们,则无法访问服务器。
+
 
 ```
 required-permissions = [
@@ -28,5 +29,5 @@ optional-permissions = [
 ]
 ```
 
-> [!TIP]
-> To check if a user has approved the respective permission the method [alt.getPermissionState](https://docs.altv.mp/js/api/alt-client.html#_altmp_altv_types_alt_client_getPermissionState) can be used.
+> [!提示]
+> 要检查用户是否批准了相应的权限,可以使用方法 [alt.getPermissionState](https://docs.altv.mp/js/api/alt-client.html#_altmp_altv_types_alt_client_getPermissionState)。

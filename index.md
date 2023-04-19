@@ -1,36 +1,36 @@
-# alt:V Documentation
+# alt:V 文档
 
-alt:V is an alternative multiplayer framework for GTA:V and allows developers and players to play on custom servers. These servers can utilize languages such as C# and JavaScript. Here you'll learn how to work with alt:V in these languages, how to properly setup a project and build out your very own gamemode.
+alt:V 是 GTA:V 的另一种多人模式框架,允许开发者和玩家在自定义服务器上玩。这些服务器可以使用诸如 C# 和 JavaScript 等语言。在这里,您将学习如何使用这些语言与 alt:V 一起工作,如何正确设置项目和构建您自己的游戏模式。
 
-Some of our features:
+我们的一些功能:
 
-&#x2714; Free to use
+&#x2714; 免费使用 
 
-&#x2714; Slot limits based on hardware
+&#x2714; 根据硬件设置的槽限制
 
-&#x2714; Play with friends
+&#x2714; 与朋友一起玩
 
-&#x2714; Perfect synchronization
+&#x2714; 完美的同步 
 
-&#x2714; Server browser
+&#x2714; 服务器浏览器
 
-&#x2714; Server and client-side
+&#x2714; 服务器端和客户端
 
-&#x2714; CEF
+&#x2714; CEF  
 
-&#x2714; CDN support
+&#x2714; CDN 支持
 
-&#x2714; Encrypted client-side code
+&#x2714; 加密的客户端代码
 
-&#x2714; Built-in voice service up to 500+ users
+&#x2714; 内置语音服务,最多可支持 500+ 用户
 
-&#x2714; Mod support
+&#x2714; Mod 支持  
 
-&#x2714; Map support
+&#x2714; 地图支持
 
-&#x2714; MLO support
+&#x2714; MLO 支持 
 
-&#x2714; Clothing support
+&#x2714; 服装支持
 
 &#x2714; C#
 

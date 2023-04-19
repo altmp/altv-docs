@@ -1,46 +1,44 @@
-﻿# Meta data
+﻿# 元数据  
 
-Meta data can be used to pass specific values between server & client (also called synced meta or local meta) or between
-resources (global meta) and bind them to an entity or the respective side (server or client).
-For example, the username of a player can be bound to it or the status of a siren to a vehicle (synced metas).
-Likewise, data such as the current weather can also be bound to a resource as a meta so that other resources can query
-this value (global meta).
-These topics will be discussed in more detail in the respective subsections.
+元数据可用于在服务器和客户端之间传递特定的值(也称为同步元数据或本地元数据),或在资源之间(全局元数据)绑定到一个实体或相应的一方(服务器或客户端)。  
+例如,玩家的用户名可以绑定到它,或者警报器的状态绑定到一辆车(同步元数据)。  
+同样,像当前天气这样的数据也可以绑定到资源作为元数据,以便其他资源可以查询这个值(全局元数据)。  
+这些主题将在各自的子部分中更详细地讨论。
 
 <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/4oQTVkx5GA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-# Types
+# 类型
 
-## Overview
+## 概览  
 
-| Type                 | Used on       | Availability (Set) | Availability (Get) | Description                                                                                                                                   |
+| 类型                 |  使用对象      | 可用性(设置) | 可用性(获取) | 描述                                                                                                                                   |
 |----------------------|---------------|--------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Meta                 | Entities, Alt | Client & Server    | Client & Server    | The data is only available on the client or server side, depending on where it has been set.                                                  |
-| Local Meta           | Player        | Server             | Client & Server    | The data is settable has to be set on a player. Only the client it has been set to can fetch the data.                                        | 
-| (Global) Synced Meta | Entities, Alt | Server             | Client & Server    | The data is settable on every entity (player & vehicle). Every client can fetch the data.                                                     |
-| Stream Synced Meta   | Entities      | Server             | Client & Server    | This is similar to the synced meta, but the data gets only transferred when the entity is in streaming range of the client fetching the data. |
+| 元数据            | 实体,Alt | 客户端和服务器    | 客户端和服务器    | 数据只在设置它的客户端或服务器端可用。             |  
+| 本地元数据           | 玩家        | 服务器             | 客户端和服务器    | 数据是设置在玩家身上的。只有设置它的客户端可以获取数据。    |  
+| (全局)同步元数据 | 实体,Alt | 服务器             | 客户端和服务器    | 数据可以在每个实体(玩家和车辆)上设置。每个客户端都可以获取数据。    |
+| 流同步元数据   | 实体      | 服务器             | 客户端和服务器    | 这与同步元数据类似,但数据仅在实体处于客户端获取数据的流范围内时传输。 |
 
-## Usage
+## 用法  
 
-A meta is set by using the method setMeta on the class alt or an entity (player or vehicle).
-The meta is only available on the same side that it has been set and can be fetched by all resources.
+元数据是使用 alt 类或实体(玩家或车辆)上的 setMeta 方法设置的。  
+元数据只在设置它的同一侧可用,并且可以由所有资源获取。
 
 # [JS](#tab/tab1-0)
 
-Applying a global meta
+应用全局元数据
 
 ```js
-// Set a global meta (single-sided, cross-resource) with a given key and value
+// 使用给定的键和值设置全局元数据(单侧,跨资源)  
 alt.setMeta("metaKey", "metaValue");
-// Check if the meta is set and log the result
+// 检查元数据是否设置并记录结果
 if (alt.hasMeta("metaKey")) {
-    alt.log("Meta is set");
+    alt.log("元数据被设置"); 
 } else {
-    alt.log("Meta isn't set");
+    alt.log("元数据未设置");
 }
-// Fetch and save the value of the meta
-const metaValue = alt.getMeta("metaKey");
-// Delete the meta
+// 获取并保存元数据的值
+const metaValue = alt.getMeta("metaKey");  
+// 删除元数据
 alt.deleteMeta("metaKey");
 ```
 

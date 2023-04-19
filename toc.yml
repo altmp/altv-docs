@@ -1,4 +1,4 @@
-- name: General
+- name: 常规
   href: articles/toc.yml
   topicHref: articles/index.md
 - name: JavaScript
