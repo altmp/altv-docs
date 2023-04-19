@@ -1,13 +1,12 @@
-# Dimensions
+# 维度  
 
-In alt:V there exists a dimension system and it's implemented serverside. This system allows to have multiple players and vehicles on the same location without seeing each other. It's useful to implement eg Apartments, so you can have multiple Apartments on the same location, without interfiering with eachother.
+在alt:V中存在维度系统,该系统在服务器端实现。该系统允许多个玩家和车辆位于同一位置,而互不可见。这对实现公寓很有用,因此您可以在同一位置拥有多个公寓,而互不干扰。  
 
-The dimensions are represented as an int32 this means the lowest possible dimension is -2147483648, the default is 0 and the highest is 2147483647.
+维度表示为 int32,这意味着最小可能的维度为-2147483648,默认为0,最大为2147483647。     
 
-
-| Min Value   |              Max Value             |         Name           |   Description |
-| ------ | :-------------------------------: | :-------------------------------: | :-------------------------------------------------------: |
-| -2147483647   |   -1          |   Public Dimension    | This Dimension can see itself, the General Dimension and the Global Dimension (-1 can see 0, -2 can't see -1, 0 can't see -1, -1 can't see 1) |
-|   0           |   0           |  General Dimension    | This Dimension can only see itself. |
-|   -2147483648 |   -2147483648 |   Global Dimension    | This Dimension can only see itself. |
-|   1           |   2147483647  |   Private Dimension   | This Dimension can only see itself and the Global Dimension (1 can't see 0, 2 can't see 1, 0 can't see 1, 1 can't see -1)
+|  最小值     |                 最大值                |          名称            |    描述   | 
+| :--: |  :-------------------------------:  |   :-------------------------------:   |   :-------------------------------------------------------:   |
+| -2147483647   |   -1         |   公共维度    | 此维度可以看到本身、常规维度和全局维度(-1 可以看到 0,-2 无法看到 -1,0 无法看到 -1,-1 无法看到 1) |  
+|   0           |   0           |   正常维度    | 此维度只能看到它自己。     |
+|   -2147483648 |   -2147483648 |   全局维度    | 此维度只能看到它自己。    |
+|   1           |   2147483647  |   私有维度   | 此维度只能看到它自己和全局维度(1 无法看到 0,2 无法看到 1,0 无法看到 1,1 无法看到 -1)
