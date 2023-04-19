@@ -1,36 +1,36 @@
-## FAQ
+## 常见问题  
 
-Here you can see Frequently Asked Question and its answers.
+这里您可以看到常见问题及其答案。
 
-## Will the limits of GTA:V be increased?
+## GTA:V 的限制会增加吗?
 
-Some limits have already been increased. If you need to increase a limit, you can do it with a rpf resource. A tutorial can be found [here](~/altv-docs-gta/articles/tutorials/overwrite_gameconfig.md).
+某些限制已经增加。如果您需要增加限制,可以使用 rpf 资源。相关教程可以在[这里](~/altv-docs-gta/articles/tutorials/overwrite_gameconfig.md)找到。   
 
-## Does alt:V work on Linux?
+## alt:V 在 Linux 上工作吗?
 
-There are native builds of the alt:V server for Linux, however the client itself has no official Linux support.
+alt:V 服务器有针对 Linux 的本地构建,但是客户端本身没有官方的 Linux 支持。  
 
-Some people have gotten it to work with Wine or Proton though. You can attempt to run it yourself by installing both GTA V and alt:V in the same Wine prefix, but there is no guarantee it'll run as stable as a native Windows install.
+有些人通过 Wine 或 Proton 让它工作。您可以尝试通过在同一 Wine 前缀中安装 GTA V 和 alt:V 来运行它自己,但无法保证它会像本地 Windows 安装那样稳定运行。
 
-## Is or will alt:V be open-source?
+## alt:V 是开源的还是会开源?
 
-Partly. Many of the core parts aren't open-source. Other components are open-source however. These can be found over on [GitHub.com/altMP](https://github.com/altmp). Plans to make more components of alt:V open-source in the future have already been made.
+部分开源。许多核心部分不是开源的。然而,其他组件是开源的。这些可以在 [GitHub.com/altMP](https://github.com/altmp) 上找到。已制定未来使 alt:V 的更多组件开源的计划。
 
-## Do I have to pay for more server slots?
+## 我是否需要支付更多的服务器槽位费用?
 
-**No!** More server slots are currently, and will always be free.
-The only limit is the hardware which the server is running on.
+**不会!** 目前和将来更多的服务器槽位都是免费的。  
+唯一的限制是服务器运行所在的硬件。  
 
-## How can I contribute to alt:V?
+## 我如何为 alt:V 做出贡献?
 
-There are multiple ways, you can directly contribute to open source projects on [GitHub.com/altMP](https://github.com/altmp) or ask on our [Discord](https://discord.altv.mp/).
-Another way would be to support us financially on [Patreon](https://www.patreon.com/altVMP).
+有多种方式,您可以直接为 [GitHub.com/altMP](https://github.com/altmp) 上的开源项目做出贡献,或者在我们的 [Discord](https://discord.altv.mp/) 上提问。  
+另一种方式是在 [Patreon](https://www.patreon.com/altVMP) 上财务支持我们。
 
-## How can I get a token for Masterlist?
+## 我如何获得 Masterlist 的令牌?
 
-You need to message the discord bot Master-Bot#3667 and write him the message "token".
-You need to be at least 31d on our [Discord](https://discord.altv.mp/).
+您需要向 discord 机器人 Master-Bot#3667 发送消息"token"。  
+您需要在我们的 [Discord](https://discord.altv.mp/) 上至少 31 天。
 
-## Is a token needed for development?
+## 开发 alt:V 需要令牌吗?
 
-No, a token isn't needed to develop on alt:V, the token is only needed to announce your server on Masterlist.
+不,开发 alt:V 不需要令牌,令牌只需要在 Masterlist 上宣布您的服务器。
