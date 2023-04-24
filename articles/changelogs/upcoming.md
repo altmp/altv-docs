@@ -68,6 +68,7 @@
 > - player socialClubName getter
 > - socialClubName info in connectioInfo
 > - option (spawnAfterConnect = true) to spawn player automatically at position 0,0,71
+> - no-regenerate-rpf-cache cmd line arg
 > ```
 
 ### Fixed

@@ -17,6 +17,7 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 |   --host [host]               |   Specifies the host which the server should bind to ([host] needs to be replaced with the host)   |   |
 |   --port [port]               |   Specifies the port which the should bind to ([port] needs to be replaced with port)   |   |
 |   --convert-config-format     |   Converts all ".cfg" config files to ".toml" format   |   |
+|   --no-regenerate-rpf-cache   |   Don't generate a cache for rpf files   |   |
 |   --help                      |   Displays help text for all cli arguments    |   |
 
 ## Client launch options
