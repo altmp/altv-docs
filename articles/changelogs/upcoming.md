@@ -25,6 +25,10 @@
 > - blip getByScriptID method
 > - multiple webviews can be focused
 > - resource config getter
+> - vehicle rpm setter
+> - warning if gta systems have performance issues
+> - overwrite all game meta files
+> - DISABLE_SP_ENTER_VEHICLE_CLIPSET flag (true by default)
 > ```
 
 ### Fixed
@@ -36,6 +40,8 @@
 > - gfx couldn't be replaced
 > - cef flickering while marker is visible (native.drawRect(0, 0, 0, 0, 0, 0, 0, 0) workaround is no longer needed)
 > - weapon dlc addon crashed the game on connect to the server
+> - cef locale detection
+> - webview didnt get destroyed
 > ```
 
 ## Server
