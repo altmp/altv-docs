@@ -20,15 +20,18 @@
 > - audio filter api
 > - colshape api
 > - textlabel api
-> - dimension getter for localplayer
+> - dimension getter, position setter for localplayer
 > - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
 > - blip getByScriptID method
 > - multiple webviews can be focused
 > - resource config getter
 > - vehicle rpm setter
 > - warning if gta systems have performance issues
-> - overwrite all game meta files
+> - overwrite all game meta & dat files
 > - DISABLE_SP_ENTER_VEHICLE_CLIPSET flag (true by default)
+> - extendet texture budget
+> - new setter & getter for object, checkpoint
+> - localPed & localVehicle api
 > ```
 
 ### Fixed

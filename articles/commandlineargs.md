@@ -29,6 +29,7 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 |   -debug                    |   Enables debug mode   |
 |   -branch [branch]          |   Sets the branch to use ([branch] needs to be replaced with release, rc or dev)   |
 |   -skipprocessconfirmation  |   Skips the confirmation message for closing an already running GTA V / alt:V instance   |
+|   -linux                    |   Enables linux mode   |
 
 ## Server Commands
 
