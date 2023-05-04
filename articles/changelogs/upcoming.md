@@ -20,7 +20,7 @@
 > - audio filter api
 > - colshape api
 > - textlabel api
-> - dimension getter, position setter for localplayer
+> - dimension getter, position & rotation setter for localplayer
 > - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
 > - blip getByScriptID method
 > - multiple webviews can be focused
@@ -32,6 +32,9 @@
 > - extendet texture budget
 > - new setter & getter for object, checkpoint
 > - localPed & localVehicle api
+> - activityInputEnabled, activationLevel, noiseSuppressionEnabled, toggleInput methods
+> - Extended Voice API Permission
+> - isFullScreen method
 > ```
 
 ### Fixed

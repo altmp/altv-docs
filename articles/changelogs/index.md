@@ -41,6 +41,14 @@
 >    - Revert Vehicle angular velocity shuttering fix
 > - 14.16:
 >    - Vehicle angular velocity shuttering fix
+> - 14.17:
+>    - Revert network optimizations
+> - 14.18:
+>    - weapon meta crashes
+> - 14.19:
+>    - Fix linux client
+> - 14.20:
+>    - Another fix for linux client
 > ```
 
 ## Client
