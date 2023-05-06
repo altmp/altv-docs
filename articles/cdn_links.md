@@ -348,3 +348,10 @@ Other Stuff
 >https://cdn.alt-mp.com/client/${BRANCH}/x64_win32/update.json
 >https://cdn.alt-mp.com/client/${BRANCH}/x64_win32/altv.exe
 >```
+### Launcher
+> [!div class="nohljsln"]
+>```yaml
+>https://cdn.alt-mp.com/launcher/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/launcher/${BRANCH}/x64_win32/altv.exe
+>https://cdn.alt-mp.com/launcher/${BRANCH}/x64_win32/altv.zip
+>```
