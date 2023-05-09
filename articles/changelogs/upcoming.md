@@ -56,7 +56,7 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Removed BeforeConnect event
+> - Removed PlayerBeforeConnect event
 > ```
 
 ### Added
