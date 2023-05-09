@@ -9,6 +9,7 @@ Permissions are set on a resource-by-resource basis and have to be accepted by t
 | Screen Capture   | This allows a screenshot to be taken of the alt:V process (just GTA) and any webview |
 | WebRTC           |                        This allows peer-to-peer RTC inside JS                        |
 | Clipboard Access |                    This allows to copy content to users clipboard                    |
+| Extended Voice API | This allows to manually control voice, like activating of microphone, muting, etc. by the server |
 
 ## Required vs Option Permissions
 
