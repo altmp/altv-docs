@@ -48,6 +48,7 @@
 > - weapon dlc addon crashed the game on connect to the server
 > - cef locale detection
 > - webview didnt get destroyed
+> - wrong reported resource downloadspeed
 > ```
 
 ## Server
