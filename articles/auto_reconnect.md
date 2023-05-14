@@ -16,8 +16,6 @@ server to finish his startup procedure (fetching data from database, loading mod
 # [Javascript](#tab/tabid-1)
 
 ```js
-import fetch from "node-fetch";
-
 const RETRY_DELAY = 2500;
 const DEBUG_PORT = 9223;
 
@@ -54,8 +52,6 @@ connectLocalClient();
 # [Typescript](#tab/tabid-2)
 
 ```ts
-import fetch from "node-fetch";
-
 const enum Status {
   Loading = "LOADING",
   MainMenu = "MAIN_MENU",
