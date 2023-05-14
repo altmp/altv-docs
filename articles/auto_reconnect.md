@@ -16,8 +16,6 @@ server to finish his startup procedure (fetching data from database, loading mod
 # [Javascript](#tab/tabid-1)
 
 ```js
-import fetch from "node-fetch";
-
 const RETRY_DELAY = 2500;
 const DEBUG_PORT = 9223;
 
@@ -36,6 +34,7 @@ async function connectLocalClient() {
 
   if (status !== "MAIN_MENU" && status !== "IN_GAME") {
     setTimeout(() => connectLocalClient(), RETRY_DELAY);
+    return;
   }
 
   try {
@@ -54,8 +53,6 @@ connectLocalClient();
 # [Typescript](#tab/tabid-2)
 
 ```ts
-import fetch from "node-fetch";
-
 const enum Status {
   Loading = "LOADING",
   MainMenu = "MAIN_MENU",
@@ -84,6 +81,7 @@ async function connectLocalClient(): Promise<void> {
 
   if (status !== Status.MainMenu && status !== Status.InGame) {
     setTimeout(() => connectLocalClient(), RETRY_DELAY);
+    return;
   }
 
   try {
