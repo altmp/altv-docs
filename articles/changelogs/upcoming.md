@@ -35,6 +35,7 @@
 > - activityInputEnabled, activationLevel, noiseSuppressionEnabled, toggleInput methods
 > - Extended Voice API Permission
 > - isFullScreen method
+> - cef hardware acceleration
 > ```
 
 ### Fixed
@@ -49,6 +50,7 @@
 > - cef locale detection
 > - webview didnt get destroyed
 > - wrong reported resource downloadspeed
+> - optional permissions
 > ```
 
 ## Server
