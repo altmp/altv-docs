@@ -34,6 +34,7 @@ async function connectLocalClient() {
 
   if (status !== "MAIN_MENU" && status !== "IN_GAME") {
     setTimeout(() => connectLocalClient(), RETRY_DELAY);
+    return;
   }
 
   try {
@@ -80,6 +81,7 @@ async function connectLocalClient(): Promise<void> {
 
   if (status !== Status.MainMenu && status !== Status.InGame) {
     setTimeout(() => connectLocalClient(), RETRY_DELAY);
+    return;
   }
 
   try {
