@@ -36,6 +36,7 @@
 > - Extended Voice API Permission
 > - isFullScreen method
 > - cef hardware acceleration
+> - improve ressource loading speed
 > ```
 
 ### Fixed
@@ -51,6 +52,7 @@
 > - webview didnt get destroyed
 > - wrong reported resource downloadspeed
 > - optional permissions
+> - cancel button crashed client
 > ```
 
 ## Server
@@ -60,6 +62,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Removed PlayerBeforeConnect event
+> - Removed alt.Entity.getByID method
 > ```
 
 ### Added
@@ -84,6 +87,8 @@
 > - socialClubName info in connectioInfo
 > - option (spawnAfterConnect = true) to spawn player automatically at position 0,0,71
 > - no-regenerate-rpf-cache cmd line arg
+> - error message if justpack gets used without valid host config
+> - possible to enable only specific gta dlcs with the dlc-whitelist config option
 > ```
 
 ### Fixed

@@ -98,6 +98,17 @@ modules = [
     "csharp-module"
 ]
 
+# Enable only specific dlc packs
+dlc-whitelist = [
+    "mpBeach",
+    "mpBusiness",
+    "patchday27ng"
+]
+
+# extend gta pool sizes
+[pools]
+"DrawableStore" = 240420
+
 # Profiling entity creation, systems like streaming etc
 [worldProfiler]
 port = 7797
