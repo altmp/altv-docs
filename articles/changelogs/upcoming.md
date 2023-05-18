@@ -62,7 +62,6 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Removed PlayerBeforeConnect event
-> - Removed alt.Entity.getByID method
 > ```
 
 ### Added
@@ -101,6 +100,14 @@
 > ```
 
 ## Server & Client
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Removed alt.Entity.getByID method
+> ```
+
 > [!div class="nohljsln"]
 > ```yaml
 > - getByID & getByRemoteID method for baseobjects
