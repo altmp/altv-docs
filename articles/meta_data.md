@@ -191,7 +191,7 @@ alt.on("playerConnect", (player) => {
 Listening for local meta changes
 
 ```js
-alt.on("localMetaChange", (player, key, oldValue, newValue) => {
+alt.on("localMetaChange", (player, key, newValue, oldValue) => {
     // This event gets called when a local meta changes
     // You can also check it yourself by using the player.hasLocalMeta & player.getLocalMeta methods
     if (player.hasLocalMeta("metaKey")) {
@@ -222,7 +222,7 @@ alt.on("spawned", () => {
 Listening for local meta changes
 
 ```js
-alt.on("localMetaChange", (key, oldValue, newValue) => {
+alt.on("localMetaChange", (key, newValue, oldValue) => {
     // This event gets called when a local meta changes
     // You can also check it yourself by using the alt.hasLocalMeta & alt.getLocalMeta methods
     if (alt.hasLocalMeta("metaKey")) {
@@ -366,7 +366,7 @@ alt.on("spawned", () => {
 Listening for global synced meta changes
 
 ```js
-alt.on("globalSyncedMetaChange", (key, oldValue, newValue) => {
+alt.on("globalSyncedMetaChange", (key, newValue, oldValue) => {
     // This event gets called when a synced meta changes which is applied to alt
     // You can also check it yourself by using the alt.hasSyncedMeta(key) method
     if (alt.hasSyncedMeta("metaKey")) {
@@ -379,7 +379,7 @@ alt.on("globalSyncedMetaChange", (key, oldValue, newValue) => {
 Listening for synced meta changes
 
 ```js
-alt.on("syncedMetaChange", (entity, key, oldValue, newValue) => {
+alt.on("syncedMetaChange", (entity, key, newValue, oldValue) => {
     // This event gets called when a synced meta changes which is applied to an entity  
     // You can also check it yourself by using the entity.hasSyncedMeta(key) method
     if (entity.hasSyncedMeta("metaKey")) {
