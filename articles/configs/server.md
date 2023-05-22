@@ -45,8 +45,8 @@ announceRetryErrorAttempts = 50
 duplicatePlayers = 4096
 
 # Define the map bound size
-mapBoundsMinX = 10000 # values are considered negative
-mapBoundsMinY = 10000 # values are considered negative
+mapBoundsMinX = -10000
+mapBoundsMinY = -10000
 mapBoundsMaxX = 65536
 mapBoundsMaxY = 65536
 mapCellAreaSize = 100 #smaller areas uses more ram and less cpu

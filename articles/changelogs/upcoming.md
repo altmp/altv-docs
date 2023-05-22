@@ -62,6 +62,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Removed PlayerBeforeConnect event
+> - Removed id support for entityinstreamingrange method
 > ```
 
 ### Added
@@ -88,6 +89,7 @@
 > - no-regenerate-rpf-cache cmd line arg
 > - error message if justpack gets used without valid host config
 > - possible to enable only specific gta dlcs with the dlc-whitelist config option
+> - player streamedEntities getter
 > ```
 
 ### Fixed
