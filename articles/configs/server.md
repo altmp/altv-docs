@@ -105,6 +105,9 @@ dlc-whitelist = [
     "patchday27ng"
 ]
 
+# Obfuscate ressource names
+hashClientResourceName = true
+
 # extend gta pool sizes
 [pools]
 "DrawableStore" = 240420

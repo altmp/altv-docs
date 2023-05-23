@@ -9,7 +9,6 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Modify gamepool size
 > - mute loading music
 > - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE flag to keep engines on when leaving a vehicle
 > - worldObjectPositionChange event
@@ -53,6 +52,7 @@
 > - wrong reported resource downloadspeed
 > - optional permissions
 > - cancel button crashed client
+> - voiceInputVolume sets volume in reverse
 > ```
 
 ## Server
@@ -90,6 +90,8 @@
 > - error message if justpack gets used without valid host config
 > - possible to enable only specific gta dlcs with the dlc-whitelist config option
 > - player streamedEntities getter
+> - hashClientResourceName server option
+> - Modify gamepool size via server config
 > ```
 
 ### Fixed
