@@ -36,6 +36,7 @@
 > - isFullScreen method
 > - cef hardware acceleration
 > - improve ressource loading speed
+> - downloadspeed settings
 > ```
 
 ### Fixed
@@ -53,6 +54,7 @@
 > - optional permissions
 > - cancel button crashed client
 > - voiceInputVolume sets volume in reverse
+> - ladder sync
 > ```
 
 ## Server
@@ -92,6 +94,7 @@
 > - player streamedEntities getter
 > - hashClientResourceName server option
 > - Modify gamepool size via server config
+> - prometheus support
 > ```
 
 ### Fixed
