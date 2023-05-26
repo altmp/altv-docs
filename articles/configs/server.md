@@ -89,7 +89,9 @@ resources = [
     "myResource",
     # Since alt:V 10.0 you can also use resources in subdirectories
     "vehicles/firstVehicle",
-    "vehicles/secondVehicle"
+    "vehicles/secondVehicle",
+    # Since alt:V 15.0 you can even use * wildcard character to use all folders as resources
+    "vehicles/*",
 ]
 
 # An array of all modules that should be loaded
