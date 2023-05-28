@@ -96,6 +96,7 @@
 > - Modify gamepool size via server config
 > - prometheus support
 > - resource wildcard in server.cfg
+> - Missing maxDistance & isSpatial voicechannel getter
 > ```
 
 ### Fixed
@@ -141,5 +142,15 @@
 > ```yaml
 > - (Client) toggleStrictChecks for natives
 > - (Server|Client) baseObjectCreate & baseObjectRemove event
-> - (Server) Missing maxDistance & isSpatial voicechannel getter
+> ```
+
+
+## C# Module
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Removed deprecated Alt.Server property
+> - All element constructors are deprecated. Please only use Alt.Create* or AltAsync.Create* instead. In one of the next updates the constructors will be removed.
 > ```
