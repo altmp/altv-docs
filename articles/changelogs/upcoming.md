@@ -95,6 +95,7 @@
 > - hashClientResourceName server option
 > - Modify gamepool size via server config
 > - prometheus support
+> - resource wildcard in server.cfg
 > ```
 
 ### Fixed
