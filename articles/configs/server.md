@@ -51,10 +51,10 @@ mapBoundsMaxX = 65536
 mapBoundsMaxY = 65536
 mapCellAreaSize = 100 #smaller areas uses more ram and less cpu
 
-# Defines the rate (miliseconds) in which colshape calculations should occur (dev/13.0-dev32 and higher)
+# Defines the rate (miliseconds) in which colshape calculations should occur
 colShapeTickRate = 200
 
-# Defines the used logging streams (console, file, stdconsole) for the server (dev/13.0-dev32 and higher)
+# Defines the used logging streams (console, file, stdconsole) for the server
 logStreams = [ "console", "file" ]
 
 # Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2
@@ -118,6 +118,9 @@ hashClientResourceName = true
 [worldProfiler]
 port = 7797
 host = "0.0.0.0"
+
+[threads]
+streamer = 1
 
 # Settings related to js-module
 [js-module]
