@@ -57,9 +57,6 @@ colShapeTickRate = 200
 # Defines the used logging streams (console, file, stdconsole) for the server
 logStreams = [ "console", "file" ]
 
-# Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2
-entityWorkerCount = 8
-
 # The tags for your server (max. 4)
 tags = [
     "Freeroam",

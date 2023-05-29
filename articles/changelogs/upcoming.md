@@ -65,6 +65,7 @@
 > ```yaml
 > - Removed PlayerBeforeConnect event
 > - Removed id support for entityinstreamingrange method
+> - Removed entityWorkerCount server option
 > ```
 
 ### Added
