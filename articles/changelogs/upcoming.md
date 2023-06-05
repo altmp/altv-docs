@@ -16,9 +16,7 @@
 > - audio, webview, httpclien, websocketclient id getter
 > - audio, blip remoteid getter
 > - worldObjectStreamIn & worldObjectStreamOut event
-> - audio filter api
-> - colshape api
-> - textlabel api
+> - audio filter, colshape, textlabel, weaponObject api
 > - dimension getter, position & rotation setter for localplayer
 > - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
 > - blip getByScriptID method
@@ -97,7 +95,7 @@
 > - Modify gamepool size via server config
 > - prometheus support
 > - Missing maxDistance & isSpatial voicechannel getter
-> - streamer thread count can be configured in server.toml
+> - streamer, migration thread count can be configured in server.toml
 > - resource wildcard support in server.toml
 > ```
 
