@@ -11,11 +11,11 @@
 > ```yaml
 > - mute loading music
 > - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE flag to keep engines on when leaving a vehicle
-> - worldObjectPositionChange event
 > - audio, checkpoint, webview all getter
 > - audio, webview, httpclien, websocketclient id getter
 > - audio, blip remoteid getter
-> - worldObjectStreamIn & worldObjectStreamOut event
+> - worldObjectPositionChange, worldObjectStreamIn & worldObjectStreamOut event
+> - entityHitEntity event
 > - audio filter, colshape, textlabel, weaponObject api
 > - dimension getter, position & rotation setter for localplayer
 > - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
