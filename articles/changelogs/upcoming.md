@@ -35,6 +35,9 @@
 > - cef hardware acceleration
 > - improve ressource loading speed
 > - downloadspeed settings
+> - entity frozen setter/getter
+> - taskchange event is cancable
+> - startEnteringVehicle & startLeavingVehicle events
 > ```
 
 ### Fixed
@@ -53,6 +56,7 @@
 > - cancel button crashed client
 > - voiceInputVolume sets volume in reverse
 > - ladder sync
+> - localplayer micLevel & isTalking getter
 > ```
 
 ## Server
