@@ -10,7 +10,8 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - mute loading music
-> - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE flag to keep engines on when leaving a vehicle
+> - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE configflag to keep engines on when leaving a vehicle
+> - FORCE_RENDER_SNOW configflag to enable snow on any weather
 > - audio, checkpoint, webview all getter
 > - audio, webview, httpclien, websocketclient id getter
 > - audio, blip remoteid getter
@@ -38,6 +39,8 @@
 > - entity frozen setter/getter
 > - taskchange event is cancable
 > - startEnteringVehicle & startLeavingVehicle events
+> - webview reload method
+> - sourceentity parameter to weaponDamage event
 > ```
 
 ### Fixed
