@@ -12,6 +12,8 @@
 > - mute loading music
 > - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE configflag to keep engines on when leaving a vehicle
 > - FORCE_RENDER_SNOW configflag to enable snow on any weather
+> - FORCE_HIDE_NIGHT_PROPS & FORCE_HIDE_NIGHT_PROPS
+> - DISABLE_EMISSIVE_LIGHTS_RENDERING configflag to enable / disable emissive lights
 > - audio, checkpoint, webview all getter
 > - audio, webview, httpclien, websocketclient id getter
 > - audio, blip remoteid getter
@@ -105,6 +107,7 @@
 > - streamer, migration thread count can be configured in server.toml
 > - resource wildcard support in server.toml
 > - getWeaponModelInfoByHash method & weaponmodels.bin file
+> - ammo getter method
 > ```
 
 ### Fixed
