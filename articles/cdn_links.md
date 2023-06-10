@@ -139,6 +139,7 @@ label {
 
         if (branchArray[branchIndex] == "dev") {
             returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
+            returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/weaponmodels.bin</br>"
         }
         
         return returnStr;
@@ -280,6 +281,7 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/weaponmodels.bin
 >```
 
 Other Stuff
@@ -333,6 +335,7 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
+>https://cdn.alt-mp.com/data/${BRANCH}/data/weaponmodels.bin
 >```
 
 Other Stuff
