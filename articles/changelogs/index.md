@@ -49,6 +49,8 @@
 >    - Fix linux client
 > - 14.20:
 >    - Another fix for linux client
+> - 14.21:
+>    - GTA 2944 compatibility
 > ```
 
 ## Client

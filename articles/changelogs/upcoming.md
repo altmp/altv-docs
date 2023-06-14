@@ -107,7 +107,7 @@
 > - streamer, migration thread count can be configured in server.toml
 > - resource wildcard support in server.toml
 > - getWeaponModelInfoByHash method & weaponmodels.bin file
-> - ammo getter method
+> - ammo getter & setter method
 > ```
 
 ### Fixed
