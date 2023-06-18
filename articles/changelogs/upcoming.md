@@ -108,6 +108,10 @@
 > - resource wildcard support in server.toml
 > - getWeaponModelInfoByHash method & weaponmodels.bin file
 > - ammo getter & setter method
+> - canAttachCars to vehicleModelInfo
+> - timestamp for entitys
+> - hasWeapon, hasWeaponComponent method for player
+> - removeAllAmmo parameter for removeAllWeapons
 > ```
 
 ### Fixed
