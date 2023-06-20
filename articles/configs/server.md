@@ -104,7 +104,7 @@ dlc-whitelist = [
     "patchday27ng"
 ]
 
-# Obfuscate ressource names
+# Obfuscate resource names
 hashClientResourceName = true
 
 # extend gta pool sizes
