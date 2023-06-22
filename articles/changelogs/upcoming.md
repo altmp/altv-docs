@@ -43,6 +43,7 @@
 > - startEnteringVehicle & startLeavingVehicle events
 > - webview reload method
 > - sourceentity parameter to weaponDamage event
+> - gpuAccelerationActive webview getter
 > ```
 
 ### Fixed
