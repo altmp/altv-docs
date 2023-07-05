@@ -44,6 +44,9 @@
 > - webview reload method
 > - sourceentity parameter to weaponDamage event
 > - gpuAccelerationActive webview getter
+> - playerBulletHit event
+> - checkpoint icon color getter/setter
+> - extend audio api by output classes
 > ```
 
 ### Fixed
@@ -63,6 +66,9 @@
 > - voiceInputVolume sets volume in reverse
 > - ladder sync
 > - localplayer micLevel & isTalking getter
+> - mouse cursor stucked in the middle of the screen if input was not set to raw
+> - crash on invalid rml document input
+> - multiple fixes related to the audio api
 > ```
 
 ## Server
@@ -113,6 +119,7 @@
 > - timestamp for entitys
 > - hasWeapon, hasWeaponComponent method for player
 > - removeAllAmmo parameter for removeAllWeapons
+> - blip dimension setter, blips can be shown to only one player
 > ```
 
 ### Fixed
