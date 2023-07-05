@@ -113,11 +113,11 @@
 > - Missing maxDistance & isSpatial voicechannel getter
 > - streamer, migration thread count can be configured in server.toml
 > - resource wildcard support in server.toml
-> - getWeaponModelInfoByHash method & weaponmodels.bin file
+> - getWeaponModelInfoByHash method, getAmmoHashForWeaponHash method & weaponmodels.bin file
 > - ammo getter & setter method
 > - canAttachCars to vehicleModelInfo
 > - timestamp for entitys
-> - hasWeapon, hasWeaponComponent method for player
+> - hasWeapon, hasWeaponComponent, AmmoSpecialType, ammoFlags, ammoMax method for player
 > - removeAllAmmo parameter for removeAllWeapons
 > - blip dimension setter, blips can be shown to only one player
 > ```
