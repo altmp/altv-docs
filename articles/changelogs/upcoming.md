@@ -129,6 +129,9 @@
 > - Dead body position sync
 > - vehicle angular interpolator
 > - vehicle flickers when the netowner changes
+> - player model setter removed all weapons
+> - setting health directly after model change, left hp at 200
+> - maxArmour resetted when player died
 > ```
 
 ## Server & Client
