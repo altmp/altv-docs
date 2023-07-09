@@ -120,6 +120,7 @@
 > - hasWeapon, hasWeaponComponent, AmmoSpecialType, ammoFlags, ammoMax method for player
 > - removeAllAmmo parameter for removeAllWeapons
 > - blip dimension setter, blips can be shown to only one player
+> - addDecoration, removeDecoration & clearDecorations method for player
 > ```
 
 ### Fixed
