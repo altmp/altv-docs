@@ -47,6 +47,7 @@
 > - playerBulletHit event
 > - checkpoint icon color getter/setter
 > - extend audio api by output classes
+> - getAllWeaponData method
 > ```
 
 ### Fixed
@@ -96,7 +97,7 @@
 > - checkpoint all getter
 > - extend resource limit to 4GB
 > - added priority, filter getter & setter for voiceserver
-> - player playAnimation, clearTasks method
+> - player playAnimation, clearTasks, playScenario method
 > - streamsyncedmeta for checkpoints
 > - vehicle quaternion setter & getter
 > - objects Api
@@ -119,7 +120,7 @@
 > - timestamp for entitys
 > - hasWeapon, hasWeaponComponent, AmmoSpecialType, ammoFlags, ammoMax method for player
 > - removeAllAmmo parameter for removeAllWeapons
-> - blip dimension setter, blips can be shown to only one player
+> - blip dimension setter, blips can be shown to multiple players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
 > ```
 
@@ -180,4 +181,11 @@
 > ```yaml
 > - Removed deprecated Alt.Server property
 > - All element constructors are deprecated. Please only use Alt.Create* or AltAsync.Create* instead. In one of the next updates the constructors will be removed.
+> ```
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Fix OnRmlEvent Event
 > ```
