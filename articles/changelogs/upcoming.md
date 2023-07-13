@@ -47,6 +47,7 @@
 > - playerBulletHit event
 > - checkpoint icon color getter/setter
 > - extend audio api by output classes
+> - audiocategory data api
 > ```
 
 ### Fixed
@@ -69,6 +70,7 @@
 > - mouse cursor stucked in the middle of the screen if input was not set to raw
 > - crash on invalid rml document input
 > - multiple fixes related to the audio api
+> - carmodcols can be loaded to use gta v chameleon colors
 > ```
 
 ## Server
@@ -96,7 +98,7 @@
 > - checkpoint all getter
 > - extend resource limit to 4GB
 > - added priority, filter getter & setter for voiceserver
-> - player playAnimation, clearTasks method
+> - player playAnimation, clearTasks, playScenario method
 > - streamsyncedmeta for checkpoints
 > - vehicle quaternion setter & getter
 > - objects Api
@@ -119,7 +121,7 @@
 > - timestamp for entitys
 > - hasWeapon, hasWeaponComponent, AmmoSpecialType, ammoFlags, ammoMax method for player
 > - removeAllAmmo parameter for removeAllWeapons
-> - blip dimension setter, blips can be shown to only one player
+> - blip dimension setter, blips can be shown to specific players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
 > ```
 
@@ -180,4 +182,11 @@
 > ```yaml
 > - Removed deprecated Alt.Server property
 > - All element constructors are deprecated. Please only use Alt.Create* or AltAsync.Create* instead. In one of the next updates the constructors will be removed.
+> ```
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Fix OnRmlEvent Event
 > ```
