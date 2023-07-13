@@ -48,6 +48,8 @@
 > - checkpoint icon color getter/setter
 > - extend audio api by output classes
 > - audiocategory data api
+> - all getter for weapondata api
+> - gta v backup system
 > ```
 
 ### Fixed
@@ -71,6 +73,7 @@
 > - crash on invalid rml document input
 > - multiple fixes related to the audio api
 > - carmodcols can be loaded to use gta v chameleon colors
+> - possible crash in getWheelSurfaceMaterial
 > ```
 
 ## Server
