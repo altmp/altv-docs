@@ -35,6 +35,7 @@ To integrate the alt:V server only small adjustments to the server.toml are nece
 
 ```toml
 [voice]
+streamingTickRate = 10
 # The bitrate of the voice server
 bitrate = 64000
 # The secret for the external server (only needed when using externalHost)
@@ -48,4 +49,11 @@ externalPort = 7798
 externalPublicHost = "xx.xx.xx.xx"
 # The external host public port
 externalPublicPort = 7799
+
+# Define the map bound size
+mapBoundsMinX = -10000
+mapBoundsMinY = -10000
+mapBoundsMaxX = 65536
+mapBoundsMaxY = 65536
+mapCellAreaSize = 100 #smaller areas uses more ram and less cpu
 ```
