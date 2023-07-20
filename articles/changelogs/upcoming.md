@@ -134,7 +134,7 @@
 > - blip dimension setter, blips can be shown to specific players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
 > - setVoiceExternalPublic & setVoiceExternal method
-> - player networkOwnershipDisabled property
+> - player netOwnershipDisabled property
 > ```
 
 ### Fixed
