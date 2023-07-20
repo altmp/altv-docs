@@ -126,6 +126,7 @@
 > - removeAllAmmo parameter for removeAllWeapons
 > - blip dimension setter, blips can be shown to specific players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
+> - setVoiceExternalPublic & setVoiceExternal method
 > ```
 
 ### Fixed
@@ -149,6 +150,7 @@
 > - Removed alt.Entity.getByID method
 > ```
 
+### Added
 > [!div class="nohljsln"]
 > ```yaml
 > - getByID & getByRemoteID method for baseobjects
@@ -158,6 +160,13 @@
 > - markers api
 > - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee player getter
 > - metachange event
+> - voiceConnection event
+> ```
+
+### Fixed
+> [!div class="nohljsln"]
+> ```yaml
+> - radius blip size property
 > ```
 
 ## JS Module
