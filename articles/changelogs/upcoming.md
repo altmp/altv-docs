@@ -5,6 +5,13 @@
 
 ## Client
 
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Renamed Object to LocalObject
+> ```
+
 ### Added
 
 > [!div class="nohljsln"]
@@ -127,6 +134,7 @@
 > - blip dimension setter, blips can be shown to specific players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
 > - setVoiceExternalPublic & setVoiceExternal method
+> - player networkOwnershipDisabled property
 > ```
 
 ### Fixed
@@ -139,6 +147,7 @@
 > - player model setter removed all weapons
 > - setting health directly after model change, left hp at 200
 > - maxArmour resetted when player died
+> - entity attachto api didnt accept all bone ids
 > ```
 
 ## Server & Client
