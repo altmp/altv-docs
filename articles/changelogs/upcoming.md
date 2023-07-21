@@ -57,6 +57,8 @@
 > - audiocategory data api
 > - all getter for weapondata api
 > - gta v backup system
+> - resetMinimapComponentPosition method
+> - localstorage has method
 > ```
 
 ### Fixed
@@ -81,6 +83,8 @@
 > - multiple fixes related to the audio api
 > - carmodcols can be loaded to use gta v chameleon colors
 > - possible crash in getWheelSurfaceMaterial
+> - wrong vehicle position on streamin after few restreams
+> - playing animation directly after another one wasnt synced
 > ```
 
 ## Server
