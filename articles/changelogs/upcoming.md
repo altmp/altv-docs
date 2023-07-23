@@ -174,6 +174,8 @@
 > - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee player getter
 > - metachange event
 > - voiceConnection event
+> - getVoiceConnectionState method
+> - new blip api methods
 > ```
 
 ### Fixed
