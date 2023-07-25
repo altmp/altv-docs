@@ -11,6 +11,7 @@
 > ```yaml
 > - Renamed Object to LocalObject
 > - .id represents local id now, if you need same id as on server use .remoteId
+> - getPermissionState returns bool now
 > ```
 
 ### Added
