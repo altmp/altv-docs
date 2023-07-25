@@ -61,6 +61,7 @@
 > - gta v backup system
 > - resetMinimapComponentPosition method
 > - localstorage has method
+> - suspensionHeight setter & getter
 > ```
 
 ### Fixed
@@ -142,6 +143,7 @@
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
 > - setVoiceExternalPublic & setVoiceExternal method
 > - player netOwnershipDisabled property
+> - vehicle brakeLevel, accelerationLevel getter
 > ```
 
 ### Fixed
@@ -179,6 +181,7 @@
 > - voiceConnection event
 > - getVoiceConnectionState method
 > - new blip api methods
+> - vehicle steeringAngle setter & getter (serverside getter only)
 > ```
 
 ### Fixed
