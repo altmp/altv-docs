@@ -87,6 +87,7 @@
 > - possible crash in getWheelSurfaceMaterial
 > - wrong vehicle position on streamin after few restreams
 > - playing animation directly after another one wasnt synced
+> - entity models are not freed from memory
 > ```
 
 ## Server
