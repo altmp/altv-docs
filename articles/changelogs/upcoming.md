@@ -89,6 +89,7 @@
 > - wrong vehicle position on streamin after few restreams
 > - playing animation directly after another one wasnt synced
 > - entity models are not freed from memory
+> - taskSynchronizedScene wasnt synced
 > ```
 
 ## Server
@@ -144,6 +145,8 @@
 > - setVoiceExternalPublic & setVoiceExternal method
 > - player netOwnershipDisabled property
 > - vehicle brakeLevel, accelerationLevel getter
+> - requestSyncedScene, startSyncedScene, stopSyncedScene, updateSyncedScene events
+> - vehicle hornActive getter
 > ```
 
 ### Fixed
@@ -181,7 +184,7 @@
 > - voiceConnection event
 > - getVoiceConnectionState method
 > - new blip api methods
-> - vehicle steeringAngle setter & getter (serverside getter only)
+> - vehicle steeringAngle getter
 > ```
 
 ### Fixed
