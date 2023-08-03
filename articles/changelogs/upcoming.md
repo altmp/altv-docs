@@ -62,6 +62,7 @@
 > - resetMinimapComponentPosition method
 > - localstorage has method
 > - suspensionHeight setter & getter
+> - 3d audio output for webview
 > ```
 
 ### Fixed
@@ -160,6 +161,7 @@
 > - setting health directly after model change, left hp at 200
 > - maxArmour resetted when player died
 > - entity attachto api didnt accept all bone ids
+> - voiceserver port config did not apply
 > ```
 
 ## Server & Client
