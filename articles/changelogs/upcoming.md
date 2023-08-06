@@ -220,6 +220,7 @@
 > ```yaml
 > - Removed deprecated Alt.Server property
 > - All element constructors are deprecated. Please only use Alt.Create* or AltAsync.Create* instead. In one of the next updates the constructors will be removed.
+> - (server) ScriptEvents must now set the required return type. Otherwise a log will be output to the console and the event will not be registered
 > ```
 
 ### Fixed
