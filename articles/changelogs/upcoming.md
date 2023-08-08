@@ -63,6 +63,7 @@
 > - localstorage has method
 > - suspensionHeight setter & getter
 > - 3d audio output for webview
+> - alt.getVersion, alt.getBranch, alt.getLocale in webviews
 > ```
 
 ### Fixed
@@ -91,6 +92,7 @@
 > - playing animation directly after another one wasnt synced
 > - entity models are not freed from memory
 > - taskSynchronizedScene wasnt synced
+> - tattoos disappeared randomly
 > ```
 
 ## Server
