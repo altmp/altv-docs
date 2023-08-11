@@ -93,6 +93,7 @@
 > - entity models are not freed from memory
 > - taskSynchronizedScene wasnt synced
 > - tattoos disappeared randomly
+> - (max)health, (max)armor getter from remoteplayers wasn't always correct
 > ```
 
 ## Server
@@ -150,6 +151,7 @@
 > - vehicle brakeLevel, accelerationLevel getter
 > - requestSyncedScene, startSyncedScene, stopSyncedScene, updateSyncedScene events
 > - vehicle hornActive getter
+> - clientDeleteObject & clientRequestObject event
 > ```
 
 ### Fixed
@@ -194,6 +196,7 @@
 ### Fixed
 > [!div class="nohljsln"]
 > ```yaml
+> - radius blip wasn't visible
 > - radius blip size property
 > ```
 
