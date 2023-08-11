@@ -44,6 +44,9 @@ announceRetryErrorAttempts = 50
 # Max players which can connect with the same ip address
 duplicatePlayers = 4096
 
+#Can be used to share resources between 2 servers, so you dont need to redownload all the time for live & testserver for example. Projectname should be unique
+#sharedProjectName = "altv-shared"
+
 # Define the map bound size
 mapBoundsMinX = -10000
 mapBoundsMinY = -10000
