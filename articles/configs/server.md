@@ -122,6 +122,8 @@ host = "0.0.0.0"
 [threads]
 streamer = 1
 migration = 1
+syncSend = 8
+syncReceive = 8
 
 # Settings related to js-module
 [js-module]

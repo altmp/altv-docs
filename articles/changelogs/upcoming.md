@@ -136,7 +136,7 @@
 > - Modify gamepool size via server config
 > - prometheus support
 > - Missing maxDistance & isSpatial voicechannel getter
-> - streamer, migration thread count can be configured in server.toml
+> - streamer, migration, syncSend, syncReceive thread count can be configured in server.toml
 > - resource wildcard support in server.toml
 > - getWeaponModelInfoByHash method, getAmmoHashForWeaponHash method & weaponmodels.bin file
 > - ammo getter & setter method
