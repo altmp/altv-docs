@@ -94,6 +94,7 @@
 > - taskSynchronizedScene wasnt synced
 > - tattoos disappeared randomly
 > - (max)health, (max)armor getter from remoteplayers wasn't always correct
+> - parachute sync
 > ```
 
 ## Server
@@ -152,6 +153,7 @@
 > - requestSyncedScene, startSyncedScene, stopSyncedScene, updateSyncedScene events
 > - vehicle hornActive getter
 > - clientDeleteObject & clientRequestObject event
+> - connectioninfo text to display text while in queue
 > ```
 
 ### Fixed
