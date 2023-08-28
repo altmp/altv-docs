@@ -47,6 +47,12 @@ duplicatePlayers = 4096
 #Can be used to share resources between 2 servers, so you dont need to redownload all the time for live & testserver for example. Projectname should be unique
 #sharedProjectName = "altv-shared"
 
+# The amount of entities that can be streamed at the same time (all synced serverside entities that are dynamic synced) - max 256
+[maxStreaming]
+peds = 128 #max 220
+objects = 120 #max 120
+vehicles = 128  #max 220
+
 # Define the map bound size
 mapBoundsMinX = -10000
 mapBoundsMinY = -10000
@@ -101,7 +107,7 @@ modules = [
 ]
 
 # Enable only specific dlc packs
-dlc-whitelist = [
+dlcWhitelist = [
     "mpBeach",
     "mpBusiness",
     "patchday27ng"

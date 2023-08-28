@@ -106,6 +106,7 @@
 > - Removed PlayerBeforeConnect event
 > - Removed id support for entityinstreamingrange method
 > - Removed entityWorkerCount server option
+> - playerWeaponChange is not cancable anymore
 > ```
 
 ### Added
@@ -131,7 +132,7 @@
 > - option (spawnAfterConnect = true) to spawn player automatically at position 0,0,71
 > - no-regenerate-rpf-cache cmd line arg
 > - error message if justpack gets used without valid host config
-> - possible to enable only specific gta dlcs with the dlc-whitelist config option
+> - possible to enable only specific gta dlcs with the dlcWhitelist config option
 > - player streamedEntities getter
 > - hashClientResourceName server option
 > - Modify gamepool size via server config
@@ -154,6 +155,7 @@
 > - vehicle hornActive getter
 > - clientDeleteObject & clientRequestObject event
 > - connectioninfo text to display text while in queue
+> - entities limit can be increased in server.toml
 > ```
 
 ### Fixed
@@ -187,7 +189,7 @@
 > - ped's Api
 > - virtual entitys api
 > - markers api
-> - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee player getter
+> - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee, isParachuting player getter
 > - metachange event
 > - voiceConnection event
 > - getVoiceConnectionState method
