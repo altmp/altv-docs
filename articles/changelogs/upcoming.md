@@ -156,6 +156,8 @@
 > - clientDeleteObject & clientRequestObject event
 > - connectioninfo text to display text while in queue
 > - entities limit can be increased in server.toml
+> - playerheal event
+> - setter & getter to set streaminglimits
 > ```
 
 ### Fixed
@@ -170,6 +172,7 @@
 > - maxArmour resetted when player died
 > - entity attachto api didnt accept all bone ids
 > - voiceserver port config did not apply
+> - attachTo was desync on netowner change
 > ```
 
 ## Server & Client
