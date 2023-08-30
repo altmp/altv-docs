@@ -95,6 +95,7 @@
 > - tattoos disappeared randomly
 > - (max)health, (max)armor getter from remoteplayers wasn't always correct
 > - parachute sync
+> - connect to server via ipv6 adress
 > ```
 
 ## Server
@@ -157,7 +158,7 @@
 > - connectioninfo text to display text while in queue
 > - entities limit can be increased in server.toml
 > - playerheal event
-> - setter & getter to set streaminglimits
+> - setter & getter to set streaminglimits & threadcounts
 > ```
 
 ### Fixed
