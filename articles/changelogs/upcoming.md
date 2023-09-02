@@ -64,6 +64,8 @@
 > - suspensionHeight setter & getter
 > - 3d audio output for webview
 > - alt.getVersion, alt.getBranch, alt.getLocale in webviews
+> - player IsStealthy & IsCrouching getter
+> - weaponTintIndex & currentWeapontintindex getter
 > ```
 
 ### Fixed
@@ -96,6 +98,7 @@
 > - (max)health, (max)armor getter from remoteplayers wasn't always correct
 > - parachute sync
 > - connect to server via ipv6 adress
+> - position of towtruck hook on streamin
 > ```
 
 ## Server
@@ -145,7 +148,7 @@
 > - ammo getter & setter method
 > - canAttachCars to vehicleModelInfo
 > - timestamp for entitys
-> - hasWeapon, hasWeaponComponent, AmmoSpecialType, ammoFlags, ammoMax method for player
+> - hasWeapon, AmmoSpecialType, ammoFlags, ammoMax method for player
 > - removeAllAmmo parameter for removeAllWeapons
 > - blip dimension setter, blips can be shown to specific players
 > - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
@@ -174,6 +177,7 @@
 > - entity attachto api didnt accept all bone ids
 > - voiceserver port config did not apply
 > - attachTo was desync on netowner change
+> - projectile sync
 > ```
 
 ## Server & Client
@@ -199,6 +203,7 @@
 > - getVoiceConnectionState method
 > - new blip api methods
 > - vehicle steeringAngle getter
+> - player hasWeaponComponent method
 > ```
 
 ### Fixed
