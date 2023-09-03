@@ -44,8 +44,10 @@ announceRetryErrorAttempts = 50
 # Max players which can connect with the same ip address
 duplicatePlayers = 4096
 
-#Can be used to share resources between 2 servers, so you dont need to redownload all the time for live & testserver for example. Projectname should be unique
-#sharedProjectName = "altv-shared"
+# Key for shared resources. Can be used to share resources between multiple servers, so users don't have to download them separatedly
+sharedProjectKey = "altv-shared"
+# Display name for shared resources bundle (visible in alt:V client settings)
+sharedProjectName = "alt:V shared"
 
 # The amount of entities that can be streamed at the same time (all synced serverside entities that are dynamic synced) - max 256
 [maxStreaming]
