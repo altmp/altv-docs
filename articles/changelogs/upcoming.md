@@ -162,6 +162,7 @@
 > - entities limit can be increased in server.toml
 > - playerheal event
 > - setter & getter to set streaminglimits & threadcounts
+> - vehicle passenger getter
 > ```
 
 ### Fixed
