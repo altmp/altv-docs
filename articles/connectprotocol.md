@@ -1,14 +1,16 @@
 # Direct Connect Protocol
 
-This protocol can be used, to connect to an alt:V server over the browser.
+This protocol can be used to connect to an alt:V server over the browser.
 
-## CDN off
-If your server doesn't use the cdn function, you need to use the IP-Address and the port of the server.
+Protocol format:
 
-`altv://connect/${IP_ADDRESS}:${PORT}?password=${PASSWORD}` or a example `altv://connect/127.0.0.1:7788?password=xyz`
+`altv://connect/ADDRESS?password=PASSWORD` or `altv://connect/ADDRESS`
 
-## CDN on
+- ADDRESS is [urlencoded](https://www.urlencoder.org/) connection address, exactly like used in "Direct connect" window
+- PASSWORD (optional) is [urlencoded](https://www.urlencoder.org/) password
 
-If you are using the cdn function, you need to use the direct connect url to the cdn.
+Example: 
 
-`altv://connect/http://{CDN_URL}?password=${PASSWORD}` or a example `altv://connect/http://connect.example.com?password=xyz`
+- `my.cdn.server:80` -> `altv://connect/my.cdn.server%3A80`
+- `http://my.cdn.server` -> `altv://connect/http%3A%2F%2Fmy.cdn.server`
+- `[::1]:1234` with password `test` -> `altv://connect/%5B%3A%3A1%5D%3A1234?password=test`
