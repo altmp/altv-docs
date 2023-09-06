@@ -99,6 +99,7 @@
 > - parachute sync
 > - connect to server via ipv6 adress
 > - position of towtruck hook on streamin
+> - loadCloudHat native
 > ```
 
 ## Server
