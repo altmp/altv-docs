@@ -127,10 +127,13 @@ label {
             returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>"
             returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/update.json</br>"
 
-        if(osIndex === 0)
+        if(osIndex === 0) {
+            if(branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler.exe</br>"
             returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
-        else
+        } else {
+            if(branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler</br>"
             returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
+        }
 
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
@@ -275,6 +278,7 @@ Server
 >```yaml
 >https://cdn.alt-mp.com/server/${BRANCH}/x64_linux/update.json
 >https://cdn.alt-mp.com/server/${BRANCH}/x64_linux/altv-server
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_linux/altv-crash-handler
 >https://cdn.alt-mp.com/data/${BRANCH}/update.json
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
@@ -329,6 +333,7 @@ Server
 >```yaml
 >https://cdn.alt-mp.com/server/${BRANCH}/x64_win32/update.json
 >https://cdn.alt-mp.com/server/${BRANCH}/x64_win32/altv-server.exe
+>https://cdn.alt-mp.com/server/${BRANCH}/x64_win32/altv-crash-handler.exe
 >https://cdn.alt-mp.com/data/${BRANCH}/update.json
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
