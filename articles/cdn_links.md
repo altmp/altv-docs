@@ -140,7 +140,7 @@ label {
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
 
-        if (branchArray[branchIndex] == "dev") {
+        if (branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") {
             returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
             returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/weaponmodels.bin</br>"
         }
