@@ -66,6 +66,7 @@
 > - alt.getVersion, alt.getBranch, alt.getLocale in webviews
 > - player IsStealthy & IsCrouching getter
 > - weaponTintIndex & currentWeapontintindex getter
+> - vehicle steeringAngle setter
 > ```
 
 ### Fixed
