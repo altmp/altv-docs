@@ -10,7 +10,7 @@
 > [!div class="nohljsln"]
 > ```yaml
 > - Renamed Object to LocalObject
-> - .id represents local id now, if you need same id as on server use .remoteId
+> - .id represents local id now, if you need same id as on server use .remoteID
 > - getPermissionState returns bool now
 > ```
 
