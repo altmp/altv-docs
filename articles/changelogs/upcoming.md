@@ -67,6 +67,7 @@
 > - player IsStealthy & IsCrouching getter
 > - weaponTintIndex & currentWeapontintindex getter
 > - vehicle steeringAngle setter
+> - Discord Rich Presence can be deactivated/activated
 > ```
 
 ### Fixed
@@ -165,6 +166,7 @@
 > - playerheal event
 > - setter & getter to set streaminglimits & threadcounts
 > - vehicle passenger getter
+> - cloudauth api
 > ```
 
 ### Fixed
