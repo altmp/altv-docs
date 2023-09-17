@@ -167,6 +167,7 @@
 > - setter & getter to set streaminglimits & threadcounts
 > - vehicle passenger getter
 > - cloudauth api
+> - givePedScriptedTask event
 > ```
 
 ### Fixed
