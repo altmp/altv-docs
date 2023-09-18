@@ -48,7 +48,6 @@
 > - improve ressource loading speed
 > - downloadspeed settings
 > - entity frozen setter/getter
-> - taskchange event is cancable
 > - startEnteringVehicle & startLeavingVehicle events
 > - webview reload method
 > - sourceentity parameter to weaponDamage event
