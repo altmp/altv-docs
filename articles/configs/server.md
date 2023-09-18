@@ -108,7 +108,7 @@ modules = [
     "csharp-module"
 ]
 
-# Enable only specific dlc packs
+# Enable only specific game DLCs. Useful when you want to exclude some DLC because of game limits, ID shifts, etc. See complete DLC list at go.altv.mp/dlc-list
 dlcWhitelist = [
     "mpBeach",
     "mpBusiness",
