@@ -57,8 +57,16 @@
   href: discord_oauth.md
 - name: Meta data
   href: meta_data.md
+- name: Audio
+  href: audio.md
+- name: Audio filters
+  href: audio_filters.md
+- name: Voice
+  href: voice.md
 - name: External voice server
   href: external_voice_server.md
+- name: Cloud Auth
+  href: cloud_auth.md
 - name: RmlUi
   href: rmlui/index.md
   items:
