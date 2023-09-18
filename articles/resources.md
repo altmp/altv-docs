@@ -95,3 +95,9 @@ resource.toml
 | main     | Path to the .rpf file |
 
 To simplify loading process, you can load rpf DLCs without creating `resource.toml`. Just create a resource folder and put a `dlc.rpf` file in it.
+
+Example:
+- Download https://www.gta5-mods.com/maps/community-mission-row-pd/download/75282
+- Create `server/resources/nice_police_mlo` folder
+- Copy `/RageMP and SP/mrpd/dlc.rpf` to `nice_police_mlo` folder
+- Add `nice_police_mlo` to resources list in server.toml
