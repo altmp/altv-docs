@@ -16,7 +16,7 @@ For example:
 
 To allow players to hear eachother you need to create a voice channel and add players there.
 
-If two players are in two different voice channels at the same time, category will be decided by `channel.priority`. If two channels are of same priority, spatial (3D) voice is selected.
+If two players are in two different voice channels at the same time, category will be decided by `channel.priority`. If two channels are of same priority, non-spatial (2D) voice is selected.
 
 ### VoiceChannel constructor
 
