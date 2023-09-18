@@ -108,7 +108,8 @@ modules = [
     "csharp-module"
 ]
 
-# Enable only specific game DLCs. Useful when you want to exclude some DLC because of game limits, ID shifts, etc. See complete DLC list at go.altv.mp/dlc-list
+# If dlcWhitelist contains any dlcs, it will only enable these specific game DLCs. Useful when you want to maintain a list of 'supported' DLCs on your server because of game limits, ID shifts, etc. Below defined setting would make sure to only load the mpBeach, mpBusiness and patchday27ng R* dlc contents
+# See complete DLC list at go.altv.mp/dlc-list 
 dlcWhitelist = [
     "mpBeach",
     "mpBusiness",
@@ -118,9 +119,10 @@ dlcWhitelist = [
 # Obfuscate resource names
 hashClientResourceName = true
 
-# extend gta pool sizes
+# Configure GTA game pool sizes to extend them. These game pools define the limits of certain aspects in the game, extending them can and will cause stability + performance issues. Please test changes carefully.
+# See this article for a complete list of game pools: https://docs.altv.mp/gta/articles/tutorials/overwrite_gameconfig.html
 [pools]
-"DrawableStore" = 240420
+"DrawableStore" = 240420 # Example of raised DrawableStore pool
 
 # Profiling entity creation, systems like streaming etc
 [worldProfiler]
@@ -157,7 +159,8 @@ port = 9229
 # Disable dependency (NuGet) check and download at server startup, this is recommended if you have a bad connection to the NuGet server (e.g china)
 disableDependencyDownload= true
 
-# Voice configuration (needs to be set to enable voice chat)
+# Voice configuration (category needs atleast to exist in configuration, to enable voice chat)
+# See this article for more info: https://docs.altv.mp/articles/voice.html
 [voice]
 # The bitrate of the voice server
 bitrate = 64000
