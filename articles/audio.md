@@ -7,6 +7,8 @@ The system also supports custom filters (see [Voice docs](voice.md)) and GTA aud
 ## Usage
 
 [Audio class in JS API reference](https://docs.altv.mp/js/api/alt-client.Audio.html)<br>
+[Audio class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.Audio.html)<br>
+
 [AudioOutputWorld class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputWorld.html)<br>
 [AudioOutputAttached class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputAttached.html)<br>
 [AudioOutputFrontend class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputFrontend.html)<br>
@@ -78,6 +80,7 @@ GTA has an audio category system, which defines basic audio parameters like volu
 While it's possible to stream your own category file (`audio:/config/categories.dat22.rel`, see [Replacements docs](resources.md#replacements) for more info), you can modify existing categories (e.g. unused ones) on runtime using AudioCategory API.
 
 [AudioCategory class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioCategory.html)<br>
+[AudioCategory class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Data.AudioCategory.html)<br>
 
 ## Examples
 
