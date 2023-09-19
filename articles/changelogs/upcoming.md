@@ -67,6 +67,7 @@
 > - weaponTintIndex & currentWeapontintindex getter
 > - vehicle steeringAngle setter
 > - Discord Rich Presence can be deactivated/activated
+> - getNetTime method
 > ```
 
 ### Fixed
