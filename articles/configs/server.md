@@ -49,11 +49,11 @@ sharedProjectKey = "altv-shared"
 # Display name for shared resources bundle (visible in alt:V client settings)
 sharedProjectName = "alt:V shared"
 
-# The amount of entities that can be streamed at the same time (all synced serverside entities that are dynamic synced) - max 256
+# The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
-peds = 128 #max 220
-objects = 120 #max 120
-vehicles = 128  #max 220
+peds = 128 # Max 220, shared type for server side created NPC peds + player peds
+objects = 120 # Max 120, server side created objects
+vehicles = 128  # Max 220, server side created vehicles
 
 # Define the map bound size
 mapBoundsMinX = -10000
@@ -119,7 +119,7 @@ dlcWhitelist = [
 # Obfuscate resource names
 hashClientResourceName = true
 
-# Configure GTA game pool sizes to extend them. These game pools define the limits of certain aspects in the game, extending them can and will cause stability + performance issues. Please test changes carefully.
+# Configure GTA game pool sizes to extend them. These game pools define the limits of certain aspects in the game, extending them can and will cause stability and performance issues. Please test changes carefully.
 # See this article for a complete list of game pools: https://docs.altv.mp/gta/articles/tutorials/overwrite_gameconfig.html
 [pools]
 "DrawableStore" = 240420 # Example of raised DrawableStore pool
@@ -129,11 +129,12 @@ hashClientResourceName = true
 port = 7797
 host = "0.0.0.0"
 
+# Configure the amount of threads used for different kind of processing in the alt:V server. You should in total never configure more threads than your server hardware has threads. For example, when your hardware has 12 cores, use 8 for sync send, 2 for receive and all other at 1.
 [threads]
-streamer = 1
-migration = 1
-syncSend = 8
-syncReceive = 8
+streamer = 1 # Processing of streamed entities
+migration = 1 # Processing of netowner calculations
+syncSend = 8 # Processing of sending sync data, should be always the highest amount
+syncReceive = 4 # Processing of receiving sync data, should be around 1/4 of syncSend
 
 # Settings related to js-module
 [js-module]
