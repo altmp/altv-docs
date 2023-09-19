@@ -6,7 +6,7 @@ Since alt:V Update 15 you are able to create server side streamed & synchronized
 > These peds won't move and drive on their own, they need tasks assigned on client side to actually do something.
 > For GTA Online similar behaviour, you will have to implement the logic on your own.
 
-Use the convenient LocalPed class for spawning client side only peds, that other players won't see.
+Use the convenient LocalPed class for spawning streamed client side only peds, that other players won't see.
 
 [LocalPed class in JS API reference](https://docs.altv.mp/js/api/alt-client.LocalPed.html)<br>
 [LocalPed class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.LocalPed.html)<br>
