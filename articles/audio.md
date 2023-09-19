@@ -7,11 +7,14 @@ The system also supports custom filters (see [Voice docs](voice.md)) and GTA aud
 ## Usage
 
 [Audio class in JS API reference](https://docs.altv.mp/js/api/alt-client.Audio.html)<br>
-[Audio class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.Audio.html)<br>
-
 [AudioOutputWorld class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputWorld.html)<br>
 [AudioOutputAttached class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputAttached.html)<br>
 [AudioOutputFrontend class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioOutputFrontend.html)<br>
+
+[Audio class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.Audio.html)<br>
+[AudioOutputWorld class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.AudioOutputWorld.html)<br>
+[AudioOutputAttached class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.AudioOutputAttached.html)<br>
+[AudioOutputFrontend class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.AudioOutputFrontend.html)<br>
 
 In order to use Audio API you need to create Audio instance and add one or multiple audio outputs to it.
 

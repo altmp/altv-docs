@@ -14,6 +14,11 @@ With default server configuration, up to 120 of the closest objects are streamed
 
 See [server configuration](configs/server.md) [maxStreaming] section.
 
+<br>
+
+> [!TIP]
+> See <a href='https://forge.plebmasters.de/objects'>Pleb Masters: Forge</a> for a full list of all objects.
+
 ## Usage
 
 [Object class in JS API reference](https://docs.altv.mp/js/api/alt-server.Object.html)<br>

@@ -18,6 +18,11 @@ With default server configuration, up to 128 of the closest peds are streamed at
 
 See [server configuration](configs/server.md) [maxStreaming] section.
 
+<br>
+
+> [!TIP]
+> See <a href='https://forge.plebmasters.de/peds'>Pleb Masters: Forge</a> for a full list of all peds.
+
 ## Usage
 
 [Ped class in JS API reference](https://docs.altv.mp/js/api/alt-server.Ped.html)<br>
