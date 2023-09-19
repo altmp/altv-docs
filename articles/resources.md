@@ -1,11 +1,11 @@
 # Resources
 
 Resources are one of the main parts of the alt:V server. They handle the data and gamescripts for server- and clientside used by the alt:V server.<br>
-Resources a represented as a subfolder of the `resources/` folder in the alt:V server root.
+Resources are represented as a subfolder of the `resources/` folder in the alt:V server root.
 
 # resource.toml
 
-A resource (folder) is required to contain at minimum a `resource.toml` configuration file (except rpf resources, see rpf for more info). Depending on which resource type you are using, the properties you specify in the config file may differ between each other.<br>
+A resource (folder) is required to contain at minimum a `resource.toml` configuration file (except rpf resources, see rpf section below for more info). Depending on which resource type you are using, the properties you specify in the config file may differ between each other.<br>
 A resource has a folder structure like this:
 
 > [!div class="nohljsln"]

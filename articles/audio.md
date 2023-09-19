@@ -77,20 +77,23 @@ GTA has an audio category system, which defines basic audio parameters like volu
 
 While it's possible to stream your own category file (`audio:/config/categories.dat22.rel`, see [Replacements docs](resources.md#replacements) for more info), you can modify existing categories (e.g. unused ones) on runtime using AudioCategory API.
 
-[AudioCategory class in JS API reference](https://docs.altv.mp/js/api/alt-client.Audio.html)<br>
+[AudioCategory class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioCategory.html)<br>
 
 ## Examples
 
-Change volume of all `radio` sounds
+Change volume of all `radio` sounds.
 ```js
 const category = alt.AudioCategory.getForName("radio");
 category.volume = 10;
 ```
 
-Repurpose unused category to use in your own sounds
+Repurpose unused category to use in your own sounds, for example to have a radio like audio category that is much louder.
+
+Audio categories starting with `video_editor_*` are in most cases unused and can be used for this.
+
 ```js
-const radio = alt.AudioCategory.getForName("radio");
-const category = alt.AudioCategory.getForName("video_editor_weapons_guns_bullet_impacts");
+const radio = alt.AudioCategory.getForName("radio"); // Using the game radio audio category as source
+const category = alt.AudioCategory.getForName("video_editor_weapons_guns_bullet_impacts"); // This will be our target 'custom' audio category
 
 category.volume = 1000;
 category.distanceRolloffScale = radio.distanceRolloffScale;
@@ -107,6 +110,7 @@ category.pitch = radio.pitch;
 category.lowPassFilterCutoff = radio.lowPassFilterCutoff;
 category.highPassFilterCutoff = radio.highPassFilterCutoff;
 
+// Lets use our 'custom' audio category to play audio
 const output = new alt.AudioOutputFrontend("video_editor_weapons_guns_bullet_impacts");
 const audio = new alt.Audio("https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg");
 audio.addOutput(output);
@@ -114,3 +118,5 @@ audio.play();
 ```
 
 You can find list of all available categories in [AudioCategories enum](https://docs.altv.mp/js/api/alt-client.AudioCategories.html)
+
+See [Audio filters](audio_filters.md) for alt:V Voice examples using audio categories.

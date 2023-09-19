@@ -3,9 +3,9 @@
 With alt:V Update 15 there's a new unique player identifier verified by our Cloud Auth service. Unlike socialID, socialClubName, hwidHash or hwidExHash the new identifier cannot be spoofed, and therefore can be used for authentication and other sensitive systems.
 
 > [!WARNING]
-> In order to use the Cloud Auth you need to have Silver+ tier on [alt:V Patreon](https://go.altv.mp/patreon).
+> In order to use the Cloud Auth feature on your server, you need to have Silver+ tier on [alt:V Patreon](https://go.altv.mp/patreon).
 > 
-> Link your Patreon account on [Server Manager](https://my.alt-mp.com/) and generate server token to have access to the feature
+> Link your Patreon account on [Server Manager](https://my.alt-mp.com/) and make sure to have your server added there + a new server token generated to get access to the feature.
 
 ## Usage
 
