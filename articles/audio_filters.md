@@ -5,6 +5,7 @@ alt:V Audio and Voice APIs support custom filters. Filters should be created on 
 ## Usage
 
 [AudioFilter class in JS API reference](https://docs.altv.mp/js/api/alt-client.AudioFilter.html)<br>
+[AudioFilter class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.AudioFilter.html)<br>
 
 ### Audio categories
 
@@ -37,4 +38,4 @@ whisperFilter.audioCategory = 'altv_voice_whisper';
 ### Controlling volume
 In case default volume of specific audio categories is too quiet, you can edit audio categories.
 
-See [Audio category](https://docs.altv.mp/articles/audio.html#examples) for more info.
+See [Audio category](audio.md/#examples) for more info.
