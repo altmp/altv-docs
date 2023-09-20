@@ -9,7 +9,7 @@ update.json file contains build number, file locations and sha1 hashes.
 ## Link Generator
 
 <p>You can also use this Generate to create the needed links, just select the components you need and if you need the links for the update.json.
-<div id="CDN_Link_Generator-interface" style="display: flex; justify-content: space-between; max-width: 800px;"> </div>
+<div id="CDN_Link_Generator-interface" style="display: flex; justify-content: space-between; max-width: 855px;"> </div>
 </br>
 <div id="CDN_Link_Generator-links"> </div>
 
@@ -50,6 +50,7 @@ label {
         interfaceStr += "<div><input type='checkbox' id='voice' name='voice' value='voice'><label for='voice'>voice</label></div>";
         interfaceStr += "<div><input type='checkbox' id='csharp' name='csharp' value='csharp'><label for='csharp'>csharp-module</label></div>";
         interfaceStr += "<div><input type='checkbox' id='javascript' name='javascript' value='javascript'><label for='javascript'>js-module</label></div>";
+        interfaceStr += "<div><input type='checkbox' id='javascriptv2' name='javascriptv2' value='javascriptv2'><label for='javascriptv2'>js-module-v2</label></div>";
         interfaceStr += "<div><input type='checkbox' id='js-bytecode' name='js-bytecode' value='js-bytecode'><label for='js-bytecode'>js-bytecode-module</label></div>";
         interfaceStr += "<div><input type='checkbox' id='update' name='update' value='update'><label for='update'>update.json</label></div>";
 
@@ -72,9 +73,10 @@ label {
         let voice = document.getElementById("voice").checked;
         let csharp = document.getElementById("csharp").checked;
         let javascript = document.getElementById("javascript").checked;
+        let javascriptv2 = document.getElementById("javascriptv2").checked;
         let bytecodeModule = document.getElementById("js-bytecode").checked;
 
-        document.getElementById("CDN_Link_Generator-links").innerHTML = generateLinks([server, voice, csharp, javascript, bytecodeModule],branch,os,update);
+        document.getElementById("CDN_Link_Generator-links").innerHTML = generateLinks([server, voice, csharp, javascript, javascriptv2, bytecodeModule],branch,os,update);
     }
 
     /**
@@ -101,12 +103,18 @@ label {
         if(selection[3])
             returnStr += generateJSLinks(branchIndex, osIndex, listUpdate);
 
-        if (selection[4]) {
+        if(selection[4])
+            returnStr += generateJSV2Links(branchIndex, osIndex, listUpdate);
+
+        if (selection[5]) {
             returnStr += generateJSBytecodeLinks(branchIndex, osIndex, listUpdate);
         }
 
-        if(!selection[0] && !selection[1] && !selection[2] && !selection[3] && !selection[4])
+        if(!selection[0] && !selection[1] && !selection[2] && !selection[3] && !selection[4] && !selection[5])
             returnStr += "You didn't select any components :(";
+        else if(selection[4] && (branchArray[branchIndex] === "release" || branchArray[branchIndex] === "rc"))
+            returnStr += "js-module-v2 is not ready for production. It is only available on dev branch. See https://github.com/altmp/altv-js-module-v2 for more information.";
+
 
         returnStr += "<\/pre>";
 
@@ -225,6 +233,39 @@ label {
      * @param {boolean} listUpdate
      * @returns {string}
      */
+    function generateJSV2Links(branchIndex, osIndex, listUpdate)
+    {
+        let returnStr = "";
+
+        if(listUpdate) {
+            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+        }
+
+        if(osIndex === 0)
+        {
+            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.dll</br>";
+        } else {
+            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.so</br>";
+        }
+
+        if(osIndex === 0) {
+            if(branchArray[branchIndex] == "dev") {
+                returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.dll</br>";
+                returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
+            }
+        } else {
+            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libjs-module-v2.so</br>";
+        }
+
+        return returnStr;
+    }
+
+    /**
+     * @param {number} branchIndex
+     * @param {number} osIndex
+     * @param {boolean} listUpdate
+     * @returns {string}
+     */
     function generateJSBytecodeLinks(branchIndex, osIndex, listUpdate)
     {
         let returnStr = "";
@@ -257,6 +298,14 @@ JS Module
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/update.json
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.108
+>```
+
+JS Module V2
+> [!div class="nohljsln"]
+>```yaml
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/update.json
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libjs-module-v2.so
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libnodev2.so
 >```
 
 JS Bytecode Module
@@ -312,6 +361,15 @@ JS Module
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/update.json
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/modules/js-module/js-module.dll
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_win32/modules/js-module/libnode.dll
+>```
+
+JS Module V2
+> [!div class="nohljsln"]
+>```yaml
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/update.json
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/modules/js-module-v2.dll
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/modules/js-module-v2.pdb
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/libnodev2.dll
 >```
 
 JS Bytecode Module
