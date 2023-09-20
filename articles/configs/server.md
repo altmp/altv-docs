@@ -159,7 +159,7 @@ port = 9229
 # Settings related to c#-module
 [csharp-module]
 # Disable dependency (NuGet) check and download at server startup, this is recommended if you have a bad connection to the NuGet server (e.g china)
-disableDependencyDownload= true
+disableDependencyDownload = true
 
 # Voice configuration (category needs atleast to exist in configuration, to enable voice chat)
 # See this article for more info: https://docs.altv.mp/articles/voice.html
