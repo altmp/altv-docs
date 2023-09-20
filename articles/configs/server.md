@@ -129,12 +129,13 @@ hashClientResourceName = true
 port = 7797
 host = "0.0.0.0"
 
-# Configure the amount of threads used for different kind of processing in the alt:V server. You should in total never configure more threads than your server hardware has threads. For example, when your hardware has 12 cores, use 8 for sync send, 2 for receive and all other at 1.
+# Configure the amount of threads used for different kind of processing in the alt:V server. You should in total never configure more threads than your server hardware has threads. 
+# For example, when your hardware has 12 threads, use 8 for sync send, 2 for receive and all other at 1.
 [threads]
 streamer = 1 # Processing of streamed entities
 migration = 1 # Processing of netowner calculations
 syncSend = 8 # Processing of sending sync data, should be always the highest amount
-syncReceive = 4 # Processing of receiving sync data, should be around 1/4 of syncSend
+syncReceive = 2 # Processing of receiving sync data, should be around 1/4 of syncSend
 
 # Settings related to js-module
 [js-module]
