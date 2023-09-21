@@ -70,6 +70,7 @@
 > - Discord Rich Presence can be deactivated/activated
 > - getNetTime method
 > - markers api
+> - player taskData getter
 > ```
 
 ### Fixed
