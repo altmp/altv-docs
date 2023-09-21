@@ -57,7 +57,7 @@
   href: discord_oauth.md
 - name: Meta data
   href: meta_data.md
-- name: Audio
+- name: Audio API
   href: audio.md
 - name: Audio filters
   href: audio_filters.md
@@ -67,6 +67,18 @@
   href: external_voice_server.md
 - name: Cloud Auth
   href: cloud_auth.md
+- name: Object API
+  href: object.md
+- name: Ped API
+  href: ped.md
+- name: Text Labels API
+  href: textlabel.md
+- name: Markers API
+  href: marker.md
+- name: Checkpoint API
+  href: checkpoint.md
+- name: Virtual Entity API
+  href: virtualentity.md
 - name: RmlUi
   href: rmlui/index.md
   items:

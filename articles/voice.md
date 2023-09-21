@@ -13,6 +13,7 @@ For example:
 ## Voice channels
 
 [VoiceChannel class in JS API reference](https://docs.altv.mp/js/api/alt-client.VoiceChannel.html)<br>
+[VoiceChannel class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.VoiceChannel.html)<br>
 
 To allow players to hear eachother you need to create a voice channel and add the players that should hear each other there.
 
@@ -40,7 +41,7 @@ voice.filter = alt.hash('walkietalkie');
 
 You can set a custom audio category to a voice channel. In order to do that, you need to create an audio filter and set category on it.
 
-See [Audio filters](audio_filters.md) for more info.
+See [Audio filters](audio_filters.md), audio category section for more info.
 
 ### Example
 
@@ -55,4 +56,3 @@ alt.on('playerDisconnect', (player) => {
   globalVoice.removePlayer(player);
 });
 ```
-## Voice categories
