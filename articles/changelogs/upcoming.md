@@ -171,6 +171,7 @@
 > - vehicle passenger getter
 > - cloudauth api
 > - givePedScriptedTask event
+> - attach api for objects
 > ```
 
 ### Fixed
