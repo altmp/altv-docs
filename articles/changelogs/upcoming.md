@@ -12,6 +12,7 @@
 > - Renamed Object to LocalObject
 > - .id represents local id now, if you need same id as on server use .remoteID
 > - getPermissionState returns bool now
+> - setArtificialLightsState has no effect anymore, use DisableEmissiveLightsRendering config flag instead
 > ```
 
 ### Added
@@ -68,6 +69,7 @@
 > - vehicle steeringAngle setter
 > - Discord Rich Presence can be deactivated/activated
 > - getNetTime method
+> - markers api
 > ```
 
 ### Fixed
@@ -202,7 +204,6 @@
 > - getMetaKeys & getSyncedMetaKeys methods
 > - ped's Api
 > - virtual entitys api
-> - markers api
 > - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee, isParachuting player getter
 > - metachange event
 > - voiceConnection event
