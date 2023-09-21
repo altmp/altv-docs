@@ -113,7 +113,7 @@ label {
         if(!selection[0] && !selection[1] && !selection[2] && !selection[3] && !selection[4] && !selection[5])
             returnStr += "You didn't select any components :(";
         else if(selection[4] && (branchArray[branchIndex] === "release" || branchArray[branchIndex] === "rc"))
-            returnStr += "js-module-v2 is not ready for production. It is only available on dev branch. See https://github.com/altmp/altv-js-module-v2 for more information.";
+            returnStr += "js-module-v2 is not ready for production. It is only available on dev branch. See https://github.com/altmp/altv-js-module-v2/tree/v1-compatibility for more information.";
 
 
         returnStr += "<\/pre>";
