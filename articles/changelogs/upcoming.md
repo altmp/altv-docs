@@ -105,6 +105,7 @@
 > - connect to server via ipv6 adress
 > - position of towtruck hook on streamin
 > - loadCloudHat native
+> - custom numberplate limit
 > ```
 
 ## Server
@@ -172,6 +173,7 @@
 > - cloudauth api
 > - givePedScriptedTask event
 > - attach api for objects
+> - pedDamage, pedDeath, pedHeal events
 > ```
 
 ### Fixed
