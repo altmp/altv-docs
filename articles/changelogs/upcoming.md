@@ -71,6 +71,7 @@
 > - getNetTime method
 > - markers api
 > - player taskData getter
+> - playerStartTalking & playerStopTalking event
 > ```
 
 ### Fixed
