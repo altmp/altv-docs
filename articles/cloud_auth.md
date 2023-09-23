@@ -7,6 +7,38 @@ With alt:V Update 15 there's a new unique player identifier verified by our Clou
 > 
 > Link your Patreon account on [Server Manager](https://my.alt-mp.com/) and make sure to have your server added there + a new server token generated to get access to the feature.
 
+## FAQ
+
+### What is cloud auth?
+Cloud auth is a unique identification solution developed by alt:V.\
+This system uses the alt:V backend to create a special ID for each player, which is directly linked to their Rockstar account.
+
+### How secure is cloud auth?
+The Cloud Auth system is highly secure.\
+It utilizes our backend for setting up and confirming client identifiers, ensuring secure connections, protect against spoofing and adding an extra layer of security to the process.
+
+### How does the Cloud Auth system work?
+When a client connects to the server, a request can be made to the alt:V backend.\
+This request retrieves the associated unique identifier for the client's Rockstar account, which then can be used to verify and authenticate the client.
+
+### Can a client spoof or tamper with the unique identifier?
+No, due to the involvement of our backend in the process, clients cannot spoof or manipulate their unique identifiers.\
+Every operation is verified through our backend, making sure each player's unique ID stays correct and genuine.
+
+### What can change the unique Cloud Auth identifier?
+The unique cloud auth identifier is strictly linked to your Rockstar account so changing the Rockstar account will change the ID.\
+This ID isn't reliant on your hardware or any software.\
+If a stricter verification method is needed, you can consider incorporating additional checks such as hardware ID and other options.
+
+### Will switching Rockstar accounts change the id?
+Yes, switching Rockstar accounts will change the ID, because the unique ID is directly tied to your Rockstar account.\
+If stricter verification is needed, additional measures such as incorporating hardware ID and other options can be implemented.
+
+### Can I create my own cloud auth implementation or use it outside of alt:V?
+No, creating your own cloud auth implementation is not possible.\
+Our backend plays a key role in the process and for safety reasons, we do not disclose detailed information about its workings.\
+This makes it impossible to reproduce an independent cloud auth system.
+
 ## Usage
 
 [Player method in JS API reference](https://docs.altv.mp/js/api/alt-server.Player.html#_altmp_altv_types_alt_server_Player_requestCloudID) <br>
