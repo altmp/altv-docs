@@ -32,7 +32,7 @@ See [server configuration](configs/server.md) [maxStreaming] section.
 
 ```js
 // Create server side synced ped looking like a cow
-let ped = new alt.Ped("A_C_Cow", new alt.Vector3(0,0,70), new.alt.Vector3(0,0,0));
+let ped = new alt.Ped("A_C_Cow", new alt.Vector3(0, 0, 70), new alt.Vector3(0, 0, 0));
 ```
 
 To assign tasks, you'll need to apply them on the client side of the NetOwner.
