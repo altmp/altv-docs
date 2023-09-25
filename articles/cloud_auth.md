@@ -57,6 +57,7 @@ In case of failure method rejects with a string, identifying the problem
 
 ### Possible errors:
 
+- `NO_BENEFIT` - The server doesn't have the required benefit unlocked
 - `NO_LICENSE` - Indicates that the player does not have valid GTA V license (player will be kicked by the server automatically soon)
 - `SERVICE_UNAVAILABLE` - Indicates that Cloud Auth service is down.
 - `INTERNAL_ERROR`, `WRONG_REQUEST` or any other string - Identifies internal service problem, should not happen. If received, please open an issue on our [Issue tracker](https://github.com/altmp/altv-issues/issues)
