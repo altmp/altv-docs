@@ -32,7 +32,7 @@ See [server configuration](configs/server.md) [maxStreaming] section.
 
 ```js
 // Create server side synced ped looking like a cow
-let ped = new alt.Ped("A_C_Cow", new alt.Vector3(0,0,70), new.alt.Vector3(0,0,0));
+let ped = new alt.Ped("A_C_Cow", new alt.Vector3(0, 0, 70), new alt.Vector3(0, 0, 0));
 ```
 
 To assign tasks, you'll need to apply them on the client side of the NetOwner.
@@ -43,7 +43,7 @@ ped.netOwner.emit("ped_task", ped);
 
 // client side
 alt.onServer("ped_task", (ped) => {
-   // Make the specified ped roam within a 10-meter radius of the given coordinates. It will always move at least 2 meters and pause for a minimum of 10 seconds.
+   // Make the specified ped roam within a 10-meter radius of the given coordinates. It will always move to a random location inside the radius, while waiting a minimum of 2 and maximum of 10 seconds before moving.
    natives.taskWanderInArea(ped, 0, 0, 70, 10, 2, 10);
 });
 ```
