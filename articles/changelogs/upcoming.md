@@ -216,6 +216,7 @@
 > - new blip api methods
 > - vehicle steeringAngle getter
 > - player hasWeaponComponent method
+> - client -> server -> client rpc api
 > ```
 
 ### Fixed
