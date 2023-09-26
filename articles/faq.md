@@ -34,3 +34,7 @@ You need to be at least 31d on our [Discord](https://discord.altv.mp/).
 ## Is a token needed for development?
 
 No, a token isn't needed to develop on alt:V, the token is only needed to announce your server on Masterlist.
+
+## I have problems with pirate game copy & alt:V?
+
+We doesn't support pirate copy of the game. You can buy a license copy in game stores like Steam, Epic Games or Rockstar Games Launcher.
