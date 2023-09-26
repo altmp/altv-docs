@@ -17,7 +17,7 @@ This system uses the alt:V backend to create a special ID for each player, which
 The Cloud Auth system is highly secure.\
 It utilizes our backend for setting up and confirming client identifiers, ensuring secure connections, protect against spoofing and adding an extra layer of security to the process.
 
-### How does the Cloud Auth system work?
+### How does the cloud auth system work?
 When a client connects to the server, a request can be made to the alt:V backend.\
 This request retrieves the associated unique identifier for the client's Rockstar account, which then can be used to verify and authenticate the client.
 
@@ -25,7 +25,7 @@ This request retrieves the associated unique identifier for the client's Rocksta
 No, due to the involvement of our backend in the process, clients cannot spoof or manipulate their unique identifiers.\
 Every operation is verified through our backend, making sure each player's unique ID stays correct and genuine.
 
-### What can change the unique Cloud Auth identifier?
+### What can change the unique cloud auth identifier?
 The unique cloud auth identifier is strictly linked to your Rockstar account so changing the Rockstar account will change the ID.\
 This ID isn't reliant on your hardware or any software.\
 If a stricter verification method is needed, you can consider incorporating additional checks such as hardware ID and other options.
