@@ -32,3 +32,7 @@ Keep in mind that you usually do not need a master list announcement while you a
 #### Unhandled Exception: Received an unhandled exception from: ...
 
 When you use C# on your server-side, you will encounter this problem sometimes. You can easily solve this problem by updating the alt:V NuGet packages and rebuilding your resource.
+
+#### Error Invalid get_hostfxr_path
+
+When you use C# on your server-side and doesn't have installed .NET runtime on your computer, you will encounter this problem. You need to download .NET runtime from official website and restart alt:V server.
