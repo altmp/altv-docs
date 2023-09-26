@@ -28,5 +28,5 @@ See [server configuration](configs/server.md) [maxStreaming] section.
 
 ```js
 // Create physics synchronized soccer ball
-let object = new alt.Object("p_ld_soc_ball_01",  new alt.Vector3(0,0,70), new.alt.Vector3(0,0,0));
+let object = new alt.Object("p_ld_soc_ball_01",  new alt.Vector3(0,0,70), new alt.Vector3(0,0,0));
 ```
