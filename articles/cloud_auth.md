@@ -17,7 +17,7 @@ This system uses the alt:V backend to create a special ID for each player, which
 The Cloud Auth system is highly secure.\
 It utilizes our backend for setting up and confirming client identifiers, ensuring secure connections, protect against spoofing and adding an extra layer of security to the process.
 
-### How does the Cloud Auth system work?
+### How does the cloud auth system work?
 When a client connects to the server, a request can be made to the alt:V backend.\
 This request retrieves the associated unique identifier for the client's Rockstar account, which then can be used to verify and authenticate the client.
 
@@ -25,7 +25,7 @@ This request retrieves the associated unique identifier for the client's Rocksta
 No, due to the involvement of our backend in the process, clients cannot spoof or manipulate their unique identifiers.\
 Every operation is verified through our backend, making sure each player's unique ID stays correct and genuine.
 
-### What can change the unique Cloud Auth identifier?
+### What can change the unique cloud auth identifier?
 The unique cloud auth identifier is strictly linked to your Rockstar account so changing the Rockstar account will change the ID.\
 This ID isn't reliant on your hardware or any software.\
 If a stricter verification method is needed, you can consider incorporating additional checks such as hardware ID and other options.
@@ -43,7 +43,7 @@ This makes it impossible to reproduce an independent cloud auth system.
 
 [Player method in JS API reference](https://docs.altv.mp/js/api/alt-server.Player.html#_altmp_altv_types_alt_server_Player_requestCloudID) <br>
 [Player method in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.ConnectionInfo.html#AltV_Net_Elements_Entities_ConnectionInfo_RequestCloudId) <br>
-[IConnectionInfo in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_requestCloudID)
+[IConnectionInfo in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_requestCloudID) <br>
 [IConnectionInfo in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.IConnectionInfo.html#AltV_Net_Elements_Entities_IConnectionInfo_RequestCloudId)
 
 Keep in mind that this method is async.
