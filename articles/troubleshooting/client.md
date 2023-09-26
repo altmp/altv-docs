@@ -67,6 +67,12 @@ These steps are only for Rockstar Games Launcher and Steam Versions.
 2. Go to "Keyboard / Mouse" settings
 3. Change "Mouse Input Method" to "Raw Input"
 
+#### Webview elements jumping around when moving cursor
+If you experience this issue and you have a Radeon graphics card, it might be caused by Radeon Boost.
+
+1. Open Radeon settings
+2. Disable "Radeon Boost"
+
 #### Webview lagging
 This can reduce the webview performance, but may fix input lags:
 
