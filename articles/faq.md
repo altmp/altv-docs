@@ -28,13 +28,12 @@ Another way would be to support us financially on [Patreon](https://www.patreon.
 
 ## How can I get a token for Masterlist?
 
-You need to message the discord bot Master-Bot#3667 and write him the message "token".
-You need to be at least 31d on our [Discord](https://discord.altv.mp/).
+You need to sign in [Server Manager](https://my.alt-mp.com), create your server inside and copy token from "Private token" block.
 
 ## Is a token needed for development?
 
-No, a token isn't needed to develop on alt:V, the token is only needed to announce your server on Masterlist.
+No, a token isn't needed to develop on alt:V, the token is only needed to announce your server on Masterlist or to test cloud auth.
 
 ## I have problems with pirate game copy & alt:V?
 
-We doesn't support pirate copy of the game. You can buy a license copy in game stores like Steam, Epic Games or Rockstar Games Launcher.
+We don't support pirate copy of the game. You can buy a license copy in game stores like Steam, Epic Games or Rockstar Games Launcher.
