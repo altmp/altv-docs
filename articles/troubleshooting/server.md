@@ -22,7 +22,7 @@ This issue mostly occurs when strings are not put in double quotes. For example,
 
 #### Master server connect failed. Invalid token
 
-Inside your `server.toml` you can find a configuration variable called `announce`. If this is set to `true`, you will need a **valid** token. Therefore, you need to copy a master list token from [alt:V Server Manager](https://my.alt-mp.com).
+Inside your `server.toml` you can find a configuration variable called `announce`. If this is set to `true`, you will need a **valid** token. Therefore, you need to copy a master list token from [Server Manager](https://my.alt-mp.com).
 
 Keep in mind that you usually do not need a master list announcement while you are in the development stage. You can set the `announce` flag to `false` inside your `server.toml`.
 
