@@ -13,7 +13,7 @@
 > - .id represents local id now, if you need same id as on server use .remoteID
 > - getPermissionState returns bool now
 > - setArtificialLightsState has no effect anymore, use DisableEmissiveLightsRendering config flag instead
-> - Weapons & ammo no more be synced clienside, use server side methods instead.
+> - Weapons no more be synced clienside, use server side methods instead. Ammo set by the server will override ammo set by client.
 > ```
 
 ### Added
