@@ -54,6 +54,7 @@ sharedProjectName = "alt:V shared"
 peds = 128 # Max 220, shared type for server side created NPC peds + player peds
 objects = 120 # Max 120, server side created objects
 vehicles = 128  # Max 220, server side created vehicles
+entities = 128 # Defined the max limit of entities, indepent of type, that can be streamed at the same time
 
 # Define the map bound size
 mapBoundsMinX = -10000
