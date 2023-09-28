@@ -22,7 +22,7 @@
 > - mute loading music
 > - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE configflag to keep engines on when leaving a vehicle
 > - FORCE_RENDER_SNOW configflag to enable snow on any weather
-> - FORCE_HIDE_NIGHT_PROPS & FORCE_HIDE_NIGHT_PROPS
+> - FORCE_HIDE_NIGHT_PROPS & FORCE_SHOW_NIGHT_PROPS
 > - DISABLE_EMISSIVE_LIGHTS_RENDERING configflag to enable / disable emissive lights
 > - audio, checkpoint, webview all getter
 > - audio, webview, httpclien, websocketclient id getter
