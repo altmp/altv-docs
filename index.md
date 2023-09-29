@@ -22,7 +22,7 @@ Some of our features:
 
 &#x2714; Encrypted client-side code
 
-&#x2714; Built-in voice service up to 500+ users
+&#x2714; Built-in voice service
 
 &#x2714; Mod support
 
