@@ -177,6 +177,7 @@
 > - givePedScriptedTask event
 > - attach api for objects
 > - pedDamage, pedDeath, pedHeal events
+> - every entity can have its own streaming distance
 > ```
 
 ### Fixed
@@ -218,7 +219,7 @@
 > - new blip api methods
 > - vehicle steeringAngle getter
 > - player hasWeaponComponent method
-> - client -> server -> client rpc api
+> - server <-> client rpc api
 > ```
 
 ### Fixed
