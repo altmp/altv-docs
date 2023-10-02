@@ -26,7 +26,7 @@
 > - FORCE_HIDE_NIGHT_PROPS & FORCE_SHOW_NIGHT_PROPS
 > - DISABLE_EMISSIVE_LIGHTS_RENDERING configflag to enable / disable emissive lights
 > - audio, checkpoint, webview all getter
-> - audio, webview, httpclien, websocketclient id getter
+> - audio, webview, httpclient, websocketclient id getter
 > - audio, blip remoteid getter
 > - worldObjectPositionChange, worldObjectStreamIn & worldObjectStreamOut event
 > - entityHitEntity event
@@ -47,7 +47,7 @@
 > - Extended Voice API Permission
 > - isFullScreen method
 > - cef hardware acceleration
-> - improve ressource loading speed
+> - improve resource loading speed
 > - downloadspeed settings
 > - entity frozen setter/getter
 > - startEnteringVehicle & startLeavingVehicle events
