@@ -14,6 +14,7 @@
 > - getPermissionState returns bool now
 > - setArtificialLightsState has no effect anymore, use DisableEmissiveLightsRendering config flag instead
 > - Weapons no more be synced clienside, use server side methods instead. Ammo set by the server will override ammo set by client.
+> - client to server events can't be more then 8kb
 > ```
 
 ### Added
