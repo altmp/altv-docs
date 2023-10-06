@@ -26,6 +26,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
 |   earlyAuthTestURL        |   string              |   -                  | URL to your early auth website. Only usable in rc & dev branch. |
 |   gameTimeout             |   number              |   60                 | Maximum time (in seconds) the launcher should wait for GTA V to start. |
+|   logsToKeep              |   number              |   10                 | How many client & launcher logs should be kept until rotation starts. |
 
 ## Example altv.toml file
 
