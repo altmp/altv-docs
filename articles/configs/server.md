@@ -49,6 +49,9 @@ sharedProjectKey = "altv-shared"
 # Display name for shared resources bundle (visible in alt:V client settings)
 sharedProjectName = "alt:V shared"
 
+# Max size of client to server script events in bytes
+maxClientScriptEventSize = 8192
+
 # The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
 peds = 128 # Max 220, shared type for server side created NPC peds + player peds
