@@ -180,7 +180,7 @@
 > - pedDamage, pedDeath, pedHeal events
 > - every entity can have its own streaming distance
 > - maxClientScriptEventSize config option
-> - getLoadedVehicleModels
+> - getLoadedVehicleModels method
 > ```
 
 ### Fixed
