@@ -197,6 +197,7 @@
 > - voiceserver port config did not apply
 > - attachTo was desync on netowner change
 > - projectile sync
+> - netownerChange event wasnt called when netowner got null
 > ```
 
 ## Server & Client
