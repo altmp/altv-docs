@@ -51,6 +51,8 @@ sharedProjectName = "alt:V shared"
 
 # Max size of client to server script events in bytes
 maxClientScriptEventSize = 8192
+# Max size of server to client script events in bytes
+maxServerScriptEventSize = 524288
 
 # The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
