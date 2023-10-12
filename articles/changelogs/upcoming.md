@@ -181,6 +181,7 @@
 > - every entity can have its own streaming distance
 > - maxClientScriptEventSize & maxServerScriptEventSize config option
 > - getLoadedVehicleModels method
+> - allowUnknownRPCEvents server config option
 > ```
 
 ### Fixed

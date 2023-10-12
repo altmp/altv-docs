@@ -54,6 +54,9 @@ maxClientScriptEventSize = 8192
 # Max size of server to client script events in bytes
 maxServerScriptEventSize = 524288
 
+#When false unknown rpc events will result in a kick
+allowUnknownRPCEvents = true
+
 # The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
 peds = 128 # Max 220, shared type for server side created NPC peds + player peds
