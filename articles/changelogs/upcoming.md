@@ -182,6 +182,7 @@
 > - maxClientScriptEventSize & maxServerScriptEventSize config option
 > - getLoadedVehicleModels method
 > - allowUnknownRPCEvents server config option
+> - blooddamage getter & setter
 > ```
 
 ### Fixed
