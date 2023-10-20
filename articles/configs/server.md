@@ -57,13 +57,6 @@ maxServerScriptEventSize = 524288
 #When false unknown rpc events will result in a kick
 allowUnknownRPCEvents = true
 
-# The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
-[maxStreaming]
-peds = 128 # Max 220, shared type for server side created NPC peds + player peds
-objects = 120 # Max 120, server side created objects
-vehicles = 128  # Max 220, server side created vehicles
-entities = 128 # Defined the max limit of entities, indepent of type, that can be streamed at the same time
-
 # Define the map bound size
 mapBoundsMinX = -10000
 mapBoundsMinY = -10000
@@ -127,6 +120,13 @@ dlcWhitelist = [
 
 # Obfuscate resource names
 hashClientResourceName = true
+
+# The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
+[maxStreaming]
+peds = 128 # Max 220, shared type for server side created NPC peds + player peds
+objects = 120 # Max 120, server side created objects
+vehicles = 128  # Max 220, server side created vehicles
+entities = 128 # Defined the max limit of entities, indepent of type, that can be streamed at the same time
 
 # Configure GTA game pool sizes to extend them. These game pools define the limits of certain aspects in the game, extending them can and will cause stability and performance issues. Please test changes carefully.
 # See this article for a complete list of game pools: https://docs.altv.mp/gta/articles/tutorials/overwrite_gameconfig.html
