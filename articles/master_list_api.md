@@ -12,11 +12,11 @@ The master list api allow you to fetch data from the alt:V master list service.
 
 |                   URL                      |                                        Description                                                      |
 | :----------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| https://api.alt-mp.com/servers                | Statistics - Player Count across all servers & The amount of servers online                             |
-| https://api.alt-mp.com/servers/list           | Servers - All information known about all servers (Name, Description, IP, Language, Website, Etc.)      |
-| https://api.alt-mp.com/server/MASTERLIST_ID   | Specific Server - Filters server list for a specific one. Uses "id" which is unique to the server token |
-| https://api.alt-mp.com/avg/MASTERLIST_ID/TIME | Averages - Returns averages data about the specified server (TIME = 1d, 7d, 31d)                        |
-| https://api.alt-mp.com/max/MASTERLIST_ID/TIME | Maximum - Returns maximum data about the specified server (TIME = 1d, 7d, 31d)                          |
+| https://api.alt-mp.com/servers/info              | Statistics - Player Count across all servers & The amount of servers online                             |
+| https://api.alt-mp.com/servers              | Servers - All information known about all servers (Name, Description, IP, Language, Website, Etc.)      |
+| https://api.alt-mp.com/servers/SERVERID       | Specific Server - Filters server list for a specific one. Uses "id" which is unique to the server token |
+| https://api.alt-mp.com/servers/SERVERID/avg/TIME | Averages - Returns averages data about the specified server (TIME = 1d, 7d, 31d)                        |
+| https://api.alt-mp.com/servers/SERVERID/max/TIME | Maximum - Returns maximum data about the specified server (TIME = 1d, 7d, 31d)                          |
 
 ## Response example
 ### Statistics
