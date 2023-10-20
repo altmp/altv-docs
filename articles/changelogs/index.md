@@ -1,57 +1,11 @@
-# 14.0-Release
+# 15.0-Release
 
 > [!WARNING]
 > This update is the latest.
 
 > [!TIP]
-> This update was released on 31.03.2023
+> This update was released on 20.10.2023
 
-> [!div class="nohljsln"]
-> ```yaml
-> - 14.1:
->    - Fixed Wrong playercount
-> - 14.2:
->    - Fixed Some cef core fixes
-> - 14.3:
->    - Fixed cef performance issues
-> - 14.4:
->    - Fixed some master server problems
-> - 14.5:
->    - Masterserver fixes
-> - 14.6:
->    - Masterserver fixes
-> - 14.7:
->    - Masterserver fixes
-> - 14.8:
->    - Masterserver fixes
-> - 14.9:
->    - Masterserver fixes
-> - 14.10:
->    - Masterserver fixes
-> - 14.11:
->    - CI Changes
-> - 14.13:
->    - Streamermode fixes
-> - 14.14:
->    - Freeze on huge amount of entities fix
->    - Vehicle teleport on owner change fix
->    - Vehicle angular velocity shuttering fix
->    - Dead body sync fix
-> - 14.15:
->    - Revert Vehicle angular velocity shuttering fix
-> - 14.16:
->    - Vehicle angular velocity shuttering fix
-> - 14.17:
->    - Revert network optimizations
-> - 14.18:
->    - weapon meta crashes
-> - 14.19:
->    - Fix linux client
-> - 14.20:
->    - Another fix for linux client
-> - 14.21:
->    - GTA 2944 compatibility
-> ```
 
 ## Client
 
@@ -59,90 +13,248 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - disabled cloth sync if setted via native
+> - Renamed Object to LocalObject
+> - .id represents local id now, if you need same id as on server use .remoteID
+> - getPermissionState returns bool now
+> - setArtificialLightsState has no effect anymore, use DisableEmissiveLightsRendering config flag instead
+> - Weapons no more be synced clienside, use server side methods instead. Ammo set by the server will override ammo set by client.
+> - client to server events can't be more then 8kb
 > ```
 
 ### Added
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Render RMLUI under CEF
-> - Updated RMLUI to 5.0
-> - RMLUI antialiasing
-> - RMLUI fallback font
-> - getPedBonePos method
-> - Side Mouse buttons for voice keybinding
-> - Display downloadspeed while downloading ressources
-> - Server Permission translations
-> - submit nickname on first start by pressing enter
-> - adaptivity for client console layout
-> - cef support while pause menu ped is active
-> - Updated cef to v103
-> - general new UI
-> - clear console command
-> - ime support for rmlui
-> - error message in launcher, if gta:v start fails
-> - language selection on installation
-> - debug, branch & skipprocessconfirmation cli arg
-> - installer & uninstaller rework
-> - general launcher rework
+> - mute loading music
+> - DISABLE_VEHICLE_ENGINE_SHUTDOWN_ON_LEAVE configflag to keep engines on when leaving a vehicle
+> - FORCE_RENDER_SNOW configflag to enable snow on any weather
+> - FORCE_HIDE_NIGHT_PROPS & FORCE_SHOW_NIGHT_PROPS
+> - DISABLE_EMISSIVE_LIGHTS_RENDERING configflag to enable / disable emissive lights
+> - audio, checkpoint, webview all getter
+> - audio, webview, httpclient, websocketclient id getter
+> - audio, blip remoteid getter
+> - worldObjectPositionChange, worldObjectStreamIn & worldObjectStreamOut event
+> - entityHitEntity event
+> - audio filter, colshape, textlabel, weaponObject api
+> - dimension getter, position & rotation setter for localplayer
+> - httpclient, rmldocument, websocketclient, webview, checkpoint getbyID method
+> - blip getByScriptID method
+> - multiple webviews can be focused
+> - resource config getter
+> - vehicle rpm setter
+> - warning if gta systems have performance issues
+> - overwrite all game meta & dat files
+> - DISABLE_SP_ENTER_VEHICLE_CLIPSET flag (true by default)
+> - extendet texture budget
+> - new setter & getter for object, checkpoint
+> - localPed & localVehicle api
+> - activityInputEnabled, activationLevel, noiseSuppressionEnabled, toggleInput methods
+> - Extended Voice API Permission
+> - isFullScreen method
+> - cef hardware acceleration
+> - improve resource loading speed
+> - downloadspeed settings
+> - entity frozen setter/getter
+> - startEnteringVehicle & startLeavingVehicle events
+> - webview reload method
+> - sourceentity parameter to weaponDamage event
+> - gpuAccelerationActive webview getter
+> - playerBulletHit event
+> - checkpoint icon color getter/setter
+> - extend audio api by output classes
+> - audiocategory data api
+> - all getter for weapondata api
+> - gta v backup system
+> - resetMinimapComponentPosition method
+> - localstorage has method
+> - suspensionHeight setter & getter
+> - 3d audio output for webview
+> - alt.getVersion, alt.getBranch, alt.getLocale in webviews
+> - player IsStealthy & IsCrouching getter
+> - weaponTintIndex & currentWeapontintindex getter
+> - vehicle steeringAngle setter
+> - Discord Rich Presence can be deactivated/activated
+> - getNetTime method
+> - markers api
+> - player taskData getter
+> - playerStartTalking & playerStopTalking event
 > ```
 
 ### Fixed
 
 > [!div class="nohljsln"]
 > ```yaml
-> - Disconnection modal displayed twice after reconnect
-> - wrong menu after connect rejection
-> - webview freezed on FileDialog
-> - cursor type didnt reset on webview destroy
-> - crashdump location folder
-> - cursor in iframe inputs wasnt visible
-> - scrolling in iframes
-> - rmlui clipboard
-> - blips & object got not destroyed on resource stop
-> - vehiclelayout meta
-> - alt + f4 in vehicle stopped vehicle immediately
-> - crash while pressing ESC after ressource restart
-> - launcher shortcut was system wide
-> - website url of a server was always lowercase
-> - inputs in webviews didnt trigger focus & blur events
-> - GTA Sound options didnt save
-> - webview stayed unfocus if data url was used
-> - cloning ped in pause menu disappeared all UI's
-> - testProbeAgainstWater native
+> - minimap textures couldn't be replaced
+> - ap1_* ytds, vehshare.ytd, hud.ytd, minimap.ytd couldn't be replaced
+> - gfx couldn't be replaced
+> - cef flickering while marker is visible (native.drawRect(0, 0, 0, 0, 0, 0, 0, 0) workaround is no longer needed)
+> - weapon dlc addon crashed the game on connect to the server
+> - cef locale detection
+> - webview didnt get destroyed
+> - wrong reported resource downloadspeed
+> - optional permissions
+> - cancel button crashed client
+> - voiceInputVolume sets volume in reverse
+> - ladder sync
+> - localplayer micLevel & isTalking getter
+> - mouse cursor stucked in the middle of the screen if input was not set to raw
+> - crash on invalid rml document input
+> - multiple fixes related to the audio api
+> - carmodcols can be loaded to use gta v chameleon colors
+> - possible crash in getWheelSurfaceMaterial
+> - wrong vehicle position on streamin after few restreams
+> - playing animation directly after another one wasnt synced
+> - entity models are not freed from memory
+> - taskSynchronizedScene wasnt synced
+> - tattoos disappeared randomly
+> - (max)health, (max)armor getter from remoteplayers wasn't always correct
+> - parachute sync
+> - connect to server via ipv6 adress
+> - position of towtruck hook on streamin
+> - loadCloudHat native
+> - custom numberplate limit
+> - vehicle dirt rendering
 > ```
 
 ## Server
 
-### Added
+### <span style="color: red;">Breaking changes</span>
 
 > [!div class="nohljsln"]
 > ```yaml
-> - "all" as setting language
+> - Removed PlayerBeforeConnect event
+> - Removed id support for entityinstreamingrange method
+> - Removed entityWorkerCount server option
+> - playerWeaponChange is not cancable anymore
 > ```
 
-## JS Module
+### Added
+
+> [!div class="nohljsln"]
+> ```yaml
+> - unreliable events
+> - vehicleHorn event (cancable)
+> - vehicleSiren, playerSpawn event
+> - getEntitiesInDimension, getEntitiesInRange, getClosestEntities methods
+> - support for singleplayer rpf files
+> - extend limit to 65.000 entities (players, vehicles, etc.)
+> - colshape & blip, voicechannel id getter
+> - checkpoint all getter
+> - extend resource limit to 4GB
+> - added priority, filter getter & setter for voiceserver
+> - player playAnimation, clearTasks, playScenario method
+> - streamsyncedmeta for checkpoints
+> - vehicle quaternion setter & getter
+> - objects Api
+> - player socialClubName getter
+> - socialClubName info in connectioInfo
+> - option (spawnAfterConnect = true) to spawn player automatically at position 0,0,71
+> - no-regenerate-rpf-cache cmd line arg
+> - error message if justpack gets used without valid host config
+> - possible to enable only specific gta dlcs with the dlcWhitelist config option
+> - player streamedEntities getter
+> - hashClientResourceName server option
+> - Modify gamepool size via server config
+> - prometheus support
+> - Missing maxDistance & isSpatial voicechannel getter
+> - streamer, migration, syncSend, syncReceive thread count can be configured in server.toml
+> - resource wildcard support in server.toml
+> - getWeaponModelInfoByHash method, getAmmoHashForWeaponHash method & weaponmodels.bin file
+> - ammo getter & setter method
+> - canAttachCars & handlingNameHash to vehicleModelInfo
+> - timestamp for entitys
+> - hasWeapon, AmmoSpecialType, ammoFlags, ammoMax method for player
+> - removeAllAmmo parameter for removeAllWeapons
+> - blip dimension setter, blips can be shown to specific players
+> - addDecoration, removeDecoration, clearDecorations, getDecorations method for player
+> - setVoiceExternalPublic & setVoiceExternal method
+> - player netOwnershipDisabled property
+> - vehicle brakeLevel, accelerationLevel getter
+> - requestSyncedScene, startSyncedScene, stopSyncedScene, updateSyncedScene events
+> - vehicle hornActive getter
+> - clientDeleteObject & clientRequestObject event
+> - connectioninfo text to display text while in queue
+> - entities limit can be increased in server.toml
+> - playerheal event
+> - setter & getter to set streaminglimits & threadcounts
+> - vehicle passenger getter
+> - cloudauth api
+> - givePedScriptedTask event
+> - attach api for objects
+> - pedDamage, pedDeath, pedHeal events
+> - every entity can have its own streaming distance
+> - maxClientScriptEventSize & maxServerScriptEventSize config option
+> - getLoadedVehicleModels method
+> - allowUnknownRPCEvents server config option
+> - blooddamage getter & setter
+> ```
+
+### Fixed
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Dead body position sync
+> - vehicle angular interpolator
+> - vehicle flickers when the netowner changes
+> - player model setter removed all weapons
+> - setting health directly after model change, left hp at 200
+> - maxArmour resetted when player died
+> - entity attachto api didnt accept all bone ids
+> - voiceserver port config did not apply
+> - attachTo was desync on netowner change
+> - projectile sync
+> - netownerChange event wasnt called when netowner got null
+> ```
+
+## Server & Client
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Removed alt.Entity.getByID method
+> ```
 
 ### Added
 > [!div class="nohljsln"]
 > ```yaml
-> - (server) Display source path on deprecated methods usage
-> - (Server) Automatically fix paths with special characters
-> - (Server) partial TextEncoder and TextDecoder
-> - (Server) Updated nodeJS to 18.13.1
-> - (Server) Possible to modify damage value in weapondamage event
-> - (Client) Updated v8 to 10.2
-> - Allow emitting typed arrays
+> - getByID & getByRemoteID method for baseobjects
+> - getMetaKeys & getSyncedMetaKeys methods
+> - ped's Api
+> - virtual entitys api
+> - isEnteringVehicle, isLeavingVehicle, isOnLadder, isInCover, isInMelee, isParachuting player getter
+> - metachange event
+> - voiceConnection event
+> - getVoiceConnectionState method
+> - new blip api methods
+> - vehicle steeringAngle getter
+> - player hasWeaponComponent method
+> - server <-> client rpc api
 > ```
 
 ### Fixed
 > [!div class="nohljsln"]
 > ```yaml
-> - (client) webview, audio, websocket & rml geteventhandler returned removed ones
-> - (client) crash in vehicle handling if entity is invalid
-> - (client) Internal error. Icu error when using for example toLocaleString
+> - radius blip wasn't visible
+> - radius blip size property
 > ```
+
+## JS Module
+
+### <span style="color: red;">Breaking changes</span>
+
+> [!div class="nohljsln"]
+> ```yaml
+> - Removed deprecated null in emitClient & emitClientRaw as target parameter
+> ```
+
+### Added
+> [!div class="nohljsln"]
+> ```yaml
+> - (Client) toggleStrictChecks for natives
+> - (Server|Client) baseObjectCreate & baseObjectRemove event
+> ```
+
 
 ## C# Module
 
@@ -150,24 +262,14 @@
 
 > [!div class="nohljsln"]
 > ```yaml
-> - OnRemove() method replaced by OnDestroy()
-> ```
-
-### Added
-> [!div class="nohljsln"]
-> ```yaml
-> - alt:V custom .NET project template 
-> - (client) Add all missing vehicle properties
+> - Removed deprecated Alt.Server property
+> - All element constructors are deprecated. Please only use Alt.Create* or AltAsync.Create* instead. In one of the next updates the constructors will be removed.
+> - (server) ScriptEvents must now set the required return type. Otherwise a log will be output to the console and the event will not be registered
 > ```
 
 ### Fixed
-> [!div class="nohljsln"]
-> ```yaml
-> - (client) weapondata using properties
-> ```
 
-### Rework
 > [!div class="nohljsln"]
 > ```yaml
-> - Mark Remove() method as deprecated and add Destroy() method for consistent alt:V api
+> - Fix OnRmlEvent Event
 > ```

@@ -136,10 +136,10 @@ label {
             returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/update.json</br>"
 
         if(osIndex === 0) {
-            if(branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler.exe</br>"
+            returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler.exe</br>"
             returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server.exe</br>";
         } else {
-            if(branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler</br>"
+            returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-crash-handler</br>"
             returnStr += "https://cdn.alt-mp.com/server/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/altv-server</br>";
         }
 
@@ -148,11 +148,9 @@ label {
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
 
-        if (branchArray[branchIndex] == "dev" || branchArray[branchIndex] == "rc") {
-            returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
-            returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/weaponmodels.bin</br>"
-        }
-        
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
+        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/weaponmodels.bin</br>"
+
         return returnStr;
     }
 
