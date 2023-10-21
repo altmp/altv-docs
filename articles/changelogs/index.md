@@ -1,8 +1,5 @@
 # 15.0-Release
 
-> [!WARNING]
-> This update is the latest.
-
 > [!TIP]
 > This update was released on 20.10.2023
 
