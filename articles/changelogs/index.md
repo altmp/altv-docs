@@ -6,6 +6,32 @@
 > [!TIP]
 > This update was released on 20.10.2023
 
+> [!div class="nohljsln"]
+> ```yaml
+> - 15.1:
+>    - Fixed serverlist player count sort
+> - 15.2:
+>    - UI Fixes
+> - 15.3:
+>    - Fixes if alt:V path included invalid characters
+> - 15.4:
+>    - Fixed config parsing
+> - 15.5:
+>    - Temporary disabled backup
+> - 15.6:
+>    - print stacktrace on crash
+> - 15.7:
+>    - Fixed disconnect messages
+> - 15.19:
+>    - Improved startup
+> - 15.20:
+>    - Improved cloudauth
+> - 15.21:
+>    - added removeHeadBlendData method to player
+>    - Improved cloudauth
+> - 15.22:
+>    - Fixed model loading
+> ```
 
 ## Client
 
