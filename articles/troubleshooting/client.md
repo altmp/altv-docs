@@ -199,3 +199,11 @@ If you have enough free space, try the following:
 5. At "Applications" section select the entry "altv"
 6. At "Action" column select "Always ask"
 7. The next time you will be asked if you want to use the new entry.
+
+#### Voice system does not work
+If you have problems with the speech system, for example, if you change your input or output device, or if you cannot speak. Try these steps.
+1. Disable all audio inputs and outputs except the ones you need 
+  (Settings -> System -> Sound -> more sound settings -> Right click -> Disable)
+2. Uninstall your audio device (Device-Manager -> Input -> Choose your Device) and restart your PC
+3. There were problems with Kaspersky or other AV programs. Disable your AV program and try again. It works? Then create an exclusions for alt:V.
+
