@@ -6,7 +6,7 @@ This article deals with the setup of the external voice server and the connectio
 
 ## Setup external voice server
 
-First of all, the voice server must be downloaded, the links for this can be found in the [CDN](https://docs.altv.mp/articles/cdn_links.html) article under the topics Windows Server and Linux Server.
+First of all, the voice server must be downloaded, this can be done automatically with [altv-pkg](https://github.com/altmp/altv-pkg) or manually, the links for this can be found in the [CDN](https://docs.altv.mp/articles/cdn_links.html) article under the topics Windows Server and Linux Server.
 
 After the download, the voice server can be placed on any server (it can also be the same device as the alt:V server).
 
