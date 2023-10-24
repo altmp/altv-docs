@@ -86,7 +86,8 @@ earlyAuthUrl = "https://example.com/login"
 # Should a CDN be used for your server
 useCdn = false
 # The url for the CDN page
-cdnUrl = "https://cdn.example.com"
+# Outdated Notation: "https://cdn.example.com"
+cdnUrl = "cdn.example.com:443"
 
 # Should alt:V server send all clients player name on connect
 sendPlayerNames = true
