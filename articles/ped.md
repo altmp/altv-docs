@@ -85,7 +85,7 @@ const pos = new alt.Vector3(0, 0, 71);
 const rot = alt.Vector3.zero;
 const useStreaming = true;
 
-const ped = new alt.LocalPed(model, dimension, pos, rot, true);
+const ped = new alt.LocalPed(model, dimension, pos, rot, useStreaming);
 
 // Waiting until peds spawns for 5 seconds or rejecting current promise
 // (timeout value is not required, 2 seconds by default in v15)
