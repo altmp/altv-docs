@@ -87,7 +87,7 @@ const useStreaming = true;
 
 const ped = new alt.LocalPed(model, dimension, pos, rot, useStreaming);
 
-// Waiting until peds spawns for 5 seconds or rejecting current promise
+// Waiting until ped spawns for 5 seconds or rejecting current promise
 // (timeout value is not required, 2 seconds by default in v15)
 await ped.waitForSpawn(5000);
 
