@@ -77,7 +77,7 @@ alt.setPedDlcClothes(ped.scriptID, 0, 11, 1, 0);
 > [!WARNING]
 > It is important to note that the ped may not be spawned immediately due to model loading or streaming, in the above example the ped is spawned immediately (supposedly, that's why we have an `alt.Utils.assert`) because the player model is already loaded and streaming is disabled.
 
-Waiting for ped to spawn
+Waiting for ped to spawn due to model loading and streaming.
 ```js
 const model = "player_zero";
 const dimension = alt.defaultDimension; // 0 dimension
