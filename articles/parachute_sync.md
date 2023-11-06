@@ -18,7 +18,7 @@ alt.on("clientRequestObject", (player, model, position) => {
     // return false;
 });
 
-alt.on("clientDeleteObject", () => {
+alt.on("clientDeleteObject", (player) => {
     alt.log("Client:", player.name, "deleting object");
 
     // this one is also cancellable
