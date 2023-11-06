@@ -14,7 +14,7 @@ Object sync is disabled by default, in order to enable it add two event listener
 alt.on("clientRequestObject", (player, model, position) => {
     alt.log("Client:", player.name, "requesting object:", model, position);
 
-    // you can cancel it on demand if needed
+    // you can cancel it if needed
     // return false;
 });
 
