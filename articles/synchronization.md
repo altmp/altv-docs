@@ -16,6 +16,7 @@ Here is an list of things that may be synchronized:
     <li>Players Rolling</li>
     <li>Players Crouching (Have to change stance.)</li>
     <li>Players Crawling (Have to change stance.)</li>
+    <li>Player/Ped/Vehicle Parachute (Since v15)</li>
     <li>Vehicle Damage</li>
     <li>Vehicle Mods</li>
     <li>Vehicle Colors</li>
