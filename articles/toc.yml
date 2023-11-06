@@ -90,4 +90,5 @@
       href: rmlui/debugging.md
 - name: Anticheat guide (Unofficial)
   href: https://github.com/MyHwu9508/alt-V-Anticheat-Guide/blob/main/README.md
-  
+- name: Parachute Sync
+  href: parachute_sync.md
