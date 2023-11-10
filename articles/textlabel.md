@@ -8,10 +8,27 @@ Text labels are texts that are visually created in 3D space and can be used for 
 [TextLabel class in JS API reference](https://docs.altv.mp/js/api/alt-client.TextLabel.html)<br>
 [TextLabel class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Client.Elements.Entities.TextLabel.html)<br>
 
+## Server structure
+
+We'll go on by explaining the general server structure and how to add a custom font. This below is just a example, you can also import a font inside your resource directory by using relative path.
+
+```
+server/
+├── cache/
+├── data/
+├── modules/
+├── resources/
+    ├── resource1/
+    ├── mycustomfont.ttf
+├── altv-server.exe
+├── libnode.dll
+├── server.toml
+```
+
 ### Example
 
-JS Module
-```javascript
+# [JS Module](#tab/tab1-0)
+```js
 const labelPos = new alt.Vector3(-4.75, 2.497, 71.217);
 const labelRot = new alt.Vector3(0, 0, -0.253);
 const labelColor = new alt.RGBA(255, 255, 255, 255);
@@ -26,8 +43,7 @@ alt.once('resourceStart', () => {
   new alt.TextLabel('Welcome to alt:V v15', 'My font family', labelFontSize, labelFontScale, labelPos, labelRot, labelColor, labelOutlineWidth, labelOutlineColor);
 });
 ```
-
-C# Module
+# [C# Module](#tab/tab1-1)
 ```cs
 var labelPos = new Position(-4.75f, 2.497f, 71.217f);
 var labelRot = new Rotation(0f, 0f, -0.253f);
@@ -44,3 +60,4 @@ Alt.OnAnyResourceStart += _ =>
   Alt.CreateTextLabel("Welcome to alt:V v15", "My font family", labelFontSize, labelFontScale, labelPos, labelRot, labelColor, labelOutlineWidth, labelOutlineColor, false, 0);
 };
 ```
+***
