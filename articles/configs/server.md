@@ -44,6 +44,9 @@ announceRetryErrorAttempts = 50
 # Max players which can connect with the same ip address
 duplicatePlayers = 4096
 
+# Enable or disable syncedMetadata
+enableSyncedMetaData=true
+
 # Key for shared resources. Can be used to share resources between multiple servers, so users don't have to download them separatedly
 sharedProjectKey = "altv-shared"
 # Display name for shared resources bundle (visible in alt:V client settings)
