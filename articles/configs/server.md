@@ -45,7 +45,7 @@ announceRetryErrorAttempts = 50
 duplicatePlayers = 4096
 
 # Enable or disable syncedMetadata
-enableSyncedMetaData=true
+enableSyncedMetaData = true
 
 # Key for shared resources. Can be used to share resources between multiple servers, so users don't have to download them separatedly
 sharedProjectKey = "altv-shared"
