@@ -14,8 +14,8 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   lastip                  |   string              |   0.0.0.0 (IPv4)     | The ip of the last server you played on.|
 |   netgraph                |   boolean(true/false) |   false              | Shows a netgraph on the bottom left. |
 |   streamerMode            |   boolean(true/false) |   false              | Enables or disables the [streamer mode](~/articles/streamermode.md). |
-|   textureBudgetPatch      |   boolean(true/false) |   true               | Enable or disable the Texture Budget Patch
-|   useSharedTextures       |   boolean(true/false) |   true               | Enable or disable the SharedTextures (Hardware Acceleration for CEF)
+|   textureBudgetPatch      |   boolean(true/false) |   true               | Enable or disable the texture budget patch
+|   useSharedTextures       |   boolean(true/false) |   true               | Enable or disable the shared textures (Hardware Acceleration for CEF)
 |   useExternalConsole      |   boolean(true/false) |   false              | Enables or disables the external console (console popout). |
 |   voiceActivationKey      |   number              |   78 (N)             | Sets the key for Push-to-talk. You can get the key code [here](https://keycode.info/). |
 |   voiceActivationEnabled  |   boolean(true/false) |   false              | Enables or disables the voice activity input mode. |
@@ -26,9 +26,9 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   voiceNoiseSuppression   |   boolean(true/false) |   true               | Enables or disables the noise suppression. |
 |   voiceVolume             |   number              |   100                | Sets the output volume (Range: 0 - 200). |
 |   earlyAuthTestURL        |   string              |   -                  | URL to your early auth website. Only usable in rc & dev branch. |
-|   gameTimeout             |   number              |   60                 | Maximum time (in seconds) the launcher should wait for GTA V to start. (Range: 1 - 120) |
+|   gameTimeout             |   number              |   60                 | Maximum time (in seconds) the launcher should wait for GTA V to start. |
 |   logsToKeep              |   number              |   10                 | How many client & launcher logs should be kept until rotation starts. |
-|   linuxCompatibility      |   boolean(true/false) |   false              | Enable or disables Linux/MacOS related Settings (See Discord #general [Linux](https://discord.com/channels/371265202378899476/988474811258908702) & [MacOS](https://discord.com/channels/371265202378899476/1105208952091840612) Threads)
+|   linuxCompatibility      |   boolean(true/false) |   false              | Enable or disables Linux/MacOS related settings (See Discord #general [Linux](https://discord.com/channels/371265202378899476/988474811258908702) & [MacOS](https://discord.com/channels/371265202378899476/1105208952091840612) Threads)
 |   discordRichPresence     |   boolean(true/false) |   true               | Enable or Disable the Discord Rich Presence ("Now Playing" alt:V in Discord user profile)
 
 
