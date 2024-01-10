@@ -51,7 +51,7 @@ In case of failure cloud id property returns an empty string, and result propert
 [IConnectionInfo cloudAuthResult in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_cloudAuthResult) <br>
 [IConnectionInfo CloudAuthResult in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.IConnectionInfo.html#AltV_Net_Elements_Entities_IConnectionInfo_CloudAuthResult)
 
-## Possible errors:
+### Possible errors:
 
 - `NO_BENEFIT` - The server doesn't have the required benefit unlocked
 - `VERIFY_FAILED` - Your server failed to retrieve player's cloud id from alt:V service for unknown reason
