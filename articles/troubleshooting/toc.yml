@@ -1,4 +1,6 @@
 - name: Client
   href: client.md
+- name: Client mods
+  href: client-mods.md
 - name: Server
   href: server.md
