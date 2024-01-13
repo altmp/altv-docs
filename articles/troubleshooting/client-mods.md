@@ -7,7 +7,7 @@ In alt:V version 16, we've introduced a mod folder, allowing the use of Reshade 
 > If you encounter any issues while using them, you will be responsible for resolving them.
 > We do not develop these mods and are not familiar with their internal workings, making it impossible for us to diagnose or address any related problems.
 
-> [!INFO]
+> [!TIP]
 > Mods can be auto-disabled in alt:V during repeated crashes or stress tests for stability.
 
 ## Activate the mod support
