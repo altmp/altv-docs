@@ -44,6 +44,9 @@ announceRetryErrorAttempts = 50
 # Max players which can connect with the same ip address
 duplicatePlayers = 4096
 
+# Enable or disable syncedMetadata
+enableSyncedMetaData = true
+
 # Key for shared resources. Can be used to share resources between multiple servers, so users don't have to download them separatedly
 sharedProjectKey = "altv-shared"
 # Display name for shared resources bundle (visible in alt:V client settings)
@@ -86,7 +89,8 @@ earlyAuthUrl = "https://example.com/login"
 # Should a CDN be used for your server
 useCdn = false
 # The url for the CDN page
-cdnUrl = "https://cdn.example.com"
+# Outdated Notation: "https://cdn.example.com"
+cdnUrl = "cdn.example.com:443"
 
 # Should alt:V server send all clients player name on connect
 sendPlayerNames = true

@@ -6,6 +6,59 @@
 > [!TIP]
 > This update was released on 20.10.2023
 
+> [!div class="nohljsln"]
+> ```yaml
+> - 15.1:
+>    - Fixed serverlist player count sort
+> - 15.2:
+>    - UI Fixes
+> - 15.3:
+>    - Fixes if alt:V path included invalid characters
+> - 15.4:
+>    - Fixed config parsing
+> - 15.5:
+>    - Temporary disabled backup
+> - 15.6:
+>    - print stacktrace on crash
+> - 15.7:
+>    - Fixed disconnect messages
+> - 15.19:
+>    - Improved startup
+> - 15.20:
+>    - Improved cloudauth
+> - 15.21:
+>    - added removeHeadBlendData method to player
+>    - Improved cloudauth
+> - 15.22:
+>    - Improved model loading
+> - 15.24:
+>    - Crashes on game starting
+> - 15.28:
+>    - Localizitation for crash reporter
+> - 15.31:
+>    - Print error on asset errror
+> - 15.32:
+>    - Fix Voice chat dimensions
+> - 15.33:
+>    - Fix distorsion with noise suppression enabled
+> - 15.36:
+>    - Fix voicechat crackles with louad sounds and normalization enabled
+> - 15.37:
+>    - Fix vehicle pools
+> - 15.38:
+>    - Improve asia region support
+> - 15.40:
+>    - Fix colshape delete & create in same tick
+> - 15.41:
+>    - Fix infinite sprint
+>    - Improve modelloading
+>    - Fix total events received
+> - 15.48:
+>    - Fix Stream synced meta script event delete new value
+> - 15.49:
+>    - Increase weapon component info pool
+> - 15.57:
+>    - Always reconnect to masterlist on failure
 
 ## Client
 
