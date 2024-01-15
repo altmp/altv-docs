@@ -29,3 +29,7 @@ Activating mods in alt:V is straightforward. Follow these steps to get started:
 
 1. Inside your alt:V directory, create a new folder and name it mods.
 2. Place all the mod files into this mods folder. For mods like Reshade and ENB, this includes all related files such as \*.dll, \*.ini, \*.fx, and any other relevant files or directories associated with the mods.
+
+## RPF Files
+
+The RPF files are placed in the GTA directory as usual. They do not belong in the mod folder
