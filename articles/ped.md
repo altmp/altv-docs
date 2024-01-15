@@ -26,20 +26,44 @@ See [server configuration](configs/server.md) [maxStreaming] section.
 ### Example
 
 ```js
-// Create server side synced ped looking like a cow
-let ped = new alt.Ped("A_C_Cow", new alt.Vector3(0, 0, 70), new alt.Vector3(0, 0, 0));
-```
+//working example
 
-To assign tasks, you'll need to apply them on the client side of the NetOwner.
+////////////////////
+//SERVERSIDE:
+////////////////////
+alt.on("playerConnect", (player) => {
 
-```js
-// server side
-ped.netOwner.emit("ped_task", ped);
+    //spawn your own player
+    player.spawn(7.904539108276367, 28.82634925842285, 70.866943359375, 0);
 
-// client side
+    //create serverside NPC (posX, posY, posZ, rotX, rotY, rotZ, steamingDistance)
+    let ped = new alt.Ped("u_m_m_streetart_01", new alt.Vector3(9.717802047729492, 26.340801239013672, 70.81243896484375), new alt.Vector3(0, 0, 0), 200);
+
+    //its important to wait until Ped is ready
+    alt.setTimeout(() => {
+
+        //then u set the netOwner
+        ped.setNetOwner(alt.Player.all[0]);
+
+        //then u emit the netOwner the walkaround task (server -> client)
+        ped.netOwner.emit("ped_task", ped);
+
+    }, 2500);
+
+});
+
+////////////////////
+//CLIENTSIDE:
+////////////////////
 alt.onServer("ped_task", (ped) => {
-   // Make the specified ped roam within a 10-meter radius of the given coordinates. It will always move to a random location inside the radius, while waiting a minimum of 2 and maximum of 10 seconds before moving.
-   natives.taskWanderInArea(ped, 0, 0, 70, 10, 2, 10);
+
+    //just a debug message for the info if event is called
+    alt.log(`ped_task taskWanderInArea was called for pedID: ${ped.scriptID}`);
+
+    // Make the specified ped roam within a 10-meter radius of the given coordinates. It will always move to a random location inside the radius, while waiting a minimum of 2 and maximum of 10 seconds before moving.
+    //taskWanderInArea: ped: Ped | x: float | y: float | z: float | radius: float | minimalLength: float | timeBetweenWalks: float
+    native.taskWanderInArea(ped, 9.717802047729492, 26.340801239013672, 70.81243896484375, 10, 2, 10);
+
 });
 ```
 

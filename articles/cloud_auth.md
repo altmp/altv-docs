@@ -30,10 +30,6 @@ The unique cloud auth identifier is strictly linked to your Rockstar account so 
 This ID isn't reliant on your hardware or any software.\
 If a stricter verification method is needed, you can consider incorporating additional checks such as hardware ID and other options.
 
-### Will switching Rockstar accounts change the id?
-Yes, switching Rockstar accounts will change the ID, because the unique ID is directly tied to your Rockstar account.\
-If stricter verification is needed, additional measures such as incorporating hardware ID and other options can be implemented.
-
 ### Can I create my own cloud auth implementation or use it outside of alt:V?
 No, creating your own cloud auth implementation is not possible.\
 Our backend plays a key role in the process and for safety reasons, we do not disclose detailed information about its workings.\
@@ -41,42 +37,41 @@ This makes it impossible to reproduce an independent cloud auth system.
 
 ## Usage
 
-[Player method in JS API reference](https://docs.altv.mp/js/api/alt-server.Player.html#_altmp_altv_types_alt_server_Player_requestCloudID) <br>
-[Player method in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.ConnectionInfo.html#AltV_Net_Elements_Entities_ConnectionInfo_RequestCloudId) <br>
-[IConnectionInfo in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_requestCloudID) <br>
-[IConnectionInfo in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.IConnectionInfo.html#AltV_Net_Elements_Entities_IConnectionInfo_RequestCloudId)
+[Player cloudID in JS API reference](https://docs.altv.mp/js/api/alt-server.Player.html#_altmp_altv_types_alt_server_Player_cloudID) <br>
+[Player CloudId in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.Player.html#AltV_Net_Elements_Entities_Player_CloudId) <br>
+[IConnectionInfo cloudID in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_cloudID) <br>
+[IConnectionInfo CloudId in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.IConnectionInfo.html#AltV_Net_Elements_Entities_IConnectionInfo_CloudId)
 
-Keep in mind that this method is async.
+In case of successful authentication cloud id property returns non-empty string
 
-> [!WARNING]
-> This method will reject on auth failure (with await = throw exception)!
+In case of failure cloud id property returns an empty string, and result property returns error code
 
-In case of successful authentication method resolves with a identifier string
-
-In case of failure method rejects with a string, identifying the problem
+[Player cloudAuthResult in JS API reference](https://docs.altv.mp/js/api/alt-server.Player.html#_altmp_altv_types_alt_server_Player_cloudAuthResult) <br>
+[Player CloudAuthResult in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.Player.html#AltV_Net_Elements_Entities_Player_CloudAuthResult) <br>
+[IConnectionInfo cloudAuthResult in JS API reference](https://docs.altv.mp/js/api/alt-server.IConnectionInfo.html#_altmp_altv_types_alt_server_IConnectionInfo_cloudAuthResult) <br>
+[IConnectionInfo CloudAuthResult in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.IConnectionInfo.html#AltV_Net_Elements_Entities_IConnectionInfo_CloudAuthResult)
 
 ### Possible errors:
 
 - `NO_BENEFIT` - The server doesn't have the required benefit unlocked
-- `NO_LICENSE` - Indicates that the player does not have valid GTA V license (player will be kicked by the server automatically soon)
-- `NO_TOKEN_SPECIFIED` - No token specified in the server configuration file (server.toml)
-- `SERVICE_UNAVAILABLE` - Indicates that Cloud Auth service is down.
-- `INTERNAL_ERROR`, `WRONG_REQUEST` or any other string - Identifies internal service problem, should not happen. If received, please open an issue on our [Issue tracker](https://github.com/altmp/altv-issues/issues)
+- `VERIFY_FAILED` - Your server failed to retrieve player's cloud id from alt:V service for unknown reason
+
+[Enum in JS API reference](https://docs.altv.mp/js/api/alt-server.CloudAuthResult.html)\
+[Enum in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Data.CloudAuthResult.html)
 
 ## Example
 
 ```js
-let id;
+import * as alt from 'alt-server';
 
-try {
-    id = await player.requestCloudID();
-} catch(e) {
-    if (e === 'NO_LICENSE') {
-        player.kick('Unauthorized');
+alt.on('playerConnect', (player) => {
+    const result = player.cloudAuthResult;
+    // 0 means success
+    if (result !== 0) {
+        alt.logError('Failed to authorize player:', player.name, 'error code:', result);
         return;
-    } else {
-        if (e !== 'SERVICE_UNAVAILABLE') reportProblem('Invalid Cloud Auth response: ' + e);
-        // fallback to another login method
     }
-}
+    
+    alt.log('Player:', player.name, 'connected with cloud id:', player.cloudID);
+});
 ```
