@@ -41,7 +41,7 @@ To add new mods simply put their files into the mods folder:
 
 ### Modifying game files
 
-> [!CRITICAL]
+> [!IMPORTANT]
 > Always take a backup of the files you replace.\
 > If the mod is outdated after a GTA update it is very likely that it will crash on start.
 
