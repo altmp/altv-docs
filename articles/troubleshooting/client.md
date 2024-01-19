@@ -219,3 +219,19 @@ The detailed information about what was done can be found in the following list:
 | [Open logs directory](altv://action/logs)    | `altv://action/logs` | Opens the logs directory                                            |
 | [Open configuration file](altv://action/cfg) | `altv://action/cfg`  | Opens the altv.toml                                                 |
 | [Create report](altv://action/rep)           | `altv://action/rep`  | Creates a report zip (containing log files) and saves it to desktop |
+
+### Configuration settings
+
+#### textureBudgetPatch
+
+| Link                                                  | Target                                       | Description                       |
+|-------------------------------------------------------|----------------------------------------------|-----------------------------------|
+| [Enable](altv://action/cfg?textureBudgetPatch=true)   | `altv://action/cfg?textureBudgetPatch=true`  | Enables the texture budget patch  |
+| [Disable](altv://action/cfg?textureBudgetPatch=false) | `altv://action/cfg?textureBudgetPatch=false` | Disables the texture budget patch |
+
+#### useSharedTextures
+
+| Link                                                 | Target                                      | Description                         |
+|------------------------------------------------------|---------------------------------------------|-------------------------------------|
+| [Enable](altv://action/cfg?useSharedTextures=true)   | `altv://action/cfg?useSharedTextures=true`  | Enables the use of shared textures  |
+| [Disable](altv://action/cfg?useSharedTextures=false) | `altv://action/cfg?useSharedTextures=false` | Disables the use of shared textures |
