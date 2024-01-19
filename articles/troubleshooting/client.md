@@ -207,7 +207,7 @@ If you have problems with the speech system, for example, if you change your inp
 2. Uninstall your audio device (Device-Manager -> Input -> Choose your Device) and restart your PC
 3. There were problems with Kaspersky or other AV programs. Disable your AV program and try again. It works? Then create an exclusions for alt:V.
 
-#### Quick Links
+## Quick Links
 
 Here you will find a few links that execute predefined actions on your alt:V launcher.\
 The detailed information about what was done can be found in the following list:
