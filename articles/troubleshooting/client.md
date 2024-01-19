@@ -207,3 +207,15 @@ If you have problems with the speech system, for example, if you change your inp
 2. Uninstall your audio device (Device-Manager -> Input -> Choose your Device) and restart your PC
 3. There were problems with Kaspersky or other AV programs. Disable your AV program and try again. It works? Then create an exclusions for alt:V.
 
+#### Quick Links
+
+Here you will find a few links that execute predefined actions on your alt:V launcher.\
+The detailed information about what was done can be found in the following list:
+
+| Link                                         | Target               | Description                                                         |
+|----------------------------------------------|----------------------|---------------------------------------------------------------------|
+| [Open game directory](altv://action/game)    | `altv://action/game` | Opens the game directory                                            |
+| [Open alt:V directory](altv://action/altv)   | `altv://action/altv` | Opens the alt:V directory                                           |
+| [Open logs directory](altv://action/logs)    | `altv://action/logs` | Opens the logs directory                                            |
+| [Open configuration file](altv://action/cfg) | `altv://action/cfg`  | Opens the altv.toml                                                 |
+| [Create report](altv://action/rep)           | `altv://action/rep`  | Creates a report zip (containing log files) and saves it to desktop |
