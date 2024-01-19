@@ -224,14 +224,14 @@ The detailed information about what was done can be found in the following list:
 
 #### textureBudgetPatch
 
-| Link                                                  | Target                                       | Description                       |
-|-------------------------------------------------------|----------------------------------------------|-----------------------------------|
-| [Enable](altv://action/cfg?textureBudgetPatch=true)   | `altv://action/cfg?textureBudgetPatch=true`  | Enables the texture budget patch  |
-| [Disable](altv://action/cfg?textureBudgetPatch=false) | `altv://action/cfg?textureBudgetPatch=false` | Disables the texture budget patch |
+| Link                                                     | Target                                          | Description                       |
+|----------------------------------------------------------|-------------------------------------------------|-----------------------------------|
+| [Enable](altv://action/setcfg?textureBudgetPatch=true)   | `altv://action/setcfg?textureBudgetPatch=true`  | Enables the texture budget patch  |
+| [Disable](altv://action/setcfg?textureBudgetPatch=false) | `altv://action/setcfg?textureBudgetPatch=false` | Disables the texture budget patch |
 
 #### useSharedTextures
 
-| Link                                                 | Target                                      | Description                         |
-|------------------------------------------------------|---------------------------------------------|-------------------------------------|
-| [Enable](altv://action/cfg?useSharedTextures=true)   | `altv://action/cfg?useSharedTextures=true`  | Enables the use of shared textures  |
-| [Disable](altv://action/cfg?useSharedTextures=false) | `altv://action/cfg?useSharedTextures=false` | Disables the use of shared textures |
+| Link                                                    | Target                                         | Description                         |
+|---------------------------------------------------------|------------------------------------------------|-------------------------------------|
+| [Enable](altv://action/setcfg?useSharedTextures=true)   | `altv://action/setcfg?useSharedTextures=true`  | Enables the use of shared textures  |
+| [Disable](altv://action/setcfg?useSharedTextures=false) | `altv://action/setcfg?useSharedTextures=false` | Disables the use of shared textures |
