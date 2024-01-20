@@ -4,7 +4,7 @@
 > This update is the latest.
 
 > [!TIP]
-> This update was released on 20.10.2023
+> This update was released on 12.01.2024
 
 ## Server
 - Added config `masterlistRelay` to server.toml, its default value is `""`
