@@ -21,7 +21,8 @@ Note that RPF files are not supported in this folder, those still belong into th
 
 ### Enabling mod support
 
-As first step we have to enable the mod directory support in our [altv.toml](~/articles/configs/client.md):
+As first step we have to enable the mod directory support in our [altv.toml](~/articles/configs/client.md), which can be enabled by clicking [here](altv://action/setcfg?enableModDirectory=true).
+If the automatic activation doesn't work, follow the those steps to manually enable it:
 
 1. Navigate to your alt:V directory
 2. Open the altv.toml file with a text editor
@@ -32,18 +33,19 @@ As first step we have to enable the mod directory support in our [altv.toml](~/a
 
 ### Adding mods
 
-To add new mods simply put their files into the mods folder:
+To add new mods simply put their files into the mods folder.
+You can open this by clicking [here](altv://action/open?dir=mods) or navigating to your alt:V directory and then the `mods` directory.
+If the directory doesn't exist, create it yourself.
 
-1. Navigate to your alt:V directory
-2. If the directory `mods` doesn't exist there, create it
-3. Place the mod and it's related files (e.g. \*.dll, *\.ini, \*.fx and other relevant files) into the mods folder
-   * Remember that RPF files don't belong into this directory, see next step
+> [!IMPORTANT]
+> Place the mod and it's related files (e.g. \*.dll, *\.ini, \*.fx and other relevant files) into the mods folder.\
+> Remind that RPF files don't belong into this directory, see next step.
 
 ### Modifying game files
 
 > [!IMPORTANT]
 > Always take a backup of the files you replace.\
-> If the mod is outdated after a GTA update it is very likely that it will crash on start.
+> If the mod is outdated after a GTA update it is very likely that the game will crash on start.
 
 If your mod comes with modified game files (usually in the form of *.rpf files), these need to be changed in the GTA directory.\
 RPF files in the mods folder are ignored and won't be processed further.
