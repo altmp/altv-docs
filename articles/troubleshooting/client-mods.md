@@ -37,9 +37,8 @@ To add new mods simply put their files into the mods folder.
 You can open this by clicking [here](altv://action/open?dir=mods) or navigating to your alt:V directory and then the `mods` directory.
 If the directory doesn't exist, create it yourself.
 
-> [!IMPORTANT]
-> Place the mod and it's related files (e.g. \*.dll, *\.ini, \*.fx and other relevant files) into the mods folder.\
-> Remind that RPF files don't belong into this directory, see next step.
+Place the mod and it's related files (e.g. \*.dll, *\.ini, \*.fx and other relevant files) into the mods folder.\
+Remind that RPF files don't belong into this directory, see next step.
 
 ### Modifying game files
 
