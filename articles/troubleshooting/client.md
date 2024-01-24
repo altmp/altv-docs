@@ -238,3 +238,10 @@ The detailed information about what was done can be found in the following list:
 |---------------------------------------------------------|------------------------------------------------|-------------------------------------|
 | [Enable](altv://action/setcfg?useSharedTextures=true)   | `altv://action/setcfg?useSharedTextures=true`  | Enables the use of shared textures  |
 | [Disable](altv://action/setcfg?useSharedTextures=false) | `altv://action/setcfg?useSharedTextures=false` | Disables the use of shared textures |
+
+#### enableDiscordOverlay
+
+| Link                                                       | Target                                            | Description                  |
+|------------------------------------------------------------|---------------------------------------------------|------------------------------|
+| [Enable](altv://action/setcfg?enableDiscordOverlay=true)   | `altv://action/setcfg?enableDiscordOverlay=true`  | Enables the discord overlay  |
+| [Disable](altv://action/setcfg?enableDiscordOverlay=false) | `altv://action/setcfg?enableDiscordOverlay=false` | Disables the discord overlay |
