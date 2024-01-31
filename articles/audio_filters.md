@@ -38,4 +38,4 @@ whisperFilter.audioCategory = 'altv_voice_whisper';
 ### Controlling volume
 In case default volume of specific audio categories is too quiet, you can edit audio categories.
 
-See [Audio category](audio.md/#examples) for more info.
+See [Audio category](~/articles/audio.md#examples) for more info.
