@@ -48,3 +48,14 @@ Remind that RPF files don't belong into this directory, see next step.
 
 If your mod comes with modified game files (usually in the form of *.rpf files), these need to be changed in the GTA directory.\
 RPF files in the mods folder are ignored and won't be processed further.
+
+### Outdated mods
+
+To ensure compatibility and minimize crashes with ENB and Reshade, we enforce minimum version requirements.\
+The minimum version for Reshade is **5.9.1**, and for ENB, it is **0.462**.
+
+If you do not meet these requirements, you will receive a error on the alt:V Launcher advising you to update the mods.\
+To do this, please download the latest version from [ENB](https://enbdev.com/download_mod_gta5.htm) or [Reshade](https://reshade.me/#download), depending on which mod you need to update.
+
+> [!NOTE]
+> For stability reasons we recommend to install the Reshade version with "Full Add-On Support".
