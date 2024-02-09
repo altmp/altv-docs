@@ -225,6 +225,13 @@ The detailed information about what was done can be found in the following list:
 
 ### Configuration settings
 
+#### runasAdmin
+
+| Link                                             | Target                                  | Description                                               |
+|--------------------------------------------------|-----------------------------------------|-----------------------------------------------------------|
+| [Enable](altv://action/setcfg?runasAdmin=true)   | `altv://action/setcfg?runasAdmin=true`  | Automatically elevates alt:V to administrator permissions |
+| [Disable](altv://action/setcfg?runasAdmin=false) | `altv://action/setcfg?runasAdmin=false` | Disables the automatic elevation                          |
+
 #### textureBudgetPatch
 
 | Link                                                     | Target                                          | Description                       |
@@ -245,3 +252,9 @@ The detailed information about what was done can be found in the following list:
 |------------------------------------------------------------|---------------------------------------------------|------------------------------|
 | [Enable](altv://action/setcfg?enableDiscordOverlay=true)   | `altv://action/setcfg?enableDiscordOverlay=true`  | Enables the discord overlay  |
 | [Disable](altv://action/setcfg?enableDiscordOverlay=false) | `altv://action/setcfg?enableDiscordOverlay=false` | Disables the discord overlay |
+
+### Fixes
+
+| Link                                                            | Target                                  | Description                                                 |
+|-----------------------------------------------------------------|-----------------------------------------|-------------------------------------------------------------|
+| [Fix compatibility mode](altv://action/fix?issue=compatibility) | `altv://action/fix?issue=compatibility` | Removes compatibility settings from GTA & alt:V executables |
