@@ -125,6 +125,9 @@ dlcWhitelist = [
 # Obfuscate resource names
 hashClientResourceName = true
 
+# Disables creation of props marked as "optional"
+disableOptionalProps = false
+
 # The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
 peds = 128 # Max 220, shared type for server side created NPC peds + player peds
