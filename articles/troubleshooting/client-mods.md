@@ -34,7 +34,7 @@ If the automatic activation doesn't work, follow the those steps to manually ena
 ### Adding mods
 
 To add new mods simply put their files into the mods folder.
-You can open this by clicking [here](altv://action/open?dir=mods) or navigating to your alt:V directory and then the `mods` directory.
+You can open this by clicking [here](altv://action/open/mods) or navigating to your alt:V directory and then the `mods` directory.
 If the directory doesn't exist, create it yourself.
 
 Place the mod and it's related files (e.g. \*.dll, *\.ini, \*.fx and other relevant files) into the mods folder.\
