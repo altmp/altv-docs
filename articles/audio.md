@@ -18,6 +18,9 @@ The system also supports custom filters (see [Voice docs](voice.md)) and GTA aud
 
 In order to use Audio API you need to create Audio instance and add one or multiple audio outputs to it.
 
+> [!WARNING]
+> Currently, a maximum of 64 Audio instances can be created.
+
 ### Audio outputs
 
 There are three types of audio outputs in alt:V API:
