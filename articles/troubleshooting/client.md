@@ -212,16 +212,16 @@ If you have problems with the speech system, for example, if you change your inp
 Here you will find a few links that execute predefined actions on your alt:V launcher.\
 The detailed information about what was done can be found in the following list:
 
-| Link                                                          | Target                          | Description                                                         |
-|---------------------------------------------------------------|---------------------------------|---------------------------------------------------------------------|
-| [Open game directory](altv://action/open?dir=game)            | `altv://action/open/game`       | Opens the game directory                                            |
-| [Open alt:V directory](altv://action/open?dir=altv)           | `altv://action/open/altv`       | Opens the alt:V directory                                           |
-| [Open logs directory](altv://action/open?dir=logs)            | `altv://action/open/logs`       | Opens the logs directory                                            |
-| [Open crashdump directory](altv://action/open?dir=crashdumps) | `altv://action/open/crashdumps` | Opens the crashdumps directory                                      |
-| [Open mods directory](altv://action/open?dir=mods)            | `altv://action/open/mods`       | Opens the mods directory                                            |
-| [Open configuration file](altv://action/open?file=config)     | `altv://action/open/config`     | Opens the altv.toml                                                 |
-| [Create report](altv://action/report)                         | `altv://action/report`          | Creates a report zip (containing log files) and saves it to desktop |
-| [Copy latest crashdump id](altv://action/crashdumpid)         | `altv://action/crashdumpid`     | Copies the latest crashdump id to clipboard                         |
+| Link                                                      | Target                          | Description                                                         |
+|-----------------------------------------------------------|---------------------------------|---------------------------------------------------------------------|
+| [Open game directory](altv://action/open/game)            | `altv://action/open/game`       | Opens the game directory                                            |
+| [Open alt:V directory](altv://action/open/altv)           | `altv://action/open/altv`       | Opens the alt:V directory                                           |
+| [Open logs directory](altv://action/open/logs)            | `altv://action/open/logs`       | Opens the logs directory                                            |
+| [Open crashdump directory](altv://action/open/crashdumps) | `altv://action/open/crashdumps` | Opens the crashdumps directory                                      |
+| [Open mods directory](altv://action/open/mods)            | `altv://action/open/mods`       | Opens the mods directory                                            |
+| [Open configuration file](altv://action/open/config)      | `altv://action/open/config`     | Opens the altv.toml                                                 |
+| [Create report](altv://action/report)                     | `altv://action/report`          | Creates a report zip (containing log files) and saves it to desktop |
+| [Copy latest crashdump id](altv://action/crashdumpid)     | `altv://action/crashdumpid`     | Copies the latest crashdump id to clipboard                         |
 
 ### Configuration settings
 
@@ -255,6 +255,6 @@ The detailed information about what was done can be found in the following list:
 
 ### Fixes
 
-| Link                                                            | Target                            | Description                                                 |
-|-----------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------|
-| [Fix compatibility mode](altv://action/fix?issue=compatibility) | `altv://action/fix/compatibility` | Removes compatibility settings from GTA & alt:V executables |
+| Link                                                      | Target                            | Description                                                 |
+|-----------------------------------------------------------|-----------------------------------|-------------------------------------------------------------|
+| [Fix compatibility mode](altv://action/fix/compatibility) | `altv://action/fix/compatibility` | Removes compatibility settings from GTA & alt:V executables |
