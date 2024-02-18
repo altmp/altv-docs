@@ -12,7 +12,7 @@ For example:
 
 ## Voice channels
 
-[VoiceChannel class in JS API reference](https://docs.altv.mp/js/api/alt-client.VoiceChannel.html)<br>
+[VoiceChannel class in JS API reference](https://docs.altv.mp/js/api/alt-server.VoiceChannel.html)<br>
 [VoiceChannel class in C# API reference](https://docs.altv.mp/cs/api/AltV.Net.Elements.Entities.VoiceChannel.html)<br>
 
 To allow players to hear eachother you need to create a voice channel and add the players that should hear each other there.
