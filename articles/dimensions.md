@@ -9,5 +9,39 @@ The dimensions are represented as an int32 this means the lowest possible dimens
 | ------ | :-------------------------------: | :-------------------------------: | :-------------------------------------------------------: |
 | -2147483647   |   -1          |   Public Dimension    | This Dimension can see itself, the General Dimension and the Global Dimension (-1 can see 0, -2 can't see -1, 0 can't see -1, -1 can't see 1) |
 |   0           |   0           |  General Dimension    | This Dimension can only see itself. |
-|   -2147483648 |   -2147483648 |   Global Dimension    | This Dimension can only see itself. |
 |   1           |   2147483647  |   Private Dimension   | This Dimension can only see itself and the Global Dimension (1 can't see 0, 2 can't see 1, 0 can't see 1, 1 can't see -1)
+|   -2147483648 |   -2147483648 |   Global Dimension    | This Dimension is special, see below. |
+
+## Global Dimension
+
+This dimension can be used to make entity visible in any normal dimension (public, general, private).
+
+### Examples
+
+Make vehicle visible in any dimension.
+
+```js
+const vehicle = new alt.Vehicle('sultan2', 0, 5, 71, 0, 0, 0);
+vehicle.dimension = alt.globalDimension;
+```
+
+Get vehicles in any dimension.
+
+```js
+const veh1 = new alt.Vehicle('sultan2', 0, 0, 0, 0, 0, 0);
+veh1.dimension = 2;
+const veh2 = new alt.Vehicle('sultan3', 10, 5, 0, 0, 0, 0);
+veh2.dimension = -1;
+
+// getEntitiesInRange won't return entities immediately so we need to wait some time
+await alt.Utils.wait(1000);
+
+// get all vehicles in any dimension around 0, 0, 0 within 100 units
+const entities = alt.getEntitiesInRange(
+    alt.Vector3.zero, // pos
+    100, // range
+    alt.globalDimension, // dimension
+    2 // filter (alt.BaseObjectFilterType.Vehicle)
+);
+alt.log({ entities }); // { entities: [ Vehicle {}, Vehicle {} ] }
+```
