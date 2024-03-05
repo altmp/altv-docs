@@ -6,14 +6,14 @@ The dimensions are represented as an int32 this means the lowest possible dimens
 
 | Min Value   |              Max Value             |         Name           |   Description |
 | ------ | :-------------------------------: | :-------------------------------: | :-------------------------------------------------------: |
-|   0           |   0           |  General Dimension    | This Dimension can only see itself. |
+|   0           |   0           |  Default Dimension    | This Dimension can only see itself. |
 |   1           |   2147483647  |   Private Dimension   | This Dimension can only see itself (1 can't see 0, 2 can't see 1, 0 can't see 1, 1 can't see -1)
-| -2147483647   |   -1          |   Public Dimension    | This Dimension can see itself, the General Dimension (-1 can see 0, -2 can't see -1, 0 can't see -1, -1 can't see 1) |
+| -2147483647   |   -1          |   Public Dimension    | This Dimension can see itself, the Default Dimension (-1 can see 0, -2 can't see -1, 0 can't see -1, -1 can't see 1) |
 |   -2147483648 |   -2147483648 |   Global Dimension    | This Dimension is special, see below. |
 
 ## Global Dimension
 
-This dimension can be used to make entity visible in any normal dimension (public, general, private) or to retrieve entities from any dimension.
+This dimension can be used to make entity visible in any normal dimension (default, private, public) or to retrieve entities from any dimension.
 
 > [!WARNING]
 > It is not recommended to set dimension of players to the global dimension.
