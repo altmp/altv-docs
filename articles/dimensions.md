@@ -16,9 +16,9 @@ The dimensions are represented as an int32 this means the lowest possible dimens
 This dimension can be used to make entity visible in any normal dimension (public, general, private) or to retrieve entities from any dimension.
 
 > [!WARNING]
-> You should not set global dimension to player.
+> It is not recommended to set dimension of players to the global dimension.
 
-### Examples
+### Examples (JS)
 
 Make vehicle visible in any dimension.
 
