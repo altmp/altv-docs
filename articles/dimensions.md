@@ -16,7 +16,7 @@ The dimensions are represented as an int32 this means the lowest possible dimens
 This dimension can be used to make entity visible in any normal dimension (public, general, private) or to retrieve entities from any dimension.
 
 > [!WARNING]
-> It's not possible to set player to global dimension.
+> Players in global dimension won't see all other dimensions.
 
 ### Examples
 
