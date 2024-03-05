@@ -51,8 +51,4 @@ const globalVoice = new alt.VoiceChannel(true, 15);
 alt.on('playerConnect', (player) => {
   globalVoice.addPlayer(player);
 });
-
-alt.on('playerDisconnect', (player) => {
-  globalVoice.removePlayer(player);
-});
 ```
