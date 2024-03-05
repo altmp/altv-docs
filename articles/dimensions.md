@@ -4,7 +4,6 @@ In alt:V there exists a dimension system and it's implemented serverside. This s
 
 The dimensions are represented as an int32 this means the lowest possible dimension is -2147483648, the default is 0 and the highest is 2147483647.
 
-
 | Min Value   |              Max Value             |         Name           |   Description |
 | ------ | :-------------------------------: | :-------------------------------: | :-------------------------------------------------------: |
 | -2147483647   |   -1          |   Public Dimension    | This Dimension can see itself, the General Dimension and the Global Dimension (-1 can see 0, -2 can't see -1, 0 can't see -1, -1 can't see 1) |
@@ -14,7 +13,10 @@ The dimensions are represented as an int32 this means the lowest possible dimens
 
 ## Global Dimension
 
-This dimension can be used to make entity visible in any normal dimension (public, general, private).
+This dimension can be used to make entity visible in any normal dimension (public, general, private) or to retrieve entities from any dimension.
+
+> [!WARNING]
+> It's not possible to set player to global dimension.
 
 ### Examples
 
