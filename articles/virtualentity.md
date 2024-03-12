@@ -40,125 +40,125 @@ In this example, we are going to synchronize the Casino Lucky Wheel. We'll do th
 Server
 
 ```js
-import alt from 'alt-server'
+import alt from 'alt-server';
 
 // There can only be one lucky wheel on the server
-const maxEntitiesInStream = 1
+const maxEntitiesInStream = 1;
 
-const luckyWheelGroup = new alt.VirtualEntityGroup(maxEntitiesInStream)
+const luckyWheelGroup = new alt.VirtualEntityGroup(maxEntitiesInStream);
 
-const pos = new alt.Vector3(0, 5, 72)
-const streamingDistance = 100
-// Initial stream synced meta
+const pos = new alt.Vector3(0, 5, 72);
+const streamingDistance = 100;
+// Initial stream synced meta;
 const initialData = {
     // Most likely in your gamemode you will create different types of virtual entities
     type: 'luckyWheel',
-}
-const entity = new alt.VirtualEntity(luckyWheelGroup, pos, streamingDistance, initialData)
+};
+const entity = new alt.VirtualEntity(luckyWheelGroup, pos, streamingDistance, initialData);
 
 // Spinning wheel every 5 seconds
 alt.setInterval(async () => {
-    entity.setStreamSyncedMeta('spinStartTime', alt.getNetTime())
-    await alt.Utils.wait(2000)
-    entity.deleteStreamSyncedMeta('spinStartTime')
-}, 5_000)
+    entity.setStreamSyncedMeta('spinStartTime', alt.getNetTime());
+    await alt.Utils.wait(2000);
+    entity.deleteStreamSyncedMeta('spinStartTime');
+}, 5_000);
 
 // We can also set dimension if needed
-// entity.dimension = 123
+// entity.dimension = 123;
 
 // Or hide entity from all players
-// entity.visible = false
+// entity.visible = false;
 ```
 
 Client
 
 ```js
-import alt from 'alt-client'
+import alt from 'alt-client';
 
 // alt.LocalObject or null
-let luckyWheelObject = null
+let luckyWheelObject = null;
 // alt.Utils.EveryTick or null
-let currentSpinTick = null
+let currentSpinTick = null;
 
 const isItLuckyWheel = (object) => {
     // If its not virtual entity ignore it
-    if (!(object instanceof alt.VirtualEntity)) return false
+    if (!(object instanceof alt.VirtualEntity)) return false;
 
     // Initial stream synced meta we set on server
-    if (object.getStreamSyncedMeta('type') !== 'luckyWheel') return false
+    if (object.getStreamSyncedMeta('type') !== 'luckyWheel') return false;
 
-    return true
-}
+    return true;
+};
 
 const startSpin = (startSpinTime) => {
-    alt.log('Lucky wheel start spin time:', startSpinTime)
+    alt.log('Lucky wheel start spin time:', startSpinTime);
 
     currentSpinTick = new alt.Utils.EveryTick(() => {
-        const currentSpinTime = (alt.getNetTime() - startSpinTime)
+        const currentSpinTime = (alt.getNetTime() - startSpinTime);
 
         // Spin is already over
         if (currentSpinTime > 2000) {
-            currentSpinTick.destroy()
-            currentSpinTick = null
+            currentSpinTick.destroy();
+            currentSpinTick = null;
 
-            luckyWheelObject.rot = new alt.Vector3(0, 0, 0)
-            return
+            luckyWheelObject.rot = new alt.Vector3(0, 0, 0);
+            return;
         }
 
-        let currentNormalized = currentSpinTime / 2000
-        let degrees = currentNormalized * 360
+        let currentNormalized = currentSpinTime / 2000;
+        let degrees = currentNormalized * 360;
 
-        luckyWheelObject.rot = new alt.Vector3(0, degrees, 0).toRadians()
+        luckyWheelObject.rot = new alt.Vector3(0, degrees, 0).toRadians();
     })
 }
 
 alt.on('worldObjectStreamIn', (object) => {
-    if (!isItLuckyWheel(object)) return
+    if (!isItLuckyWheel(object)) return;
 
-    alt.log('Lucky wheel stream in')
+    alt.log('Lucky wheel stream in');
 
     // Make sure we don't have object already created
-    alt.Utils.assert(luckyWheelObject == null)
+    alt.Utils.assert(luckyWheelObject == null);
 
-    const rot = alt.Vector3.zero
-    luckyWheelObject = new alt.LocalObject('vw_prop_vw_luckywheel_02a', object.pos, rot)
+    const rot = alt.Vector3.zero;
+    luckyWheelObject = new alt.LocalObject('vw_prop_vw_luckywheel_02a', object.pos, rot);
 
-    const spinStartTime = object.getStreamSyncedMeta('spinStartTime')
-    if (spinStartTime == null) return
-    startSpin(spinStartTime)
+    const spinStartTime = object.getStreamSyncedMeta('spinStartTime');
+    if (spinStartTime == null) return;
+    startSpin(spinStartTime);
 })
 
 alt.on('worldObjectStreamOut', (object) => {
-    if (!isItLuckyWheel(object)) return
+    if (!isItLuckyWheel(object)) return;
 
-    alt.log('Lucky wheel stream out')
+    alt.log('Lucky wheel stream out');
 
-    luckyWheelObject?.destroy()
-    luckyWheelObject = null
-    currentSpinTick?.destroy()
-    currentSpinTick = null
+    luckyWheelObject?.destroy();
+    luckyWheelObject = null;
+    currentSpinTick?.destroy();
+    currentSpinTick = null;
 })
 
 alt.on('streamSyncedMetaChange', (object, key, value) => {
-    if (!isItLuckyWheel(object)) return
+    if (!isItLuckyWheel(object)) return;
 
     // Make sure we have object created
-    alt.Utils.assert(luckyWheelObject != null)
+    alt.Utils.assert(luckyWheelObject != null);
 
-    alt.log('Lucky wheel change', { key: value })
+    alt.log('Lucky wheel change', { key: value });
 
     switch (key) {
         case 'spinStartTime':
             // Value was deleted
-            if (value == null) return
+            if (value == null) return;
 
-            startSpin(value)
-            break
+            startSpin(value);
+            break;
         case 'type':
             // ignoring it
-            break
+            break;
         default:
-            alt.logError('Lucky wheel unknown stream synced meta change key:', key)
+            alt.logError('Lucky wheel unknown stream synced meta change key:', key);
     }
-})
+});
 ```
