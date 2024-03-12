@@ -49,7 +49,7 @@ const luckyWheelGroup = new alt.VirtualEntityGroup(maxEntitiesInStream);
 
 const pos = new alt.Vector3(0, 5, 72);
 const streamingDistance = 100;
-// Initial stream synced meta;
+// Initial stream synced meta
 const initialData = {
     // Most likely in your gamemode you will create different types of virtual entities
     type: 'luckyWheel',
