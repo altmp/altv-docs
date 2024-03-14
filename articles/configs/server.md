@@ -167,10 +167,6 @@ global-webcrypto = true
 network-imports = true
 # Add extra cli arguments to the node environment "https://nodejs.org/api/cli.html"
 extra-cli-args = ["--max-old-space-size=8192"]
-# Enable node.js inspector
-[js-module.inspector]
-host = "127.0.0.1"
-port = 9229
 
 # Settings related to c#-module
 [csharp-module]
