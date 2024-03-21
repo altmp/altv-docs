@@ -290,6 +290,9 @@ Alt.OnPlayerConnect += (player, reason) =>
 
 ## Synced Meta
 
+> [!WARNING]
+> Synced meta is deprecated, use [stream synced meta](https://docs.altv.mp/articles/meta_data.html#stream-synced-meta) or [emitAllClients](https://docs.altv.mp/js/articles/events/index.html) instead.
+
 A synced meta is distributed to all resources & clients and can be used in the following ways:
 
 - Global (applied to alt)
