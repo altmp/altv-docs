@@ -3,9 +3,22 @@
 The `server.toml` file is the most important configuration file, it is the main configuration file for your whole server, and will define
 important configurations like server name, amount of slots, loaded resources and more.
 
-The current `server.cfg` in `yaml` format is deprecated but will support too.
+## Basic configuration for development of JS resources
+```toml
+# An array of all modules (specific language support on server-side) that should be loaded
+modules = ["js-module"]
+# An array of all resources that should be loaded
+resources = ["example"]
+
+# Enables reconnect command, CEF debug and other developer features
+debug = true
+```
 
 Here is a list of all configuration options for the `server.toml` and what they are used for:
+
+> [!WARNING]
+> DO NOT copy all options into your server config, only use the options you **really** need.
+
 ```toml
 # The display name of your server
 name = "My server name"
