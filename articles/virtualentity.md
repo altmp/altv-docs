@@ -101,7 +101,7 @@ const startSpin = (startSpinTime) => {
             currentSpinTick.destroy();
             currentSpinTick = null;
 
-            luckyWheelObject.rot = new alt.Vector3(0, 0, 0);
+            luckyWheelObject.rot = alt.Vector3.zero;
             return;
         }
 
