@@ -35,6 +35,6 @@ Command line arguments means you'll likely need to pass them to individual '.exe
 
 | Key       |             Description             |
 | ------    | :-------------------------------: |
-|   start [resourcename]    |   Starts a server resource by name    |
-|   stop [resourcename]     |   Stops a server resource by name     |
-|   restart [resourcename]  |   Restarts a server resource by name  |
+|   start [resourcename]    |   Starts a resource by name    |
+|   stop [resourcename]     |   Stops a resource by name     |
+|   restart [resourcename]  |   Restarts a resource by name (client will also redownload [`client-files`](https://docs.altv.mp/articles/configs/resource.html) if they were changed)  |
