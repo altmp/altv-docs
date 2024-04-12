@@ -32,7 +32,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   linuxCompatibility      |   boolean(true/false) |   false              | Enable or disables Linux/MacOS related settings (See Discord #general [Linux](https://discord.com/channels/371265202378899476/988474811258908702) & [MacOS](https://discord.com/channels/371265202378899476/1105208952091840612) Threads) |
 |   discordRichPresence     |   boolean(true/false) |   true               | Enable or Disable the Discord Rich Presence ("Now Playing" alt:V in Discord user profile)                                                                                                                                                 |
 |   enableModDirectory      |   boolean(true/false) |   false              | Enables the mod directory. See [here](~/articles/troubleshooting/client-mods.md) for more info.                                                                                                                                           |
-
+|   cachePath      |   string |   "cache" directory in client folder             | Changes location of cache directory                                                                                                                                           |
 ## Example altv.toml file
 
 ```toml
