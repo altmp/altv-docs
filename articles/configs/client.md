@@ -32,7 +32,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   linuxCompatibility      |   boolean(true/false) |   false              | Enable or disables Linux/MacOS related settings (See Discord #general [Linux](https://discord.com/channels/371265202378899476/988474811258908702) & [MacOS](https://discord.com/channels/371265202378899476/1105208952091840612) Threads) |
 |   discordRichPresence     |   boolean(true/false) |   true               | Enable or Disable the Discord Rich Presence ("Now Playing" alt:V in Discord user profile)                                                                                                                                                 |
 |   enableModDirectory      |   boolean(true/false) |   false              | Enables the mod directory. See [here](~/articles/troubleshooting/client-mods.md) for more info.                                                                                                                                           |
-|   cachePath      |   string |   "cache" directory in client folder             | Changes location of cache directory                                                                                                                                           |
+|   cachePath      |   string |   "cache" directory in client folder             | Changes location of the cache directory where server assets (interiors, scripts, etc.) are being downloaded to.                                                                                                                                           |
 ## Example altv.toml file
 
 ```toml
@@ -41,7 +41,7 @@ debug = false
 gtapath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Grand Theft Auto V"
 lang = "en"
 lastip = "127.0.0.1:7788"
-name = "exampleName"
+nameo = "exampleName"
 netgraph = false
 streamerMode = false
 useExternalConsole = false
