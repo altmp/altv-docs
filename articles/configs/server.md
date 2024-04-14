@@ -166,6 +166,14 @@ migration = 1 # Processing of netowner calculations
 syncSend = 8 # Processing of sending sync data, should be always the highest amount
 syncReceive = 2 # Processing of receiving sync data, should be around 1/4 of syncSend
 
+[antiCheat]
+# Enables server-side weapon checks
+# For example, if a weapon is given via giveWeaponToPed native it won't be synced
+weaponSwitch = true
+
+# Enables collision checks so natives like setEntityNoCollisionEntity will not work
+collision = true
+
 # Settings related to js-module
 [js-module]
 # "https://nodejs.org/api/cli.html#--enable-source-maps"
