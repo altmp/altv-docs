@@ -171,7 +171,7 @@ syncReceive = 2 # Processing of receiving sync data, should be around 1/4 of syn
 # For example, if a weapon is given via giveWeaponToPed native it won't be synced
 weaponSwitch = true
 
-# Enables collision checks so natives like setEntityNoCollisionEntity will not work.
+# Enables collision checks so natives like setEntityNoCollisionEntity will not work
 collision = true
 
 # Settings related to js-module
