@@ -1,12 +1,71 @@
 # 16.0.0-Release
 
+## 16.0.147
 > [!WARNING]
 > This update is the latest.
 
 > [!TIP]
+> This update was released on 30.03.2024
+
+### Server
+- Added caching for streamed bitsets
+- Improved performance of player connect/disconnect events
+- Improved performance of dimension checks
+- Improved performance and stability of entity streamer
+- Improved entity containers
+- Improved performance of migration manager
+- Improved entity fetch of cell manager
+- Improved log of property sync errors
+- Improved log of sync limit errors
+- Improved alt.getEntitiesInDimension and Alt.GetEntitiesInDimension()
+- Fixed colshape manager
+- Fixed player to player attach offset
+- Fixed default values of wheel getters
+- Fixed weelsCount getter [#2062](https://github.com/altmp/altv-issues/issues/2062)
+- Fixed onStreamSyncedMetaChange event [#2231](https://github.com/altmp/altv-issues/issues/2231)
+- Fixed order of player bones
+- Fixed player to ped attachment
+- Fixed ids of ped bones
+- Fixed components startup order
+
+### Client
+- Added increase for high heel and props drawables from 255 to 4294967296
+- Improved internal debug utilities
+- Improved remote audio load timeout
+- Migrated backup functionality to startup (launcher) to reduce permission related issues
+- Added new medal.tv api
+- Added runtime size validation
+- Added compile time pattern initialization
+- Added function to get streamed file name by index
+- Fixed missing NULL check in detour functions
+- Fixed crash caused by modded vehicles
+- Fixed replacement of data files not working
+- Fixed log of callstack logging
+- Fixed isTalking timeout
+- Fixed rml element remove call
+- Fixed rml element create call
+- Fixed rml element event [#2209](https://github.com/altmp/altv-issues/issues/2209)
+- Fixed gameEntityDestroy event [#2236](https://github.com/altmp/altv-issues/issues/2236)
+- Fixed static pattern initialization
+- Fixed vehicle exit animation reset with clothes, props and hats
+- Fixed memory leak in audio outputs
+- Fixed weapon damage event
+- Fixed game entity create and destroy event for local peds, local objects and local vehicles
+- Improved mutex for rmlui
+- Improved removal of audio output
+- Improved microfreezes
+
+### Launcher
+- Added cachePath config
+- Added auto detection for platform if game path is set
+- Updated mirror for china
+- Removed skipLauncherPatcher config
+
+## 16.0.0
+> [!TIP]
 > This update was released on 12.01.2024
 
-## Server
+### Server
 - Added config `masterlistRelay` to server.toml, its default value is `""`
 - Added config `mtu` to server.toml, its default value is `1400`
 - Added config `enableSyncedMetaData` to server.toml, its default value is `true`
@@ -22,7 +81,7 @@
 - Removed property `MajorVersion` from `IConnectionInfo` in C#-Module
 
 
-## Client
+### Client
 - Added method `alt.getServerTime` to JS-Module and `alt.ServerTime` to C#-Module
 - Added method `alt.getPoolSize` to JS-Module and `alt.GetPoolSize` to C#-Module
 - Added method `alt.getPoolCount` to JS-Module and `alt.GetPoolCount` to C#-Module
