@@ -1,9 +1,22 @@
 # 16.0.0-Release
 
-## 16.0.147
+## 16.0.153
 > [!WARNING]
 > This update is the latest.
 
+> [!TIP]
+> This update was released on 16.04.2024
+
+### Client
+- Compatibility for GTA - Update 3179
+
+### Launcher
+- Added cachePath config
+- Added auto detection for platform if game path is set
+- Updated mirror for china
+- Removed skipLauncherPatcher config
+
+## 16.0.147
 > [!TIP]
 > This update was released on 30.03.2024
 
@@ -54,12 +67,6 @@
 - Improved mutex for rmlui
 - Improved removal of audio output
 - Improved microfreezes
-
-### Launcher
-- Added cachePath config
-- Added auto detection for platform if game path is set
-- Updated mirror for china
-- Removed skipLauncherPatcher config
 
 ## 16.0.0
 > [!TIP]
