@@ -34,7 +34,7 @@
 - Fixed colshape manager
 - Fixed player to player attach offset
 - Fixed default values of wheel getters
-- Fixed weelsCount getter [#2062](https://github.com/altmp/altv-issues/issues/2062)
+- Fixed wheelsCount getter [#2062](https://github.com/altmp/altv-issues/issues/2062)
 - Fixed onStreamSyncedMetaChange event [#2231](https://github.com/altmp/altv-issues/issues/2231)
 - Fixed order of player bones
 - Fixed player to ped attachment
