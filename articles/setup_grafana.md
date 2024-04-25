@@ -1,8 +1,8 @@
-## Tutorial for Grafana
+# Tutorial for Grafana
 
-### Steps on your server/local machine
+## Steps on your server/local machine
 
-#### Prometheus
+### Prometheus
 1. Head to Prometheus Download page https://prometheus.io/download/
 2. Download "prometheus" LTS version for your OS
 3. Unpack the folder
@@ -17,7 +17,7 @@
 7. Open a console (PowerShell whatever)
 8. Run prometheus (.exe) and keep it running
 
-#### alt:V Server
+### alt:V Server
 1. Head to your server.toml
 2. Open it with a text editor
 3. Add or edit following line:
@@ -29,9 +29,9 @@ host = "0.0.0.0"
 4. Open a console (PowerShell whatever)
 5. Start the server and keep it running
 
-### Steps in browser
+## Steps in browser
 
-#### Grafana (Cloud):
+### Grafana (Cloud):
 1. Create an account on Grafana: https://grafana.com/auth/sign-up/create-user?pg=login
 2. Setup your vanity URL (e.g. PROJECTNAME.grafana.net)
 3. On your vanity URL, click on the burger icon next to home
@@ -48,7 +48,7 @@ host = "0.0.0.0"
 14. Select the data source you created just before
 15. Click on Import
 
-#### Grafana (self-hosted):
+### Grafana (self-hosted):
 1. On your vanity URL, click on the burger icon next to home
 2. Open the dropdown of "Connections"
 3. Click on Data sources
@@ -64,4 +64,3 @@ host = "0.0.0.0"
 13. Click on Import
 
 If you have a static server IPv4, you can add users to your Grafana dashboard to share data with your team.
-
