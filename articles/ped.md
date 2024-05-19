@@ -108,8 +108,9 @@ const dimension = alt.defaultDimension; // 0 dimension
 const pos = new alt.Vector3(0, 0, 71);
 const rot = alt.Vector3.zero;
 const useStreaming = true;
+const streamingDistance = 100; // customize for your needs
 
-const ped = new alt.LocalPed(model, dimension, pos, rot, useStreaming);
+const ped = new alt.LocalPed(model, dimension, pos, rot, useStreaming, streamingDistance);
 
 // Waiting until ped spawns for 5 seconds or rejecting current promise
 // (timeout value is not required, 2 seconds by default in v15)
