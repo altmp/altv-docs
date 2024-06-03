@@ -94,3 +94,6 @@
   href: parachute_sync.md
 - name: Setup Grafana
   href: setup_grafana.md
+- name: How to run a server
+  href: server/toc.yml
+  topicHref: server/index.md

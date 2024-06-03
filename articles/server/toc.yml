@@ -1,0 +1,6 @@
+- name: How to run a server
+  href: index.md
+- name: How to run a server on windows
+  href: windows.md
+- name: How to run a server on linux
+  href: linux.md
