@@ -1,6 +1,6 @@
 # CDN Links
 
-Here you can find the CDN-Links(=Content Delivery Network) for the alt:V files. It's recommended to use the [Downloads-Page](https://altv.mp/#/downloads) where the files get automatically bundled for you.
+Here you can find the CDN-Links(=Content Delivery Network) for the alt:V files. It's recommended to use the [Downloads-Page](https://altv.mp/downloads) where the files get automatically bundled for you.
 
 Valid values for ${BRANCH} are: **release**, **rc** and **dev**.
 
