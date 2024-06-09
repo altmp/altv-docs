@@ -53,7 +53,7 @@ alt.on("playerConnect", (player) => {
 ```
 
 ## Request alt:V Name
-To request the alt:V from a player, you can use the snipped below in your early auth.
+To request the name from a player, you can use the snipped below in your early auth.
 
 ```html
 <script>
