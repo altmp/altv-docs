@@ -275,7 +275,7 @@ $requiredRepos=[Ordered]@{
         "submodules"=$false;
     };
     "./coreclr-module/"=@{
-        "repo"="https://github.com/FabianTerhorst/coreclr-module";
+        "repo"="https://github.com/altmp/coreclr-module";
         "name"="C#";
         "strategy"=([StrategyType]::Core + [StrategyType]::CSharp);
         "submodules"=$false;
