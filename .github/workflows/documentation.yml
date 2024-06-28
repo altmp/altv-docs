@@ -123,7 +123,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          repository: FabianTerhorst/coreclr-module
+          repository: altmp/coreclr-module
           ref: ${{ env.SOURCE_BRANCH }}
           path: ./coreclr-module
       - name: Checkout latest commit
@@ -266,7 +266,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          repository: FabianTerhorst/coreclr-module
+          repository: altmp/coreclr-module
           path: ./coreclr-module
       - name: Checkout SDK repository
         uses: actions/checkout@v3
