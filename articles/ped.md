@@ -25,51 +25,89 @@ See [server configuration](configs/server.md) [maxStreaming] section.
 
 ### Example
 
+In this example, we are going to create a ped and make it wander around. We'll do this using the JavaScript API.
+
+Server
 ```js
-//working example
+import alt from "alt-server";
 
-////////////////////
-//SERVERSIDE:
-////////////////////
+// When some player connects
 alt.on("playerConnect", (player) => {
+  alt.log("Player connected:", player.name, "with assigned id:", player.id);
 
-    //spawn your own player
-    player.spawn(7.904539108276367, 28.82634925842285, 70.866943359375, 0);
+  // Spawn player at specific position and with "a_f_y_beach_02" model
+  player.spawn("a_f_y_beach_02", new alt.Vector3(9.7, 26.3, 70.8));
 
-    //create serverside NPC (posX, posY, posZ, rotX, rotY, rotZ, steamingDistance)
-    let ped = new alt.Ped("u_m_m_streetart_01", new alt.Vector3(9.717802047729492, 26.340801239013672, 70.81243896484375), new alt.Vector3(0, 0, 0), 200);
+  // Create a cat
+  const model = "a_c_cat_01";
+  const pos = new alt.Vector3(7.9, 28.8, 70.8);
+  const rot = alt.Vector3.zero;
+  const ped = new alt.Ped(model, pos, rot);
 
-    //its important to wait until Ped is ready
-    alt.setTimeout(() => {
+  // Set stream synced meta for client side to give wander task for this particular ped
+  ped.setStreamSyncedMeta("giveWanderTask", true);
+});
+```
 
-        //then u set the netOwner
-        ped.setNetOwner(alt.Player.all[0]);
+Client
+```js
+import alt from "alt-client";
+import natives from "natives";
 
-        //then u emit the netOwner the walkaround task (server -> client)
-        ped.netOwner.emit("ped_task", ped);
+// If ped is spawned in the game and network owner is our local player give it wander task
+alt.on("netOwnerChange", async (ped, netOwner) => {
+  // Here `ped` is alt.Entity, so if its not alt.Ped we ignore it
+  if (!(ped instanceof alt.Ped)) return;
 
-    }, 2500);
+  alt.log("netOwnerChange", {
+    netOwner_name: netOwner?.name,
+    ped_remoteID: ped.remoteID,
+    ped_scriptID: ped.scriptID,
+    giveWanderTask: ped.getStreamSyncedMeta("giveWanderTask"),
+  });
 
+  // If ped does not exists in the game we can't give it wander task
+  if (!ped.isSpawned) return;
+
+  giveSpawnedPedWanderTask(ped);
 });
 
-////////////////////
-//CLIENTSIDE:
-////////////////////
-alt.onServer("ped_task", (ped) => {
+// If ped is spawned in the game and network owner is our local player give it wander task
+// (we can't use netOwnerChange event alone because
+// ped may not be spawned at the moment when netOwnerChange is triggered)
+alt.on("gameEntityCreate", (ped) => {
+  // Here `ped` is alt.Entity, so if its not alt.Ped we ignore it
+  if (!(ped instanceof alt.Ped)) return;
 
-    //just a debug message for the info if event is called
-    alt.log(`ped_task taskWanderInArea was called for pedID: ${ped.scriptID}`);
+  alt.log("gameEntityCreate", {
+    netOwner_name: ped.netOwner?.name,
+    ped_remoteID: ped.remoteID,
+    ped_scriptID: ped.scriptID,
+  });
 
-    // Make the specified ped roam within a 10-meter radius of the given coordinates. It will always move to a random location inside the radius, while waiting a minimum of 2 and maximum of 10 seconds before moving.
-    //taskWanderInArea: ped: Ped | x: float | y: float | z: float | radius: float | minimalLength: float | timeBetweenWalks: float
-    native.taskWanderInArea(ped, 9.717802047729492, 26.340801239013672, 70.81243896484375, 10, 2, 10);
-
+  giveSpawnedPedWanderTask(ped);
 });
+
+function giveSpawnedPedWanderTask(ped) {
+  // If network owner is not our player we ignore it
+  if (ped.netOwner !== alt.Player.local) return;
+
+  // Should we call wander task for this ped (set on server side)
+  if (!ped.getStreamSyncedMeta("giveWanderTask")) return;
+
+  alt.log("Giving wander task to ped:", {
+    ped_remoteID: ped.remoteID,
+    ped_scriptID: ped.scriptID,
+  });
+
+  // give wander task
+  natives.taskWanderStandard(ped, 0, 0);
+}
 ```
 
 ## Local Ped API
 
-Its also possible to create local (clientside only) peds that other players won't see.
+Its also possible to create local (client side only) peds that other players won't see.
 
 ### Usage
 
@@ -80,6 +118,8 @@ Its also possible to create local (clientside only) peds that other players won'
 Clothes shop preview.
 
 ```js
+import alt from "alt-client";
+
 // We don't need streaming enabled
 // because we need to use ped immediately
 const useStreaming = false;
@@ -103,6 +143,8 @@ alt.setPedDlcClothes(ped.scriptID, 0, 11, 1, 0);
 
 Waiting for ped to spawn due to model loading and streaming.
 ```js
+import alt from "alt-client";
+
 const model = "player_zero";
 const dimension = alt.defaultDimension; // 0 dimension
 const pos = new alt.Vector3(0, 0, 71);
