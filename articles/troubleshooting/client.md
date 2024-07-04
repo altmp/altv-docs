@@ -253,6 +253,13 @@ The detailed information about what was done can be found in the following list:
 | [Enable](altv://action/setcfg?enableDiscordOverlay=true)   | `altv://action/setcfg?enableDiscordOverlay=true`  | Enables the discord overlay  |
 | [Disable](altv://action/setcfg?enableDiscordOverlay=false) | `altv://action/setcfg?enableDiscordOverlay=false` | Disables the discord overlay |
 
+#### enableDebugMode
+
+| Link                                                       | Target                                            | Description                  |
+|------------------------------------------------------------|---------------------------------------------------|------------------------------|
+| [Enable](altv://action/setcfg?debug=true)   | `altv://action/setcfg?debug=true`  | Enables debug mode  |
+| [Disable](altv://action/setcfg?debug=false) | `altv://action/setcfg?debug=false` | Disables debug mode |
+
 ### Fixes
 
 | Link                                                      | Target                            | Description                                                 |
