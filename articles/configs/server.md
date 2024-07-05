@@ -28,6 +28,7 @@ host = "0.0.0.0"
 port = 7788
 # The amount of players that can play on your server concurrently
 players = 256
+maxDuplicatePlayers = 12
 # The password required to join your server
 password = "mySecretPassword"
 # If the server should be visible on the masterlist in the alt:V client
@@ -44,10 +45,13 @@ language = "English"
 description = "My cool server"
 # If the debug mode should be allowed (Debug mode allows debugging functions like reconnect or the CEF debugger)
 debug = false
+debugNodes = false
 # The stream in distance for entities
 streamingDistance = 400
 # The migration distance for entities
 migrationDistance = 150
+streamingTickRate = 20
+migrationTickRate = 20
 # The timeout multiplier (must be >= 1)
 timeout = 1
 # The delay that is used when the announceRetryErrorAttempts are reached (in ms)
@@ -56,6 +60,19 @@ announceRetryErrorDelay = 10000
 announceRetryErrorAttempts = 50
 # Max players which can connect with the same ip address
 duplicatePlayers = 4096
+
+mtu = 1400
+httphost = ""
+
+masterlistRelay = ""
+region = "global"
+
+newSync = true
+newEvents = false
+newEventsPort = 7787
+
+flushAfterSend = false
+highThreadPriority = false
 
 # Enable or disable syncedMetadata
 enableSyncedMetaData = true
@@ -78,10 +95,17 @@ mapBoundsMinX = -10000
 mapBoundsMinY = -10000
 mapBoundsMaxX = 65536
 mapBoundsMaxY = 65536
-mapCellAreaSize = 100 #smaller areas uses more ram and less cpu
+mapCellAreaSize = 200 #smaller areas uses more ram and less cpu
 
 # Defines the rate (miliseconds) in which colshape calculations should occur
 colShapeTickRate = 200
+
+workerCount = 8
+entityWorkerCount = 8
+
+worker-ports = []
+
+profiler = false
 
 # Defines the used logging streams (console, file, stdconsole) for the server
 logStreams = [ "console", "file" ]
