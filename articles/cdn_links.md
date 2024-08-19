@@ -145,7 +145,6 @@ label {
 
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmodels.bin</br>";
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/vehmods.bin</br>"
-        returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/clothes.bin</br>"
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/pedmodels.bin</br>"
 
         returnStr += "https://cdn.alt-mp.com/data/" + branchArray[branchIndex] + "/data/rpfdata.bin</br>"
@@ -329,7 +328,6 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/update.json
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
->https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/weaponmodels.bin
@@ -393,7 +391,6 @@ Server
 >https://cdn.alt-mp.com/data/${BRANCH}/update.json
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/vehmods.bin
->https://cdn.alt-mp.com/data/${BRANCH}/data/clothes.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/pedmodels.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/rpfdata.bin
 >https://cdn.alt-mp.com/data/${BRANCH}/data/weaponmodels.bin
