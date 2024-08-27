@@ -67,8 +67,8 @@ audio.on("streamStarted", () => { alt.log(`streamStarted`); });
 audio.on("streamEnded", () => { alt.log(`streamEnded`); });
 audio.on("streamPaused", () => { alt.log(`streamPaused`); });
 audio.on("streamReset", () => { alt.log(`streamReset`); });
-audio.on("streamSeek ", (time) => { alt.log(`streamSeek: ${time}`); });
-audio.on("volumeChange ", (vol) => { alt.log(`volumeChange: ${vol}`); });
+audio.on("streamSeek", (time) => { alt.log(`streamSeek: ${time}`); });
+audio.on("volumeChange", (vol) => { alt.log(`volumeChange: ${vol}`); });
 audio.on("error", (code, message) => { alt.log(`error: ${code} | ${message}`); });
 
 audio.addOutput(output);
