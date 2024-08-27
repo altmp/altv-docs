@@ -1,14 +1,13 @@
 # Introduction
 
 > [!CAUTION]
-> Custom launchers that are required to connect to the server are only allowed if they are fully open source and the server is not listed on the masterlist.
+> Custom launchers must comply with our [ToS](https://altv.mp/terms-of-service.pdf).
 
 As an alternative to the custom launcher, it is possible to obtain a branded launcher.
 
 The branded launcher is available from the Patreon "Diamond" tier or higher and features several server-specific displays such as an RSS feed, launcher and UI background, logo, primary color, and server name.\
 In order for a user to activate this branding, a "Apply server skin" checkbox is shown when connecting to the server, which is enabled by default.
-
-This article explains what information is required and how to request it.
+To set up the custom launcher for your server visit our [server manager](https://my.alt-mp.com).
 
 # Samples
 
@@ -18,20 +17,6 @@ You can check out the following examples for some of the available customization
 - [Interface background and RSS feed](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)
 - [Loading screen](~/altv-docs-assets/altv-docs-gta/images/customlauncher/loading_screen.png)
 - [Activate the skin](~/altv-docs-assets/altv-docs-gta/images/customlauncher/apply_skin.png)
-
-# Requesting a launcher
-
-To request a launcher, you must have an active Patreon membership at the "Diamond" level or higher.
-
-The following data can be included optionally to customize the interface:
-- **All images must be in PNG format**
-- A launcher background with a resolution of 300x400 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/launcher_splash.png)]
-- A logo with a resolution of 128x128 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
-- A UI background with a resolution of 1920x1080 or 3840x2160 [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/loading_screen.png)]
-- A color to replace the primary color of the interface [[Example 1](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)] [[Example 2](~/altv-docs-assets/altv-docs-gta/images/customlauncher/color_customization.png)]
-- The link to an RSS feed. The exact format of the RSS feed is covered in the following topics. [[Example](~/altv-docs-assets/altv-docs-gta/images/customlauncher/user_interface.png)]
-
-Once you have fulfilled all requirements and prepared the necessary media, join our [Discord server](https://discord.altv.mp/) and contact a member of the Public Relations team.
 
 # RSS Feed
 
