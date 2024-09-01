@@ -88,5 +88,41 @@ The following snippet explains how to use it:
 ```
 This data is now persistently stored until the alt:V client's cache folder is deleted.
 
+## Discord OAuth2
+Early auth supports utilizing the Discord gamesdk to request an oauth2 token.
+The following sample shows how to use it:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord OAuth2 Sample</title>
+</head>
+<body>
+
+<button id="oauthButton">Request OAuth2 Token</button>
+<p id="tokenLabel">Token: Not received yet</p>
+
+<script>
+    // The client id MUST be a string. Numbers won't work!
+	const clientId = "123456789";
+
+    document.getElementById("oauthButton").addEventListener("click", () => {
+        // Requests the token
+        alt.emit("discordRequestOAuth2Token", clientId);
+    });
+
+    // Event listener for receiving the token
+    alt.on("discordOAuth2", (token) => {
+        const maskedToken = token.slice(0, 4) + "x".repeat(token.length - 4);
+        document.getElementById("tokenLabel").innerText = "Token: " + maskedToken;
+    });
+</script>
+
+</body>
+</html>
+```
+
 ## Extra informations
 If you want to close your early auth window, you have to use `alt.emit('closeMe')`
