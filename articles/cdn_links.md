@@ -251,7 +251,7 @@ label {
                 returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
             }
         } else {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libjs-module-v2.so</br>";
+            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
         }
 
         return returnStr;
@@ -301,7 +301,7 @@ JS Module V2
 > [!div class="nohljsln"]
 >```yaml
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/update.json
->https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libjs-module-v2.so
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/modules/libjs-module-v2.so
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libnodev2.so
 >```
 
