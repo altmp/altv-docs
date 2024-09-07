@@ -246,12 +246,12 @@ label {
         }
 
         if(osIndex === 0) {
-            if(branchArray[branchIndex] == "dev") {
+            if(branchArray[branchIndex] != "stable") {
                 returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.dll</br>";
                 returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
             }
         } else {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
+            if(branchArray[branchIndex] != "stable") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
         }
 
         return returnStr;
