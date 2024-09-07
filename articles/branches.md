@@ -16,7 +16,7 @@ This branch is for production, it is consider as stable. This is the only branch
 
 <img src="https://cdn.alt-mp.com/static/images/updates/branch_rc.png" width="100px"/>
 
-This branch is for the next update and contains the newest features. It can be considered as mostly stable, here the last bugs will be fixed before they are merged to release. If you run a public server, you should use this branch before updates to update your server code to a new version of alt:V. This branch can contain bugs and unfinished features, the features also can change. If you want the newest features you can test them on this branch and help us finding bugs. The icon is colored orange.
+This branch is for the next update and contains the newest features. Here the last bugs will be fixed before they are merged to release. If you run a public server, you should use this branch before [release](#release) merge (a few days) to update your server code to a new version of alt:V. This branch can contain bugs and unfinished features, the features also can change. If you want the newest features you can test them on this branch and help us finding bugs. The icon is colored orange.
 
 ## Internal
 
