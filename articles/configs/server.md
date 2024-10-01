@@ -4,6 +4,7 @@ The `server.toml` file is the most important configuration file, it is the main 
 important configurations like server name, amount of slots, loaded resources and more.
 
 ## Basic configuration for development of JS resources
+
 ```toml
 # An array of all modules (specific language support on server-side) that should be loaded
 modules = ["js-module"]
@@ -85,6 +86,9 @@ colShapeTickRate = 200
 
 # Defines the used logging streams (console, file, stdconsole) for the server
 logStreams = [ "console", "file" ]
+
+# Defines the timestamp format of logs ("%H:%M:%S" by default)
+logTimeFormat = "%H:%M:%S"
 
 # The tags for your server (max. 4)
 tags = [
