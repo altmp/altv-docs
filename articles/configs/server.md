@@ -35,14 +35,8 @@ password = "mySecretPassword"
 announce = true
 # Token to announce the server to the masterlist
 token = "superSecretToken"
-# The gamemode your server is running
-gamemode = "Freeroam"
-# The website of your server
-website = "example.com"
 # The language of your server
 language = "English"
-# The description of your server
-description = "My cool server"
 # If the debug mode should be allowed (Debug mode allows debugging functions like reconnect or the CEF debugger)
 debug = false
 # The stream in distance for entities
@@ -89,12 +83,6 @@ logStreams = [ "console", "file" ]
 
 # Defines the timestamp format of logs ("%H:%M:%S" by default)
 logTimeFormat = "%H:%M:%S"
-
-# The tags for your server (max. 4)
-tags = [
-    "Freeroam",
-    "Cool"
-]
 
 # Should connection queue be enabled for your server.
 # ConnectionQueueAdd & ConnectionQueueRemove serverside events are required to accept or decline connections
