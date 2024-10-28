@@ -214,7 +214,7 @@ label {
         if(osIndex === 0)
             returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.dll</br>";
         else
-            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so.108</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/libnode.so</br>";
 
         if(osIndex === 0)
             returnStr += "https://cdn.alt-mp.com/js-module/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module/js-module.dll</br>";
@@ -294,7 +294,7 @@ JS Module
 >```yaml
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/update.json
 >https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so
->https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.108
+>https://cdn.alt-mp.com/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so
 >```
 
 JS Module V2
