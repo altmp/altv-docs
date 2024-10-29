@@ -35,6 +35,7 @@ After you downloaded and installed the alt:V Multiplayer client, you can find th
 |   cachePath               |         string        |   "cache" directory in client folder | Changes location of the cache directory where server assets (interiors, scripts, etc.) are being downloaded to.                                                                                               |
 |   skipCustomModuleWarning |   boolean(true/false) |   false              | Skips "Do you want to load [module name]?" confirmation window. See [SDK](https://docs.altv.mp/sdk/index.html) for more info. |
 |   logTimeFormat           |   string              |   "%H:%M:%S"         | Defines the timestamp format of logs. See [here](~/articles/logging.md#timestamp-format-of-logs) for more info. |
+|   logsToKeep              |   number              |   10                 | How many log files to keep in the "logs" directory. Set to 0 for unlimited number of log files |
 
 ## Example altv.toml file
 
