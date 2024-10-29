@@ -79,7 +79,7 @@ This resource type is to provide content to other resources (eg Pictures, Videos
 
 > [!div class="nohljsln"]
 >```
-> type = asset-pack
+> type = 'asset-pack'
 > client-files = [ ... ]
 > ```
 
