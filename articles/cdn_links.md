@@ -112,9 +112,6 @@ label {
 
         if(!selection[0] && !selection[1] && !selection[2] && !selection[3] && !selection[4] && !selection[5])
             returnStr += "You didn't select any components :(";
-        else if(selection[4] && (branchArray[branchIndex] === "release" || branchArray[branchIndex] === "rc"))
-            returnStr += "js-module-v2 is not ready for production. It is only available on dev branch. See https://github.com/altmp/altv-js-module-v2/tree/v1-compatibility for more information.";
-
 
         returnStr += "<\/pre>";
 
@@ -235,23 +232,17 @@ label {
         let returnStr = "";
 
         if(listUpdate) {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/update.json</br>";
         }
 
         if(osIndex === 0)
         {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
         } else {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.so</br>";
-        }
-
-        if(osIndex === 0) {
-            if(branchArray[branchIndex] == "dev") {
-                returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.dll</br>";
-                returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
-            }
-        } else {
-            if(branchArray[branchIndex] == "dev") returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.so</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
         }
 
         return returnStr;
