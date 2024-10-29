@@ -90,6 +90,12 @@ logStreams = [ "console", "file" ]
 # Defines the timestamp format of logs ("%H:%M:%S" by default)
 logTimeFormat = "%H:%M:%S"
 
+# How many log files to keep in the "logs" directory (created automatically by alt:V)
+# 0 = no limit
+# For example, logsToKeep = 3 will set limit to 3 files in default server mode + 3 files for --justpack
+# Note: if you remove this parameter "logs" directory will not be created
+logsToKeep = 0
+
 # The tags for your server (max. 4)
 tags = [
     "Freeroam",
