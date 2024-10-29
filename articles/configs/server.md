@@ -84,6 +84,11 @@ logStreams = [ "console", "file" ]
 # Defines the timestamp format of logs ("%H:%M:%S" by default)
 logTimeFormat = "%H:%M:%S"
 
+# How many log files to keep in the "logs" directory (created automatically by alt:V)
+# Set to 0 to disable "logs" directory (default behavior)
+# For example, logsToKeep = 3 will set limit to 3 files in default server mode + 3 files for --justpack
+logsToKeep = 0
+
 # Should connection queue be enabled for your server.
 # ConnectionQueueAdd & ConnectionQueueRemove serverside events are required to accept or decline connections
 connectionQueue = false
