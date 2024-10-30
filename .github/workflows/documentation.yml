@@ -98,14 +98,12 @@ jobs:
         with:
           name: js
           path: ./altv-types/docs/
-          include-hidden-files: true
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-js
           path: ./altv-types/docs/
-          include-hidden-files: true
   cs:
     runs-on: windows-2019
     needs: bootstrap
@@ -134,14 +132,13 @@ jobs:
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1.6
         with:
-          repository: deluvas1911/docfx
+          repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
-          fileName: docfx-win-x64-v2.78.0.zip
+          fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path "./docfx-win-x64-v2.78.0.zip" -DestinationPath "./docfx/"
-          Remove-Item -Path "./docfx-win-x64-v2.78.0.zip"
-          
+          Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "./docfx.zip"
       - name: Generate C# metadata
         run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
       - name: Upload artifacts
@@ -150,14 +147,12 @@ jobs:
         with:
           name: cs
           path: ./coreclr-module/docs/
-          include-hidden-files: true
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: "env.PRODUCTION == 'false'"
         with:
           name: nightly-cs
           path: ./coreclr-module/docs/
-          include-hidden-files: true
   sdk:
     runs-on: windows-2019
     needs: bootstrap
@@ -296,13 +291,13 @@ jobs:
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1.6
         with:
-          repository: deluvas1911/docfx
+          repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
-          fileName: docfx-win-x64-v2.78.0.zip
+          fileName: docfx.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path "./docfx-win-x64-v2.78.0.zip" -DestinationPath "./docfx/"
-          Remove-Item -Path "docfx-win-x64-v2.78.0.zip"
+          Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "docfx.zip"
       - name: Download DocFx TypeScriptReference package
         uses: robinraju/release-downloader@v1.6
         with:
