@@ -124,11 +124,8 @@ jobs:
         with:
           persist-credentials: false
           repository: altmp/coreclr-module
-          ref: ${{ env.SOURCE_BRANCH }}
           path: ./coreclr-module
-      - name: Checkout latest commit
-        run: git checkout $(git rev-parse HEAD)
-        working-directory: ./coreclr-module
+          ref: 093720606ef6a9cf9223faaec7e53e3867ccd73c
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1.6
         with:
@@ -268,6 +265,7 @@ jobs:
           persist-credentials: false
           repository: altmp/coreclr-module
           path: ./coreclr-module
+          ref: 093720606ef6a9cf9223faaec7e53e3867ccd73c
       - name: Checkout SDK repository
         uses: actions/checkout@v3
         with:
