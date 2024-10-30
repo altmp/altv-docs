@@ -400,6 +400,9 @@ jobs:
             tar -xvf "./altv-types/$($devPrefix)js.tar" -C "./altv-types/"
             Remove-Item -Path "./altv-types/$($devPrefix)js.tar"
           }
+          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "altv-types\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
+            throw "Invalid altv-types repo manifest."
+          }
           Remove-Item -Path "./coreclr-module/docs/" -Recurse
           if(-not (Test-Path -Path "./$($devPrefix)cs/$($devPrefix)cs.tar")) {
             Move-Item -Path "./$($devPrefix)cs/" -Destination "./coreclr-module/docs"
@@ -407,6 +410,9 @@ jobs:
             Move-Item -Path "./$($devPrefix)cs/$($devPrefix)cs.tar" -Destination "./coreclr-module/$($devPrefix)cs.tar"
             tar -xvf "./coreclr-module/$($devPrefix)cs.tar" -C "./coreclr-module/"
             Remove-Item -Path "./coreclr-module/$($devPrefix)cs.tar"
+          }
+          if([System.String]::IsNullOrWhiteSpace((Get-Content -Path "coreclr-module\docs\api\.manifest" -ErrorAction SilentlyContinue))) {
+            throw "Invalid coreclr-module repo manifest."
           }
           Remove-Item -Path "./cpp-sdk/articles/" -Recurse
           if(-not (Test-Path -Path "./$($devPrefix)sdk/$($devPrefix)sdk.tar")) {
