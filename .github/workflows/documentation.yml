@@ -132,13 +132,14 @@ jobs:
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1.6
         with:
-          repository: dotnet/docfx
+          repository: deluvas1911/docfx
           tag: ${{ env.DOCFX }}
-          fileName: docfx-win-x64-v2.64.0.zip
+          fileName: docfx-win-x64-v2.78.0.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path "./docfx-win-x64-v2.64.0.zip" -DestinationPath "./docfx/"
-          Remove-Item -Path "./docfx-win-x64-v2.64.0.zip"
+          Expand-Archive -Path "./docfx-win-x64-v2.78.0.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "./docfx-win-x64-v2.78.0.zip"
+          
       - name: Generate C# metadata
         run: ./docfx/docfx metadata "./coreclr-module/docs/docfx.json"
       - name: Upload artifacts
@@ -291,13 +292,13 @@ jobs:
       - name: Download DocFx package
         uses: robinraju/release-downloader@v1.6
         with:
-          repository: dotnet/docfx
+          repository: deluvas1911/docfx
           tag: ${{ env.DOCFX }}
-          fileName: docfx-win-x64-v2.64.0.zip
+          fileName: docfx-win-x64-v2.78.0.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path "./docfx-win-x64-v2.64.0.zip" -DestinationPath "./docfx/"
-          Remove-Item -Path "docfx-win-x64-v2.64.0.zip"
+          Expand-Archive -Path "./docfx-win-x64-v2.78.0.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "docfx-win-x64-v2.78.0.zip"
       - name: Download DocFx TypeScriptReference package
         uses: robinraju/release-downloader@v1.6
         with:
