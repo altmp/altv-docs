@@ -293,11 +293,11 @@ jobs:
         with:
           repository: dotnet/docfx
           tag: ${{ env.DOCFX }}
-          fileName: docfx.zip
+          fileName: docfx-win-x64-v2.77.0.zip
       - name: Unzip DocFx package
         run: |
-          Expand-Archive -Path "./docfx.zip" -DestinationPath "./docfx/"
-          Remove-Item -Path "docfx.zip"
+          Expand-Archive -Path "./docfx-win-x64-v2.77.0.zip" -DestinationPath "./docfx/"
+          Remove-Item -Path "docfx-win-x64-v2.77.0.zip"
       - name: Download DocFx TypeScriptReference package
         uses: robinraju/release-downloader@v1.6
         with:
