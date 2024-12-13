@@ -237,11 +237,11 @@ label {
 
         if(osIndex === 0)
         {
-            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.dll</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnode.dll</br>";
             returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.dll</br>";
             returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/js-module-v2.pdb</br>";
         } else {
-            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnodev2.so</br>";
+            returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/libnode.so</br>";
             returnStr += "https://cdn.alt-mp.com/js-module-v2/" + branchArray[branchIndex] + "/" + osArray[osIndex] + "/modules/libjs-module-v2.so</br>";
         }
 
@@ -293,7 +293,7 @@ JS Module V2
 >```yaml
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/update.json
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/modules/libjs-module-v2.so
->https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libnodev2.so
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_linux/libnode.so
 >```
 
 JS Bytecode Module
@@ -356,7 +356,7 @@ JS Module V2
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/update.json
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/modules/js-module-v2.dll
 >https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/modules/js-module-v2.pdb
->https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/libnodev2.dll
+>https://cdn.alt-mp.com/js-module-v2/${BRANCH}/x64_win32/libnode.dll
 >```
 
 JS Bytecode Module
