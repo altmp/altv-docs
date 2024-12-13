@@ -138,6 +138,13 @@ hashClientResourceName = true
 # Disables creation of props marked as "optional"
 disableOptionalProps = false
 
+# Allows clients to download only modified parts of resources, without this option enabled if any resource is changed it gets redownloaded as it was the first time
+# Warning: if enabled clients will have to re-download all resources
+resourceContainerizerMode = true
+
+# Resource block size in MB. Default: 32MB (see resourceContainerizerMode)
+resourceBlockSize = 32
+
 # The amount of server side managed entities per type that can be streamed at the same time per player. If more than the set amount of entities are in streaming range, the closest n entities (as defined below) of the specific type will be streamed. Changing these values can cause performance and stability issues.
 [maxStreaming]
 peds = 128 # Max 220, shared type for server side created NPC peds + player peds
